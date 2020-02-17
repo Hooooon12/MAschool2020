@@ -1,0 +1,77 @@
+######################
+#		     #
+# ATLAS-SUSY-2016-07 #
+#		     #
+######################
+
+set main.fastsim.package = fastjet
+set main.fastsim.algorithm = antikt
+set main.fastsim.radius = 0.4
+set main.fastsim.bjet_id.matching_dr = 0.3
+set main.fastsim.jetrecomode = constituents
+
+# Jets
+
+define reco_efficiency j 0.0  [pt <= 0.1]
+define reco_efficiency j 0.7  [abseta <= 1.5 and pt > 0.1 and pt <= 1.0]
+define reco_efficiency j 0.95 [abseta <= 1.5 and pt > 1.0]
+define reco_efficiency j 0.6  [abseta > 1.5 and abseta <= 2.5 and pt > 0.1 and pt <= 1.0]
+define reco_efficiency j 0.85 [abseta > 1.5 and abseta <= 2.5 and pt > 1.0]
+define reco_efficiency j 0.0  [abseta > 2.5]
+
+define smearer j with PT sqrt(0.06^2 + pt^2*1.3e-3^2) [abseta <= 0.5 and pt > 0.1]
+define smearer j with PT sqrt(0.10^2 + pt^2*1.7e-3^2) [abseta > 0.5 and abseta <= 1.5 and pt > 0.1]
+define smearer j with PT sqrt(0.25^2 + pt^2*3.1e-3^2) [abseta > 1.5 and abseta <= 2.5 and pt > 0.1]
+
+define smearer j with E sqrt(E^2*0.0302^2 + E*0.5205^2 + 1.59^2) [abseta <= 1.7]
+define smearer j with E sqrt(E^2*0.0500^2 + E*0.706^2) [abseta > 1.7 and abseta <= 3.2]
+define smearer j with E sqrt(E^2*0.09420^2 + E*1.00^2) [abseta > 3.2 and abseta <= 4.9]
+
+# Electrons
+
+define reco_efficiency e 0.0  [pt <= 10.0]
+define reco_efficiency e 0.95 [abseta <= 1.5 and pt > 10.0]
+define reco_efficiency e 0.85 [abseta > 1.5 and abseta <= 2.5 and pt > 10.0]
+define reco_efficiency e 0.0  [abseta > 2.5]
+
+define smearer e with PT sqrt(0.06^2 + pt^2*1.3e-3^2) [abseta <= 0.5 and pt > 0.1]
+define smearer e with PT sqrt(0.10^2 + pt^2*1.7e-3^2) [abseta > 0.5 and abseta <= 1.5 and pt > 0.1]
+define smearer e with PT sqrt(0.25^2 + pt^2*3.1e-3^2) [abseta > 1.5 and abseta <= 2.5 and pt > 0.1]
+
+define smearer e with E sqrt(E^2*0.0017^2 + E*0.101^2) [abseta <= 3.2]
+define smearer e with E sqrt(E^2*0.0350^2 + E*0.285^2) [abseta > 3.2 and abseta <= 4.9]
+
+# photons
+
+define reco_efficiency a 0.0  [pt <= 10.0]
+define reco_efficiency a 0.95 [abseta <= 1.5 and pt > 10.0]
+define reco_efficiency a 0.85 [abseta > 1.5 and abseta <= 2.5 and pt > 10.0]
+define reco_efficiency a 0.0  [abseta > 2.5]
+
+define smearer a with E sqrt(E^2*0.0017^2 + E*0.101^2) [abseta <= 3.2]
+define smearer a with E sqrt(E^2*0.0350^2 + E*0.285^2) [abseta > 3.2 and abseta <= 4.9]
+
+# muons
+
+define reco_efficiency mu 0.0  [pt <= 10.0]
+define reco_efficiency mu 0.95 [abseta <= 1.5 and pt > 10.0]
+define reco_efficiency mu 0.85 [abseta > 1.5 and abseta <= 2.7 and pt > 10.0]
+define reco_efficiency mu 0.0  [abseta > 2.7]
+
+define smearer mu with PT sqrt(0.02^2 + pt^2*2.0e-4^2) [abseta <= 0.5 and pt > 0.1]
+define smearer mu with PT sqrt(0.03^2 + pt^2*3.0e-4^2) [abseta > 0.5 and abseta <= 1.5 and pt > 0.1]
+define smearer mu with PT sqrt(0.06^2 + pt^2*6.0e-4^2) [abseta > 1.5 and abseta <= 2.5 and pt > 0.1]
+
+# B tagging
+
+define tagger j as b 0.002+7.3e-06*pt
+define tagger c as b 0.20*tanh(0.02*pt)*(1/(1+0.0034*pt))
+define tagger b as b 0.80*tanh(0.003*pt)*(30/(1+0.086*pt)) [abseta <= 2.5]
+define tagger b as b 0.0 [abseta > 2.5]
+
+# Tau tagging
+
+define tagger j as ta 0.01
+define tagger ta as ta 0.6 [abseta <= 2.5]
+define tagger ta as ta 0.0 [abseta > 2.5]
+

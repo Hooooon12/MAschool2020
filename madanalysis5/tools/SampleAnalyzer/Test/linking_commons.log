@@ -1,0 +1,1 @@
+c++ Commons/Test.o  -L/home/jhkim/MAschool2020/madanalysis5/tools/SampleAnalyzer/Lib -L/home/jhkim/MAschool2020/madanalysis5/tools/SampleAnalyzer/ExternalSymLink/Lib -lcommons_for_ma5 -o ../Bin/TestCommons

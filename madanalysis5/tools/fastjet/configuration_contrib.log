@@ -1,0 +1,25 @@
+Configuring fjcontrib version 1.039
+
+Enabled contribs: 
+        ClusteringVetoPlugin   v1.0.0           
+        ConstituentSubtractor  v1.3.1           
+        EnergyCorrelator       v1.3.1           
+        FlavorCone             v1.0.0           
+        GenericSubtractor      v1.3.1           
+        JetCleanser            v1.0.1           
+        JetFFMoments           v1.0.0           
+        JetsWithoutJets        v1.0.0           
+        LundPlane              v1.0.2           
+        Nsubjettiness          v2.2.5           
+        QCDAwarePlugin         v1.0.0           
+        RecursiveTools         v2.0.0-beta2     
+        ScJet                  v1.1.0           
+        SoftKiller             v1.0.0           
+        SubjetCounting         v1.0.1           
+        ValenciaPlugin         v2.0.0           
+        VariableR              v1.2.1           
+
+Installation prefix: /home/jhkim/MAschool2020/madanalysis5/tools/fastjet
+--------------------------------------------------
+Now run 'make', optionally 'make check', and 'make install'
+

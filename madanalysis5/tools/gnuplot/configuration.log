@@ -1,0 +1,394 @@
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking dependency style of gcc... (cached) gcc3
+checking how to run the C preprocessor... gcc -E
+checking for gcc... gcc
+checking whether we are using the GNU Objective C compiler... no
+checking whether gcc accepts -g... no
+checking dependency style of gcc... gcc3
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking for preprocessor stringizing operator... yes
+checking whether ln -s works... yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking dependency style of gcc... (cached) gcc3
+checking for emacs... emacs
+checking for emacs... (cached) emacs
+checking where .elc files should go... ${datarootdir}/emacs/site-lisp
+checking for tex... tex
+checking for latex... latex
+checking for pdflatex... pdflatex
+checking for dvips... dvips
+checking for troff... troff
+checking for kpsexpand... kpsexpand
+checking for texhash... texhash
+checking for X... libraries , headers 
+checking for gethostbyname... yes
+checking for connect... yes
+checking for remove... yes
+checking for shmat... yes
+checking for IceConnectionNumber in -lICE... no
+checking for MS-DOS/djgpp/libGRX... no
+checking for NeXT... no
+checking for Apple MacOS X... no
+checking for BeOS... no
+checking for Alpha/AXP CPU... no
+checking for sin... no
+checking for sin in -lm... yes
+checking for ANSI C header files... (cached) yes
+checking dirent.h usability... yes
+checking dirent.h presence... yes
+checking for dirent.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking float.h usability... yes
+checking float.h presence... yes
+checking for float.h... yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking math.h usability... yes
+checking math.h presence... yes
+checking for math.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking time.h usability... yes
+checking time.h presence... yes
+checking for time.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for sys/types.h... (cached) yes
+checking sys/bsdtypes.h usability... no
+checking sys/bsdtypes.h presence... no
+checking for sys/bsdtypes.h... no
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking for sys/stat.h... (cached) yes
+checking sys/systeminfo.h usability... no
+checking sys/systeminfo.h presence... no
+checking for sys/systeminfo.h... no
+checking sys/timeb.h usability... yes
+checking sys/timeb.h presence... yes
+checking for sys/timeb.h... yes
+checking sys/utsname.h usability... yes
+checking sys/utsname.h presence... yes
+checking for sys/utsname.h... yes
+checking libc.h usability... no
+checking libc.h presence... no
+checking for libc.h... no
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking poll.h usability... yes
+checking poll.h presence... yes
+checking for poll.h... yes
+checking sgtty.h usability... yes
+checking sgtty.h presence... yes
+checking for sgtty.h... yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking values.h usability... yes
+checking values.h presence... yes
+checking for values.h... yes
+checking for dirent.h... (cached) yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for struct exception in math.h... no
+checking whether stat file-mode macros are broken... no
+checking for unistd.h... yes
+checking if errno variable is declared... yes
+checking for size_t... yes
+checking for time_t in time.h... yes
+checking return type of signal handlers... void
+checking for atexit... yes
+checking for memcpy... yes
+checking for memmove... yes
+checking for memset... yes
+checking for on_exit... yes
+checking for bcopy... yes
+checking for bzero... yes
+checking for setvbuf... yes
+checking for strerror... yes
+checking for strchr... yes
+checking for strrchr... yes
+checking for strstr... yes
+checking for index... yes
+checking for rindex... yes
+checking for erf... yes
+checking for erfc... yes
+checking for gamma... yes
+checking for lgamma... yes
+checking for getcwd... yes
+checking for poll... yes
+checking for pclose... yes
+checking for popen... yes
+checking for fdopen... yes
+checking for select... yes
+checking for sleep... yes
+checking for stpcpy... yes
+checking for strcspn... yes
+checking for strdup... yes
+checking for strndup... yes
+checking for strnlen... yes
+checking for strcasecmp... yes
+checking for stricmp... no
+checking for strncasecmp... yes
+checking for strnicmp... no
+checking for sysinfo... yes
+checking for tcgetattr... yes
+checking for vfprintf... yes
+checking for doprnt... no
+checking for usleep... yes
+checking for snprintf... yes
+checking whether signgam is declared... yes
+checking for sigsetjmp... yes
+checking if malloc(0) returns 0... no
+checking for sys/select.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking types of arguments for select... int,fd_set *,struct timeval *
+checking for tputs in -lncurses... no
+checking for tputs in -lcurses... no
+checking for tputs in -ltermcap... no
+checking for tputs in -lterminfo... no
+checking for tputs in -ltermlib... no
+checking for remove_history in -lreadline... no
+checking for remove_history in -lhistory... no
+configure: WARNING: GNU readline not found - falling back to builtin readline
+checking for library containing rl_ding... no
+checking for library containing rl_forced_update_display... no
+checking for library containing rl_reset_after_signal... no
+checking for library containing rl_complete_with_tilde_expansion... no
+checking for wcwidth... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking for deflate in -lz... yes
+checking zlib.h usability... yes
+checking zlib.h presence... yes
+checking for zlib.h... yes
+checking for gdlib-config... no
+checking for gdImageCreateTrueColor in -lgd... no
+configure: WARNING: libgd not found or too old, version >= 2.0 is required
+checking for library containing iconv_open... none required
+checking iconv.h usability... yes
+checking iconv.h presence... yes
+checking for iconv.h... yes
+checking for pdflib-config... no
+checking for PDF_get_majorversion in -lpdf... no
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for LUA... no
+checking for LUA... no
+configure: WARNING: Could not find support for lua using pkg-config.
+checking for library containing luaL_openlibs... no
+checking for multi-byte support in x11... checking for XmbDrawString in -lX11... yes
+checking for pkg-config... (cached) /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking whether we are using the GNU C++ compiler... yes
+checking whether c++ accepts -g... yes
+checking dependency style of c++... gcc3
+checking how to run the C++ preprocessor... c++ -E
+checking for wx-config... no
+configure: WARNING: wxWidgets can't be found. You can try --with-wx-config-path to give the right path to wx-config. The wxWidgets terminal will not be compiled.
+checking for CAIROPANGO... configure: WARNING:
+Package requirements (cairo >= 0.9.0 pango >= 1.10 pangocairo >= 1.10) were not met:
+
+No package 'cairo' found
+No package 'pango' found
+No package 'pangocairo' found
+
+Consider adjusting the PKG_CONFIG_PATH environment variable if you
+installed software in a non-standard prefix.
+
+Alternatively, you may set the environment variables CAIROPANGO_CFLAGS
+and CAIROPANGO_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+
+configure: WARNING: The wxWidgets terminal will not be compiled.
+checking for PANGO_1_10_2... no
+checking for CAIROPDF... configure: WARNING:
+Package requirements (       cairo >= 1.2 cairo-pdf >= 1.2 pango >= 1.10 pangocairo >= 1.10 glib-2.0) were not met:
+
+No package 'cairo' found
+No package 'cairo-pdf' found
+No package 'pango' found
+No package 'pangocairo' found
+No package 'glib-2.0' found
+
+Consider adjusting the PKG_CONFIG_PATH environment variable if you
+installed software in a non-standard prefix.
+
+Alternatively, you may set the environment variables CAIROPDF_CFLAGS
+and CAIROPDF_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+
+configure: WARNING: The cairo terminals will not be compiled.
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config/Makefile
+config.status: creating demo/Makefile
+config.status: creating docs/Makefile
+config.status: creating m4/Makefile
+config.status: creating man/Makefile
+config.status: creating share/Makefile
+config.status: creating share/LaTeX/Makefile
+config.status: creating src/Makefile
+config.status: creating src/beos/Makefile
+config.status: creating src/wxterminal/Makefile
+config.status: creating src/qtterminal/Makefile
+config.status: creating term/Makefile
+config.status: creating tutorial/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing default commands
+=== configuring in lisp (/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/lisp)
+configure: running /bin/bash ./configure --disable-option-checking '--prefix=/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot'  '--with-png' '--with-jpeg' '--with-pdf' --cache-file=/dev/null --srcdir=.
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for emacs... emacs
+checking where .elc files should go... ${datarootdir}/emacs/site-lisp
+checking for dvips... dvips
+checking for latex... latex
+checking for makeinfo... /usr/bin/makeinfo
+checking for pdflatex... pdflatex
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+
+** Configuration summary for gnuplot 4.6.5:
+
+gnuplot will be compiled with the following terminals:
+
+  Standalone terminals: yes (always builtin)
+    canvas, cgm, context, corel, dumb, dxf, eepic, emf, emtex,
+    epslatex, fig, gpic, hp2623a, hp2648, hpgl, imagen,
+    latex, metafont, metapost, mif, pcl5, postscript, pslatex,
+    pstex, pstricks, qms, regis, svg,
+    tek40xx, tek410x, texdraw, tgif, tkcanvas, tpic, vttek
+
+  dot-matrix terminals: no
+    epson, nec, okidata, tandy, and seiko dp414 printers
+    hp500c, hpdj, hpljii, hppj, pbm, starc
+
+  X Window System terminal: yes
+    (with multi-byte fonts)
+    (enable plotting to windows opened by external apps) 
+    (with application defaults, in /etc/X11/app-defaults/)
+  jpeg terminal: no (requires libgd with jpeg support)
+  gif terminal: no (requires libgd with gif support)
+  png terminal: no (requires libgd with png support)
+    (jpeg, gif and png terminals cannot use TTF fonts, requires libgd support)
+  pdf terminal: no (requires libpdf)
+  linux terminal (vga console): no (use --with-linux-vga to enable,
+                                       requires SVGAlib)
+  vgagl terminal ((s)vga console): no (use --with-linux-vga to enable,
+                                       requires SVGAlib with vgagl)
+  ggi terminal: no (use --with-ggi to enable, requires libggi)
+  svga terminal (MSDOS/djgpp): no
+  be terminal (BeOS): no
+  next terminal: no
+  aqua terminal: no
+  wxt terminal: no (requires C++, wxWidgets>2.6, cairo>0.9, pango>1.10)
+  cairo-based terminals: no (requires cairo>1.2, pango>1.10)
+  lua/TikZ terminal: no 
+  Qt terminal: no (requires C++, Qt >= 4.5)
+
+  Additional terminals are availaible in platform-specific makefiles:
+   cgi (makefile.unx), pm (makefile.os2),
+   sun (makefile.unx), unixpc (makefile.unx), windows (various Windows
+   makefiles)
+
+gnuplot will be compiled with the following features:
+
+  Mouse support in interactive terminals: yes
+  Zooming or refresh of volatile data: yes 
+  Typing <space> in plot window raises console
+  Command line macros: yes 
+  Placement of rectangles and other objects: yes 
+
+gnuplot will be compiled with the following options:
+
+  Readline library: builtin minimal (use --with-readline=gnu for GNU readline)
+  Command-line history file: yes
+  Check current directory for .gnuplot file: no (use --with-cwdrc to enable)
+  Sort help/subtopic tables by column: no (use --without-row-help to enable)
+  Use TeX kpsexpand to search for fonts: no (use --with-kpsexpand to enable)
+  Hidden3d optimization: quadtree
+  Deprecated syntax and terminal options: no (use --enable-backwards-compatibility)
+  Generate statistical summary of data: yes
+
+gnuplot will install the following additional materials:
+
+  gnuplot-mode for X/Emacs: yes
+  LaTeX tutorial: no
+  cfg file for epslatex terminal: yes
+  TeX *.sty for lua/tikz terminal: no
+  TeX files will be installed in /home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/texmf/tex/latex/gnuplot
+                               (use --with-texdir=DIR to change)
+  Help file: yes (always), in ${datarootdir}/gnuplot/4.6/gnuplot.gih
+  PostScript prologue files: yes (always)

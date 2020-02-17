@@ -1,0 +1,391 @@
+Making install in config
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/config' 들어감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/config' 들어감
+make[2]: 'install-exec-am'을(를) 위해 할 일이 없습니다.
+make[2]: 'install-data-am'을(를) 위해 할 일이 없습니다.
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/config' 나감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/config' 나감
+Making install in m4
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/m4' 들어감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/m4' 들어감
+make[2]: 'install-exec-am'을(를) 위해 할 일이 없습니다.
+make[2]: 'install-data-am'을(를) 위해 할 일이 없습니다.
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/m4' 나감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/m4' 나감
+Making install in term
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/term' 들어감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/term' 들어감
+make[2]: 'install-exec-am'을(를) 위해 할 일이 없습니다.
+ /bin/mkdir -p '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js'
+ /bin/mkdir -p '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua'
+ /bin/mkdir -p '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript'
+ /usr/bin/install -c -m 644 js/canvasmath.js js/canvastext.js js/gnuplot_common.js js/gnuplot_dashedlines.js js/gnuplot_mouse.js js/gnuplot_svg.js js/grid.png js/help.png js/nextzoom.png js/previouszoom.png js/textzoom.png js/gnuplot_mouse.css js/README '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js'
+ /usr/bin/install -c -m 644 lua/gnuplot-tikz.lua '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua'
+ /usr/bin/install -c -m 644 PostScript/8859-15.ps PostScript/8859-1.ps PostScript/8859-2.ps PostScript/8859-9.ps PostScript/cp1250.ps PostScript/cp1251.ps PostScript/cp437.ps PostScript/cp850.ps PostScript/cp852.ps PostScript/koi8r.ps PostScript/koi8u.ps PostScript/prologue.ps PostScript/utf-8.ps PostScript/aglfn.txt '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript'
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/term' 나감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/term' 나감
+Making install in src
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/src' 들어감
+Making install in wxterminal
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/src/wxterminal' 들어감
+make[3]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/src/wxterminal' 들어감
+make[3]: 'install-exec-am'을(를) 위해 할 일이 없습니다.
+make[3]: 'install-data-am'을(를) 위해 할 일이 없습니다.
+make[3]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/src/wxterminal' 나감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/src/wxterminal' 나감
+Making install in qtterminal
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/src/qtterminal' 들어감
+make[3]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/src/qtterminal' 들어감
+make[3]: 'install-exec-am'을(를) 위해 할 일이 없습니다.
+make[3]: 'install-data-am'을(를) 위해 할 일이 없습니다.
+make[3]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/src/qtterminal' 나감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/src/qtterminal' 나감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/src' 들어감
+depbase=`echo alloc.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT alloc.o -MD -MP -MF $depbase.Tpo -c -o alloc.o alloc.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo axis.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT axis.o -MD -MP -MF $depbase.Tpo -c -o axis.o axis.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo binary.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT binary.o -MD -MP -MF $depbase.Tpo -c -o binary.o binary.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo breaders.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT breaders.o -MD -MP -MF $depbase.Tpo -c -o breaders.o breaders.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo color.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT color.o -MD -MP -MF $depbase.Tpo -c -o color.o color.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo command.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT command.o -MD -MP -MF $depbase.Tpo -c -o command.o command.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo contour.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT contour.o -MD -MP -MF $depbase.Tpo -c -o contour.o contour.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo datafile.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT datafile.o -MD -MP -MF $depbase.Tpo -c -o datafile.o datafile.c &&\
+mv -f $depbase.Tpo $depbase.Po
+binary.c: In function ‘fread_matrix’:
+binary.c:123:5: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result [-Wunused-result]
+     fread(ct, sizeof(*ct), num_cols, fin);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+command.c: In function ‘do_system’:
+command.c:2639:5: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
+     system(cmd);
+     ^~~~~~~~~~~
+depbase=`echo dynarray.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT dynarray.o -MD -MP -MF $depbase.Tpo -c -o dynarray.o dynarray.c &&\
+mv -f $depbase.Tpo $depbase.Po
+command.c: In function ‘pause_command’:
+command.c:1433:2: warning: ignoring return value of ‘fgets’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) fgets(buf, strlen(buf), stdin);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from command.h:41:0,
+                 from command.c:72:
+command.c: In function ‘pwd_command’:
+stdfn.h:340:34: warning: ignoring return value of ‘getcwd’, declared with attribute warn_unused_result [-Wunused-result]
+ #     define GP_GETCWD(path,len) getcwd (path, len)
+                                  ^~~~~~~~~~~~~~~~~~
+command.c:1570:2: note: in expansion of macro ‘GP_GETCWD’
+  GP_GETCWD(save_file, PATH_MAX);
+  ^~~~~~~~~
+depbase=`echo eval.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT eval.o -MD -MP -MF $depbase.Tpo -c -o eval.o eval.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo fit.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT fit.o -MD -MP -MF $depbase.Tpo -c -o fit.o fit.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo gadgets.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT gadgets.o -MD -MP -MF $depbase.Tpo -c -o gadgets.o gadgets.c &&\
+mv -f $depbase.Tpo $depbase.Po
+In file included from alloc.h:44:0,
+                 from eval.c:44:
+eval.c: In function ‘update_gpval_variables’:
+stdfn.h:340:34: warning: ignoring return value of ‘getcwd’, declared with attribute warn_unused_result [-Wunused-result]
+ #     define GP_GETCWD(path,len) getcwd (path, len)
+                                  ^~~~~~~~~~~~~~~~~~
+eval.c:928:6: note: in expansion of macro ‘GP_GETCWD’
+      GP_GETCWD(save_file, PATH_MAX);
+      ^~~~~~~~~
+depbase=`echo getcolor.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT getcolor.o -MD -MP -MF $depbase.Tpo -c -o getcolor.o getcolor.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo graph3d.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT graph3d.o -MD -MP -MF $depbase.Tpo -c -o graph3d.o graph3d.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo graphics.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT graphics.o -MD -MP -MF $depbase.Tpo -c -o graphics.o graphics.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo help.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT help.o -MD -MP -MF $depbase.Tpo -c -o help.o help.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo hidden3d.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT hidden3d.o -MD -MP -MF $depbase.Tpo -c -o hidden3d.o hidden3d.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo history.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT history.o -MD -MP -MF $depbase.Tpo -c -o history.o history.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo internal.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT internal.o -MD -MP -MF $depbase.Tpo -c -o internal.o internal.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo interpol.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT interpol.o -MD -MP -MF $depbase.Tpo -c -o interpol.o interpol.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo matrix.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT matrix.o -MD -MP -MF $depbase.Tpo -c -o matrix.o matrix.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo misc.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT misc.o -MD -MP -MF $depbase.Tpo -c -o misc.o misc.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo mouse.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT mouse.o -MD -MP -MF $depbase.Tpo -c -o mouse.o mouse.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo parse.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT parse.o -MD -MP -MF $depbase.Tpo -c -o parse.o parse.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo plot.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT plot.o -MD -MP -MF $depbase.Tpo -c -o plot.o plot.c &&\
+mv -f $depbase.Tpo $depbase.Po
+plot.c: In function ‘main’:
+plot.c:281:5: warning: ignoring return value of ‘setuid’, declared with attribute warn_unused_result [-Wunused-result]
+     setuid(getuid());
+     ^~~~~~~~~~~~~~~~
+depbase=`echo plot2d.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT plot2d.o -MD -MP -MF $depbase.Tpo -c -o plot2d.o plot2d.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo plot3d.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT plot3d.o -MD -MP -MF $depbase.Tpo -c -o plot3d.o plot3d.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo pm3d.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT pm3d.o -MD -MP -MF $depbase.Tpo -c -o pm3d.o pm3d.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo readline.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT readline.o -MD -MP -MF $depbase.Tpo -c -o readline.o readline.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo save.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT save.o -MD -MP -MF $depbase.Tpo -c -o save.o save.c &&\
+mv -f $depbase.Tpo $depbase.Po
+readline.c: In function ‘mbwidth’:
+readline.c:379:13: warning: implicit declaration of function ‘wcwidth’; did you mean ‘mbwidth’? [-Wimplicit-function-declaration]
+      return wcwidth(wc);
+             ^~~~~~~
+             mbwidth
+depbase=`echo scanner.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT scanner.o -MD -MP -MF $depbase.Tpo -c -o scanner.o scanner.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo set.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT set.o -MD -MP -MF $depbase.Tpo -c -o set.o set.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo show.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT show.o -MD -MP -MF $depbase.Tpo -c -o show.o show.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo specfun.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT specfun.o -MD -MP -MF $depbase.Tpo -c -o specfun.o specfun.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo standard.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT standard.o -MD -MP -MF $depbase.Tpo -c -o standard.o standard.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo stats.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT stats.o -MD -MP -MF $depbase.Tpo -c -o stats.o stats.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo stdfn.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT stdfn.o -MD -MP -MF $depbase.Tpo -c -o stdfn.o stdfn.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo tables.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT tables.o -MD -MP -MF $depbase.Tpo -c -o tables.o tables.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo tabulate.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT tabulate.o -MD -MP -MF $depbase.Tpo -c -o tabulate.o tabulate.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo term.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT term.o -MD -MP -MF $depbase.Tpo -c -o term.o term.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo time.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT time.o -MD -MP -MF $depbase.Tpo -c -o time.o time.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo unset.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT unset.o -MD -MP -MF $depbase.Tpo -c -o unset.o unset.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo util.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT util.o -MD -MP -MF $depbase.Tpo -c -o util.o util.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo util3d.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT util3d.o -MD -MP -MF $depbase.Tpo -c -o util3d.o util3d.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo variable.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT variable.o -MD -MP -MF $depbase.Tpo -c -o variable.o variable.c &&\
+mv -f $depbase.Tpo $depbase.Po
+variable.c: In function ‘fontpath_handler’:
+variable.c:399:5: warning: ignoring return value of ‘fgets’, declared with attribute warn_unused_result [-Wunused-result]
+     fgets(envval,255,fcmd);
+     ^~~~~~~~~~~~~~~~~~~~~~
+depbase=`echo version.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT version.o -MD -MP -MF $depbase.Tpo -c -o version.o version.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bf_test.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT bf_test.o -MD -MP -MF $depbase.Tpo -c -o bf_test.o bf_test.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo gplt_x11.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT gplt_x11.o -MD -MP -MF $depbase.Tpo -c -o gplt_x11.o gplt_x11.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo gpexecute.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -MT gpexecute.o -MD -MP -MF $depbase.Tpo -c -o gpexecute.o gpexecute.c &&\
+mv -f $depbase.Tpo $depbase.Po
+gplt_x11.c: In function ‘process_event’:
+gplt_x11.c:4564:2: warning: ‘XKeycodeToKeysym’ is deprecated [-Wdeprecated-declarations]
+  keysym = XKeycodeToKeysym(dpy, event->xkey.keycode, 0);
+  ^~~~~~
+In file included from gplt_x11.c:108:0:
+/usr/include/X11/Xlib.h:1687:15: note: declared here
+ extern KeySym XKeycodeToKeysym(
+               ^~~~~~~~~~~~~~~~
+gplt_x11.c: In function ‘main’:
+gplt_x11.c:717:2: warning: ignoring return value of ‘freopen’, declared with attribute warn_unused_result [-Wunused-result]
+  freopen("/dev/null", "w", stderr);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -DHAVE_CONFIG_H -I. -I..  -I../term -I../term -DBINDIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin\" -DX11_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DQT_DRIVER_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6\" -DGNUPLOT_SHARE_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6\" -DGNUPLOT_PS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/PostScript\" -DGNUPLOT_JS_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/js\" -DGNUPLOT_LUA_DIR=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/lua\" -DCONTACT=\"gnuplot-bugs@lists.sourceforge.net\" -DHELPFILE=\"/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih\" -DGNUPLOT_X11=\"`echo gnuplot_x11 | sed 's,x,x,'`\" -DXAPPLRESDIR=\"/etc/X11/app-defaults/\"    -g -O2 -c -DGPLT_X11_MODE -o getcolor_x11.o ./getcolor.c
+gplt_x11.c: In function ‘process_event’:
+gplt_x11.c:4329:12: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
+   if (cmd) system(cmd);
+            ^~~~~~~~~~~
+gplt_x11.c: In function ‘getMultiTabConsoleSwitchCommand’:
+gplt_x11.c:4097:3: warning: ignoring return value of ‘fscanf’, declared with attribute warn_unused_result [-Wunused-result]
+   fscanf(p, "%lu", &w);
+   ^~~~~~~~~~~~~~~~~~~~
+gcc  -g -O2   -o bf_test bf_test.o binary.o alloc.o  -lm 
+gplt_x11.c: In function ‘main’:
+gplt_x11.c:1546:23: warning: ‘%3u’ directive writing between 3 and 10 bytes into a region of size 5 [-Wformat-overflow=]
+   sprintf(cmapidx+1, "%3u%c", cm_index, '\0');
+                       ^~~
+gplt_x11.c:1546:22: note: directive argument in the range [0, 2147483647]
+   sprintf(cmapidx+1, "%3u%c", cm_index, '\0');
+                      ^~~~~~~
+In file included from /usr/include/stdio.h:862:0,
+                 from stdfn.h:50,
+                 from gplt_x11.c:119:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:33:10: note: ‘__builtin___sprintf_chk’ output between 5 and 12 bytes into a destination of size 5
+   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       __bos (__s), __fmt, __va_arg_pack ());
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc  -g -O2   -o gnuplot_x11 gplt_x11.o gpexecute.o version.o getcolor_x11.o -lX11  -lm 
+In file included from term.h:327:0,
+                 from term.c:1436:
+../term/post.trm: In function ‘PS_options’:
+../term/post.trm:1141:33: warning: ‘%g’ directive writing between 1 and 13 bytes into a region of size between 0 and 50 [-Wformat-overflow=]
+     sprintf(PS_default_font,"%s,%g",ps_params->font,ps_fontsize);
+                                 ^~
+../term/post.trm:1141:29: note: assuming directive output of 12 bytes
+     sprintf(PS_default_font,"%s,%g",ps_params->font,ps_fontsize);
+                             ^~~~~~~
+In file included from /usr/include/stdio.h:862:0,
+                 from stdfn.h:50,
+                 from term_api.h:43,
+                 from term.c:77:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:33:10: note: ‘__builtin___sprintf_chk’ output between 3 and 65 bytes into a destination of size 51
+   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       __bos (__s), __fmt, __va_arg_pack ());
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+c++  -g -O2   -o gnuplot alloc.o axis.o binary.o breaders.o color.o command.o contour.o datafile.o dynarray.o eval.o fit.o gadgets.o getcolor.o graph3d.o graphics.o help.o hidden3d.o history.o internal.o interpol.o matrix.o misc.o mouse.o parse.o plot.o plot2d.o plot3d.o pm3d.o readline.o save.o scanner.o set.o show.o specfun.o standard.o stats.o stdfn.o tables.o tabulate.o term.o time.o unset.o util.o util3d.o variable.o version.o      -lz    -lm 
+make[3]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/src' 들어감
+ /bin/mkdir -p '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin'
+ /bin/mkdir -p '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6'
+  /usr/bin/install -c gnuplot '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/bin'
+  /usr/bin/install -c gnuplot_x11 '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/libexec/gnuplot/4.6'
+make[3]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/src' 나감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/src' 나감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/src' 나감
+Making install in docs
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/docs' 들어감
+gcc -DHAVE_CONFIG_H -I. -I. -I.. -I.. -I../src -I../term  -g -O2 -c doc2gih.c
+gcc -DHAVE_CONFIG_H -I. -I. -I.. -I.. -I../src -I../term  -g -O2 -c termdoc.c
+../mkinstalldirs /home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6
+if test -f gnuplot.pdf ; then \
+    /usr/bin/install -c -m 644 gnuplot.pdf /home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.pdf; \
+fi
+gcc -g -O2  -o doc2gih doc2gih.o termdoc.o -lm 
+./doc2gih ./gnuplot.doc gnuplot.gih
+../mkinstalldirs /home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6
+/usr/bin/install -c -m 644 gnuplot.gih /home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/gnuplot.gih
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/docs' 나감
+Making install in lisp
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/lisp' 들어감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/lisp' 들어감
+make[2]: 'install-exec-am'을(를) 위해 할 일이 없습니다.
+make  install-data-hook
+make[3]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/lisp' 들어감
+/bin/bash ./../mkinstalldirs /home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/emacs/site-lisp
+emacs -batch -q -no-site-file -l ./dot.el -f batch-byte-compile gnuplot.el
+emacs -batch -q -no-site-file -l ./dot.el -f batch-byte-compile gnuplot-gui.el
+mkdir -p -- /home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/emacs/site-lisp
+ /usr/bin/install -c -m 644 gnuplot-gui.el /home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/emacs/site-lisp/gnuplot-gui.el
+ /usr/bin/install -c -m 644 gnuplot.el /home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/emacs/site-lisp/gnuplot.el
+/bin/bash ./../mkinstalldirs /home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/emacs/site-lisp
+ /usr/bin/install -c -m 644 gnuplot.elc /home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/emacs/site-lisp/gnuplot.elc
+ /usr/bin/install -c -m 644 gnuplot-gui.elc /home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/emacs/site-lisp/gnuplot-gui.elc
+make[3]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/lisp' 나감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/lisp' 나감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/lisp' 나감
+Making install in man
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/man' 들어감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/man' 들어감
+make[2]: 'install-exec-am'을(를) 위해 할 일이 없습니다.
+ /bin/mkdir -p '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/man/man1'
+ /usr/bin/install -c -m 644 gnuplot.1 '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/man/man1'
+make  install-data-hook
+make[3]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/man' 들어감
+make[3]: 'install-data-hook'을(를) 위해 할 일이 없습니다.
+make[3]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/man' 나감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/man' 나감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/man' 나감
+Making install in demo
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/demo' 들어감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/demo' 들어감
+make[2]: 'install-exec-am'을(를) 위해 할 일이 없습니다.
+make[2]: 'install-data-am'을(를) 위해 할 일이 없습니다.
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/demo' 나감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/demo' 나감
+Making install in tutorial
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/tutorial' 들어감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/tutorial' 들어감
+make[2]: 'install-exec-am'을(를) 위해 할 일이 없습니다.
+make[2]: 'install-data-am'을(를) 위해 할 일이 없습니다.
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/tutorial' 나감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/tutorial' 나감
+Making install in share
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/share' 들어감
+Making install in LaTeX
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/share/LaTeX' 들어감
+make[3]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/share/LaTeX' 들어감
+make[3]: 'install-exec-am'을(를) 위해 할 일이 없습니다.
+ /bin/mkdir -p '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/texmf/tex/latex/gnuplot'
+ /usr/bin/install -c -m 644 gnuplot.cfg '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/texmf/tex/latex/gnuplot'
+make  install-data-hook
+make[4]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/share/LaTeX' 들어감
+test -n "" || texhash
+texhash: /usr/local/share/texmf: directory not writable. Skipping...
+texhash: /var/lib/texmf: directory not writable. Skipping...
+texhash: /var/lib/texmf: directory not writable. Skipping...
+texhash: /var/lib/texmf: directory not writable. Skipping...
+texhash: Done.
+make[4]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/share/LaTeX' 나감
+make[3]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/share/LaTeX' 나감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/share/LaTeX' 나감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/share' 들어감
+cp -p ./Gnuplot.app-defaults Gnuplot
+make[3]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/share' 들어감
+make[3]: 'install-exec-am'을(를) 위해 할 일이 없습니다.
+ /bin/mkdir -p '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/app-defaults'
+ /bin/mkdir -p '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6'
+ /usr/bin/install -c -m 644 Gnuplot '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6/app-defaults'
+ /usr/bin/install -c -m 644 colors_default.gp colors_podo.gp colors_mono.gp gnuplotrc '/home/jhkim/MAschool2020/madanalysis5/tools/gnuplot/share/gnuplot/4.6'
+make[3]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/share' 나감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/share' 나감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5/share' 나감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5' 들어감
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5' 들어감
+make[2]: 'install-exec-am'을(를) 위해 할 일이 없습니다.
+make[2]: 'install-data-am'을(를) 위해 할 일이 없습니다.
+make[2]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5' 나감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_gnuplot/gnuplot-4.6.5' 나감

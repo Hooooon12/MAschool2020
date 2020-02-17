@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+
+<head>
+  <title>MadAnalysis 5 HTML report</title>
+  <link rel='stylesheet' media='screen' type='text/css' title='style' href='style.css' />
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+</head>
+
+<body>
+<div id='top' class='top'>
+  <table>
+    <tr>
+      <td width='35%'>
+        <img style='width: 182px; height: 53px;' alt='ma5-logo' src='logo.png' /><br />
+        <a href='http://madanalysis.irmp.ucl.ac.be'>Please visit us.</a>
+      </td>
+      <td width='65%'>
+        <h1>MadAnalysis 5 report</h1><br />
+        <i>Created by <font color='#0000CC'>jhkim</font> on  <font color='#0000CC'>13 February 2020, 17:39:51</font></i>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div id='menu' class= 'menu'>
+  <br />
+  <h3>PDF version of this report</h3>
+  <ul><li><a href='../../PDF/MadAnalysis5job_0/main.pdf'>Download here</a></li></ul>
+  <h3>Setup</h3>
+  <ul>
+    <li><a href='#Commandhistory'>Command history</a></li>
+    <li><a href='#Configuration'>Configuration</a></li>
+  </ul>
+  <h3>Datasets</h3>
+  <ul>
+    <li><a href='#defaultset'>defaultset</a></li>
+  </ul>
+  <h3>Histos and cuts</h3>
+  <ul>
+    <li><a href='#Histogram1'>Histogram 1</a></li>
+    <li><a href='#Cut1'>Cut 1</a></li>
+    <li><a href='#Histogram2'>Histogram 2</a></li>
+  </ul>
+  <h3>Summary</h3>
+  <ul>
+    <li><a href='#Cut-flowcharts'>Cut-flow charts</a></li>
+  </ul>
+</div>
+
+<div id='main' class='main'>
+  <br /><br />
+
+  <h2>Setup</h2><br />
+  <h3><a name='Commandhistory'>Command history</a></h3><br />
+  <tt>ma5>install samples</tt><br />
+  <tt>ma5>display_multiparticles</tt><br />
+  <tt>ma5>define mu = mu+ mu-</tt><br />
+  <tt>ma5>import samples/ttbar_*.lhe.gz</tt><br />
+  <tt>ma5>plot PT(mu)</tt><br />
+  <tt>ma5>reject plot PT(mu) < 40</tt><br />
+  <tt>ma5>reject PT(mu) < 40</tt><br />
+  <tt>ma5>plot PT(mu)</tt><br />
+  <tt>ma5>submit</tt><br />
+  <br />
+  <h3><a name='Configuration'>Configuration</a></h3>
+  <ul>
+    <li>
+      MadAnalysis version 1.8.40 (2020/01/29).<br />
+    </li>
+    <li>
+      Histograms given for an integrated luminosity of <font color='#0000CC'>10</font><font color='#0000CC'> fb</font><sup><font color='#0000CC'>-1</font></sup><font color='#0000CC'>.</font><br />
+    </li>
+  </ul>
+  <br /><br />
+
+  <h2>Datasets</h2><br />
+  <h3><a name='defaultset'>defaultset</a></h3>
+  <ul>
+    <li>
+      Sample consisting of: <font color='#0000CC'>signal</font> events.<br />
+    </li>
+    <li>
+      Generated events: <font color='#0000CC'>3000 </font> events.<br />
+    </li>
+    <li>
+      Normalization to the luminosity: <font color='#0000CC'>146623</font><font color='#0000CC'> +/- </font><font color='#0000CC'>1054 </font> events.<br />
+    </li>
+    <li>
+      <font color='#FF0000'>Ratio (event weight): </font><font color='#FF0000'>48 </font><font color='#FF0000'> - warning: please generate more events (weight larger than 1)!</font><br />
+    </li>
+  </ul>
+  <table>
+    <tr>
+      <td width='39.0%' bgcolor='#FFFF00'>
+        Paths to the event files  <br />
+      </td> 
+      <td width='18.0%' bgcolor='#FFFF00'>
+        Nr. of events  <br />
+      </td> 
+      <td width='21.0%' bgcolor='#FFFF00'>
+        Cross section (pb)  <br />
+      </td> 
+      <td width='21.0%' bgcolor='#FFFF00'>
+        Negative wgts (%)  <br />
+      </td>
+    </tr>
+    <tr>
+      <td width='39.0%' bgcolor='#FFFFFF'>
+        samples/ttbar_sl_1.lhe.gz  <br />
+      </td> 
+      <td width='18.0%' bgcolor='#FFFFFF'>
+        1000  <br />
+      </td> 
+      <td width='21.0%' bgcolor='#FFFFFF'>
+        15.4 @ 0.74%  <br />
+      </td> 
+      <td width='21.0%' bgcolor='#FFFFFF'>
+        0.0  <br />
+      </td>
+    </tr>
+    <tr>
+      <td width='39.0%' bgcolor='#FFFFFF'>
+        samples/ttbar_sl_2.lhe.gz  <br />
+      </td> 
+      <td width='18.0%' bgcolor='#FFFFFF'>
+        1000  <br />
+      </td> 
+      <td width='21.0%' bgcolor='#FFFFFF'>
+        15.2 @ 0.66%  <br />
+      </td> 
+      <td width='21.0%' bgcolor='#FFFFFF'>
+        0.0  <br />
+      </td>
+    </tr>
+    <tr>
+      <td width='39.0%' bgcolor='#FFFFFF'>
+        samples/ttbar_fh.lhe.gz  <br />
+      </td> 
+      <td width='18.0%' bgcolor='#FFFFFF'>
+        1000  <br />
+      </td> 
+      <td width='21.0%' bgcolor='#FFFFFF'>
+        13.3 @ 2.1%  <br />
+      </td> 
+      <td width='21.0%' bgcolor='#FFFFFF'>
+        0.0  <br />
+      </td>
+    </tr>
+    <tr>
+      <td width='39.0%' bgcolor='#FFFFFF'>
+        <font color='#0000CC'>Sum</font>  <br />
+      </td> 
+      <td width='18.0%' bgcolor='#FFFFFF'>
+        <font color='#0000CC'>3000</font>  <br />
+      </td> 
+      <td width='21.0%' bgcolor='#FFFFFF'>
+        <font color='#0000CC'>14.7 @ 0.72%</font>  <br />
+      </td> 
+      <td width='21.0%' bgcolor='#FFFFFF'>
+        <font color='#0000CC'>0.0</font>  <br />
+      </td>
+    </tr>
+  </table><br /> <br />
+  <br /><br />
+
+  <h2>Histos and cuts</h2><br />
+  <h3><a name='Histogram1'>Histogram 1</a></h3><br />
+<b>* Plot: PT ( mu ) </b>  <br />
+<BR>  <br />
+  <table>
+    <tr>
+      <td width='17.0%' bgcolor='#FFFF00'>
+        Dataset  <br />
+      </td> 
+      <td width='16.0%' bgcolor='#FFFF00'>
+        Integral  <br />
+      </td> 
+      <td width='13.0%' bgcolor='#FFFF00'>
+        Entries per event  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#FFFF00'>
+        Mean  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#FFFF00'>
+        RMS  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#FFFF00'>
+        % underflow  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#FFFF00'>
+        % overflow  <br />
+      </td>
+    </tr>
+    <tr>
+      <td width='17.0%' bgcolor='#FFFFFF'>
+        defaultset  <br />
+      </td> 
+      <td width='16.0%' bgcolor='#FFFFFF'>
+        48239  <br />
+      </td> 
+      <td width='13.0%' bgcolor='#FFFFFF'>
+        1.0  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#FFFFFF'>
+        49.6728  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#FFFFFF'>
+        34.55  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#00FF00'>
+        0.0  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#00FF00'>
+        0.0  <br />
+      </td>
+    </tr>
+  </table><br /> <br />
+  <center>
+    <img src='selection_0.png' height='420.459770115' alt ='' />
+  </center><br /> <br />
+  <br />
+  <h3><a name='Cut1'>Cut 1</a></h3><br />
+<b>* Cut: reject PT ( mu ) < 40.0</b>  <br />
+<BR>  <br />
+  <table>
+    <tr>
+      <td width='15.0%' bgcolor='#FFFF00'>
+        Dataset  <br />
+      </td> 
+      <td width='19.0%' bgcolor='#FFFF00'>
+        Events kept:<br />
+        K  <br />
+      </td> 
+      <td width='19.0%' bgcolor='#FFFF00'>
+        Rejected events:<br />
+        R  <br />
+      </td> 
+      <td width='24.0%' bgcolor='#FFFF00'>
+        Efficiency:<br />
+        K / (K + R)  <br />
+      </td> 
+      <td width='23.0%' bgcolor='#FFFF00'>
+        Cumul. efficiency:<br />
+        K / Initial  <br />
+      </td>
+    </tr>
+    <tr>
+      <td width='15.0%' bgcolor='#FFFFFF'>
+        defaultset  <br />
+      </td> 
+      <td width='19.0%' bgcolor='#FFFFFF'>
+        122632 +/- 892  <br />
+      </td> 
+      <td width='19.0%' bgcolor='#FFFFFF'>
+        23991 +/- 223  <br />
+      </td> 
+      <td width='24.0%' bgcolor='#FFFFFF'>
+        0.836374 +/- 0.000966  <br />
+      </td> 
+      <td width='23.0%' bgcolor='#FFFFFF'>
+        0.836374 +/- 0.000966  <br />
+      </td>
+    </tr>
+  </table><br /> <br />
+  <br />
+  <h3><a name='Histogram2'>Histogram 2</a></h3><br />
+<b>* Plot: PT ( mu ) </b>  <br />
+<BR>  <br />
+  <table>
+    <tr>
+      <td width='17.0%' bgcolor='#FFFF00'>
+        Dataset  <br />
+      </td> 
+      <td width='16.0%' bgcolor='#FFFF00'>
+        Integral  <br />
+      </td> 
+      <td width='13.0%' bgcolor='#FFFF00'>
+        Entries per event  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#FFFF00'>
+        Mean  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#FFFF00'>
+        RMS  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#FFFF00'>
+        % underflow  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#FFFF00'>
+        % overflow  <br />
+      </td>
+    </tr>
+    <tr>
+      <td width='17.0%' bgcolor='#FFFFFF'>
+        defaultset  <br />
+      </td> 
+      <td width='16.0%' bgcolor='#FFFFFF'>
+        25316  <br />
+      </td> 
+      <td width='13.0%' bgcolor='#FFFFFF'>
+        1.0  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#FFFFFF'>
+        71.8934  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#FFFFFF'>
+        34.18  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#00FF00'>
+        0.0  <br />
+      </td> 
+      <td width='14.0%' bgcolor='#00FF00'>
+        0.0  <br />
+      </td>
+    </tr>
+  </table><br /> <br />
+  <center>
+    <img src='selection_1.png' height='420.459770115' alt ='' />
+  </center><br /> <br />
+  <br />
+  <br /><br />
+
+  <h2>Summary</h2><br />
+  <h3><a name='Cut-flowcharts'>Cut-flow charts</a></h3>
+  <ul>
+    <li>
+      How to compare signal (S) and background (B): <font color='#0000CC'>S/sqrt(S+B)</font>.<br />
+    </li>
+    <li>
+      Object definition selections are indicated in cyan.    </li>
+    <li>
+      Reject and select are indicated by 'REJ' and 'SEL' respectively    </li>
+  </ul>
+  <table>
+    <tr>
+      <td width='25.0%' bgcolor='#FFFF00'>
+        Cuts  <br />
+      </td> 
+      <td width='25.0%' bgcolor='#FFFF00'>
+        Signal (S)  <br />
+      </td> 
+      <td width='25.0%' bgcolor='#FFFF00'>
+        Background (B)  <br />
+      </td> 
+      <td width='24.0%' bgcolor='#FFFF00'>
+        S vs B  <br />
+      </td>
+    </tr>
+    <tr>
+      <td width='25.0%' bgcolor='#FFFFFF'>
+        Initial (no cut)  <br />
+      </td> 
+      <td width='25.0%' bgcolor='#FFFFFF'>
+        146623 +/- 1053  <br />
+      </td> 
+      <td width='25.0%' bgcolor='#FFFFFF'>
+          <br />
+      </td> 
+      <td width='24.0%' bgcolor='#FFFFFF'>
+          <br />
+      </td>
+    </tr>
+    <tr>
+      <td width='25.0%' bgcolor='#FFFFFF'>
+REJ: PT ( mu ) < 40.0  <br />
+      </td> 
+      <td width='25.0%' bgcolor='#FFFFFF'>
+        122632 +/- 892  <br />
+      </td> 
+      <td width='25.0%' bgcolor='#FFFFFF'>
+          <br />
+      </td> 
+      <td width='24.0%' bgcolor='#FFFFFF'>
+          <br />
+      </td>
+    </tr>
+  </table><br /> <br />
+  <br /><hr size='4' width='350' />
+</div>
+</body>
+</html>

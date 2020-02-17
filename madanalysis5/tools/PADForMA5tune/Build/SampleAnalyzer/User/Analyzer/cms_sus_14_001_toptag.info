@@ -1,0 +1,40 @@
+<!--
+to be put in the same directory as the analysis code,
+i.e. Build/SampleAnalyzer/User/Analyzer/
+-->
+
+<analysis id="cms_sus_14_001_toptag">
+  <lumi>19.5</lumi> <!-- in fb^-1 -->
+
+  <!-- first, the signal regions targeting stop -> t neutralino -->
+
+  <!--
+     region definition: the attribute "id" has to match the name of the region
+     as defined in the analysis code;
+     the attribute "type" can be "signal" or "control" and is optional (default=signal)
+  -->
+
+  <region type="signal" id="MET200-350__Nbjets=1">
+    <nobs>6159</nobs>
+    <nb>6090.0</nb>
+    <deltanb>670.0</deltanb>
+  </region>
+
+  <region type="signal" id="MET>350__Nbjets=1">
+    <nobs>2305</nobs>
+    <nb>2280.0</nb>
+    <deltanb>270.0</deltanb>
+  </region>
+
+  <region type="signal" id="MET200-350__Nbjets>1">
+    <nobs>454</nobs>
+    <nb>418.0</nb>
+    <deltanb>66.0</deltanb>
+  </region>
+
+  <region type="signal" id="MET>350__Nbjets>1">
+    <nobs>62</nobs>
+    <nb>57.4</nb>
+    <deltanb>11.2</deltanb>
+  </region>
+</analysis>

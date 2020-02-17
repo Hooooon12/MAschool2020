@@ -1,0 +1,53 @@
+<analysis id="cms_exo_12_048">
+  <lumi>19.5</lumi> <!-- in fb^-1 -->
+
+  <region type="signal" id="MET>250">
+    <nobs>52200</nobs>
+    <nb>51800</nb>
+    <deltanb>2000</deltanb>
+  </region>
+
+  <region type="signal" id="MET>300">
+    <nobs>19800</nobs>
+    <nb>19600</nb>
+    <deltanb>830</deltanb>
+  </region>
+
+
+  <region type="signal" id="MET>350">
+    <nobs>8320</nobs>
+    <nb>8190</nb>
+    <deltanb>400</deltanb>
+  </region>
+
+
+  <region type="signal" id="MET>400">
+    <nobs>3830</nobs>
+    <nb>3930</nb>
+    <deltanb>230</deltanb>
+  </region>
+
+
+  <region type="signal" id="MET>450">
+    <nobs>1830</nobs>
+    <nb>2050</nb>
+    <deltanb>150</deltanb>
+  </region>
+
+
+  <region type="signal" id="MET>500">
+    <nobs>934</nobs>
+    <nb>1040</nb>
+    <deltanb>100</deltanb>
+  </region>
+
+
+  <region type="signal" id="MET>550">
+    <nobs>519</nobs>
+    <nb>509</nb>
+    <deltanb>66</deltanb>
+  </region>
+
+
+
+</analysis>

@@ -1,0 +1,34 @@
+<analysis id="atlas_exot_2016_32">
+<lumi>36.1</lumi> <!-- in fb^-1 -->
+
+<region type="signal" id="SRI1">
+    <nobs>2400</nobs>
+    <nb>2600</nb>
+    <deltanb>160</deltanb>
+  </region>
+
+<region type="signal" id="SRI2">
+      <nobs>729</nobs>
+      <nb>765</nb>
+      <deltanb>59</deltanb>
+    </region>
+
+<region type="signal" id="SRI3">
+        <nobs>236</nobs>
+        <nb>273</nb>
+        <deltanb>37</deltanb>
+      </region>
+
+<region type="signal" id="SRE1">
+          <nobs>1671</nobs>
+          <nb>1900</nb>
+          <deltanb>140</deltanb>
+        </region>
+
+<region type="signal" id="SRE2">
+            <nobs>493</nobs>
+            <nb>501</nb>
+            <deltanb>44</deltanb>
+          </region>
+
+</analysis>

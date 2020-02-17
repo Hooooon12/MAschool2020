@@ -1,0 +1,22 @@
+<!--
+to be put in the same directory as the analysis code,
+i.e. Build/SampleAnalyzer/Analyzer/
+-->
+
+<analysis id="cms_sus_13_016">
+  <lumi>19.7</lumi> <!-- in fb^-1 -->
+
+  <!-- first, the signal regions targeting Gluino -> t tbar neutralino -->
+
+  <!--
+     the attribute "id" has to match the name of the region
+     as defined in the analysis code
+     the attribute "type" can be "signal" or "control" and is optional;
+     the region is assumed to be a signal region if not given
+  -->
+  <region type="signal" id="Gluino_to_TT_neutralino">
+    <nobs>1</nobs>
+    <nb>1.2</nb>
+    <deltanb>1.05</deltanb>
+  </region>
+</analysis>

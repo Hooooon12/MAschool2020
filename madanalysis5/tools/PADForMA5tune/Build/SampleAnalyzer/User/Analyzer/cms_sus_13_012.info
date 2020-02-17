@@ -1,0 +1,248 @@
+<!--
+BZZ
+D
+B
+B
+this XML file serves for the statistical interpretation of the MA5 simulation. 
+it lists the number of observed events <nobs>, number of expected backgrounds <nb> 
+and number of background uncertainty <deltanb> in each of the regions  
+-->
+
+<!--
+to be put in the same directory as the analysis code,
+i.e. Build/SampleAnalyzer/Analyzer/
+-->
+
+<analysis id="cms_sus_13_012">
+  <lumi>19.5</lumi> <!-- in fb^-1 -->
+
+  <!-- first, the signal regions targeting stop -> t neutralino -->
+
+  <!--
+     region definition: the attribute "id" has to match the name of the region
+     as defined in the analysis code;
+     the attribute "type" can be "signal" or "control" and is optional (default=signal)
+  -->
+  <region type="signal" id="Njets3-5, HT500-800, MHT200-300">
+    <nobs>6159</nobs>
+    <nb>6090</nb>
+    <deltanb>670</deltanb>
+  </region>
+
+  <region type="signal" id="Njets3-5, HT500-800, MHT300-450">
+    <nobs>2305</nobs>
+    <nb>2280</nb>
+    <deltanb>270</deltanb>
+  </region>
+
+  <region type="signal" id="Njets3-5, HT500-800, MHT450-600">
+    <nobs>454</nobs>
+    <nb>418</nb>
+    <deltanb>66</deltanb>
+  </region>
+
+  <region type="signal" id="Njets3-5, HT500-800, MHT>600">
+    <nobs>62</nobs>
+    <nb>57.4</nb>
+    <deltanb>11.2</deltanb>
+  </region>
+
+
+  <region type="signal" id="Njets3-5, HT800-1000, MHT200-300">
+    <nobs>808</nobs>
+    <nb>777</nb>
+    <deltanb>107</deltanb>
+  </region>
+
+  <region type="signal" id="Njets3-5, HT800-1000, MHT300-450">
+    <nobs>305</nobs>
+    <nb>330</nb>
+    <deltanb>40</deltanb>
+  </region>
+
+  <region type="signal" id="Njets3-5, HT800-1000, MHT450-600">
+    <nobs>124</nobs>
+    <nb>108</nb>
+    <deltanb>15</deltanb>
+  </region>
+  
+ 
+  <region type="signal" id="Njets3-5, HT800-1000, MHT>600">
+    <nobs>52</nobs>
+    <nb>54.8</nb>
+    <deltanb>9.7</deltanb>
+  </region>
+
+  <region type="signal" id="Njets3-5, HT1000-1250, MHT200-300">
+    <nobs>335</nobs>
+    <nb>305</nb>
+    <deltanb>41</deltanb>
+  </region>
+
+  <region type="signal" id="Njets3-5, HT1000-1250, MHT300-450">
+    <nobs>129</nobs>
+    <nb>137</nb>
+    <deltanb>20</deltanb>
+  </region>
+
+  <region type="signal" id="Njets3-5, HT1000-1250, MHT450-600">
+    <nobs>34</nobs>
+    <nb>32.3</nb>
+    <deltanb>6.1</deltanb>
+  </region>
+
+  <region type="signal" id="Njets3-5, HT1000-1250, MHT>600">
+    <nobs>32</nobs>
+    <nb>22.8</nb>
+    <deltanb>5.2</deltanb>
+  </region>
+
+  <region type="signal" id="Njets3-5, HT1250-1500, MHT200-300">
+    <nobs>98</nobs>
+    <nb>109</nb>
+    <deltanb>18</deltanb>
+  </region>
+
+  <region type="signal" id="Njets3-5, HT1250-1500, MHT300-450">
+    <nobs>38</nobs>
+    <nb>42.8</nb>
+    <deltanb>9.5</deltanb>
+  </region>
+
+  <region type="signal" id="Njets3-5, HT1250-1500, MHT>450">
+    <nobs>23</nobs>
+    <nb>17.6</nb>
+    <deltanb>4.1</deltanb>
+  </region>
+
+  <region type="signal" id="Njets3-5, HT>1500, MHT200-300">
+    <nobs>94</nobs>
+    <nb>86</nb>
+    <deltanb>17</deltanb>
+  </region>
+
+    <region type="signal" id="Njets3-5, HT>1500, MHT>300">
+    <nobs>39</nobs>
+    <nb>29.7</nb>
+    <deltanb>5.8</deltanb>
+  </region>
+
+
+  <region type="signal" id="Njets6-7, HT500-800, MHT200-300">
+    <nobs>266</nobs>
+    <nb>290</nb>
+    <deltanb>65</deltanb>
+  </region>
+
+  <region type="signal" id="Njets6-7, HT500-800, MHT300-450">
+    <nobs>62</nobs>
+    <nb>52</nb>
+    <deltanb>12</deltanb>
+  </region>
+
+
+  <region type="signal" id="Njets6-7, HT500-800, MHT>450">
+    <nobs>9</nobs>
+    <nb>0.8</nb>
+    <deltanb>3.3</deltanb>
+  </region>
+
+  <region type="signal" id="Njets6-7, HT800-1000, MHT200-300">
+    <nobs>111</nobs>
+    <nb>124</nb>
+    <deltanb>29</deltanb>
+  </region>
+
+  <region type="signal" id="Njets6-7, HT800-1000, MHT300-450">
+    <nobs>35</nobs>
+    <nb>28.6</nb>
+    <deltanb>6.9</deltanb>
+  </region>
+
+  <region type="signal" id="Njets6-7, HT800-1000, MHT>450">
+    <nobs>4</nobs>
+    <nb>6.0</nb>
+    <deltanb>2.8</deltanb>
+  </region>
+
+  <region type="signal" id="Njets6-7, HT1000-1250, MHT200-300">
+    <nobs>67</nobs>
+    <nb>70</nb>
+    <deltanb>16</deltanb>
+  </region>
+
+  <region type="signal" id="Njets6-7, HT1000-1250, MHT300-450">
+    <nobs>20</nobs>
+    <nb>21.6</nb>
+    <deltanb>5.8</deltanb>
+  </region>
+
+  <region type="signal" id="Njets6-7, HT1000-1250, MHT>450">
+    <nobs>4</nobs>
+    <nb>2.2</nb>
+    <deltanb>3.8</deltanb>
+  </region>
+
+  <region type="signal" id="Njets6-7, HT1250-1500, MHT200-300">
+    <nobs>24</nobs>
+    <nb>28</nb>
+    <deltanb>8.2</deltanb>
+  </region>
+
+  <region type="signal" id="Njets6-7, HT1250-1500, MHT300-450">
+    <nobs>5</nobs>
+    <nb>9.4</nb>
+    <deltanb>3.6</deltanb>
+  </region>
+
+  <region type="signal" id="Njets6-7, HT1250-1500, MHT>450">
+    <nobs>2</nobs>
+    <nb>0.5</nb>
+    <deltanb>2.6</deltanb>
+  </region>
+
+  <region type="signal" id="Njets6-7, HT>1500, MHT200-300">
+    <nobs>18</nobs>
+    <nb>21.1</nb>
+    <deltanb>8.1</deltanb>
+  </region>
+    
+  <region type="signal" id="Njets6-7, HT>1500, MHT>300">
+    <nobs>3</nobs>
+    <nb>7.9</nb>
+    <deltanb>3.6</deltanb>
+  </region>
+
+  <region type="signal" id="Njets>7, HT500-800, MHT>200">
+    <nobs>8</nobs>
+    <nb>4.8</nb>
+    <deltanb>2.3</deltanb>
+  </region>
+
+  <region type="signal" id="Njets>7, HT800-1000, MHT>200">
+    <nobs>9</nobs>
+    <nb>8.3</nb>
+    <deltanb>3.4</deltanb>
+  </region>
+
+  <region type="signal" id="Njets>7, HT1000-1250, MHT>200">
+    <nobs>8</nobs>
+    <nb>5.6</nb>
+    <deltanb>2.3</deltanb>
+  </region>
+
+  <region type="signal" id="Njets>7, HT1250-1500, MHT>200">
+    <nobs>5</nobs>
+    <nb>7.1</nb>
+    <deltanb>3.8</deltanb>
+  </region>
+
+
+  <region type="signal" id="Njets>7, HT>1500, MHT>200">
+    <nobs>2</nobs>
+    <nb>3.3</nb>
+    <deltanb>4.7</deltanb>
+  </region>
+
+
+</analysis>

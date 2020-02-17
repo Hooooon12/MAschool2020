@@ -1,0 +1,233 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo)) (./jheppub.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/dvips.def))))
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+
+Package hyperref Warning: Option `pagecolor' is not available anymore.
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hdvips.def
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pdfmark.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+No file main.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd) <logo.eps>
+
+Package JHEP Warning: E-mails are missing.
+(JHEP)                Plese use \emailAdd macro to provide e-mails..
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+
+[0] [1] (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 50--67
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd) [2]
+Overfull \hbox (18.13213pt too wide) in paragraph at lines 91--104
+ [] 
+[3]
+Overfull \hbox (55.33208pt too wide) in paragraph at lines 118--125
+ [] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--126
+
+<selection_0.eps> [4]
+Underfull \hbox (badness 4872) in paragraph at lines 143--144
+[]|\T1/cmr/m/n/10 Rejected events:
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\T1/cmr/m/n/10 0.836374 +/--
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+[]|\T1/cmr/m/n/10 0.836374 +/--
+
+Overfull \hbox (27.68684pt too wide) in paragraph at lines 140--151
+ [] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--152
+
+[5]
+Overfull \hbox (55.33208pt too wide) in paragraph at lines 160--167
+ [] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--168
+
+<selection_1.eps> [6]
+Overfull \hbox (20.97742pt too wide) in paragraph at lines 190--199
+ [] 
+[7] (./main.aux)
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)
+Output written on main.dvi (8 pages, 20700 bytes).
+Transcript written on main.log.
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo)) (./jheppub.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/dvips.def))))
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+
+Package hyperref Warning: Option `pagecolor' is not available anymore.
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hdvips.def
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pdfmark.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty) (./main.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./main.out) (./main.out)
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd) <logo.eps>
+
+Package JHEP Warning: E-mails are missing.
+(JHEP)                Plese use \emailAdd macro to provide e-mails..
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+
+[0] (./main.toc) [1] (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 50--67
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd) [2]
+Overfull \hbox (18.13213pt too wide) in paragraph at lines 91--104
+ [] 
+[3]
+Overfull \hbox (55.33208pt too wide) in paragraph at lines 118--125
+ [] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--126
+
+<selection_0.eps> [4]
+Underfull \hbox (badness 4872) in paragraph at lines 143--144
+[]|\T1/cmr/m/n/10 Rejected events:
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\T1/cmr/m/n/10 0.836374 +/--
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+[]|\T1/cmr/m/n/10 0.836374 +/--
+
+Overfull \hbox (27.68684pt too wide) in paragraph at lines 140--151
+ [] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--152
+
+[5]
+Overfull \hbox (55.33208pt too wide) in paragraph at lines 160--167
+ [] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--168
+
+<selection_1.eps> [6]
+Overfull \hbox (20.97742pt too wide) in paragraph at lines 190--199
+ [] 
+[7] (./main.aux) )
+(see the transcript file for additional information)
+Output written on main.dvi (8 pages, 24808 bytes).
+Transcript written on main.log.

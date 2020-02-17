@@ -1,0 +1,1 @@
+c++ -Wall -O3 -fPIC -I/home/jhkim/MAschool2020/madanalysis5/tools/ -pthread -std=c++11 -m64 -I/home/jhkim/root/include -o DelphesMA5tune/Test.o -c DelphesMA5tune/Test.cpp

@@ -1,0 +1,8 @@
+#              delphes card             | Analyses
+#                                       |
+delphes_card_atlas_sus_2013_04.tcl      | atlas_susy_2013_04  
+delphesma5tune_card_atlas_05.tcl        | atlas_susy_2013_21   atlas_susy_2013_05  
+delphesma5tune_card_atlas_2014_10.tcl   | atlas_susy_2014_10  
+delphesma5tune_card_atlas_dileptonsusy.tcl| atlas_susy_2013_02   atlas_higg_2013_03   atlas_susy_2013_11  
+delphesma5tune_card_cms_sus14004.tcl    | cms_sus_14_001_toptag
+delphesma5tune_card_cms_susy.tcl        | cms_sus_13_011       cms_sus_13_012       cms_sus_13_016       cms_sus_14_001_monojet

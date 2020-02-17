@@ -1,0 +1,106 @@
+<!--
+this XML file serves for the statistical interpretation of the MA5 simulation. 
+it lists the number of observed events <nobs>, number of expected backgrounds <nb> 
+and number of background uncertainty <deltanb> in each of the regions  
+-->
+
+<!--
+to be put in the same directory as the analysis code,
+i.e. Build/SampleAnalyzer/User/Analyzer/
+-->
+
+<analysis id="atlas_susy_2013_11">
+  <lumi>20.3</lumi> <!-- in fb^-1 -->
+
+  <!-- first, the mT2 signal regions -->
+
+  <!--
+     region definition: the attribute "id" has to match the name of the region
+     as defined in the analysis code;
+     the attribute "type" can be "signal" or "control" and is optional (default=signal)
+     when results are given after combination of several signal regions
+     (as is the case here: SF instead of ee and mumu separately)
+     the signal regions should be given in the attribute "id" separated by
+     semicolons
+  -->
+  <region type="signal" id="MT2-90 ee;MT2-90 mumu">
+    <nobs>33</nobs>
+    <nb>38.2</nb>
+    <deltanb>5.1</deltanb>
+  </region>
+
+  <region type="signal" id="MT2-90 emu">
+    <nobs>21</nobs>
+    <nb>23.3</nb>
+    <deltanb>3.7</deltanb>
+  </region>
+  
+  <region type="signal" id="MT2-120 ee;MT2-120 mumu">
+    <nobs>5</nobs>
+    <nb>8.9</nb>
+    <deltanb>2.1</deltanb>
+  </region>
+
+  <region type="signal" id="MT2-120 emu">
+    <nobs>5</nobs>
+    <nb>3.6</nb>
+    <deltanb>1.2</deltanb>
+  </region>
+  
+  <region type="signal" id="MT2-150 ee;MT2-150 mumu">
+    <nobs>3</nobs>
+    <nb>3.2</nb>
+    <deltanb>0.7</deltanb>
+  </region>
+
+  <region type="signal" id="MT2-150 emu">
+    <nobs>2</nobs>
+    <nb>1.0</nb>
+    <deltanb>0.5</deltanb>
+  </region>
+  
+  <!-- next, the WW signal regions -->
+  <region type="signal" id="WWa ee;WWa mumu">
+    <nobs>73</nobs>
+    <nb>86.5</nb>
+    <deltanb>7.4</deltanb>
+  </region>
+
+  <region type="signal" id="WWa emu">
+    <nobs>70</nobs>
+    <nb>73.6</nb>
+    <deltanb>7.9</deltanb>
+  </region>
+  
+  <region type="signal" id="WWb ee;WWb mumu">
+    <nobs>26</nobs>
+    <nb>30.2</nb>
+    <deltanb>3.5</deltanb>
+  </region>
+
+  <region type="signal" id="WWb emu">
+    <nobs>17</nobs>
+    <nb>18.1</nb>
+    <deltanb>2.6</deltanb>
+  </region>
+
+  <region type="signal" id="WWc ee;WWc mumu">
+    <nobs>10</nobs>
+    <nb>20.3</nb>
+    <deltanb>3.5</deltanb>
+  </region>
+
+  <region type="signal" id="WWc emu">
+    <nobs>11</nobs>
+    <nb>9.0</nb>
+    <deltanb>2.2</deltanb>
+  </region>
+  
+  <!-- finally, the Zjets signal region(s) -->
+  <region type="signal" id="Zjets ee;Zjets mumu">
+    <nobs>1</nobs>
+    <nb>1.4</nb>
+    <deltanb>0.6</deltanb>
+  </region>
+
+</analysis>

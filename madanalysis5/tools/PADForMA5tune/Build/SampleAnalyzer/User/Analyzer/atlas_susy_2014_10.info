@@ -1,0 +1,83 @@
+<!--
+this XML file serves for the statistical interpretation of the MA5 simulation. 
+it lists the number of observed events <nobs>, number of expected backgrounds <nb> 
+and number of background uncertainty <deltanb> in each of the regions  
+-->
+
+<!--
+to be put in the same directory as the analysis code,
+i.e. Build/SampleAnalyzer/User/Analyzer/
+-->
+
+<analysis id="atlas_susy_2014_10">
+  <lumi>20.3</lumi> <!-- in fb^-1 -->
+
+  <!-- we consider results where ee+mumu channels are combined -->
+
+  <region type="signal" id="Z ee;Z mumu">
+    <nobs>29</nobs>
+    <nb>10.6</nb>
+    <deltanb>3.2</deltanb>
+  </region>
+
+  <region type="signal" id="below-Z-2j-bveto ee;below-Z-2j-bveto mumu">
+    <nobs>54</nobs>
+    <nb>50</nb>
+    <deltanb>9.4</deltanb>
+  </region>
+
+  <region type="signal" id="above-Z-2j-bveto ee;above-Z-2j-bveto mumu">
+    <nobs>55</nobs>
+    <nb>73</nb>
+    <deltanb>12.7</deltanb>
+  </region>
+
+  <region type="signal" id="below-Z-4j-bveto ee;below-Z-4j-bveto mumu">
+    <nobs>6</nobs>
+    <nb>8.2</nb>
+    <deltanb>3.4</deltanb>
+  </region>
+
+  <region type="signal" id="above-Z-4j-bveto ee;above-Z-4j-bveto mumu">
+    <nobs>11</nobs>
+    <nb>10</nb>
+    <deltanb>3.6</deltanb>
+  </region>
+
+  <region type="signal" id="below-Z-loose ee;below-Z-loose mumu">
+    <nobs>1133</nobs>
+    <nb>1190</nb>
+    <deltanb>81</deltanb>
+  </region>
+
+  <region type="signal" id="above-Z-loose ee;above-Z-loose mumu">
+    <nobs>1605</nobs>
+    <nb>1600</nb>
+    <deltanb>108</deltanb>
+  </region>
+
+  <region type="signal" id="below-Z-2j-btag ee;below-Z-2j-btag mumu">
+    <nobs>79</nobs>
+    <nb>104</nb>
+    <deltanb>13.0</deltanb>
+  </region>
+
+  <region type="signal" id="above-Z-2j-btag ee;above-Z-2j-btag mumu">
+    <nobs>164</nobs>
+    <nb>171</nb>
+    <deltanb>21.3</deltanb>
+  </region>
+
+  <region type="signal" id="below-Z-4j-btag ee;below-Z-4j-btag mumu">
+    <nobs>31</nobs>
+    <nb>38</nb>
+    <deltanb>6.7</deltanb>
+  </region>
+
+  <region type="signal" id="above-Z-4j-btag ee;above-Z-4j-btag mumu">
+    <nobs>41</nobs>
+    <nb>36</nb>
+    <deltanb>7.8</deltanb>
+  </region>
+</analysis>
+

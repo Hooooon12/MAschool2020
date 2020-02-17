@@ -1,0 +1,599 @@
+make FJCONTRIB_SUBMAKE=1 -C Nsubjettiness
+make FJCONTRIB_SUBMAKE=1 -C ClusteringVetoPlugin
+make FJCONTRIB_SUBMAKE=1 -C JetsWithoutJets
+make FJCONTRIB_SUBMAKE=1 -C RecursiveTools
+make FJCONTRIB_SUBMAKE=1 -C JetFFMoments
+make FJCONTRIB_SUBMAKE=1 -C VariableR
+make FJCONTRIB_SUBMAKE=1 -C SubjetCounting
+make FJCONTRIB_SUBMAKE=1 -C EnergyCorrelator
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/ClusteringVetoPlugin' 들어감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/JetFFMoments' 들어감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/JetsWithoutJets' 들어감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/RecursiveTools' 들어감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/VariableR' 들어감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/SubjetCounting' 들어감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/EnergyCorrelator' 들어감
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/Nsubjettiness' 들어감
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o ClusteringVetoPlugin.o ClusteringVetoPlugin.cc
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o JetFFMoments.o JetFFMoments.cc
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o JetsWithoutJets.o JetsWithoutJets.cc
+g++ -O3 -Wall -Woverloaded-virtual -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o VariableRPlugin.o VariableRPlugin.cc
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o Nsubjettiness.o Nsubjettiness.cc
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o SubjetCounting.o SubjetCounting.cc
+g++ -O3 -Wall -Wextra -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o EnergyCorrelator.o EnergyCorrelator.cc
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o Recluster.o Recluster.cc
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from ClusteringVetoPlugin.hh:31,
+                 from ClusteringVetoPlugin.cc:26:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from ClusteringVetoPlugin.hh:31,
+                 from ClusteringVetoPlugin.cc:26:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequenceAreaBase.hh:34:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequenceArea.hh:34,
+                 from JetFFMoments.cc:22:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequenceAreaBase.hh:34,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequenceArea.hh:34,
+                 from JetFFMoments.cc:22:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from VariableRPlugin.hh:31,
+                 from VariableRPlugin.cc:25:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from VariableRPlugin.hh:31,
+                 from VariableRPlugin.cc:25:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from JetsWithoutJets.hh:31,
+                 from JetsWithoutJets.cc:25:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from JetsWithoutJets.hh:31,
+                 from JetsWithoutJets.cc:25:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from Recluster.hh:25,
+                 from Recluster.cc:22:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from Recluster.hh:25,
+                 from Recluster.cc:22:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from SubjetCounting.hh:28:0,
+                 from SubjetCounting.cc:23:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from SubjetCounting.hh:28,
+                 from SubjetCounting.cc:23:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from TauComponents.hh:29:0,
+                 from MeasureDefinition.hh:34,
+                 from Njettiness.hh:29,
+                 from Nsubjettiness.hh:30,
+                 from Nsubjettiness.cc:25:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from TauComponents.hh:29,
+                 from MeasureDefinition.hh:34,
+                 from Njettiness.hh:29,
+                 from Nsubjettiness.hh:30,
+                 from Nsubjettiness.cc:25:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+ar cru libClusteringVetoPlugin.a ClusteringVetoPlugin.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libClusteringVetoPlugin.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/ClusteringVetoPlugin' 나감
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o RecursiveSymmetryCutBase.o RecursiveSymmetryCutBase.cc
+ar cru libSubjetCounting.a SubjetCounting.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libSubjetCounting.a
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o Njettiness.o Njettiness.cc
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/SubjetCounting' 나감
+make FJCONTRIB_SUBMAKE=1 -C ConstituentSubtractor
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/ConstituentSubtractor' 들어감
+g++ -O3 -Wall -g -fPIC -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o ConstituentSubtractor.o ConstituentSubtractor.cc
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/CompositeJetStructure.hh:39,
+                 from RecursiveSymmetryCutBase.hh:30,
+                 from RecursiveSymmetryCutBase.cc:22:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/CompositeJetStructure.hh:39,
+                 from RecursiveSymmetryCutBase.hh:30,
+                 from RecursiveSymmetryCutBase.cc:22:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from TauComponents.hh:29:0,
+                 from MeasureDefinition.hh:34,
+                 from Njettiness.hh:29,
+                 from Njettiness.cc:25:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from TauComponents.hh:29,
+                 from MeasureDefinition.hh:34,
+                 from Njettiness.hh:29,
+                 from Njettiness.cc:25:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequenceAreaBase.hh:34:0,
+                 from ConstituentSubtractor.hh:31,
+                 from ConstituentSubtractor.cc:25:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequenceAreaBase.hh:34,
+                 from ConstituentSubtractor.hh:31,
+                 from ConstituentSubtractor.cc:25:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o ModifiedMassDropTagger.o ModifiedMassDropTagger.cc
+ar cru libVariableR.a VariableRPlugin.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libVariableR.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/VariableR' 나감
+make FJCONTRIB_SUBMAKE=1 -C QCDAwarePlugin
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/QCDAwarePlugin' 들어감
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include -fPIC   -c -o QCDAwarePlugin.o QCDAwarePlugin.cc
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/CompositeJetStructure.hh:39,
+                 from RecursiveSymmetryCutBase.hh:30,
+                 from ModifiedMassDropTagger.hh:26,
+                 from ModifiedMassDropTagger.cc:22:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/CompositeJetStructure.hh:39,
+                 from RecursiveSymmetryCutBase.hh:30,
+                 from ModifiedMassDropTagger.hh:26,
+                 from ModifiedMassDropTagger.cc:22:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+ar cru libJetFFMoments.a JetFFMoments.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libJetFFMoments.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/JetFFMoments' 나감
+make FJCONTRIB_SUBMAKE=1 -C ValenciaPlugin
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/ValenciaPlugin' 들어감
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o ValenciaPlugin.o ValenciaPlugin.cc
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o SoftDrop.o SoftDrop.cc
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from QCDAwarePlugin.hh:30,
+                 from QCDAwarePlugin.cc:26:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from QCDAwarePlugin.hh:30,
+                 from QCDAwarePlugin.cc:26:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from ValenciaPlugin.hh:26,
+                 from ValenciaPlugin.cc:22:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from ValenciaPlugin.hh:26,
+                 from ValenciaPlugin.cc:22:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/CompositeJetStructure.hh:39,
+                 from RecursiveSymmetryCutBase.hh:30,
+                 from SoftDrop.hh:27,
+                 from SoftDrop.cc:24:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/CompositeJetStructure.hh:39,
+                 from RecursiveSymmetryCutBase.hh:30,
+                 from SoftDrop.hh:27,
+                 from SoftDrop.cc:24:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+make FJCONTRIB_SUBMAKE=1 -C FlavorCone
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/FlavorCone' 들어감
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o FlavorCone.o FlavorCone.cc
+ar cru libValenciaPlugin.a ValenciaPlugin.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libValenciaPlugin.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/ValenciaPlugin' 나감
+ar cru libQCDAwarePlugin.a QCDAwarePlugin.o
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o EventStorage.o EventStorage.cc
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libQCDAwarePlugin.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/QCDAwarePlugin' 나감
+make FJCONTRIB_SUBMAKE=1 -C JetCleanser
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/JetCleanser' 들어감
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o JetCleanser.o JetCleanser.cc
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o NjettinessPlugin.o NjettinessPlugin.cc
+ar cru libEnergyCorrelator.a EnergyCorrelator.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libEnergyCorrelator.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/EnergyCorrelator' 나감
+make FJCONTRIB_SUBMAKE=1 -C ScJet
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/ScJet' 들어감
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o ScJet.o ScJet.cc
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o IteratedSoftDrop.o IteratedSoftDrop.cc
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from FlavorCone.hh:27,
+                 from FlavorCone.cc:23:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from FlavorCone.hh:27,
+                 from FlavorCone.cc:23:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o XConePlugin.o XConePlugin.cc
+In file included from JetCleanser.hh:31:0,
+                 from JetCleanser.cc:26:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from JetCleanser.hh:31,
+                 from JetCleanser.cc:26:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from TauComponents.hh:29:0,
+                 from MeasureDefinition.hh:34,
+                 from Njettiness.hh:29,
+                 from NjettinessPlugin.hh:30,
+                 from NjettinessPlugin.cc:25:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from TauComponents.hh:29,
+                 from MeasureDefinition.hh:34,
+                 from Njettiness.hh:29,
+                 from NjettinessPlugin.hh:30,
+                 from NjettinessPlugin.cc:25:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from ScJet.cc:26:0:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from ScJet.cc:26:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from Recluster.hh:25,
+                 from RecursiveSoftDrop.hh:26,
+                 from IteratedSoftDrop.hh:29,
+                 from IteratedSoftDrop.cc:26:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from Recluster.hh:25,
+                 from RecursiveSoftDrop.hh:26,
+                 from IteratedSoftDrop.hh:29,
+                 from IteratedSoftDrop.cc:26:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from TauComponents.hh:29:0,
+                 from MeasureDefinition.hh:34,
+                 from Njettiness.hh:29,
+                 from NjettinessPlugin.hh:30,
+                 from XConePlugin.hh:30,
+                 from XConePlugin.cc:25:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from TauComponents.hh:29,
+                 from MeasureDefinition.hh:34,
+                 from Njettiness.hh:29,
+                 from NjettinessPlugin.hh:30,
+                 from XConePlugin.hh:30,
+                 from XConePlugin.cc:25:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+ar cru libScJet.a ScJet.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libScJet.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/ScJet' 나감
+make FJCONTRIB_SUBMAKE=1 -C SoftKiller
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/SoftKiller' 들어감
+ar cru libFlavorCone.a FlavorCone.o
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o SoftKiller.o SoftKiller.cc
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libFlavorCone.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/FlavorCone' 나감
+make FJCONTRIB_SUBMAKE=1 -C LundPlane
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/LundPlane' 들어감
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o LundGenerator.o LundGenerator.cc
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o RecursiveSoftDrop.o RecursiveSoftDrop.cc
+g++ -O3 -Wall -g -fPIC -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o IterativeConstituentSubtractor.o IterativeConstituentSubtractor.cc
+ar cru libJetsWithoutJets.a JetsWithoutJets.o EventStorage.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libJetsWithoutJets.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/JetsWithoutJets' 나감
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o LundWithSecondary.o LundWithSecondary.cc
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/tools/Recluster.hh:25,
+                 from LundGenerator.hh:26,
+                 from LundGenerator.cc:23:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/tools/Recluster.hh:25,
+                 from LundGenerator.hh:26,
+                 from LundGenerator.cc:23:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o MeasureDefinition.o MeasureDefinition.cc
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from Recluster.hh:25,
+                 from RecursiveSoftDrop.hh:26,
+                 from RecursiveSoftDrop.cc:23:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from Recluster.hh:25,
+                 from RecursiveSoftDrop.hh:26,
+                 from RecursiveSoftDrop.cc:23:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequenceAreaBase.hh:34:0,
+                 from ConstituentSubtractor.hh:31,
+                 from IterativeConstituentSubtractor.hh:28,
+                 from IterativeConstituentSubtractor.cc:24:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequenceAreaBase.hh:34,
+                 from ConstituentSubtractor.hh:31,
+                 from IterativeConstituentSubtractor.hh:28,
+                 from IterativeConstituentSubtractor.cc:24:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/tools/Recluster.hh:25,
+                 from LundGenerator.hh:26,
+                 from LundWithSecondary.hh:25,
+                 from LundWithSecondary.cc:22:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/tools/Recluster.hh:25,
+                 from LundGenerator.hh:26,
+                 from LundWithSecondary.hh:25,
+                 from LundWithSecondary.cc:22:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o ExtraRecombiners.o ExtraRecombiners.cc
+In file included from TauComponents.hh:29:0,
+                 from MeasureDefinition.hh:34,
+                 from MeasureDefinition.cc:27:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from TauComponents.hh:29,
+                 from MeasureDefinition.hh:34,
+                 from MeasureDefinition.cc:27:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o SecondaryLund.o SecondaryLund.cc
+ar cru libSoftKiller.a SoftKiller.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libSoftKiller.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/SoftKiller' 나감
+make FJCONTRIB_SUBMAKE=1 -C GenericSubtractor
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/GenericSubtractor' 들어감
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o GenericSubtractor.o GenericSubtractor.cc
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o AxesDefinition.o AxesDefinition.cc
+g++ -O3 -Wall -g -fPIC -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o RescalingClasses.o RescalingClasses.cc
+ar cru libJetCleanser.a JetCleanser.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libJetCleanser.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/JetCleanser' 나감
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o TauComponents.o TauComponents.cc
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from ExtraRecombiners.hh:29,
+                 from ExtraRecombiners.cc:25:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from ExtraRecombiners.hh:29,
+                 from ExtraRecombiners.cc:25:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:657:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/tools/Recluster.hh:25,
+                 from LundGenerator.hh:26,
+                 from SecondaryLund.hh:25,
+                 from SecondaryLund.cc:22:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/JetDefinition.hh:39,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/tools/Recluster.hh:25,
+                 from LundGenerator.hh:26,
+                 from SecondaryLund.hh:25,
+                 from SecondaryLund.cc:22:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+SecondaryLund.cc: In member function ‘virtual int fastjet::contrib::SecondaryLund_mMDT::result(const std::vector<fastjet::contrib::LundDeclustering>&) const’:
+SecondaryLund.cc:36:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i=0; i < declusts.size(); ++i) {
+                 ~~^~~~~~~~~~~~~~~~~
+SecondaryLund.cc: In member function ‘virtual int fastjet::contrib::SecondaryLund_dotmMDT::result(const std::vector<fastjet::contrib::LundDeclustering>&) const’:
+SecondaryLund.cc:49:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i=0; i < declusts.size(); ++i) {
+                 ~~^~~~~~~~~~~~~~~~~
+SecondaryLund.cc: In member function ‘virtual int fastjet::contrib::SecondaryLund_Mass::result(const std::vector<fastjet::contrib::LundDeclustering>&) const’:
+SecondaryLund.cc:72:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i=0; i < declusts.size(); ++i) {
+                 ~~^~~~~~~~~~~~~~~~~
+In file included from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequenceAreaBase.hh:34:0,
+                 from GenericSubtractor.cc:22:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequenceAreaBase.hh:34,
+                 from GenericSubtractor.cc:22:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+g++ -O3 -Wall -g -I/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include   -c -o BottomUpSoftDrop.o BottomUpSoftDrop.cc
+In file included from TauComponents.hh:29:0,
+                 from MeasureDefinition.hh:34,
+                 from AxesDefinition.hh:29,
+                 from AxesDefinition.cc:25:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from TauComponents.hh:29,
+                 from MeasureDefinition.hh:34,
+                 from AxesDefinition.hh:29,
+                 from AxesDefinition.cc:25:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from TauComponents.hh:29:0,
+                 from TauComponents.cc:25:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from TauComponents.hh:29,
+                 from TauComponents.cc:25:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+ar cru libLundPlane.a LundGenerator.o LundWithSecondary.o SecondaryLund.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libLundPlane.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/LundPlane' 나감
+In file included from BottomUpSoftDrop.hh:26:0,
+                 from BottomUpSoftDrop.cc:23:
+/home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:372:44: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   inline void plugin_associate_extras(std::auto_ptr<Extras> extras_in){
+                                            ^~~~~~~~
+In file included from /usr/include/c++/7/memory:80:0,
+                 from /home/jhkim/MAschool2020/madanalysis5/tools/fastjet/include/fastjet/ClusterSequence.hh:38,
+                 from BottomUpSoftDrop.hh:26,
+                 from BottomUpSoftDrop.cc:23:
+/usr/include/c++/7/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+ar cru libConstituentSubtractor.a ConstituentSubtractor.o IterativeConstituentSubtractor.o RescalingClasses.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libConstituentSubtractor.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/ConstituentSubtractor' 나감
+ar cru libGenericSubtractor.a GenericSubtractor.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libGenericSubtractor.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/GenericSubtractor' 나감
+ar cru libRecursiveTools.a Recluster.o RecursiveSymmetryCutBase.o ModifiedMassDropTagger.o SoftDrop.o IteratedSoftDrop.o RecursiveSoftDrop.o BottomUpSoftDrop.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libRecursiveTools.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/RecursiveTools' 나감
+ar cru libNsubjettiness.a Nsubjettiness.o Njettiness.o NjettinessPlugin.o XConePlugin.o MeasureDefinition.o ExtraRecombiners.o AxesDefinition.o TauComponents.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libNsubjettiness.a
+make[1]: 디렉터리 '/tmp/jhkim/MA5_fastjetcontrib/fjcontrib-1.039/Nsubjettiness' 나감

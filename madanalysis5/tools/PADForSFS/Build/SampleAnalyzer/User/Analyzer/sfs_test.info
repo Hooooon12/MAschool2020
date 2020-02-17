@@ -1,0 +1,162 @@
+<!--
+this XML file serves for the statistical interpretation of the MA5 simulation. 
+it lists the number of observed events <nobs>, number of expected backgrounds <nb> 
+and number of background uncertainty <deltanb> in each of the regions  
+-->
+
+<!--
+to be put in the same directory as the analysis code,
+i.e. Build/SampleAnalyzer/User/Analyzer/
+-->
+
+<analysis id="sfs_test">
+  <lumi>36.1</lumi> <!-- in fb^-1 -->
+
+  <!--  signal regions -->
+
+  <!--
+     region definition: the attribute "id" has to match the name of the region
+     as defined in the analysis code;
+     the attribute "type" can be "signal" or "control" and is optional (default=signal)
+     when results are given after combination of several signal regions
+     (as is the case here: SF instead of ee and mumu separately)
+     the signal regions should be given in the attribute "id" separated by
+     semicolons
+  -->
+  
+  
+  <region type="signal" id="2j_Meff_1200">
+    <nobs>611</nobs>
+    <nb>526</nb>
+    <deltanb>31</deltanb>
+  </region>
+  
+  <region type="signal" id="2j_Meff_1600">
+    <nobs>216</nobs>
+    <nb>228</nb>
+    <deltanb>19</deltanb>
+  </region>
+
+  <region type="signal" id="2j_Meff_2000">
+    <nobs>73</nobs>
+    <nb>90</nb>
+    <deltanb>10</deltanb>
+  </region>
+  
+  <region type="signal" id="2j_Meff_2400">
+    <nobs>34</nobs>
+    <nb>42</nb>
+    <deltanb>4</deltanb>
+  </region>
+  
+  <region type="signal" id="2j_Meff_2800">
+    <nobs>19</nobs>
+    <nb>17.3</nb>
+    <deltanb>2.0</deltanb>
+  </region>
+  
+  <region type="signal" id="2j_Meff_3600">
+    <nobs>5</nobs>
+    <nb>3.6</nb>
+    <deltanb>0.9</deltanb>
+  </region>
+  
+  <region type="signal" id="2j_Meff_2100">
+    <nobs>190</nobs>
+    <nb>153</nb>
+    <deltanb>14</deltanb>
+  </region>
+  
+  <region type="signal" id="3j_Meff_1300">
+    <nobs>429</nobs>
+    <nb>390</nb>
+    <deltanb>29</deltanb>
+  </region>
+  
+  <region type="signal" id="4j_Meff_1000">
+    <nobs>142</nobs>
+    <nb>124</nb>
+    <deltanb>12</deltanb>
+  </region>
+  
+  <region type="signal" id="4j_Meff_1400">
+    <nobs>199</nobs>
+    <nb>182</nb>
+    <deltanb>16</deltanb>
+  </region>
+  
+  <region type="signal" id="4j_Meff_1800">
+    <nobs>55</nobs>
+    <nb>49</nb>
+    <deltanb>7</deltanb>
+  </region>
+  
+  <region type="signal" id="4j_Meff_2200">
+    <nobs>24</nobs>
+    <nb>16.5</nb>
+    <deltanb>2.7</deltanb>
+  </region>
+  
+  <region type="signal" id="4j_Meff_2600">
+    <nobs>4</nobs>
+    <nb>5.8</nb>
+    <deltanb>2.0</deltanb>
+  </region>
+  
+  <region type="signal" id="4j_Meff_3000">
+    <nobs>2</nobs>
+    <nb>2.0</nb>
+    <deltanb>0.6</deltanb>
+  </region>
+  
+  <region type="signal" id="5j_Meff_1600">
+    <nobs>135</nobs>
+    <nb>128</nb>
+    <deltanb>14</deltanb>
+  </region>
+  
+  <region type="signal" id="5j_Meff_1700">
+    <nobs>49</nobs>
+    <nb>43</nb>
+    <deltanb>5</deltanb>
+  </region>
+  
+  <region type="signal" id="5j_Meff_2000">
+    <nobs>59</nobs>
+    <nb>65</nb>
+    <deltanb>7</deltanb>
+  </region>
+  
+  <region type="signal" id="5j_Meff_2600">
+    <nobs>10</nobs>
+    <nb>9.4</nb>
+    <deltanb>2.1</deltanb>
+  </region>
+  
+  <region type="signal" id="6j_Meff_1200">
+    <nobs>276</nobs>
+    <nb>274</nb>
+    <deltanb>32</deltanb>
+  </region>
+  
+  <region type="signal" id="6j_Meff_1800">
+    <nobs>9</nobs>
+    <nb>5.1</nb>
+    <deltanb>1.8</deltanb>
+  </region>
+  
+  <region type="signal" id="6j_Meff_2200">
+    <nobs>3</nobs>
+    <nb>3.1</nb>
+    <deltanb>1.3</deltanb>
+  </region>
+ 
+  
+  <region type="signal" id="6j_Meff_2600">
+    <nobs>1</nobs>
+    <nb>2.2</nb>
+    <deltanb>1.4</deltanb>
+  </region>
+
+ </analysis>
+  

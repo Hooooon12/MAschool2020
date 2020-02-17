@@ -1,0 +1,151 @@
+<!--
+this XML file serves for the statistical interpretation of the MA5 simulation. 
+it lists the number of observed events <nobs>, number of expected backgrounds <nb> 
+and number of background uncertainty <deltanb> in each of the regions  
+-->
+
+<!--
+to be put in the same directory as the analysis code,
+i.e. Build/SampleAnalyzer/User/Analyzer/
+-->
+
+<analysis id="atlas_exot_2016_27">
+  <lumi>36.2</lumi> <!-- in fb^-1 -->
+
+  <!--  signal regions -->
+
+  <!--
+     region definition: the attribute "id" has to match the name of the region
+     as defined in the analysis code;
+     the attribute "type" can be "signal" or "control" and is optional (default=signal)
+     when results are given after combination of several signal regions
+     (as is the case here: SF instead of ee and mumu separately)
+     the signal regions should be given in the attribute "id" separated by
+     semicolons
+  -->
+<region type="signal" id="EM1">
+    <nobs>111203</nobs>
+    <nb>111100</nb>
+    <deltanb>2300</deltanb>
+  </region>
+
+
+
+  <region type="signal" id="EM2">
+    <nobs>67475</nobs>
+    <nb>67100</nb>
+    <deltanb>140</deltanb>
+  </region>
+
+  <region type="signal" id="EM3">
+    <nobs>35285</nobs>
+    <nb>33820</nb>
+    <deltanb>940</deltanb>
+  </region>
+  
+  <region type="signal" id="EM4">
+    <nobs>27843</nobs>
+    <nb>27640</nb>
+    <deltanb>610</deltanb>
+  </region>
+
+  <region type="signal" id="EM5">
+    <nobs>8583</nobs>
+    <nb>8360</nb>
+    <deltanb>190</deltanb>
+  </region>
+  
+  <region type="signal" id="EM6">
+    <nobs>2975</nobs>
+    <nb>2825</nb>
+    <deltanb>78</deltanb>
+  </region>
+
+  <region type="signal" id="EM7">
+    <nobs>1142</nobs>
+    <nb>1094</nb>
+    <deltanb>33</deltanb>
+  </region>
+  
+ <region type="signal" id="EM8">
+    <nobs>512</nobs>
+    <nb>463</nb>
+    <deltanb>19</deltanb>
+  </region>
+
+ <region type="signal" id="EM9">
+    <nobs>223</nobs>
+    <nb>213</nb>
+    <deltanb>9</deltanb>
+  </region>
+
+
+
+
+
+  
+    <region type="signal" id="IM1">
+    <nobs>255486</nobs>
+    <nb>245900</nb>
+    <deltanb>5800</deltanb>
+   </region>
+
+    <region type="signal" id="IM2">
+    <nobs>144283</nobs>
+    <nb>138000</nb>
+    <deltanb>3400</deltanb>
+    </region>
+
+
+    <region type="signal" id="IM3">
+    <nobs>76808</nobs>
+    <nb>73000</nb>
+    <deltanb>1900</deltanb>
+    </region>
+
+    <region type="signal" id="IM4">
+    <nobs>41523</nobs>
+    <nb>39900</nb>
+    <deltanb>1000</deltanb>
+    </region>
+
+    <region type="signal" id="IM5">
+    <nobs>13680</nobs>
+    <nb>12720</nb>
+    <deltanb>340</deltanb>
+    </region>
+
+    <region type="signal" id="IM6">
+    <nobs>5097</nobs>
+    <nb>4680</nb>
+    <deltanb>160</deltanb>
+    </region>
+   
+
+     <region type="signal" id="IM7">
+    <nobs>2122</nobs>
+    <nb>2017</nb>
+    <deltanb>90</deltanb>
+    </region>
+
+ <region type="signal" id="IM8">
+    <nobs>980</nobs>
+    <nb>908</nb>
+    <deltanb>55</deltanb>
+    </region>
+
+ <region type="signal" id="IM9">
+    <nobs>468</nobs>
+    <nb>464</nb>
+    <deltanb>34</deltanb>
+    </region>
+
+  <region type="signal" id="IM10">
+    <nobs>245</nobs>
+    <nb>238</nb>
+    <deltanb>23</deltanb>
+    </region>
+
+  
+
+</analysis>

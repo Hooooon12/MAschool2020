@@ -1,0 +1,61 @@
+<!--
+this XML file serves for the statistical interpretation of the MA5 simulation. 
+it lists the number of observed events <nobs>, number of expected backgrounds <nb> 
+and number of background uncertainty <deltanb> in each of the regions  
+-->
+
+<!--
+to be put in the same directory as the analysis code,
+i.e. Build/SampleAnalyzer/Analyzer/
+-->
+
+<analysis id="atlas_susy_2013_05">
+  <lumi>20.1</lumi> <!-- in fb^-1 -->
+
+  <!-- first, the signal regions targeting stop -> t neutralino -->
+
+  <!--
+     region definition: the attribute "id" has to match the name of the region
+     as defined in the analysis code;
+     the attribute "type" can be "signal" or "control" and is optional (default=signal)
+  -->
+  
+  <region type="signal" id="SRA, HighDeltaM, MET > 150, MCT > 150">
+    <nobs>102</nobs>
+    <nb>94</nb>
+    <deltanb>13</deltanb>
+  </region>
+    
+  <region type="signal" id="SRA, HighDeltaM, MET > 150, MCT > 200">
+    <nobs>48</nobs>
+    <nb>39</nb>
+    <deltanb>6</deltanb>
+  </region>
+    
+  <region type="signal" id="SRA, HighDeltaM, MET > 150, MCT > 250">
+    <nobs>14</nobs>
+    <nb>15.8</nb>
+    <deltanb>2.8</deltanb>
+  </region>
+    
+  <region type="signal" id="SRA, HighDeltaM, MET > 150, MCT > 300">
+    <nobs>7</nobs>
+    <nb>5.9</nb>
+    <deltanb>1.1</deltanb>
+  </region>
+    
+   <region type="signal" id="SRA, HighDeltaM, MET > 150, MCT > 350">
+    <nobs>3</nobs>
+    <nb>2.5</nb>
+    <deltanb>0.6</deltanb>
+  </region>
+    
+   <region type="signal" id="SRB, LowDeltaM, MET > 250">
+    <nobs>65</nobs>
+    <nb>64</nb>
+    <deltanb>10</deltanb> 
+  </region>
+    
+  
+</analysis>
+

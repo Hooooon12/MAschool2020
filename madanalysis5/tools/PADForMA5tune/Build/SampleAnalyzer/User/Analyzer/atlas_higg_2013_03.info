@@ -1,0 +1,20 @@
+<!--
+this XML file serves for the statistical interpretation of the MA5 simulation. 
+it lists the number of observed events <nobs>, number of expected backgrounds <nb> 
+and number of background uncertainty <deltanb> in each of the regions  
+-->
+
+<!--
+to be put in the same directory as the analysis code,
+i.e. Build/SampleAnalyzer/User/Analyzer/
+-->
+
+<analysis id="atlas_higg_2013_03">
+  <lumi>20.3</lumi> <!-- in fb^-1; we only consider 8 TeV collisions -->
+
+  <region type="signal" id="sig">
+    <nobs>152</nobs>
+    <nb>138</nb>
+    <deltanb>9.8</deltanb>
+  </region>
+</analysis>

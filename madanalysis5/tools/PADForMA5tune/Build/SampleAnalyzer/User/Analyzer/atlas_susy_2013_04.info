@@ -1,0 +1,103 @@
+<!--
+this XML file serves for the statistical interpretation of the MA5 simulation. 
+it lists the number of observed events <nobs>, number of expected backgrounds <nb> 
+and number of background uncertainty <deltanb> in each of the regions  
+-->
+
+<!--
+to be put in the same directory as the analysis code,
+i.e. Build/SampleAnalyzer/Analyzer/
+-->
+
+<analysis id="atlas_susy_2013_04">
+  <lumi>20.1</lumi> <!-- in fb^-1 -->
+
+  <!-- first, the signal regions targeting stop -> t neutralino -->
+
+  <!--
+     region definition: the attribute "id" has to match the name of the region
+     as defined in the analysis code;
+     the attribute "type" can be "signal" or "control" and is optional (default=signal)
+  -->
+
+  <region type="signal" id="8j50, 0 bjet">
+    <nobs>40</nobs>
+    <nb>35</nb>
+    <deltanb>4</deltanb>
+  </region>
+
+  <region type="signal" id="8j50, 1 bjet">
+    <nobs>44</nobs>
+    <nb>40</nb>
+    <deltanb>10</deltanb>
+  </region>
+
+  <region type="signal" id="8j50, >=2 bjets">
+    <nobs>44</nobs>
+    <nb>50</nb>
+    <deltanb>10</deltanb>
+  </region>
+
+  <region type="signal" id="9j50, 0 bjet">
+    <nobs>5</nobs>
+    <nb>3.3</nb>
+    <deltanb>0.7</deltanb>
+  </region>
+
+  <region type="signal" id="9j50, 1 bjet">
+    <nobs>8</nobs>
+    <nb>6.1</nb>
+    <deltanb>1.7</deltanb>
+  </region>
+
+  <region type="signal" id="9j50, >=2 bjets">
+    <nobs>7</nobs>
+    <nb>8.0</nb>
+    <deltanb>2.7</deltanb>
+  </region>
+
+  <region type="signal" id=">=10j50">
+    <nobs>3</nobs>
+    <nb>1.37</nb>
+    <deltanb>0.35</deltanb>
+  </region>
+
+  <region type="signal" id="7j80, 0 bjet">
+    <nobs>12</nobs>
+    <nb>11.0</nb>
+    <deltanb>2.2</deltanb>
+  </region>
+
+  <region type="signal" id="7j80, 1 bjet">
+    <nobs>17</nobs>
+    <nb>17</nb>
+    <deltanb>6</deltanb>
+  </region>
+
+  <region type="signal" id="7j80, >=2 bjets">
+    <nobs>13</nobs>
+    <nb>25</nb>
+    <deltanb>10</deltanb>
+  </region>
+
+  <region type="signal" id=">=8j80, 0 bjet">
+    <nobs>2</nobs>
+    <nb>0.9</nb>
+    <deltanb>0.6</deltanb>
+  </region>
+
+  <region type="signal" id=">=8j80, 1 bjet">
+    <nobs>1</nobs>
+    <nb>1.5</nb>
+    <deltanb>0.9</deltanb>
+  </region>
+
+  <region type="signal" id=">=8j80, >=2 bjets">
+    <nobs>3</nobs>
+    <nb>3.3</nb>
+    <deltanb>2.2</deltanb>
+  </region>
+
+
+</analysis>
+
