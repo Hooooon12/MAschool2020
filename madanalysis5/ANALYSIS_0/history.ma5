@@ -1,8 +1,0 @@
-set main.currentdir = /home/jhkim/MAschool2020/madanalysis5
-install samples
-define mu = mu+ mu-
-import samples/ttbar_*.lhe.gz
-plot PT(mu)
-reject plot PT(mu) < 40
-reject PT(mu) < 40
-plot PT(mu)

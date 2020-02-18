@@ -1,2 +1,0 @@
-c++ -Wall -O3 -fPIC -I/home/jhkim/MAschool2020/madanalysis5/tools/ -I./ -pthread -std=c++11 -m64 -I/home/jhkim/root/include -o Main/main.o -c Main/main.cpp
-c++ -Wall -O3 -fPIC -I/home/jhkim/MAschool2020/madanalysis5/tools/ -I./ -pthread -std=c++11 -m64 -I/home/jhkim/root/include -o SampleAnalyzer/User/Analyzer/user.o -c SampleAnalyzer/User/Analyzer/user.cpp
