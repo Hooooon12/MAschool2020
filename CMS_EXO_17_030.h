@@ -39,7 +39,6 @@ namespace MA5
     double dalitz63(JetCollection, int, int, int);
     double massAsymm(TripletPair);
     double delta(Triplet);
-    double mds63(JetCollection jets);
     double mds6332(JetCollection jets);
     double compareMass(Triplet, double);
     Triplet chooseSigTrip(TripletCollection, double);

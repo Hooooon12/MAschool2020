@@ -1,4 +1,7 @@
 #include "SampleAnalyzer/User/Analyzer/CMS_EXO_17_030.h"
+#include <iostream>
+using std::cout;
+using std::endl;
 
 using namespace MA5;
 using namespace std;
@@ -84,6 +87,7 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
   Manager()->AddCut("SigTripInSR3", "Mg_700to1200");
   Manager()->AddCut("SigTripInSR4", "Mg_1200to2000");
   
+  cout << "Preparing ROOT output" << endl;
   // Prepare ROOT output
   fOut = new TFile("test.root", "recreate");
   for (int i = 0; i < 4; i++) {
@@ -96,6 +100,7 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     cutFlow_TripletPair[i] = new TH1D(Form("SR_Triplet_Pair_%d",i+1), Form("SR_Triplet_Pair_%d",i+1), 10, 0, 10);
     cutFlow_Triplet[i] = new TH1D(Form("SR_Triplet_%d",i+1), Form("SR_Triplet_%d",i+1), 10, 0, 10);
   }
+  cout << "ROOT output has prepared" << endl;
 
   cout << "END   Initialization" << endl;
   
@@ -110,12 +115,14 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
 {
   cout << "BEGIN Finalization" << endl;
   // saving histos
+  fOut->cd();
   for (int i = 0; i < 4; i++) {
     tSr[i]->Write();
     cutFlow_Evt[i]->Write();
     cutFlow_TripletPair[i]->Write();
     cutFlow_Triplet[i]->Write();
   }
+  fOut->Write();
   fOut->Close();
   cout << "END   Finalization" << endl;
 }
@@ -180,9 +187,12 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       HT[i] = getHT(Jets[i]);
     }
 
+    double lpT[4] = {0.};
     for (int i = 0; i < 4; i++) {
-      if (HT[i] < HTcut[i]) continue;
+      if (Jets[i].size() < 6) continue;
+      else if (HT[i] < HTcut[i]) continue;
       else if (Jets[i][5]->pt() < lpTcut[i]) continue;
+      lpT[i] = Jets[i][5]->pt();
       cutFlow_Evt[i]->Fill(1.5);
     }
 
@@ -191,10 +201,10 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     if(!Manager()->ApplyCut(HT[2] > HTcut[2], "HT > 900GeV")) return true;
 
     // 6th Jet Pt cut for each regions
-    if(!Manager()->ApplyCut((Jets[0][5])->pt() > lpTcut[0], "pt(j6) > 40GeV") ) return true;
-    if(!Manager()->ApplyCut((Jets[1][5])->pt() > lpTcut[1], "pt(j6) > 50GeV") ) return true;
-    if(!Manager()->ApplyCut((Jets[2][5])->pt() > lpTcut[2], "pt(j6) > 125GeV")) return true;
-    if(!Manager()->ApplyCut((Jets[3][5])->pt() > lpTcut[3], "pt(j6) > 175GeV")) return true;
+    if(!Manager()->ApplyCut(lpT[0] > lpTcut[0], "pt(j6) > 40GeV") ) return true;
+    if(!Manager()->ApplyCut(lpT[1] > lpTcut[1], "pt(j6) > 50GeV") ) return true;
+    if(!Manager()->ApplyCut(lpT[2] > lpTcut[2], "pt(j6) > 125GeV")) return true;
+    if(!Manager()->ApplyCut(lpT[3] > lpTcut[3], "pt(j6) > 175GeV")) return true;
     
     // Mds6332 cut for each regions
     double evtMds6332[4];
@@ -220,10 +230,10 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       cutFlow_TripletPair[i]->Fill(1.5, trips[i].size()/2);
       cutFlow_Triplet[i]->Fill(1.5, trips[i].size());
     }
-    if(!Manager()->ApplyCut(trips[0].size() == 0, "Am < 0.25")) return true;
-    if(!Manager()->ApplyCut(trips[1].size() == 0, "Am < 1.75")) return true;
-    if(!Manager()->ApplyCut(trips[2].size() == 0, "Am < 0.15")) return true;
-    if(!Manager()->ApplyCut(trips[3].size() == 0, "Am < 0.15")) return true;
+    if(!Manager()->ApplyCut(trips[0].size() != 0, "Am < 0.25")) return true;
+    if(!Manager()->ApplyCut(trips[1].size() != 0, "Am < 1.75")) return true;
+    if(!Manager()->ApplyCut(trips[2].size() != 0, "Am < 0.15")) return true;
+    if(!Manager()->ApplyCut(trips[3].size() != 0, "Am < 0.15")) return true;
 
     // Delta cut
     // for each Triplets
@@ -231,10 +241,10 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       trips[i] = deltaSelection(trips[i], deltaCut[i]);
       cutFlow_Triplet[i]->Fill(2.5, trips[i].size());
     }
-    if(!Manager()->ApplyCut(trips[0].size() == 0, "Delta > 250GeV" )) return true;
-    if(!Manager()->ApplyCut(trips[1].size() == 0, "Delta > 180GeV" )) return true;
-    if(!Manager()->ApplyCut(trips[2].size() == 0, "Delta > 20GeV"  )) return true;
-    if(!Manager()->ApplyCut(trips[3].size() == 0, "Delta > -120GeV")) return true;
+    if(!Manager()->ApplyCut(trips[0].size() != 0, "Delta > 250GeV" )) return true;
+    if(!Manager()->ApplyCut(trips[1].size() != 0, "Delta > 180GeV" )) return true;
+    if(!Manager()->ApplyCut(trips[2].size() != 0, "Delta > 20GeV"  )) return true;
+    if(!Manager()->ApplyCut(trips[3].size() != 0, "Delta > -120GeV")) return true;
 
     // mds32 cut
     // for each Triplets
@@ -247,7 +257,8 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       triplet_eta[i].clear();
       triplet_phi[i].clear();
       triplet_mass[i].clear();
-      for (int j = 0; i < trips[i].size(); i++) {
+
+      for (int j = 0; j < trips[i].size(); j++) {
         MALorentzVector mom = getMomentum(trips[i][j]);
         triplet_pt[i].push_back(mom.Pt());
         triplet_eta[i].push_back(mom.Eta());
@@ -256,10 +267,10 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       }
       tSr[i]->Fill();
     }
-    if(!Manager()->ApplyCut(trips[0].size() == 0, "D^2[3,2] < 0.05" )) return true;
-    if(!Manager()->ApplyCut(trips[1].size() == 0, "D^2[3,2] < 0.175")) return true;
-    if(!Manager()->ApplyCut(trips[2].size() == 0, "D^2[3,2] < 0.2"  )) return true;
-    if(!Manager()->ApplyCut(trips[3].size() == 0, "D^2[3,2] < 0.25" )) return true;
+    if(!Manager()->ApplyCut(trips[0].size() != 0, "D^2[3,2] < 0.05" )) return true;
+    if(!Manager()->ApplyCut(trips[1].size() != 0, "D^2[3,2] < 0.175")) return true;
+    if(!Manager()->ApplyCut(trips[2].size() != 0, "D^2[3,2] < 0.2"  )) return true;
+    if(!Manager()->ApplyCut(trips[3].size() != 0, "D^2[3,2] < 0.25" )) return true;
 
     // (Jin)MESSAGE: choose the best candidate from the Triplets
     // If there is no triplet in the event, then return empty vector(might change)
@@ -356,23 +367,11 @@ double CMS_EXO_17_030::mds32(Triplet t) {
   return res;
 }
 
-double CMS_EXO_17_030::mds63(JetCollection jets) {
-  double c = 1./sqrt(20.);
-  double res = 0.;
-  for (int i = 0; i < 6; i++) {
-    for (int j = i + 1; j < 6; j++) {
-      for (int k = j + 1; k < 6; k++) {
-       res += pow(dalitz63(jets, i, j, k) - c, 2);
-      }
-    }
-  }
-  return res;
-}
-
 double CMS_EXO_17_030::mds6332(JetCollection jets) {
   double res = 0.;
   double c = 1./sqrt(20.);
   double temp;
+  if (jets.size() < 6) return 10.;
   for (int i = 0; i < 6; i++) {
     for (int j = i + 1; j < 6; j++) {
       for (int k = j + 1; k < 6; k++) {
@@ -430,6 +429,7 @@ double CMS_EXO_17_030::dalitz63(JetCollection trip, int idx1, int idx2, int idx3
 
 PairCollection CMS_EXO_17_030::makePairCollection(JetCollection Jets) {
   PairCollection res;
+  if (Jets.size() < 6) return res;
   TripletCollection trips;
   for (int i = 0 ; i < 6; i++) {
     for (int j = i+1; j < 6; j++){
@@ -455,6 +455,7 @@ double CMS_EXO_17_030::compareMass(Triplet trip, double gluinoM) {
 
 Triplet CMS_EXO_17_030::chooseSigTrip(TripletCollection trips, double gluinoM) {
   Triplet res_trip;
+  if ( trips.size() == 0 ) return res_trip;
   res_trip = trips.at(0);
   for (unsigned int i = 0; i < trips.size(); i++) {
     if (compareMass(trips.at(i), gluinoM) < compareMass(res_trip, gluinoM)) res_trip = trips.at(i);
