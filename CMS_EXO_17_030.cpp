@@ -220,7 +220,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       if (evtMds6332[i] > mds6332Cut[i]) {
         Jets[i].clear();
         continue;
-      }
+       }
       cutFlow_Evt[i]->Fill(3.5);
     }
     if(!Manager()->ApplyCut(evtMds6332[0] < mds6332Cut[0], "D^2[6,3+3,2] < 1.25")) return true;
@@ -372,7 +372,7 @@ double CMS_EXO_17_030::mds32(Triplet t) {
   double res = 0.;
   for (int i = 0; i < 3; i++) {
     for (int j = i+1; j < 3; j++) {
-      res += pow(dalitz32(t, i, j) - c, 2);
+      res += pow(sqrt(dalitz32(t, i, j)) - c, 2);
     }
   }
   return res;
@@ -387,7 +387,7 @@ double CMS_EXO_17_030::mds6332(JetCollection jets) {
     for (int j = i + 1; j < 6; j++) {
       for (int k = j + 1; k < 6; k++) {
         Triplet t = { jets[i], jets[j], jets[k] };
-        temp = pow(dalitz63(jets, i, j, k), 2) + pow(mds32(t), 1);
+        temp = pow(dalitz63(jets, i, j, k), 1) + pow(mds32(t), 1);
         temp = sqrt(temp) - c;
         res += temp*temp;
       }
