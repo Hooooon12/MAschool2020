@@ -1,7 +1,4 @@
 #include "SampleAnalyzer/User/Analyzer/CMS_EXO_17_030.h"
-#include <iostream>
-using std::cout;
-using std::endl;
 
 using namespace MA5;
 using namespace std;
@@ -99,7 +96,14 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     cutFlow_Evt[i] = new TH1D(Form("SR_Evt_%d",i+1), Form("SR_Evt_%d",i+1), 10, 0, 10);
     cutFlow_TripletPair[i] = new TH1D(Form("SR_Triplet_Pair_%d",i+1), Form("SR_Triplet_Pair_%d",i+1), 10, 0, 10);
     cutFlow_Triplet[i] = new TH1D(Form("SR_Triplet_%d",i+1), Form("SR_Triplet_%d",i+1), 10, 0, 10);
+
+    // Histogram to count #trips/event
+    trips_no_init[i] = new TH1D(Form("trips_no_init_%d", i+1), Form("trips_no_init_%d", i+1), 20, 0, 20);
+    trips_no_Am[i] = new TH1D(Form("trips_no_Am_%d", i+1), Form("trips_no_Am_%d", i+1), 20, 0, 20);
+    trips_no_Delta[i] = new TH1D(Form("trips_no_Delta_%d", i+1), Form("trips_no_Delta_%d", i+1), 20, 0, 20);
+    trips_no_MDS32[i] = new TH1D(Form("trips_no_MDS32_%d", i+1), Form("trips_no_MDS32_%d", i+1), 20, 0, 20);
   }
+
   cout << "ROOT output has prepared" << endl;
 
   cout << "END   Initialization" << endl;
@@ -121,6 +125,10 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
     cutFlow_Evt[i]->Write();
     cutFlow_TripletPair[i]->Write();
     cutFlow_Triplet[i]->Write();
+    trips_no_init[i]->Write();
+    trips_no_Am[i]->Write();
+    trips_no_Delta[i]->Write();
+    trips_no_MDS32[i]->Write();
   }
   fOut->Close();
   cout << "END   Finalization" << endl;
@@ -170,6 +178,8 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     for (int i = 0; i < 4; i++) {
       cutFlow_Evt[i]->Fill(0.5);
       Jets[i] = jetSelection(event, pTcut[i]);
+      SORTER->sort(Jets[i]);
+      if (Jets[i].size() >= 6) cutFlow_Evt[i]->Fill(1.5);
     }
 
     // Jet ID
@@ -179,7 +189,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     // Number of Jets cut for low and high mass regions
     if(!Manager()->ApplyCut(Jets[0].size() >= 6, "Njets>=6 Low") ) return true;
     if(!Manager()->ApplyCut(Jets[2].size() >= 6, "Njets>=6 High")) return true;
-
+    //cout << "[DEBUG] : NJets: " << Jets[3].size() << endl;
     // get HT for each signal regions
     double HT[4];
     for (int i = 0; i < 4; i++) {
@@ -188,16 +198,19 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
 
     double lpT[4] = {0.};
     for (int i = 0; i < 4; i++) {
-      if (Jets[i].size() < 6) continue;
+      if (Jets[i].size() < 6) {
+        Jets[i].clear();
+        continue;
+      }
       else if (HT[i] < HTcut[i]) {
-        continue;
         Jets[i].clear();
+        continue;
       } else if (Jets[i][5]->pt() < lpTcut[i]) {
-        continue;
         Jets[i].clear();
+        continue;
       }
       lpT[i] = Jets[i][5]->pt();
-      cutFlow_Evt[i]->Fill(1.5);
+      cutFlow_Evt[i]->Fill(2.5);
     }
 
     // HT cut for low and high mass regions
@@ -214,11 +227,12 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     double evtMds6332[4];
     for (int i = 0; i < 4; i++) {
       evtMds6332[i] = mds6332(Jets[i]);
+      if (Jets[i].size() < 6) continue;
       if (evtMds6332[i] > mds6332Cut[i]) {
         Jets[i].clear();
         continue;
-      }
-      cutFlow_Evt[i]->Fill(2.5);
+       }
+      cutFlow_Evt[i]->Fill(3.5);
     }
     if(!Manager()->ApplyCut(evtMds6332[0] < mds6332Cut[0], "D^2[6,3+3,2] < 1.25")) return true;
     if(!Manager()->ApplyCut(evtMds6332[1] < mds6332Cut[1], "D^2[6,3+3,2] < 1.0") ) return true;
@@ -233,10 +247,16 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       tripPairs[i] = makePairCollection(Jets[i]);
       cutFlow_TripletPair[i]->Fill(0.5, tripPairs[i].size());
       cutFlow_Triplet[i]->Fill(0.5, tripPairs[i].size()*2);
+
+      trips_no_init[i]->Fill(trips[i].size());
+ 
       trips[i] = pairSelection(tripPairs[i], asymmCut[i]);
       cutFlow_TripletPair[i]->Fill(1.5, trips[i].size()/2);
       cutFlow_Triplet[i]->Fill(1.5, trips[i].size());
+
+      trips_no_Am[i]->Fill(trips[i].size());
     }
+      
     if(!Manager()->ApplyCut(trips[0].size() != 0, "Am < 0.25")) return true;
     if(!Manager()->ApplyCut(trips[1].size() != 0, "Am < 1.75")) return true;
     if(!Manager()->ApplyCut(trips[2].size() != 0, "Am < 0.15")) return true;
@@ -247,6 +267,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     for (int i = 0; i < 4; i++) {
       trips[i] = deltaSelection(trips[i], deltaCut[i]);
       cutFlow_Triplet[i]->Fill(2.5, trips[i].size());
+      trips_no_Delta[i]->Fill(trips[i].size());
     }
     if(!Manager()->ApplyCut(trips[0].size() != 0, "Delta > 250GeV" )) return true;
     if(!Manager()->ApplyCut(trips[1].size() != 0, "Delta > 180GeV" )) return true;
@@ -258,6 +279,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     for (int i = 0; i < 4; i++) {
       trips[i] = mds32Selection(trips[i], mds32Cut[i]);
       cutFlow_Triplet[i]->Fill(3.5, trips[i].size());
+      trips_no_MDS32[i]->Fill(trips[i].size());
     }
     for (int i = 0; i < 4; i++) {
       triplet_pt[i].clear();
@@ -286,12 +308,15 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       SigTrip[i] = chooseSigTrip(trips[i], gluinoMass[i]);
     }
     for (int i = 0; i < 4; i++) {
+      if (trips[i].size() == 0) {
+        continue;
+      }
       trips[i][0] = SigTrip[i];
     }
-    if(!Manager()->ApplyCut(trips[0].size() == 0, "SigTripInSR1")) return true;
-    if(!Manager()->ApplyCut(trips[1].size() == 0, "SigTripInSR2")) return true;
-    if(!Manager()->ApplyCut(trips[2].size() == 0, "SigTripInSR3")) return true;
-    if(!Manager()->ApplyCut(trips[3].size() == 0, "SigTripInSR4")) return true;
+    if(!Manager()->ApplyCut(trips[0].size() != 0, "SigTripInSR1")) return true;
+    if(!Manager()->ApplyCut(trips[1].size() != 0, "SigTripInSR2")) return true;
+    if(!Manager()->ApplyCut(trips[2].size() != 0, "SigTripInSR3")) return true;
+    if(!Manager()->ApplyCut(trips[3].size() != 0, "SigTripInSR4")) return true;
    
   }
   return true;  
@@ -346,6 +371,7 @@ TripletCollection CMS_EXO_17_030::deltaSelection( TripletCollection trips, doubl
   for (unsigned int i = 0; i < trips.size(); i++) {
     Triplet trip = trips[i];
     double delta_ = delta(trip);
+    //cout << "[DEBUG]: Delta" << delta_ << endl;
     if (delta_ < deltaCut) continue;
     sigTrips.push_back(trip);
   }
@@ -368,9 +394,10 @@ double CMS_EXO_17_030::mds32(Triplet t) {
   double res = 0.;
   for (int i = 0; i < 3; i++) {
     for (int j = i+1; j < 3; j++) {
-      res += pow(dalitz32(t, i, j) - c, 2);
+      res += pow(sqrt(dalitz32(t, i, j)) - c, 2);
     }
   }
+  //cout << "[DEBUG]: MDS32 " << res << endl;
   return res;
 }
 
@@ -383,7 +410,7 @@ double CMS_EXO_17_030::mds6332(JetCollection jets) {
     for (int j = i + 1; j < 6; j++) {
       for (int k = j + 1; k < 6; k++) {
         Triplet t = { jets[i], jets[j], jets[k] };
-        temp = pow(dalitz63(jets, i, j, k), 2) + mds32(t);
+        temp = pow(dalitz63(jets, i, j, k), 1) + pow(mds32(t), 1);
         temp = sqrt(temp) - c;
         res += temp*temp;
       }
@@ -408,7 +435,7 @@ double CMS_EXO_17_030::delta( Triplet trip ) {
   for(int i = 0; i < 3; i++) {
     HT += trip[i]->pt();
   }
-  double M = (trip[1]->momentum() + trip[2]->momentum() + trip[3]->momentum()).M();
+  double M = (trip[0]->momentum() + trip[1]->momentum() + trip[2]->momentum()).M();
   double Delta = HT - M;
   return Delta;
 }
@@ -446,9 +473,7 @@ PairCollection CMS_EXO_17_030::makePairCollection(JetCollection Jets) {
     }
   }
   for (int i = 0; i < 10; i++) {
-    for (int j = 19; j > 9; j--) {
-      res.push_back(make_pair(trips[i], trips[j]));
-    }
+    res.push_back(make_pair(trips[i], trips[19-i]));
   }
   return res;
 }
