@@ -412,7 +412,7 @@ double CMS_EXO_17_030::delta( Triplet trip ) {
   for(int i = 0; i < 3; i++) {
     HT += trip[i]->pt();
   }
-  double M = (trip[1]->momentum() + trip[2]->momentum() + trip[3]->momentum()).M();
+  double M = (trip[0]->momentum() + trip[1]->momentum() + trip[2]->momentum()).M();
   double Delta = HT - M;
   return Delta;
 }
