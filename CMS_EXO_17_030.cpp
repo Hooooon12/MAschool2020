@@ -171,6 +171,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       cutFlow_Evt[i]->Fill(0.5);
       Jets[i] = jetSelection(event, pTcut[i]);
       SORTER->sort(Jets[i]);
+      if (Jets[i].size() >= 6) cutFlow_Evt[i]->Fill(1.5);
     }
 
     // Jet ID
@@ -189,16 +190,19 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
 
     double lpT[4] = {0.};
     for (int i = 0; i < 4; i++) {
-      if (Jets[i].size() < 6) continue;
+      if (Jets[i].size() < 6) {
+        Jets[i].clear();
+        continue;
+      }
       else if (HT[i] < HTcut[i]) {
-        continue;
         Jets[i].clear();
+        continue;
       } else if (Jets[i][5]->pt() < lpTcut[i]) {
-        continue;
         Jets[i].clear();
+        continue;
       }
       lpT[i] = Jets[i][5]->pt();
-      cutFlow_Evt[i]->Fill(1.5);
+      cutFlow_Evt[i]->Fill(2.5);
     }
 
     // HT cut for low and high mass regions
@@ -215,12 +219,13 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     double evtMds6332[4];
     for (int i = 0; i < 4; i++) {
       evtMds6332[i] = mds6332(Jets[i]);
+      if (Jets[i].size() < 6) continue;
       cout << "evt :: " << evtMds6332[i] << " cut :: "<<  mds6332Cut[i] << endl;
       if (evtMds6332[i] > mds6332Cut[i]) {
         Jets[i].clear();
         continue;
       }
-      cutFlow_Evt[i]->Fill(2.5);
+      cutFlow_Evt[i]->Fill(3.5);
     }
     if(!Manager()->ApplyCut(evtMds6332[0] < mds6332Cut[0], "D^2[6,3+3,2] < 1.25")) return true;
     if(!Manager()->ApplyCut(evtMds6332[1] < mds6332Cut[1], "D^2[6,3+3,2] < 1.0") ) return true;
