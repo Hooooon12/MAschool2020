@@ -1,7 +1,4 @@
 #include "SampleAnalyzer/User/Analyzer/CMS_EXO_17_030.h"
-#include <iostream>
-using std::cout;
-using std::endl;
 
 using namespace MA5;
 using namespace std;
@@ -292,6 +289,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       SigTrip[i] = chooseSigTrip(trips[i], gluinoMass[i]);
     }
     for (int i = 0; i < 4; i++) {
+      if (trips[i].size() == 0) continue;
       trips[i][0] = SigTrip[i];
     }
     if(!Manager()->ApplyCut(trips[0].size() == 0, "SigTripInSR1")) return true;
@@ -389,7 +387,7 @@ double CMS_EXO_17_030::mds6332(JetCollection jets) {
     for (int j = i + 1; j < 6; j++) {
       for (int k = j + 1; k < 6; k++) {
         Triplet t = { jets[i], jets[j], jets[k] };
-        temp = pow(dalitz63(jets, i, j, k), 2) + pow(mds32(t), 2);
+        temp = pow(dalitz63(jets, i, j, k), 2) + pow(mds32(t), 1);
         temp = sqrt(temp) - c;
         res += temp*temp;
       }
