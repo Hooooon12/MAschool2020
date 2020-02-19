@@ -170,6 +170,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     for (int i = 0; i < 4; i++) {
       cutFlow_Evt[i]->Fill(0.5);
       Jets[i] = jetSelection(event, pTcut[i]);
+      SORTER->sort(Jets[i]);
     }
 
     // Jet ID
@@ -214,6 +215,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     double evtMds6332[4];
     for (int i = 0; i < 4; i++) {
       evtMds6332[i] = mds6332(Jets[i]);
+      cout << "evt :: " << evtMds6332[i] << " cut :: "<<  mds6332Cut[i] << endl;
       if (evtMds6332[i] > mds6332Cut[i]) {
         Jets[i].clear();
         continue;
@@ -333,6 +335,7 @@ TripletCollection CMS_EXO_17_030::pairSelection( PairCollection tripPairs, doubl
   TripletCollection trips;
   for (unsigned int i = 0; i < tripPairs.size(); i++) {
     TripletPair tripPair = tripPairs[i];
+    cout << "asymmm in events :: " << massAsymm(tripPair) << " cut :: " << asymmCut << endl;
     if ( massAsymm(tripPair) < asymmCut ) {
       trips.push_back(tripPair.first);
       trips.push_back(tripPair.second);
@@ -383,7 +386,7 @@ double CMS_EXO_17_030::mds6332(JetCollection jets) {
     for (int j = i + 1; j < 6; j++) {
       for (int k = j + 1; k < 6; k++) {
         Triplet t = { jets[i], jets[j], jets[k] };
-        temp = pow(dalitz63(jets, i, j, k), 2) + mds32(t);
+        temp = pow(dalitz63(jets, i, j, k), 2) + pow(mds32(t), 2);
         temp = sqrt(temp) - c;
         res += temp*temp;
       }
@@ -446,9 +449,7 @@ PairCollection CMS_EXO_17_030::makePairCollection(JetCollection Jets) {
     }
   }
   for (int i = 0; i < 10; i++) {
-    for (int j = 19; j > 9; j--) {
-      res.push_back(make_pair(trips[i], trips[j]));
-    }
+    res.push_back(make_pair(trips[i], trips[19-i]));
   }
   return res;
 }
