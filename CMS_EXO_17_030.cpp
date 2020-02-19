@@ -178,7 +178,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     // Number of Jets cut for low and high mass regions
     if(!Manager()->ApplyCut(Jets[0].size() >= 6, "Njets>=6 Low") ) return true;
     if(!Manager()->ApplyCut(Jets[2].size() >= 6, "Njets>=6 High")) return true;
-
+    //cout << "[DEBUG] : NJets: " << Jets[3].size() << endl;
     // get HT for each signal regions
     double HT[4];
     for (int i = 0; i < 4; i++) {
@@ -350,6 +350,7 @@ TripletCollection CMS_EXO_17_030::deltaSelection( TripletCollection trips, doubl
   for (unsigned int i = 0; i < trips.size(); i++) {
     Triplet trip = trips[i];
     double delta_ = delta(trip);
+    //cout << "[DEBUG]: Delta" << delta_ << endl;
     if (delta_ < deltaCut) continue;
     sigTrips.push_back(trip);
   }
@@ -375,6 +376,7 @@ double CMS_EXO_17_030::mds32(Triplet t) {
       res += pow(sqrt(dalitz32(t, i, j)) - c, 2);
     }
   }
+  //cout << "[DEBUG]: MDS32 " << res << endl;
   return res;
 }
 
