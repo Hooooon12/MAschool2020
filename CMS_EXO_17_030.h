@@ -48,10 +48,10 @@ namespace MA5
     TH1D*  cutFlow_Evt[4];
     TH1D*  cutFlow_TripletPair[4];
     TH1D*  cutFlow_Triplet[4];
-    TH1D*  trips_no_init[4];
-    TH1D*  trips_no_Am[4];
-    TH1D*  trips_no_Delta[4];
-    TH1D*  trips_no_MDS32[4];
+    TH1D*  trips_num_init[4];
+    TH1D*  trips_num_Am[4];
+    TH1D*  trips_num_Delta[4];
+    TH1D*  trips_num_MDS32[4];
     std::vector<double> triplet_pt[4];
     std::vector<double> triplet_eta[4];
     std::vector<double> triplet_phi[4];

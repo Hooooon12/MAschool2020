@@ -98,10 +98,10 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     cutFlow_Triplet[i] = new TH1D(Form("SR_Triplet_%d",i+1), Form("SR_Triplet_%d",i+1), 10, 0, 10);
 
     // Histogram to count #trips/event
-    trips_no_init[i] = new TH1D(Form("trips_no_init_%d", i+1), Form("trips_no_init_%d", i+1), 20, 0, 20);
-    trips_no_Am[i] = new TH1D(Form("trips_no_Am_%d", i+1), Form("trips_no_Am_%d", i+1), 20, 0, 20);
-    trips_no_Delta[i] = new TH1D(Form("trips_no_Delta_%d", i+1), Form("trips_no_Delta_%d", i+1), 20, 0, 20);
-    trips_no_MDS32[i] = new TH1D(Form("trips_no_MDS32_%d", i+1), Form("trips_no_MDS32_%d", i+1), 20, 0, 20);
+    trips_num_init[i] = new TH1D(Form("trips_num_init_%d", i+1), Form("trips_num_init_%d", i+1), 20, 0.5, 20.5);
+    trips_num_Am[i] = new TH1D(Form("trips_num_Am_%d", i+1), Form("trips_num_Am_%d", i+1), 20, 0.5, 20.5);
+    trips_num_Delta[i] = new TH1D(Form("trips_num_Delta_%d", i+1), Form("trips_num_Delta_%d", i+1), 20, 0.5, 20.5);
+    trips_num_MDS32[i] = new TH1D(Form("trips_num_MDS32_%d", i+1), Form("trips_num_MDS32_%d", i+1), 20, 0.5, 20.5);
   }
 
   cout << "ROOT output has prepared" << endl;
@@ -125,10 +125,10 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
     cutFlow_Evt[i]->Write();
     cutFlow_TripletPair[i]->Write();
     cutFlow_Triplet[i]->Write();
-    trips_no_init[i]->Write();
-    trips_no_Am[i]->Write();
-    trips_no_Delta[i]->Write();
-    trips_no_MDS32[i]->Write();
+    trips_num_init[i]->Write();
+    trips_num_Am[i]->Write();
+    trips_num_Delta[i]->Write();
+    trips_num_MDS32[i]->Write();
   }
   fOut->Close();
   cout << "END   Finalization" << endl;
@@ -173,6 +173,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   // The event loop start here
   if(event.rec()!=0) {
 
+    cout << "No. of events analyzed: " << Nevents << endl;
     // Select jets satisfying pt&eta cut
     JetCollection Jets[4];
     for (int i = 0; i < 4; i++) {
@@ -248,13 +249,13 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       cutFlow_TripletPair[i]->Fill(0.5, tripPairs[i].size());
       cutFlow_Triplet[i]->Fill(0.5, tripPairs[i].size()*2);
 
-      trips_no_init[i]->Fill(trips[i].size());
+      trips_num_init[i]->Fill(tripPairs[i].size()*2);
  
       trips[i] = pairSelection(tripPairs[i], asymmCut[i]);
       cutFlow_TripletPair[i]->Fill(1.5, trips[i].size()/2);
       cutFlow_Triplet[i]->Fill(1.5, trips[i].size());
 
-      trips_no_Am[i]->Fill(trips[i].size());
+      trips_num_Am[i]->Fill(trips[i].size());
     }
       
     if(!Manager()->ApplyCut(trips[0].size() != 0, "Am < 0.25")) return true;
@@ -267,7 +268,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     for (int i = 0; i < 4; i++) {
       trips[i] = deltaSelection(trips[i], deltaCut[i]);
       cutFlow_Triplet[i]->Fill(2.5, trips[i].size());
-      trips_no_Delta[i]->Fill(trips[i].size());
+      trips_num_Delta[i]->Fill(trips[i].size());
     }
     if(!Manager()->ApplyCut(trips[0].size() != 0, "Delta > 250GeV" )) return true;
     if(!Manager()->ApplyCut(trips[1].size() != 0, "Delta > 180GeV" )) return true;
@@ -279,7 +280,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     for (int i = 0; i < 4; i++) {
       trips[i] = mds32Selection(trips[i], mds32Cut[i]);
       cutFlow_Triplet[i]->Fill(3.5, trips[i].size());
-      trips_no_MDS32[i]->Fill(trips[i].size());
+      trips_num_MDS32[i]->Fill(trips[i].size());
     }
     for (int i = 0; i < 4; i++) {
       triplet_pt[i].clear();
