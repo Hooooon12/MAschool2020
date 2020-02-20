@@ -59,6 +59,9 @@ namespace MA5
     TH1D*  Delta_after[4];
     TH1D*  MDS32_before[4];
     TH1D*  MDS32_after[4];
+    TH1D*  MDS6332_before[4];
+    TH1D*  MDS6332_after[4];
+
     std::vector<double> triplet_pt[4];
     std::vector<double> triplet_eta[4];
     std::vector<double> triplet_phi[4];

@@ -104,6 +104,8 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     trips_num_MDS32[i] = new TH1D(Form("trips_num_MDS32_%d", i+1), Form("trips_num_MDS32_%d", i+1), 20, 0.5, 20.5);
   
     // Histograms to check kinematic variables
+    MDS6332_before[i] = new TH1D(Form("MDS6332_before_%d", i+1), Form("MDS6332_before_%d", i+1), 40, 0., 2.);
+    MDS6332_after[i] = new TH1D(Form("MDS6332_after_%d", i+1), Form("MDS6332_after_%d", i+1), 40, 0., 2.);
     Am_before[i] = new TH1D(Form("Am_before_%d", i+1), Form("Am_before_%d", i+1), 40, 0. , 2.);
     Am_after[i] = new TH1D(Form("Am_after_%d", i+1), Form("Am_after_%d", i+1), 40, 0., 2.);
     Delta_before[i] = new TH1D(Form("Delta_before_%d", i+1), Form("Delta_before_%d", i+1), 60, -600, 600);
@@ -138,6 +140,8 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
     trips_num_Am[i]->Write();
     trips_num_Delta[i]->Write();
     trips_num_MDS32[i]->Write();
+    MDS6332_before[i]->Write();
+    MDS6332_after[i]->Write();
     Am_before[i]->Write();
     Am_after[i]->Write();
     Delta_before[i]->Write();
@@ -243,11 +247,15 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     double evtMds6332[4];
     for (int i = 0; i < 4; i++) {
       evtMds6332[i] = mds6332(Jets[i]);
+      MDS6332_before[i]->Fill(evtMds6332[i]);
       if (Jets[i].size() < 6) continue;
       if (evtMds6332[i] > mds6332Cut[i]) {
         Jets[i].clear();
         continue;
        }
+      if (Jets[i].size() != 0) {
+        MDS6332_after[i]->Fill(evtMds6332[i]);
+      }
       cutFlow_Evt[i]->Fill(3.5);
     }
     if(!Manager()->ApplyCut(evtMds6332[0] < mds6332Cut[0], "D^2[6,3+3,2] < 1.25")) return true;
