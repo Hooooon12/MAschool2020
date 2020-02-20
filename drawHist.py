@@ -31,7 +31,7 @@ if __name__ == '__main__' :
   import argparse
   parse = argparse.ArgumentParser()
   parse.add_argument('--fIn', '-f', default='test.root', help='input root file')
-  parse.add_argument('--sr', '-s', default=1, help='signal region to draw')
+  parse.add_argument('--sr', '-s', type=int, default=2, help='signal region to draw')
   parse.add_argument('--plotdir', '-p', default='plots', help='directory for plotting output')
   args = parse.parse_args()
   fIn = TFile.Open(args.fIn, 'read')
