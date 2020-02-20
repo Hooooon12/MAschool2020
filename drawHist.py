@@ -19,6 +19,8 @@ def drawDiff(fIn, prefix, i, d) :
   aH = fIn.Get('%s_after_%d'%(prefix, i))
   bH.SetLineColor(kBlue)
   aH.SetLineColor(kRed)
+  bH.SetStats(0)
+  aH.SetStats(0)
   c = TCanvas()
   c.SetLogy()
   bH.SetTitle('%s'%prefix)
@@ -37,6 +39,6 @@ if __name__ == '__main__' :
   fIn = TFile.Open(args.fIn, 'read')
   os.system('mkdir -p %s'%args.plotdir)
   drawMassHist(fIn, args.sr, args.plotdir)
-  prefixes = ['Am', 'Delta', 'MDS32']
+  prefixes = ['Am', 'Delta', 'MDS32', 'MDS6332']
   for prefix in prefixes :
     drawDiff(fIn, prefix, args.sr, args.plotdir)
