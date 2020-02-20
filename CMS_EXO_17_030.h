@@ -32,6 +32,7 @@ namespace MA5
     TripletCollection mds32Selection( TripletCollection, double ); 
 
     PairCollection makePairCollection(JetCollection);
+    PairCollection passAmTripPairs( PairCollection, double);
     MALorentzVector getMomentum(Triplet trip);
     double getMass(Triplet trip);
     double dalitz32(Triplet t, int idx1, int idx2);
@@ -52,6 +53,12 @@ namespace MA5
     TH1D*  trips_num_Am[4];
     TH1D*  trips_num_Delta[4];
     TH1D*  trips_num_MDS32[4];
+    TH1D*  Am_before[4];
+    TH1D*  Am_after[4];
+    TH1D*  Delta_before[4];
+    TH1D*  Delta_after[4];
+    TH1D*  MDS32_before[4];
+    TH1D*  MDS32_after[4];
     std::vector<double> triplet_pt[4];
     std::vector<double> triplet_eta[4];
     std::vector<double> triplet_phi[4];

@@ -102,7 +102,16 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     trips_num_Am[i] = new TH1D(Form("trips_num_Am_%d", i+1), Form("trips_num_Am_%d", i+1), 20, 0.5, 20.5);
     trips_num_Delta[i] = new TH1D(Form("trips_num_Delta_%d", i+1), Form("trips_num_Delta_%d", i+1), 20, 0.5, 20.5);
     trips_num_MDS32[i] = new TH1D(Form("trips_num_MDS32_%d", i+1), Form("trips_num_MDS32_%d", i+1), 20, 0.5, 20.5);
+  
+    // Histograms to check kinematic variables
+    Am_before[i] = new TH1D(Form("Am_before_%d", i+1), Form("Am_before_%d", i+1), 40, 0. , 2.);
+    Am_after[i] = new TH1D(Form("Am_after_%d", i+1), Form("Am_after_%d", i+1), 40, 0., 2.);
+    Delta_before[i] = new TH1D(Form("Delta_before_%d", i+1), Form("Delta_before_%d", i+1), 60, -600, 600);
+    Delta_after[i] = new TH1D(Form("Delta_after_%d", i+1), Form("Delta_after_%d", i+1), 60, -600, 600);
+    MDS32_before[i] = new TH1D(Form("MDS32_before_%d", i+1), Form("MDS32_before_%d", i+1), 20, 0., 1.);
+    MDS32_after[i] = new TH1D(Form("MDS32_after_%d", i+1), Form("MDS32_after_%d", i+1), 20, 0., 1.);
   }
+
 
   cout << "ROOT output has prepared" << endl;
 
@@ -129,6 +138,12 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
     trips_num_Am[i]->Write();
     trips_num_Delta[i]->Write();
     trips_num_MDS32[i]->Write();
+    Am_before[i]->Write();
+    Am_after[i]->Write();
+    Delta_before[i]->Write();
+    Delta_after[i]->Write();
+    MDS32_before[i]->Write();
+    MDS32_after[i]->Write();
   }
   fOut->Close();
   cout << "END   Finalization" << endl;
@@ -173,7 +188,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   // The event loop start here
   if(event.rec()!=0) {
 
-    cout << "No. of events analyzed: " << Nevents << endl;
+    //cout << "No. of events analyzed: " << Nevents << endl;
     // Select jets satisfying pt&eta cut
     JetCollection Jets[4];
     for (int i = 0; i < 4; i++) {
@@ -244,18 +259,38 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     // for each TripletPairs
     PairCollection tripPairs[4];
     TripletCollection trips[4];
+    double MA[4];
+    double Del[4];
+    double Mds32[4];
     for (int i = 0; i < 4; i++) {
       tripPairs[i] = makePairCollection(Jets[i]);
+      
       cutFlow_TripletPair[i]->Fill(0.5, tripPairs[i].size());
       cutFlow_Triplet[i]->Fill(0.5, tripPairs[i].size()*2);
 
       trips_num_init[i]->Fill(tripPairs[i].size()*2);
+      for (int j = 0; j < tripPairs[i].size(); j++) {
+        MA[i] = massAsymm( tripPairs[i].at(j));
+        Am_before[i]->Fill(MA[i]);
+      }
  
       trips[i] = pairSelection(tripPairs[i], asymmCut[i]);
+      tripPairs[i] = passAmTripPairs(tripPairs[i], asymmCut[i]);
       cutFlow_TripletPair[i]->Fill(1.5, trips[i].size()/2);
       cutFlow_Triplet[i]->Fill(1.5, trips[i].size());
-
+	
       trips_num_Am[i]->Fill(trips[i].size());
+      // Histograms for Am cut
+      for (int j = 0; j < tripPairs[i].size(); j++) {
+        MA[i] = massAsymm( tripPairs[i].at(j));
+        Am_after[i]->Fill(MA[i]);
+      }
+  
+      // Histograms for before Delta Cut
+      for (int j = 0; j < trips[i].size(); j++) {
+        Del[i] = delta(trips[i].at(j));
+        Delta_before[i]->Fill(Del[i]);
+      } 
     }
       
     if(!Manager()->ApplyCut(trips[0].size() != 0, "Am < 0.25")) return true;
@@ -269,6 +304,18 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       trips[i] = deltaSelection(trips[i], deltaCut[i]);
       cutFlow_Triplet[i]->Fill(2.5, trips[i].size());
       trips_num_Delta[i]->Fill(trips[i].size());
+      
+      // Histograms for after Delta Cut
+      for (int j = 0; j < trips[i].size(); j++) {
+        Del[i] = delta(trips[i].at(j));
+        Delta_after[i]->Fill(Del[i]);
+      }
+      
+      // Histograms for before mds32 cut
+      for (int j = 0; j < trips[i].size(); j++) {
+        Mds32[i] = mds32(trips[i].at(j));
+        MDS32_before[i]->Fill(Mds32[i]);
+      }   
     }
     if(!Manager()->ApplyCut(trips[0].size() != 0, "Delta > 250GeV" )) return true;
     if(!Manager()->ApplyCut(trips[1].size() != 0, "Delta > 180GeV" )) return true;
@@ -281,6 +328,12 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       trips[i] = mds32Selection(trips[i], mds32Cut[i]);
       cutFlow_Triplet[i]->Fill(3.5, trips[i].size());
       trips_num_MDS32[i]->Fill(trips[i].size());
+    
+      // Histograms for after mds32 cut
+      for (int j = 0; j < trips[i].size(); j++) {
+        Mds32[i] = mds32(trips[i].at(j));
+        MDS32_after[i]->Fill(Mds32[i]);
+      }
     }
     for (int i = 0; i < 4; i++) {
       triplet_pt[i].clear();
@@ -366,6 +419,16 @@ TripletCollection CMS_EXO_17_030::pairSelection( PairCollection tripPairs, doubl
   }
   return trips;
 }
+
+PairCollection CMS_EXO_17_030::passAmTripPairs( PairCollection tripPairs, double asymmCut) {
+  PairCollection pairs;
+  for (unsigned int i = 0; i < tripPairs.size(); i++) {
+    TripletPair tripPair = tripPairs[i];
+    if (massAsymm(tripPair) < asymmCut ) pairs.push_back(tripPair);
+  }
+  return pairs;
+}
+  
 
 TripletCollection CMS_EXO_17_030::deltaSelection( TripletCollection trips, double deltaCut ) {
   TripletCollection sigTrips;
