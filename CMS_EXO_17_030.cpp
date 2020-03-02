@@ -60,7 +60,7 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
   
   // Declaration of the Am cut - TripletPair cut
   Manager()->AddCut("Am < 0.25", "Mg_200to400");
-  Manager()->AddCut("Am < 1.75", "Mg_400to700");
+  Manager()->AddCut("Am < 0.175", "Mg_400to700");
   Manager()->AddCut("Am < 0.15", "Mg_700to1200");
   Manager()->AddCut("Am < 0.15", "Mg_1200to2000");
   
@@ -118,20 +118,20 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
 	
     /*
     for (int j = 0; j < 10; j++) {
-      jet_pt[i][j] = new TH1D(Form("jet_pt_%dth_%d", j+1, i+1), Form("jet_pt_%dth_%d", j+1, i+1), 50, 100, 1100);
+      jet_pt[i][j] = new TH1D(Form("jet_pt_%dth_%d", j+1, i+1), Form("jet_pt_%dth_%d", j+1, i+1), 1100, 0, 1100);
     }
     */
 
-    jet_pt_1[i] = new TH1D(Form("jet_pt_1_%d", i+1), Form("jet_pt_1_%d", i+1), 50, 100, 1100);
-    jet_pt_2[i] = new TH1D(Form("jet_pt_2_%d", i+1), Form("jet_pt_2_%d", i+1), 50, 100, 1100);
-    jet_pt_3[i] = new TH1D(Form("jet_pt_3_%d", i+1), Form("jet_pt_3_%d", i+1), 50, 100, 1100);
-    jet_pt_4[i] = new TH1D(Form("jet_pt_4_%d", i+1), Form("jet_pt_4_%d", i+1), 50, 100, 1100);
-    jet_pt_5[i] = new TH1D(Form("jet_pt_5_%d", i+1), Form("jet_pt_5_%d", i+1), 50, 100, 1100);
-    jet_pt_6[i] = new TH1D(Form("jet_pt_6_%d", i+1), Form("jet_pt_6_%d", i+1), 50, 100, 1100);
-    jet_pt_7[i] = new TH1D(Form("jet_pt_7_%d", i+1), Form("jet_pt_7_%d", i+1), 50, 100, 1100);
-    jet_pt_8[i] = new TH1D(Form("jet_pt_8_%d", i+1), Form("jet_pt_8_%d", i+1), 50, 100, 1100);
-    jet_pt_9[i] = new TH1D(Form("jet_pt_9_%d", i+1), Form("jet_pt_9_%d", i+1), 50, 100, 1100);
-    jet_pt_10[i] = new TH1D(Form("jet_pt_10_%d", i+1), Form("jet_pt_10_%d", i+1), 50, 100, 1100);
+    jet_pt_1[i] = new TH1D(Form("jet_pt_1_%d", i+1), Form("jet_pt_1_%d", i+1), 1100, 0, 1100);
+    jet_pt_2[i] = new TH1D(Form("jet_pt_2_%d", i+1), Form("jet_pt_2_%d", i+1), 1100, 0, 1100);
+    jet_pt_3[i] = new TH1D(Form("jet_pt_3_%d", i+1), Form("jet_pt_3_%d", i+1), 1100, 0, 1100);
+    jet_pt_4[i] = new TH1D(Form("jet_pt_4_%d", i+1), Form("jet_pt_4_%d", i+1), 1100, 0, 1100);
+    jet_pt_5[i] = new TH1D(Form("jet_pt_5_%d", i+1), Form("jet_pt_5_%d", i+1), 1100, 0, 1100);
+    jet_pt_6[i] = new TH1D(Form("jet_pt_6_%d", i+1), Form("jet_pt_6_%d", i+1), 1100, 0, 1100);
+    jet_pt_7[i] = new TH1D(Form("jet_pt_7_%d", i+1), Form("jet_pt_7_%d", i+1), 1100, 0, 1100);
+    jet_pt_8[i] = new TH1D(Form("jet_pt_8_%d", i+1), Form("jet_pt_8_%d", i+1), 1100, 0, 1100);
+    jet_pt_9[i] = new TH1D(Form("jet_pt_9_%d", i+1), Form("jet_pt_9_%d", i+1), 1100, 0, 1100);
+    jet_pt_10[i] = new TH1D(Form("jet_pt_10_%d", i+1), Form("jet_pt_10_%d", i+1), 1100, 0, 1100);
   }
   cout << "ROOT output has prepared" << endl;
 
@@ -363,7 +363,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     }
       
     if(!Manager()->ApplyCut(trips[0].size() != 0, "Am < 0.25")) return true;
-    if(!Manager()->ApplyCut(trips[1].size() != 0, "Am < 1.75")) return true;
+    if(!Manager()->ApplyCut(trips[1].size() != 0, "Am < 0.175")) return true;
     if(!Manager()->ApplyCut(trips[2].size() != 0, "Am < 0.15")) return true;
     if(!Manager()->ApplyCut(trips[3].size() != 0, "Am < 0.15")) return true;
 
