@@ -61,6 +61,18 @@ namespace MA5
     TH1D*  MDS32_after[4];
     TH1D*  MDS6332_before[4];
     TH1D*  MDS6332_after[4];
+    TH1D*  Njets[4];
+    //TH1D*  jet_pt[4][10];
+    TH1D*  jet_pt_1[4];
+    TH1D*  jet_pt_2[4];
+    TH1D*  jet_pt_3[4];
+    TH1D*  jet_pt_4[4];
+    TH1D*  jet_pt_5[4];
+    TH1D*  jet_pt_6[4];
+    TH1D*  jet_pt_7[4];
+    TH1D*  jet_pt_8[4];
+    TH1D*  jet_pt_9[4];
+    TH1D*  jet_pt_10[4];
 
     std::vector<double> triplet_pt[4];
     std::vector<double> triplet_eta[4];

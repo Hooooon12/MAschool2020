@@ -60,7 +60,7 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
   
   // Declaration of the Am cut - TripletPair cut
   Manager()->AddCut("Am < 0.25", "Mg_200to400");
-  Manager()->AddCut("Am < 1.75", "Mg_400to700");
+  Manager()->AddCut("Am < 0.175", "Mg_400to700");
   Manager()->AddCut("Am < 0.15", "Mg_700to1200");
   Manager()->AddCut("Am < 0.15", "Mg_1200to2000");
   
@@ -112,9 +112,27 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     Delta_after[i] = new TH1D(Form("Delta_after_%d", i+1), Form("Delta_after_%d", i+1), 60, -600, 600);
     MDS32_before[i] = new TH1D(Form("MDS32_before_%d", i+1), Form("MDS32_before_%d", i+1), 20, 0., 1.);
     MDS32_after[i] = new TH1D(Form("MDS32_after_%d", i+1), Form("MDS32_after_%d", i+1), 20, 0., 1.);
+    
+    // Histrograms to check Njets & kinematic distributions
+    Njets[i] = new TH1D(Form("Njets_%d", i+1), Form("NJets_%d", i+1), 5, 5.5, 10.5);
+	
+    /*
+    for (int j = 0; j < 10; j++) {
+      jet_pt[i][j] = new TH1D(Form("jet_pt_%dth_%d", j+1, i+1), Form("jet_pt_%dth_%d", j+1, i+1), 1100, 0, 1100);
+    }
+    */
+
+    jet_pt_1[i] = new TH1D(Form("jet_pt_1_%d", i+1), Form("jet_pt_1_%d", i+1), 1100, 0, 1100);
+    jet_pt_2[i] = new TH1D(Form("jet_pt_2_%d", i+1), Form("jet_pt_2_%d", i+1), 1100, 0, 1100);
+    jet_pt_3[i] = new TH1D(Form("jet_pt_3_%d", i+1), Form("jet_pt_3_%d", i+1), 1100, 0, 1100);
+    jet_pt_4[i] = new TH1D(Form("jet_pt_4_%d", i+1), Form("jet_pt_4_%d", i+1), 1100, 0, 1100);
+    jet_pt_5[i] = new TH1D(Form("jet_pt_5_%d", i+1), Form("jet_pt_5_%d", i+1), 1100, 0, 1100);
+    jet_pt_6[i] = new TH1D(Form("jet_pt_6_%d", i+1), Form("jet_pt_6_%d", i+1), 1100, 0, 1100);
+    jet_pt_7[i] = new TH1D(Form("jet_pt_7_%d", i+1), Form("jet_pt_7_%d", i+1), 1100, 0, 1100);
+    jet_pt_8[i] = new TH1D(Form("jet_pt_8_%d", i+1), Form("jet_pt_8_%d", i+1), 1100, 0, 1100);
+    jet_pt_9[i] = new TH1D(Form("jet_pt_9_%d", i+1), Form("jet_pt_9_%d", i+1), 1100, 0, 1100);
+    jet_pt_10[i] = new TH1D(Form("jet_pt_10_%d", i+1), Form("jet_pt_10_%d", i+1), 1100, 0, 1100);
   }
-
-
   cout << "ROOT output has prepared" << endl;
 
   cout << "END   Initialization" << endl;
@@ -148,6 +166,24 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
     Delta_after[i]->Write();
     MDS32_before[i]->Write();
     MDS32_after[i]->Write();
+    Njets[i]->Write();
+
+    jet_pt_1[i]->Write();
+    jet_pt_2[i]->Write();
+    jet_pt_3[i]->Write();
+    jet_pt_4[i]->Write();
+    jet_pt_5[i]->Write();
+    jet_pt_6[i]->Write();
+    jet_pt_7[i]->Write();
+    jet_pt_8[i]->Write();
+    jet_pt_9[i]->Write();
+    jet_pt_10[i]->Write();
+   
+    /*
+    for (int j = 0; j < 10; j++) {
+      jet_pt[i][j]->Write();
+    }
+    */
   }
   fOut->Close();
   cout << "END   Finalization" << endl;
@@ -162,7 +198,7 @@ unsigned int Nevents = 0;
 bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
 {
   Nevents = Nevents + 1;
-//   cout << " N° event = " << Nevents << endl;
+  // cout << " N° event = " << Nevents << endl;
   // Event weight
   double myEventWeight;
   if(Configuration().IsNoEventWeight()) myEventWeight=1.;
@@ -200,6 +236,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       Jets[i] = jetSelection(event, pTcut[i]);
       SORTER->sort(Jets[i]);
       if (Jets[i].size() >= 6) cutFlow_Evt[i]->Fill(1.5);
+      if (Jets[i].size() >= 6) Njets[i]->Fill(Jets[i].size());
     }
 
     // Jet ID
@@ -242,6 +279,30 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     if(!Manager()->ApplyCut(lpT[1] > lpTcut[1], "pt(j6) > 50GeV") ) return true;
     if(!Manager()->ApplyCut(lpT[2] > lpTcut[2], "pt(j6) > 125GeV")) return true;
     if(!Manager()->ApplyCut(lpT[3] > lpTcut[3], "pt(j6) > 175GeV")) return true;
+
+    // Fill the histograms for jet_pt
+    /*
+    for (int i = 0; i < 4; i++) {
+      for (int j = 0; j < 10; j++) {
+        jet_pt[i][j]->Fill(Jets[i][j]->pt());
+      }
+    }
+    */  
+    for (int i = 0; i < 4; i++) {
+      if ( Jets[i].size() >= 6) {
+        jet_pt_1[i]->Fill(Jets[i][0]->pt());
+        jet_pt_2[i]->Fill(Jets[i][1]->pt());
+        jet_pt_3[i]->Fill(Jets[i][2]->pt());
+        jet_pt_4[i]->Fill(Jets[i][3]->pt());
+        jet_pt_5[i]->Fill(Jets[i][4]->pt());
+        jet_pt_6[i]->Fill(Jets[i][5]->pt());
+      }
+      if (Jets[i].size() >= 7) jet_pt_7[i]->Fill(Jets[i][6]->pt());
+      if (Jets[i].size() >= 8) jet_pt_8[i]->Fill(Jets[i][7]->pt());
+      if (Jets[i].size() >= 9) jet_pt_9[i]->Fill(Jets[i][8]->pt());
+      if (Jets[i].size() >= 10) jet_pt_10[i]->Fill(Jets[i][9]->pt());
+    }     
+
     
     // Mds6332 cut for each regions
     double evtMds6332[4];
@@ -302,7 +363,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     }
       
     if(!Manager()->ApplyCut(trips[0].size() != 0, "Am < 0.25")) return true;
-    if(!Manager()->ApplyCut(trips[1].size() != 0, "Am < 1.75")) return true;
+    if(!Manager()->ApplyCut(trips[1].size() != 0, "Am < 0.175")) return true;
     if(!Manager()->ApplyCut(trips[2].size() != 0, "Am < 0.15")) return true;
     if(!Manager()->ApplyCut(trips[3].size() != 0, "Am < 0.15")) return true;
 
