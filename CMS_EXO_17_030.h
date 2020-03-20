@@ -7,7 +7,7 @@
 #include <TFile.h>
 #include <TTree.h>
 #include <TH1D.h>
-
+#include <TH2D.h>
 namespace MA5
 {
   typedef std::vector<const RecJetFormat*> JetCollection;
@@ -34,15 +34,19 @@ namespace MA5
     PairCollection makePairCollection(JetCollection);
     PairCollection passAmTripPairs( PairCollection, double);
     MALorentzVector getMomentum(Triplet trip);
-    double getMass(Triplet trip);
+    double getMass(Triplet);
     double dalitz32(Triplet t, int idx1, int idx2);
     double mds32(Triplet t);
     double dalitz63(JetCollection, int, int, int);
     double massAsymm(TripletPair);
     double delta(Triplet);
+	double GetMass(Triplet);
+	double GetHT(Triplet);
     double mds6332(JetCollection jets);
     double compareMass(Triplet, double);
     Triplet chooseSigTrip(TripletCollection, double);
+	double mass12(Triplet);
+	double mass23(Triplet);
 
     TFile* fOut;
     TTree* tSr[4];
@@ -73,6 +77,8 @@ namespace MA5
     TH1D*  jet_pt_8[4];
     TH1D*  jet_pt_9[4];
     TH1D*  jet_pt_10[4];
+	TH2D*  Mass_HT_beforeDelta[4];
+	TH2D*  Mass_HT_afterDelta[4];
 
     std::vector<double> triplet_pt[4];
     std::vector<double> triplet_eta[4];
