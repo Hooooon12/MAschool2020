@@ -45,8 +45,6 @@ namespace MA5
     double mds6332(JetCollection jets);
     double compareMass(Triplet, double);
     Triplet chooseSigTrip(TripletCollection, double);
-	double mass12(Triplet);
-	double mass23(Triplet);
 
     TFile* fOut;
     TTree* tSr[4];
@@ -79,6 +77,7 @@ namespace MA5
     TH1D*  jet_pt_10[4];
 	TH2D*  Mass_HT_beforeDelta[4];
 	TH2D*  Mass_HT_afterDelta[4];
+	TH2D*  Dalitz32[4];
 
     std::vector<double> triplet_pt[4];
     std::vector<double> triplet_eta[4];

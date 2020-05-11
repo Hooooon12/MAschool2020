@@ -86,7 +86,7 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
   
   cout << "Preparing ROOT output" << endl;
   // Prepare ROOT output
-  fOut = new TFile("test.root", "recreate");
+  fOut = new TFile("test_SR3_go900.root", "recreate");
   for (int i = 0; i < 4; i++) {
     tSr[i] = new TTree(Form("SR_%d", i+1), Form("Signal Region %d", i));
     tSr[i]->Branch("tripletPt", &triplet_pt[i]);
@@ -136,6 +136,7 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
 	// HT ~ Pt histogram
     Mass_HT_beforeDelta[i] = new TH2D(Form("Mass_HT_beforeDelta_%d", i+1), Form("Mass_HT_beforeDelta_%d", i+1), 24, 0, 1200, 24, 0, 1200);
 	Mass_HT_afterDelta[i] = new TH2D(Form("Mass_HT_afterDelta_%d", i+1), Form("Mass_HT_afterDelta_%d", i+1), 24, 0, 1200, 24, 0, 1200); 
+	Dalitz32[i] = new TH2D(Form("Dalitz32_%d", i+1), Form("Dalitz_%d", i+1), 50, 0., 0.5, 50, 0., 1.);
   }
   cout << "ROOT output has prepared" << endl;
 
@@ -185,6 +186,8 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
  
 	Mass_HT_beforeDelta[i]->Write();
 	Mass_HT_afterDelta[i]->Write();
+
+	Dalitz32[i]->Write();
     /*
     for (int j = 0; j < 10; j++) {
       jet_pt[i][j]->Write();
@@ -439,6 +442,31 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       }
       tSr[i]->Fill();
     }
+
+	// (Jin) Drawing Dalitz plot
+	// preparing dalitz vector
+
+	for (int i = 0; i < 4; i++) {
+	  for (int j = 0; j < trips[i].size(); j++){
+		if (trips[i].size() == 0) break;
+		vector<double> dalitz32s; dalitz32s.clear();
+	    dalitz32s.push_back(dalitz32(trips[i].at(j), 0, 1));
+		dalitz32s.push_back(dalitz32(trips[i].at(j), 0, 2));
+		dalitz32s.push_back(dalitz32(trips[i].at(j), 1, 2));
+
+		// sort from low to high
+	    sort(dalitz32s.begin(), dalitz32s.end());
+		// Debugging
+		//for (int k = 0; k < 3; k++) cout << "[DEBUG] sort dalitz32s: " << dalitz32s[i].at(k) << " ";
+		//cout << endl;
+
+		//fill hist
+		Dalitz32[i]->Fill(dalitz32s.at(0), dalitz32s.at(1));
+		Dalitz32[i]->Fill(dalitz32s.at(0), dalitz32s.at(2));
+		Dalitz32[i]->Fill(dalitz32s.at(1), dalitz32s.at(2));
+	  }
+	}
+
     if(!Manager()->ApplyCut(trips[0].size() != 0, "D^2[3,2] < 0.05" )) return true;
     if(!Manager()->ApplyCut(trips[1].size() != 0, "D^2[3,2] < 0.175")) return true;
     if(!Manager()->ApplyCut(trips[2].size() != 0, "D^2[3,2] < 0.2"  )) return true;
@@ -662,15 +690,3 @@ Triplet CMS_EXO_17_030::chooseSigTrip(TripletCollection trips, double gluinoM) {
   return res_trip;
 }
 
-// ==== (Jin) Functions to make dalitz plot
-double CMS_EXO_17_030::mass12(Triplet trip) {
- double m12;
- m12 = (trip[0]->momentum() + trip[1]->momentum()).M();
- return m12;
-}
-
-double CMS_EXO_17_030::mass23(Triplet trip) {
-  double m23;
-  m23 = (trip[1]->momentum() + trip[2]->momentum()).M();
-  return m23;
-}
