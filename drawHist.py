@@ -28,6 +28,14 @@ def drawDiff(fIn, prefix, i, d) :
   aH.Draw('same')
   c.SaveAs('%s/%s_cut_%d.png'%(d, prefix, i))
 
+def drawHist(fIn, prefix, i, d) :
+  bH = fIn.Get('%s_%d'%(prefix, i))
+  bH.SetStats(0)
+  c = TCanvas()
+  c.SetLogy()
+  bH.SetTitle('%s'%prefix)
+  bH.Draw('colz')
+  c.SaveAs('%s/%s_%d.png'%(d, prefix, i))
 
 if __name__ == '__main__' :
   import argparse
@@ -42,3 +50,4 @@ if __name__ == '__main__' :
   prefixes = ['Am', 'Delta', 'MDS32', 'MDS6332']
   for prefix in prefixes :
     drawDiff(fIn, prefix, args.sr, args.plotdir)
+  drawHist(fIn, 'Dalitz32', args.sr, args.plotdir)
