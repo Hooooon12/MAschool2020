@@ -86,7 +86,7 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
   
   cout << "Preparing ROOT output" << endl;
   // Prepare ROOT output
-  fOut = new TFile("test.root", "recreate");
+  fOut = new TFile("test_SR3_go900.root", "recreate");
   for (int i = 0; i < 4; i++) {
     tSr[i] = new TTree(Form("SR_%d", i+1), Form("Signal Region %d", i));
     tSr[i]->Branch("tripletPt", &triplet_pt[i]);
@@ -132,6 +132,11 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     jet_pt_8[i] = new TH1D(Form("jet_pt_8_%d", i+1), Form("jet_pt_8_%d", i+1), 1100, 0, 1100);
     jet_pt_9[i] = new TH1D(Form("jet_pt_9_%d", i+1), Form("jet_pt_9_%d", i+1), 1100, 0, 1100);
     jet_pt_10[i] = new TH1D(Form("jet_pt_10_%d", i+1), Form("jet_pt_10_%d", i+1), 1100, 0, 1100);
+
+	// HT ~ Pt histogram
+    Mass_HT_beforeDelta[i] = new TH2D(Form("Mass_HT_beforeDelta_%d", i+1), Form("Mass_HT_beforeDelta_%d", i+1), 24, 0, 1200, 24, 0, 1200);
+	Mass_HT_afterDelta[i] = new TH2D(Form("Mass_HT_afterDelta_%d", i+1), Form("Mass_HT_afterDelta_%d", i+1), 24, 0, 1200, 24, 0, 1200); 
+	Dalitz32[i] = new TH2D(Form("Dalitz32_%d", i+1), Form("Dalitz_%d", i+1), 50, 0., 0.5, 50, 0., 1.);
   }
   cout << "ROOT output has prepared" << endl;
 
@@ -178,7 +183,11 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
     jet_pt_8[i]->Write();
     jet_pt_9[i]->Write();
     jet_pt_10[i]->Write();
-   
+ 
+	Mass_HT_beforeDelta[i]->Write();
+	Mass_HT_afterDelta[i]->Write();
+
+	Dalitz32[i]->Write();
     /*
     for (int j = 0; j < 10; j++) {
       jet_pt[i][j]->Write();
@@ -201,10 +210,9 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   // cout << " N° event = " << Nevents << endl;
   // Event weight
   double myEventWeight;
-  if(Configuration().IsNoEventWeight()) myEventWeight=1.;
-  else if(event.mc()->weight()!=0.) myEventWeight=event.mc()->weight();
-  else
-  {
+  if (Configuration().IsNoEventWeight()) myEventWeight=1.;
+  else if (event.mc()->weight()!=0.) myEventWeight=event.mc()->weight();
+  else {
     WARNING << "Found one event with a zero weight. Skipping...\n";
     return false;
   }
@@ -262,7 +270,8 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       else if (HT[i] < HTcut[i]) {
         Jets[i].clear();
         continue;
-      } else if (Jets[i][5]->pt() < lpTcut[i]) {
+      } 
+	  else if (Jets[i][5]->pt() < lpTcut[i]) {
         Jets[i].clear();
         continue;
       }
@@ -313,7 +322,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       if (evtMds6332[i] > mds6332Cut[i]) {
         Jets[i].clear();
         continue;
-       }
+      }
       if (Jets[i].size() != 0) {
         MDS6332_after[i]->Fill(evtMds6332[i]);
       }
@@ -331,6 +340,8 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     double MA[4];
     double Del[4];
     double Mds32[4];
+	double Mass[4];
+	double HT_[4];
     for (int i = 0; i < 4; i++) {
       tripPairs[i] = makePairCollection(Jets[i]);
       
@@ -359,9 +370,15 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       for (int j = 0; j < trips[i].size(); j++) {
         Del[i] = delta(trips[i].at(j));
         Delta_before[i]->Fill(Del[i]);
-      } 
+      }
+
+	  for (int j = 0; j < trips[i].size(); j++) {
+		Mass[i] = GetMass(trips[i].at(j));
+		HT_[i] = GetHT(trips[i].at(j));
+		Mass_HT_beforeDelta[i]->Fill(Mass[i], HT_[i]);
+	  }	
     }
-      
+
     if(!Manager()->ApplyCut(trips[0].size() != 0, "Am < 0.25")) return true;
     if(!Manager()->ApplyCut(trips[1].size() != 0, "Am < 0.175")) return true;
     if(!Manager()->ApplyCut(trips[2].size() != 0, "Am < 0.15")) return true;
@@ -384,7 +401,13 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       for (int j = 0; j < trips[i].size(); j++) {
         Mds32[i] = mds32(trips[i].at(j));
         MDS32_before[i]->Fill(Mds32[i]);
-      }   
+      }
+
+	  for (int j = 0; j < trips[i].size(); j++) {
+		Mass[i] = GetMass(trips[i].at(j));
+		HT_[i] = GetHT(trips[i].at(j));
+		Mass_HT_afterDelta[i]->Fill(Mass[i], HT_[i]);
+	  }
     }
     if(!Manager()->ApplyCut(trips[0].size() != 0, "Delta > 250GeV" )) return true;
     if(!Manager()->ApplyCut(trips[1].size() != 0, "Delta > 180GeV" )) return true;
@@ -419,6 +442,31 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       }
       tSr[i]->Fill();
     }
+
+	// (Jin) Drawing Dalitz plot
+	// preparing dalitz vector
+
+	for (int i = 0; i < 4; i++) {
+	  for (int j = 0; j < trips[i].size(); j++){
+		if (trips[i].size() == 0) break;
+		vector<double> dalitz32s; dalitz32s.clear();
+	    dalitz32s.push_back(dalitz32(trips[i].at(j), 0, 1));
+		dalitz32s.push_back(dalitz32(trips[i].at(j), 0, 2));
+		dalitz32s.push_back(dalitz32(trips[i].at(j), 1, 2));
+
+		// sort from low to high
+	    sort(dalitz32s.begin(), dalitz32s.end());
+		// Debugging
+		//for (int k = 0; k < 3; k++) cout << "[DEBUG] sort dalitz32s: " << dalitz32s[i].at(k) << " ";
+		//cout << endl;
+
+		//fill hist
+		Dalitz32[i]->Fill(dalitz32s.at(0), dalitz32s.at(1));
+		Dalitz32[i]->Fill(dalitz32s.at(0), dalitz32s.at(2));
+		Dalitz32[i]->Fill(dalitz32s.at(1), dalitz32s.at(2));
+	  }
+	}
+
     if(!Manager()->ApplyCut(trips[0].size() != 0, "D^2[3,2] < 0.05" )) return true;
     if(!Manager()->ApplyCut(trips[1].size() != 0, "D^2[3,2] < 0.175")) return true;
     if(!Manager()->ApplyCut(trips[2].size() != 0, "D^2[3,2] < 0.2"  )) return true;
@@ -573,6 +621,19 @@ double CMS_EXO_17_030::delta( Triplet trip ) {
   return Delta;
 }
 
+double CMS_EXO_17_030::GetHT(Triplet trip) {
+  double HT = 0;
+  for (int i = 0; i < 3; i++) {
+	HT += trip[i]->pt();
+  }
+  return HT;
+}
+
+double CMS_EXO_17_030::GetMass(Triplet trip) {
+  double M = (trip[0]->momentum() + trip[1]->momentum() + trip[2]->momentum()).M();
+  return M;
+}
+
 double CMS_EXO_17_030::dalitz32(Triplet trip, int idx1, int idx2) {
   double M_ = pow( (trip[idx1]->momentum()+trip[idx2]->momentum()).M(), 2);
   double M_123 = pow( (trip[0]->momentum()+trip[1]->momentum()+trip[2]->momentum()).M(), 2);
@@ -627,4 +688,5 @@ Triplet CMS_EXO_17_030::chooseSigTrip(TripletCollection trips, double gluinoM) {
     else continue;
   }
   return res_trip;
-} 
+}
+
