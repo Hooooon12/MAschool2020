@@ -86,7 +86,7 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
   
   cout << "Preparing ROOT output" << endl;
   // Prepare ROOT output
-  fOut = new TFile("test_SR3_go900.root", "recreate");
+  fOut = new TFile("test.root", "recreate");
   for (int i = 0; i < 4; i++) {
     tSr[i] = new TTree(Form("SR_%d", i+1), Form("Signal Region %d", i));
     tSr[i]->Branch("tripletPt", &triplet_pt[i]);
