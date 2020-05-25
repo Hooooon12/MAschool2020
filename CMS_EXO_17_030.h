@@ -77,7 +77,8 @@ namespace MA5
     TH1D*  jet_pt_10[4];
 	TH2D*  Mass_HT_beforeDelta[4];
 	TH2D*  Mass_HT_afterDelta[4];
-	TH2D*  Dalitz32[4];
+	TH2D*  Dalitz32_beforeMDS[4];
+	TH2D*  Dalitz32_afterMDS[4];
 
     std::vector<double> triplet_pt[4];
     std::vector<double> triplet_eta[4];
