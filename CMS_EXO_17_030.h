@@ -65,6 +65,17 @@ namespace MA5
     TH1D*  MDS6332_after[4];
     TH1D*  Njets[4];
     //TH1D*  jet_pt[4][10];
+	TH1D*  jet_pt_1_preselection[4];
+	TH1D*  jet_pt_2_preselection[4];
+	TH1D*  jet_pt_3_preselection[4];
+	TH1D*  jet_pt_4_preselection[4];
+	TH1D*  jet_pt_5_preselection[4];
+	TH1D*  jet_pt_6_preselection[4];
+	TH1D*  jet_pt_7_preselection[4];
+	TH1D*  jet_pt_8_preselection[4];
+	TH1D*  jet_pt_9_preselection[4];
+	TH1D*  jet_pt_10_preselection[4];
+
     TH1D*  jet_pt_1[4];
     TH1D*  jet_pt_2[4];
     TH1D*  jet_pt_3[4];

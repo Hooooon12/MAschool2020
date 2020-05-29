@@ -112,30 +112,37 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     Delta_after[i] = new TH1D(Form("Delta_after_%d", i+1), Form("Delta_after_%d", i+1), 60, -600, 600);
     MDS32_before[i] = new TH1D(Form("MDS32_before_%d", i+1), Form("MDS32_before_%d", i+1), 20, 0., 1.);
     MDS32_after[i] = new TH1D(Form("MDS32_after_%d", i+1), Form("MDS32_after_%d", i+1), 20, 0., 1.);
-    
-    // Histrograms to check Njets & kinematic distributions
+
+	// Histograms to check jet kinematics after the preselection
+	jet_pt_1_preselection[i] = new TH1D(Form("jet_pt_1_%d_preselection", i+1), Form("jet_pt_1_%d_preselection", i+1), 2000, 0, 2000);
+    jet_pt_2_preselection[i] = new TH1D(Form("jet_pt_2_%d_preselection", i+1), Form("jet_pt_2_%d_preselection", i+1), 2000, 0, 2000);
+	jet_pt_3_preselection[i] = new TH1D(Form("jet_pt_3_%d_preselection", i+1), Form("jet_pt_3_%d_preselection", i+1), 2000, 0, 2000);
+	jet_pt_4_preselection[i] = new TH1D(Form("jet_pt_4_%d_preselection", i+1), Form("jet_pt_4_%d_preselection", i+1), 2000, 0, 2000);
+	jet_pt_5_preselection[i] = new TH1D(Form("jet_pt_5_%d_preselection", i+1), Form("jet_pt_5_%d_preselection", i+1), 2000, 0, 2000);
+	jet_pt_6_preselection[i] = new TH1D(Form("jet_pt_6_%d_preselection", i+1), Form("jet_pt_6_%d_preselection", i+1), 2000, 0, 2000);
+	jet_pt_7_preselection[i] = new TH1D(Form("jet_pt_7_%d_preselection", i+1), Form("jet_pt_7_%d_preselection", i+1), 2000, 0, 2000);
+	jet_pt_8_preselection[i] = new TH1D(Form("jet_pt_8_%d_preselection", i+1), Form("jet_pt_8_%d_preselection", i+1), 2000, 0, 2000);
+	jet_pt_9_preselection[i] = new TH1D(Form("jet_pt_9_%d_preselection", i+1), Form("jet_pt_9_%d_preselection", i+1), 2000, 0, 2000);
+	jet_pt_10_preselection[i] = new TH1D(Form("jet_pt_10_%d_preselection", i+1), Form("jet_pt_10_%d_preselection", i+1), 2000, 0, 2000);
+	
+	// Histograms to check Njets & kinematic distributions
     Njets[i] = new TH1D(Form("Njets_%d", i+1), Form("NJets_%d", i+1), 5, 5.5, 10.5);
 	
-    /*
-    for (int j = 0; j < 10; j++) {
-      jet_pt[i][j] = new TH1D(Form("jet_pt_%dth_%d", j+1, i+1), Form("jet_pt_%dth_%d", j+1, i+1), 1100, 0, 1100);
-    }
-    */
 
-    jet_pt_1[i] = new TH1D(Form("jet_pt_1_%d", i+1), Form("jet_pt_1_%d", i+1), 1100, 0, 1100);
-    jet_pt_2[i] = new TH1D(Form("jet_pt_2_%d", i+1), Form("jet_pt_2_%d", i+1), 1100, 0, 1100);
-    jet_pt_3[i] = new TH1D(Form("jet_pt_3_%d", i+1), Form("jet_pt_3_%d", i+1), 1100, 0, 1100);
-    jet_pt_4[i] = new TH1D(Form("jet_pt_4_%d", i+1), Form("jet_pt_4_%d", i+1), 1100, 0, 1100);
-    jet_pt_5[i] = new TH1D(Form("jet_pt_5_%d", i+1), Form("jet_pt_5_%d", i+1), 1100, 0, 1100);
-    jet_pt_6[i] = new TH1D(Form("jet_pt_6_%d", i+1), Form("jet_pt_6_%d", i+1), 1100, 0, 1100);
-    jet_pt_7[i] = new TH1D(Form("jet_pt_7_%d", i+1), Form("jet_pt_7_%d", i+1), 1100, 0, 1100);
-    jet_pt_8[i] = new TH1D(Form("jet_pt_8_%d", i+1), Form("jet_pt_8_%d", i+1), 1100, 0, 1100);
-    jet_pt_9[i] = new TH1D(Form("jet_pt_9_%d", i+1), Form("jet_pt_9_%d", i+1), 1100, 0, 1100);
-    jet_pt_10[i] = new TH1D(Form("jet_pt_10_%d", i+1), Form("jet_pt_10_%d", i+1), 1100, 0, 1100);
+    jet_pt_1[i] = new TH1D(Form("jet_pt_1_%d", i+1), Form("jet_pt_1_%d", i+1), 2000, 0, 2000);
+    jet_pt_2[i] = new TH1D(Form("jet_pt_2_%d", i+1), Form("jet_pt_2_%d", i+1), 2000, 0, 2000);
+    jet_pt_3[i] = new TH1D(Form("jet_pt_3_%d", i+1), Form("jet_pt_3_%d", i+1), 2000, 0, 2000);
+    jet_pt_4[i] = new TH1D(Form("jet_pt_4_%d", i+1), Form("jet_pt_4_%d", i+1), 2000, 0, 2000);
+    jet_pt_5[i] = new TH1D(Form("jet_pt_5_%d", i+1), Form("jet_pt_5_%d", i+1), 2000, 0, 2000);
+    jet_pt_6[i] = new TH1D(Form("jet_pt_6_%d", i+1), Form("jet_pt_6_%d", i+1), 2000, 0, 2000);
+    jet_pt_7[i] = new TH1D(Form("jet_pt_7_%d", i+1), Form("jet_pt_7_%d", i+1), 2000, 0, 2000);
+    jet_pt_8[i] = new TH1D(Form("jet_pt_8_%d", i+1), Form("jet_pt_8_%d", i+1), 2000, 0, 2000);
+    jet_pt_9[i] = new TH1D(Form("jet_pt_9_%d", i+1), Form("jet_pt_9_%d", i+1), 2000, 0, 2000);
+    jet_pt_10[i] = new TH1D(Form("jet_pt_10_%d", i+1), Form("jet_pt_10_%d", i+1), 2000, 0, 2000);
 
 	// HT ~ Pt histogram
-    Mass_HT_beforeDelta[i] = new TH2D(Form("Mass_HT_beforeDelta_%d", i+1), Form("Mass_HT_beforeDelta_%d", i+1), 24, 0, 1200, 24, 0, 1200);
-	Mass_HT_afterDelta[i] = new TH2D(Form("Mass_HT_afterDelta_%d", i+1), Form("Mass_HT_afterDelta_%d", i+1), 24, 0, 1200, 24, 0, 1200); 
+    Mass_HT_beforeDelta[i] = new TH2D(Form("Mass_HT_beforeDelta_%d", i+1), Form("Mass_HT_beforeDelta_%d", i+1), 200, 0, 2000, 200, 0, 2000);
+	Mass_HT_afterDelta[i] = new TH2D(Form("Mass_HT_afterDelta_%d", i+1), Form("Mass_HT_afterDelta_%d", i+1), 200, 0, 2000, 200, 0, 2000); 
 	// Dalitz plots
 	Dalitz32_beforeMDS[i] = new TH2D(Form("Dalitz32_beforeMDS_%d", i+1), Form("Dalitz_beforeMDS_%d", i+1), 50, 0., 0.5, 50, 0., 1.);
     Dalitz32_afterMDS[i] = new TH2D(Form("Dalitz32_afterMDS_%d", i+1), Form("Dalitz_afterMDS_%d", i+1), 50, 0., 0.5, 50, 0., 1.);
@@ -174,6 +181,17 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
     MDS32_before[i]->Write();
     MDS32_after[i]->Write();
     Njets[i]->Write();
+
+	jet_pt_1_preselection[i]->Write();
+	jet_pt_2_preselection[i]->Write();
+	jet_pt_3_preselection[i]->Write();
+	jet_pt_4_preselection[i]->Write();
+	jet_pt_5_preselection[i]->Write();
+	jet_pt_6_preselection[i]->Write();
+	jet_pt_7_preselection[i]->Write();
+	jet_pt_8_preselection[i]->Write();
+	jet_pt_9_preselection[i]->Write();
+	jet_pt_10_preselection[i]->Write();
 
     jet_pt_1[i]->Write();
     jet_pt_2[i]->Write();
@@ -248,6 +266,20 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       SORTER->sort(Jets[i]);
       if (Jets[i].size() >= 6) cutFlow_Evt[i]->Fill(1.5);
       if (Jets[i].size() >= 6) Njets[i]->Fill(Jets[i].size());
+	  
+	  // Jet pt distribution after preselection
+	  if (Jets[i].size() >= 6) {
+		jet_pt_1_preselection[i]->Fill(Jets[i][0]->pt());
+		jet_pt_2_preselection[i]->Fill(Jets[i][1]->pt());
+		jet_pt_3_preselection[i]->Fill(Jets[i][2]->pt());
+		jet_pt_4_preselection[i]->Fill(Jets[i][3]->pt());
+		jet_pt_5_preselection[i]->Fill(Jets[i][4]->pt());
+		jet_pt_6_preselection[i]->Fill(Jets[i][5]->pt());
+	  }
+	  if (Jets[i].size() >= 7) jet_pt_7_preselection[i]->Fill(Jets[i][6]->pt());
+	  if (Jets[i].size() >= 8) jet_pt_8_preselection[i]->Fill(Jets[i][7]->pt());
+	  if (Jets[i].size() >= 9) jet_pt_9_preselection[i]->Fill(Jets[i][8]->pt());
+	  if (Jets[i].size() >= 10) jet_pt_10_preselection[i]->Fill(Jets[i][9]->pt());
     }
 
     // Jet ID
@@ -292,14 +324,6 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     if(!Manager()->ApplyCut(lpT[2] > lpTcut[2], "pt(j6) > 125GeV")) return true;
     if(!Manager()->ApplyCut(lpT[3] > lpTcut[3], "pt(j6) > 175GeV")) return true;
 
-    // Fill the histograms for jet_pt
-    /*
-    for (int i = 0; i < 4; i++) {
-      for (int j = 0; j < 10; j++) {
-        jet_pt[i][j]->Fill(Jets[i][j]->pt());
-      }
-    }
-    */  
     for (int i = 0; i < 4; i++) {
       if ( Jets[i].size() >= 6) {
         jet_pt_1[i]->Fill(Jets[i][0]->pt());
