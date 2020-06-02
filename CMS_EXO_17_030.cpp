@@ -93,6 +93,10 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     tSr[i]->Branch("tripletEta", &triplet_eta[i]);
     tSr[i]->Branch("tripletPhi", &triplet_phi[i]);
     tSr[i]->Branch("tripletM", &triplet_mass[i]);
+    tSr[i]->Branch("gen_tripletPt", &gen_triplet_pt[i]);
+    tSr[i]->Branch("gen_tripletEta", &gen_triplet_eta[i]);
+    tSr[i]->Branch("gen_tripletPhi", &gen_triplet_phi[i]);
+    tSr[i]->Branch("gen_tripletM", &gen_triplet_mass[i]); 
     cutFlow_Evt[i] = new TH1D(Form("SR_Evt_%d",i+1), Form("SR_Evt_%d",i+1), 10, 0, 10);
     cutFlow_TripletPair[i] = new TH1D(Form("SR_Triplet_Pair_%d",i+1), Form("SR_Triplet_Pair_%d",i+1), 10, 0, 10);
     cutFlow_Triplet[i] = new TH1D(Form("SR_Triplet_%d",i+1), Form("SR_Triplet_%d",i+1), 10, 0, 10);
@@ -104,14 +108,16 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     trips_num_MDS32[i] = new TH1D(Form("trips_num_MDS32_%d", i+1), Form("trips_num_MDS32_%d", i+1), 20, 0.5, 20.5);
   
     // Histograms to check kinematic variables
-    MDS6332_before[i] = new TH1D(Form("MDS6332_before_%d", i+1), Form("MDS6332_before_%d", i+1), 40, 0., 2.);
-    MDS6332_after[i] = new TH1D(Form("MDS6332_after_%d", i+1), Form("MDS6332_after_%d", i+1), 40, 0., 2.);
+    MDS6332_before[i] = new TH1D(Form("MDS6332_before_%d", i+1), Form("MDS6332_before_%d", i+1), 60, 0., 3.);
+    MDS6332_after[i] = new TH1D(Form("MDS6332_after_%d", i+1), Form("MDS6332_after_%d", i+1), 60, 0., 3.);
     Am_before[i] = new TH1D(Form("Am_before_%d", i+1), Form("Am_before_%d", i+1), 40, 0. , 2.);
     Am_after[i] = new TH1D(Form("Am_after_%d", i+1), Form("Am_after_%d", i+1), 40, 0., 2.);
     Delta_before[i] = new TH1D(Form("Delta_before_%d", i+1), Form("Delta_before_%d", i+1), 60, -600, 600);
     Delta_after[i] = new TH1D(Form("Delta_after_%d", i+1), Form("Delta_after_%d", i+1), 60, -600, 600);
-    MDS32_before[i] = new TH1D(Form("MDS32_before_%d", i+1), Form("MDS32_before_%d", i+1), 20, 0., 1.);
-    MDS32_after[i] = new TH1D(Form("MDS32_after_%d", i+1), Form("MDS32_after_%d", i+1), 20, 0., 1.);
+    MDS32_before[i] = new TH1D(Form("MDS32_before_%d", i+1), Form("MDS32_before_%d", i+1), 100, 0., 1.);
+    MDS32_after[i] = new TH1D(Form("MDS32_after_%d", i+1), Form("MDS32_after_%d", i+1), 100, 0., 1.);
+    Gen_MDS6332[i] = new TH1D(Form("Gen_MDS6332_%d", i+1), Form("Gen_MDS6332_%d", i+1), 60, 0., 3.);
+    Gen_MDS32[i] = new TH1D(Form("Gen_MDS32_%d", i+1), Form("Gen_MDS32_%d", i+1), 100, 0., 1.);
     
     // Histrograms to check Njets & kinematic distributions
     Njets[i] = new TH1D(Form("Njets_%d", i+1), Form("NJets_%d", i+1), 5, 5.5, 10.5);
@@ -132,14 +138,42 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     jet_pt_8[i] = new TH1D(Form("jet_pt_8_%d", i+1), Form("jet_pt_8_%d", i+1), 1100, 0, 1100);
     jet_pt_9[i] = new TH1D(Form("jet_pt_9_%d", i+1), Form("jet_pt_9_%d", i+1), 1100, 0, 1100);
     jet_pt_10[i] = new TH1D(Form("jet_pt_10_%d", i+1), Form("jet_pt_10_%d", i+1), 1100, 0, 1100);
+    jet_eta_1[i] = new TH1D(Form("jet_eta_1_%d", i+1), Form("jet_eta_1_%d", i+1), 100, -5, 5);
+    jet_eta_2[i] = new TH1D(Form("jet_eta_2_%d", i+1), Form("jet_eta_2_%d", i+1), 100, -5, 5);
+    jet_eta_3[i] = new TH1D(Form("jet_eta_3_%d", i+1), Form("jet_eta_3_%d", i+1), 100, -5, 5);
+    jet_eta_4[i] = new TH1D(Form("jet_eta_4_%d", i+1), Form("jet_eta_4_%d", i+1), 100, -5, 5);
+    jet_eta_5[i] = new TH1D(Form("jet_eta_5_%d", i+1), Form("jet_eta_5_%d", i+1), 100, -5, 5);
+    jet_eta_6[i] = new TH1D(Form("jet_eta_6_%d", i+1), Form("jet_eta_6_%d", i+1), 100, -5, 5);
+    jet_eta_7[i] = new TH1D(Form("jet_eta_7_%d", i+1), Form("jet_eta_7_%d", i+1), 100, -5, 5);
+    jet_eta_8[i] = new TH1D(Form("jet_eta_8_%d", i+1), Form("jet_eta_8_%d", i+1), 100, -5, 5);
+    jet_eta_9[i] = new TH1D(Form("jet_eta_9_%d", i+1), Form("jet_eta_9_%d", i+1), 100, -5, 5);
+    jet_eta_10[i] = new TH1D(Form("jet_eta_10_%d", i+1), Form("jet_eta_10_%d", i+1), 100, -5, 5); 
 
-	// HT ~ Pt histogram
-  Mass_HT_beforeDelta[i] = new TH2D(Form("Mass_HT_beforeDelta_%d", i+1), Form("Mass_HT_beforeDelta_%d", i+1), 48, 0, 1200, 48, 0, 1200);
-	Mass_HT_afterDelta[i] = new TH2D(Form("Mass_HT_afterDelta_%d", i+1), Form("Mass_HT_afterDelta_%d", i+1), 48, 0, 1200, 48, 0, 1200); 
-	// Dalitz plots
-	Dalitz32_beforeMDS[i] = new TH2D(Form("Dalitz32_beforeMDS_%d", i+1), Form("Dalitz_beforeMDS_%d", i+1), 50, 0., 0.5, 50, 0., 1.);
-  Dalitz32_afterMDS[i] = new TH2D(Form("Dalitz32_afterMDS_%d", i+1), Form("Dalitz_afterMDS_%d", i+1), 50, 0., 0.5, 50, 0., 1.);
-  }
+    parton_pt_1[i] = new TH1D(Form("parton_pt_1_%d", i+1), Form("parton_pt_1_%d", i+1), 1100, 0, 1100);
+    parton_pt_2[i] = new TH1D(Form("parton_pt_2_%d", i+1), Form("parton_pt_2_%d", i+1), 1100, 0, 1100);
+    parton_pt_3[i] = new TH1D(Form("parton_pt_3_%d", i+1), Form("parton_pt_3_%d", i+1), 1100, 0, 1100);
+    parton_pt_4[i] = new TH1D(Form("parton_pt_4_%d", i+1), Form("parton_pt_4_%d", i+1), 1100, 0, 1100);
+    parton_pt_5[i] = new TH1D(Form("parton_pt_5_%d", i+1), Form("parton_pt_5_%d", i+1), 1100, 0, 1100);
+    parton_pt_6[i] = new TH1D(Form("parton_pt_6_%d", i+1), Form("parton_pt_6_%d", i+1), 1100, 0, 1100);
+    parton_eta_1[i] = new TH1D(Form("parton_eta_1_%d", i+1), Form("parton_eta_1_%d", i+1), 100, -5, 5);
+    parton_eta_2[i] = new TH1D(Form("parton_eta_2_%d", i+1), Form("parton_eta_2_%d", i+1), 100, -5, 5);
+    parton_eta_3[i] = new TH1D(Form("parton_eta_3_%d", i+1), Form("parton_eta_3_%d", i+1), 100, -5, 5);
+    parton_eta_4[i] = new TH1D(Form("parton_eta_4_%d", i+1), Form("parton_eta_4_%d", i+1), 100, -5, 5);
+    parton_eta_5[i] = new TH1D(Form("parton_eta_5_%d", i+1), Form("parton_eta_5_%d", i+1), 100, -5, 5);
+    parton_eta_6[i] = new TH1D(Form("parton_eta_6_%d", i+1), Form("parton_eta_6_%d", i+1), 100, -5, 5);
+
+	  // HT ~ Pt histogram
+    Mass_HT_beforeDelta[i] = new TH2D(Form("Mass_HT_beforeDelta_%d", i+1), Form("Mass_HT_beforeDelta_%d", i+1), 120, 0, 1200, 120, 0, 1200);
+	  Mass_HT_afterDelta[i] = new TH2D(Form("Mass_HT_afterDelta_%d", i+1), Form("Mass_HT_afterDelta_%d", i+1), 120, 0, 1200, 120, 0, 1200); 
+    Gen_Mass_HT_beforeDelta[i] = new TH2D(Form("Gen_Mass_HT_beforeDelta_%d", i+1), Form("Gen_Mass_HT_beforeDelta_%d", i+1), 120, 0, 1200, 120, 0, 1200);
+	  Gen_Mass_HT_afterDelta[i] = new TH2D(Form("Gen_Mass_HT_afterDelta_%d", i+1), Form("Gen_Mass_HT_afterDelta_%d", i+1), 120, 0, 1200, 120, 0, 1200); 
+	  // Dalitz plots
+	  Dalitz32_beforeMDS[i] = new TH2D(Form("Dalitz32_beforeMDS_%d", i+1), Form("Dalitz_beforeMDS_%d", i+1), 100, 0., 0.5, 100, 0., 1.);
+    Dalitz32_afterMDS[i] = new TH2D(Form("Dalitz32_afterMDS_%d", i+1), Form("Dalitz_afterMDS_%d", i+1), 100, 0., 0.5, 100, 0., 1.);
+	  Gen_Dalitz32[i] = new TH2D(Form("Gen_Dalitz32_%d", i+1), Form("Gen_Dalitz_%d", i+1), 100, 0., 0.5, 100, 0., 1.);
+	  Gen_dR[i] = new TH1D(Form("Gen_dR_%d", i+1), Form("Gen_dR_%d", i+1), 50, 0, 5);
+
+  } 
   cout << "ROOT output has prepared" << endl;
 
   cout << "END   Initialization" << endl;
@@ -173,6 +207,8 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
     Delta_after[i]->Write();
     MDS32_before[i]->Write();
     MDS32_after[i]->Write();
+    Gen_MDS6332[i]->Write();
+    Gen_MDS32[i]->Write();
     Njets[i]->Write();
 
     jet_pt_1[i]->Write();
@@ -185,12 +221,38 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
     jet_pt_8[i]->Write();
     jet_pt_9[i]->Write();
     jet_pt_10[i]->Write();
+    jet_eta_1[i]->Write();
+    jet_eta_2[i]->Write();
+    jet_eta_3[i]->Write();
+    jet_eta_4[i]->Write();
+    jet_eta_5[i]->Write();
+    jet_eta_6[i]->Write();
+    jet_eta_7[i]->Write();
+    jet_eta_8[i]->Write();
+    jet_eta_9[i]->Write();
+    jet_eta_10[i]->Write(); 
+    parton_pt_1[i]->Write();
+    parton_pt_2[i]->Write();
+    parton_pt_3[i]->Write();
+    parton_pt_4[i]->Write();
+    parton_pt_5[i]->Write();
+    parton_pt_6[i]->Write();
+    parton_eta_1[i]->Write();
+    parton_eta_2[i]->Write();
+    parton_eta_3[i]->Write();
+    parton_eta_4[i]->Write();
+    parton_eta_5[i]->Write();
+    parton_eta_6[i]->Write(); 
  
-	Mass_HT_beforeDelta[i]->Write();
-	Mass_HT_afterDelta[i]->Write();
+	  Mass_HT_beforeDelta[i]->Write();
+	  Mass_HT_afterDelta[i]->Write();
+	  Gen_Mass_HT_beforeDelta[i]->Write();
+	  Gen_Mass_HT_afterDelta[i]->Write(); // not yet
 
-	Dalitz32_beforeMDS[i]->Write();
-	Dalitz32_afterMDS[i]->Write();
+	  Dalitz32_beforeMDS[i]->Write();
+	  Dalitz32_afterMDS[i]->Write();
+	  Gen_Dalitz32[i]->Write();
+	  Gen_dR[i]->Write();
     /*
     for (int j = 0; j < 10; j++) {
       jet_pt[i][j]->Write();
@@ -299,7 +361,18 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
         jet_pt[i][j]->Fill(Jets[i][j]->pt());
       }
     }
-    */  
+    */
+
+    // Collect gen level partons
+    const vector<MCParticleFormat>& gens = event.mc()->particles();
+    vector<const MCParticleFormat*> partons;
+    for(unsigned int i=0;i<gens.size();i++){
+      if(abs(gens[i].pdgid())<=3&&(gens[i].mothers()).at(0)->pdgid()==1000021){
+        partons.push_back(&gens[i]);
+      }
+    }
+    SORTER->sort(partons);
+
     for (int i = 0; i < 4; i++) {
       if ( Jets[i].size() >= 6) {
         jet_pt_1[i]->Fill(Jets[i][0]->pt());
@@ -308,14 +381,107 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
         jet_pt_4[i]->Fill(Jets[i][3]->pt());
         jet_pt_5[i]->Fill(Jets[i][4]->pt());
         jet_pt_6[i]->Fill(Jets[i][5]->pt());
+        jet_eta_1[i]->Fill(Jets[i][0]->eta());
+        jet_eta_2[i]->Fill(Jets[i][1]->eta());
+        jet_eta_3[i]->Fill(Jets[i][2]->eta());
+        jet_eta_4[i]->Fill(Jets[i][3]->eta());
+        jet_eta_5[i]->Fill(Jets[i][4]->eta());
+        jet_eta_6[i]->Fill(Jets[i][5]->eta());
       }
-      if (Jets[i].size() >= 7) jet_pt_7[i]->Fill(Jets[i][6]->pt());
-      if (Jets[i].size() >= 8) jet_pt_8[i]->Fill(Jets[i][7]->pt());
-      if (Jets[i].size() >= 9) jet_pt_9[i]->Fill(Jets[i][8]->pt());
-      if (Jets[i].size() >= 10) jet_pt_10[i]->Fill(Jets[i][9]->pt());
-    }     
+      if (Jets[i].size() >= 7){
+        jet_pt_7[i]->Fill(Jets[i][6]->pt());
+        jet_eta_7[i]->Fill(Jets[i][6]->eta());
+      }
+      if (Jets[i].size() >= 8){
+        jet_pt_8[i]->Fill(Jets[i][7]->pt());
+        jet_eta_8[i]->Fill(Jets[i][7]->eta());
+      }
+      if (Jets[i].size() >= 9){
+        jet_pt_9[i]->Fill(Jets[i][8]->pt());
+        jet_eta_9[i]->Fill(Jets[i][8]->eta());
+      }
+      if (Jets[i].size() >= 10){
+        jet_pt_10[i]->Fill(Jets[i][9]->pt());
+        jet_eta_10[i]->Fill(Jets[i][9]->eta());
+      }
+      parton_pt_1[i]->Fill(partons[0]->pt());
+      parton_pt_2[i]->Fill(partons[1]->pt());
+      parton_pt_3[i]->Fill(partons[2]->pt());
+      parton_pt_4[i]->Fill(partons[3]->pt());
+      parton_pt_5[i]->Fill(partons[4]->pt());
+      parton_pt_6[i]->Fill(partons[5]->pt());
+      parton_eta_1[i]->Fill(partons[0]->eta());
+      parton_eta_2[i]->Fill(partons[1]->eta());
+      parton_eta_3[i]->Fill(partons[2]->eta());
+      parton_eta_4[i]->Fill(partons[3]->eta());
+      parton_eta_5[i]->Fill(partons[4]->eta());
+      parton_eta_6[i]->Fill(partons[5]->eta()); 
+    }
 
-    
+    TripletCollection genTrips[4];
+    double genMass[4];
+    double genHT[4];
+    double genMds6332[4];
+    double genMds32[4];
+    for(int i = 0; i < 4 ; i++){
+      genTrips[i] = GenMatchedTriplets(event, Jets[i]);
+      // calculate correct jets MDS 6332 first
+      if(genTrips[i].size()==2){
+        JetCollection this_gen_6jets;
+        for(int k=0;k<2;k++){
+          for(int l=0;l<3;l++){
+            this_gen_6jets.push_back(genTrips[i].at(k)[l]);
+          }
+        }
+        genMds6332[i] = mds6332(this_gen_6jets);
+        Gen_MDS6332[i]->Fill(genMds6332[i]);
+      }
+
+	    for (int j = 0; j < genTrips[i].size() ; j++) {
+        Triplet this_gen_trip = genTrips[i].at(j);
+        // correct jets MDS 32
+        genMds32[i] = mds32(this_gen_trip);
+        Gen_MDS32[i]->Fill(genMds32[i]);
+        // correct jets deltaR
+        Gen_dR[i]->Fill(this_gen_trip[0]->momentum().DeltaR(this_gen_trip[1]->momentum()));
+        Gen_dR[i]->Fill(this_gen_trip[0]->momentum().DeltaR(this_gen_trip[2]->momentum()));
+        Gen_dR[i]->Fill(this_gen_trip[1]->momentum().DeltaR(this_gen_trip[2]->momentum()));
+        // below lines are to test double matched jets. Ideally this should not print any messages.
+        if(this_gen_trip[0]->momentum().DeltaR(this_gen_trip[1]->momentum())<0.1){
+          cout << "[Warning] jet deltaR_12 < 0.1 : " << this_gen_trip[0]->momentum().DeltaR(this_gen_trip[1]->momentum()) << endl;
+          cout << "1st pt, eta, phi : " << this_gen_trip[0]->pt() << this_gen_trip[0]->eta() << this_gen_trip[0]->phi() << endl;
+          cout << "2nd pt, eta, phi : " << this_gen_trip[1]->pt() << this_gen_trip[1]->eta() << this_gen_trip[1]->phi() << endl;
+          cout << "3rd pt, eta, phi : " << this_gen_trip[2]->pt() << this_gen_trip[2]->eta() << this_gen_trip[2]->phi() << endl;
+        }
+        if(this_gen_trip[0]->momentum().DeltaR(this_gen_trip[2]->momentum())<0.1&&i==2){
+          cout << "[Warning] jet deltaR_13 < 0.1 : " << this_gen_trip[0]->momentum().DeltaR(this_gen_trip[2]->momentum()) << endl;
+          cout << "1st pt, eta, phi : " << this_gen_trip[0]->pt() << this_gen_trip[0]->eta() << this_gen_trip[0]->phi() << endl;
+          cout << "2nd pt, eta, phi : " << this_gen_trip[1]->pt() << this_gen_trip[1]->eta() << this_gen_trip[1]->phi() << endl;
+          cout << "3rd pt, eta, phi : " << this_gen_trip[2]->pt() << this_gen_trip[2]->eta() << this_gen_trip[2]->phi() << endl;
+        }
+        if(this_gen_trip[1]->momentum().DeltaR(this_gen_trip[2]->momentum())<0.1&&i==2){
+          cout << "[Warning] jet deltaR_23 < 0.1 : " << this_gen_trip[1]->momentum().DeltaR(this_gen_trip[2]->momentum()) << endl;
+          cout << "1st pt, eta, phi : " << this_gen_trip[0]->pt() << this_gen_trip[0]->eta() << this_gen_trip[0]->phi() << endl;
+          cout << "2nd pt, eta, phi : " << this_gen_trip[1]->pt() << this_gen_trip[1]->eta() << this_gen_trip[1]->phi() << endl;
+          cout << "3rd pt, eta, phi : " << this_gen_trip[2]->pt() << this_gen_trip[2]->eta() << this_gen_trip[2]->phi() << endl;
+        }
+        // Mass vs HT plot
+		    genMass[i] = GetMass(genTrips[i].at(j));
+		    genHT[i] = GetHT(genTrips[i].at(j));
+		    Gen_Mass_HT_beforeDelta[i]->Fill(genHT[i], genMass[i]);
+        // Dalitz32 plot
+	  	  vector<double> dalitz32s; dalitz32s.clear();
+	  	  dalitz32s.push_back(dalitz32(genTrips[i].at(j), 0, 1));
+	  	  dalitz32s.push_back(dalitz32(genTrips[i].at(j), 0, 2));
+	  	  dalitz32s.push_back(dalitz32(genTrips[i].at(j), 1, 2));
+	  	  // sort from low to high
+	  	  sort(dalitz32s.begin(), dalitz32s.end());
+	  	  Gen_Dalitz32[i]->Fill(dalitz32s.at(0), dalitz32s.at(1));
+	  	  Gen_Dalitz32[i]->Fill(dalitz32s.at(0), dalitz32s.at(2));
+	  	  Gen_Dalitz32[i]->Fill(dalitz32s.at(1), dalitz32s.at(2));
+	    }
+    } 
+
     // Mds6332 cut for each regions
     double evtMds6332[4];
     for (int i = 0; i < 4; i++) {
@@ -343,8 +509,8 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
     double MA[4];
     double Del[4];
     double Mds32[4];
-	double Mass[4];
-	double HT_[4];
+	  double Mass[4];
+	  double HT_[4];
     for (int i = 0; i < 4; i++) {
       tripPairs[i] = makePairCollection(Jets[i]);
       
@@ -374,12 +540,11 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
         Del[i] = delta(trips[i].at(j));
         Delta_before[i]->Fill(Del[i]);
       }
-
-	  for (int j = 0; j < trips[i].size(); j++) {
-		Mass[i] = GetMass(trips[i].at(j));
-		HT_[i] = GetHT(trips[i].at(j));
-		Mass_HT_beforeDelta[i]->Fill(HT_[i], Mass[i]);
-	  }	
+	    for (int j = 0; j < trips[i].size(); j++) {
+		    Mass[i] = GetMass(trips[i].at(j));
+		    HT_[i] = GetHT(trips[i].at(j));
+		    Mass_HT_beforeDelta[i]->Fill(HT_[i], Mass[i]);
+	    }	
     }
 
     if(!Manager()->ApplyCut(trips[0].size() != 0, "Am < 0.25")) return true;
@@ -407,10 +572,10 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       }
 
 	  for (int j = 0; j < trips[i].size(); j++) {
-		Mass[i] = GetMass(trips[i].at(j));
-		HT_[i] = GetHT(trips[i].at(j));
-		Mass_HT_afterDelta[i]->Fill(HT_[i], Mass[i]);
-	  }
+		  Mass[i] = GetMass(trips[i].at(j));
+		  HT_[i] = GetHT(trips[i].at(j));
+		  Mass_HT_afterDelta[i]->Fill(HT_[i], Mass[i]);
+	    }
     }
     if(!Manager()->ApplyCut(trips[0].size() != 0, "Delta > 250GeV" )) return true;
     if(!Manager()->ApplyCut(trips[1].size() != 0, "Delta > 180GeV" )) return true;
@@ -420,18 +585,18 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
 	// Dalitz plot before MDS cut
 	for (int i = 0; i < 4; i++) {
 	  for (int j = 0; j < trips[i].size(); j++){
-		if (trips[i].size() == 0) break;
-		vector<double> dalitz32s; dalitz32s.clear();
-		dalitz32s.push_back(dalitz32(trips[i].at(j), 0, 1));
-		dalitz32s.push_back(dalitz32(trips[i].at(j), 0, 2));
-		dalitz32s.push_back(dalitz32(trips[i].at(j), 1, 2));
+		  if (trips[i].size() == 0) break;
+		  vector<double> dalitz32s; dalitz32s.clear();
+		  dalitz32s.push_back(dalitz32(trips[i].at(j), 0, 1));
+		  dalitz32s.push_back(dalitz32(trips[i].at(j), 0, 2));
+		  dalitz32s.push_back(dalitz32(trips[i].at(j), 1, 2));
 
-		// sort from low to high
-		sort(dalitz32s.begin(), dalitz32s.end());
+		  // sort from low to high
+		  sort(dalitz32s.begin(), dalitz32s.end());
 
-		Dalitz32_beforeMDS[i]->Fill(dalitz32s.at(0), dalitz32s.at(1));
-		Dalitz32_beforeMDS[i]->Fill(dalitz32s.at(0), dalitz32s.at(2));
-		Dalitz32_beforeMDS[i]->Fill(dalitz32s.at(1), dalitz32s.at(2));
+		  Dalitz32_beforeMDS[i]->Fill(dalitz32s.at(0), dalitz32s.at(1));
+		  Dalitz32_beforeMDS[i]->Fill(dalitz32s.at(0), dalitz32s.at(2));
+		  Dalitz32_beforeMDS[i]->Fill(dalitz32s.at(1), dalitz32s.at(2));
 	  }
 	}
     // mds32 cut
@@ -452,13 +617,25 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       triplet_eta[i].clear();
       triplet_phi[i].clear();
       triplet_mass[i].clear();
-
+      gen_triplet_pt[i].clear();
+      gen_triplet_eta[i].clear();
+      gen_triplet_phi[i].clear();
+      gen_triplet_mass[i].clear();
+      
       for (int j = 0; j < trips[i].size(); j++) {
         MALorentzVector mom = getMomentum(trips[i][j]);
         triplet_pt[i].push_back(mom.Pt());
         triplet_eta[i].push_back(mom.Eta());
         triplet_phi[i].push_back(mom.Phi());
         triplet_mass[i].push_back(mom.M());
+      }
+      genTrips[i] = GenMatchedTriplets(event, trips[i]);
+      for (int j = 0; j < genTrips[i].size(); j++){
+        MALorentzVector gen_mom = getMomentum(genTrips[i][j]);
+        gen_triplet_pt[i].push_back(gen_mom.Pt());
+        gen_triplet_eta[i].push_back(gen_mom.Eta());
+        gen_triplet_phi[i].push_back(gen_mom.Phi());
+        gen_triplet_mass[i].push_back(gen_mom.M());
       }
       tSr[i]->Fill();
     }
@@ -468,22 +645,22 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
 
 	for (int i = 0; i < 4; i++) {
 	  for (int j = 0; j < trips[i].size(); j++){
-		if (trips[i].size() == 0) break;
-		vector<double> dalitz32s; dalitz32s.clear();
+		  if (trips[i].size() == 0) break;
+		  vector<double> dalitz32s; dalitz32s.clear();
 	    dalitz32s.push_back(dalitz32(trips[i].at(j), 0, 1));
-		dalitz32s.push_back(dalitz32(trips[i].at(j), 0, 2));
-		dalitz32s.push_back(dalitz32(trips[i].at(j), 1, 2));
+		  dalitz32s.push_back(dalitz32(trips[i].at(j), 0, 2));
+		  dalitz32s.push_back(dalitz32(trips[i].at(j), 1, 2));
 
-		// sort from low to high
+		  // sort from low to high
 	    sort(dalitz32s.begin(), dalitz32s.end());
-		// Debugging
-		//for (int k = 0; k < 3; k++) cout << "[DEBUG] sort dalitz32s: " << dalitz32s[i].at(k) << " ";
-		//cout << endl;
+		  // Debugging
+		  //for (int k = 0; k < 3; k++) cout << "[DEBUG] sort dalitz32s: " << dalitz32s[i].at(k) << " ";
+		  //cout << endl;
 
-		//fill hist
-		Dalitz32_afterMDS[i]->Fill(dalitz32s.at(0), dalitz32s.at(1));
-		Dalitz32_afterMDS[i]->Fill(dalitz32s.at(0), dalitz32s.at(2));
-		Dalitz32_afterMDS[i]->Fill(dalitz32s.at(1), dalitz32s.at(2));
+		  //fill hist
+		  Dalitz32_afterMDS[i]->Fill(dalitz32s.at(0), dalitz32s.at(1));
+		  Dalitz32_afterMDS[i]->Fill(dalitz32s.at(0), dalitz32s.at(2));
+		  Dalitz32_afterMDS[i]->Fill(dalitz32s.at(1), dalitz32s.at(2));
 	  }
 	}
 
@@ -589,6 +766,78 @@ TripletCollection CMS_EXO_17_030::mds32Selection( TripletCollection trips, doubl
   }
   return sigTrips;
 }
+
+TripletCollection CMS_EXO_17_030::GenMatchedTriplets( const EventFormat& event, JetCollection Jets ) {
+  JetCollection GenMatchedJets1, GenMatchedJets2;
+  TripletCollection GenMatchedTrips;
+  const vector<MCParticleFormat>& gens = event.mc()->particles();
+
+  bool matched;
+  for(unsigned int i=0;i<gens.size();i++){
+    if(1<=gens[i].pdgid()&&gens[i].pdgid()<=3&&(gens[i].mothers()).at(0)->pdgid()==1000021){
+      for(unsigned int j=0;j<Jets.size();j++){
+        matched = (Jets[j]->momentum()).DeltaR(gens[i].momentum())<0.3;
+        if(matched){
+          GenMatchedJets1.push_back(Jets[j]);
+        }
+      }
+    }
+    else if(-3<=gens[i].pdgid()&&gens[i].pdgid()<=-1&&(gens[i].mothers()).at(0)->pdgid()==1000021){
+      for(unsigned int j=0;j<Jets.size();j++){
+        matched = (Jets[j]->momentum()).DeltaR(gens[i].momentum())<0.3;
+        if(matched){
+          GenMatchedJets2.push_back(Jets[j]);
+        }
+      }
+    }
+  }
+  // Now remove double matching
+  sort(GenMatchedJets1.begin(),GenMatchedJets1.end());
+  auto last1 = unique(GenMatchedJets1.begin(),GenMatchedJets1.end());
+  GenMatchedJets1.erase(last1,GenMatchedJets1.end());
+  sort(GenMatchedJets2.begin(),GenMatchedJets2.end());
+  auto last2 = unique(GenMatchedJets2.begin(),GenMatchedJets2.end());
+  GenMatchedJets2.erase(last2,GenMatchedJets2.end());
+
+  if(GenMatchedJets1.size()==3) GenMatchedTrips.push_back({GenMatchedJets1[0],GenMatchedJets1[1],GenMatchedJets1[2]});
+  if(GenMatchedJets2.size()==3) GenMatchedTrips.push_back({GenMatchedJets2[0],GenMatchedJets2[1],GenMatchedJets2[2]});
+  
+  return GenMatchedTrips;
+} 
+
+TripletCollection CMS_EXO_17_030::GenMatchedTriplets( const EventFormat& event, TripletCollection Trips ) {
+  JetCollection GenMatchedJets1, GenMatchedJets2;
+  TripletCollection GenMatchedTrips;
+  const vector<MCParticleFormat>& gens = event.mc()->particles();
+
+  bool matched;
+  for(unsigned int i=0;i<gens.size();i++){
+    if(1<=gens[i].pdgid()&&gens[i].pdgid()<=3&&(gens[i].mothers()).at(0)->pdgid()==1000021){
+      for(unsigned int j=0;j<Trips.size();j++){
+        for(unsigned int k=0;k<3;k++){
+          matched = (Trips.at(j)[k]->momentum()).DeltaR(gens[i].momentum())<0.3;
+          if(matched){
+            GenMatchedJets1.push_back(Trips.at(j)[k]);
+          }
+        }
+        if(GenMatchedJets1.size()==3) GenMatchedTrips.push_back(Trips.at(j));
+      }
+    }
+    else if(-3<=gens[i].pdgid()&&gens[i].pdgid()<=-1&&(gens[i].mothers()).at(0)->pdgid()==1000021){
+      for(unsigned int j=0;j<Trips.size();j++){
+        for(unsigned int k=0;k<3;k++){
+          matched = (Trips.at(j)[k]->momentum()).DeltaR(gens[i].momentum())<0.3;
+          if(matched){
+            GenMatchedJets2.push_back(Trips.at(j)[k]);
+          }
+        }
+        if(GenMatchedJets2.size()==3) GenMatchedTrips.push_back(Trips.at(j));
+      }
+    }
+  }
+  
+  return GenMatchedTrips;
+} 
 
 double CMS_EXO_17_030::mds32(Triplet t) {
   double c = 1./sqrt(3.);

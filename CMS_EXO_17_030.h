@@ -30,6 +30,8 @@ namespace MA5
     TripletCollection pairSelection( PairCollection, double );
     TripletCollection deltaSelection( TripletCollection, double );
     TripletCollection mds32Selection( TripletCollection, double ); 
+    TripletCollection GenMatchedTriplets( const EventFormat& event, JetCollection ); 
+    TripletCollection GenMatchedTriplets( const EventFormat& event, TripletCollection ); 
 
     PairCollection makePairCollection(JetCollection);
     PairCollection passAmTripPairs( PairCollection, double);
@@ -40,8 +42,8 @@ namespace MA5
     double dalitz63(JetCollection, int, int, int);
     double massAsymm(TripletPair);
     double delta(Triplet);
-	double GetMass(Triplet);
-	double GetHT(Triplet);
+	  double GetMass(Triplet);
+	  double GetHT(Triplet);
     double mds6332(JetCollection jets);
     double compareMass(Triplet, double);
     Triplet chooseSigTrip(TripletCollection, double);
@@ -63,6 +65,8 @@ namespace MA5
     TH1D*  MDS32_after[4];
     TH1D*  MDS6332_before[4];
     TH1D*  MDS6332_after[4];
+    TH1D*  Gen_MDS32[4];
+    TH1D*  Gen_MDS6332[4];
     TH1D*  Njets[4];
     //TH1D*  jet_pt[4][10];
     TH1D*  jet_pt_1[4];
@@ -75,15 +79,45 @@ namespace MA5
     TH1D*  jet_pt_8[4];
     TH1D*  jet_pt_9[4];
     TH1D*  jet_pt_10[4];
-	TH2D*  Mass_HT_beforeDelta[4];
-	TH2D*  Mass_HT_afterDelta[4];
-	TH2D*  Dalitz32_beforeMDS[4];
-	TH2D*  Dalitz32_afterMDS[4];
+    TH1D*  jet_eta_1[4];
+    TH1D*  jet_eta_2[4];
+    TH1D*  jet_eta_3[4];
+    TH1D*  jet_eta_4[4];
+    TH1D*  jet_eta_5[4];
+    TH1D*  jet_eta_6[4];
+    TH1D*  jet_eta_7[4];
+    TH1D*  jet_eta_8[4];
+    TH1D*  jet_eta_9[4];
+    TH1D*  jet_eta_10[4];
+    TH1D*  parton_pt_1[4];
+    TH1D*  parton_pt_2[4];
+    TH1D*  parton_pt_3[4];
+    TH1D*  parton_pt_4[4];
+    TH1D*  parton_pt_5[4];
+    TH1D*  parton_pt_6[4];
+    TH1D*  parton_eta_1[4];
+    TH1D*  parton_eta_2[4];
+    TH1D*  parton_eta_3[4];
+    TH1D*  parton_eta_4[4];
+    TH1D*  parton_eta_5[4];
+    TH1D*  parton_eta_6[4];
+	  TH2D*  Mass_HT_beforeDelta[4];
+	  TH2D*  Mass_HT_afterDelta[4];
+	  TH2D*  Gen_Mass_HT_beforeDelta[4];
+	  TH2D*  Gen_Mass_HT_afterDelta[4];
+	  TH2D*  Dalitz32_beforeMDS[4];
+	  TH2D*  Dalitz32_afterMDS[4];
+	  TH2D*  Gen_Dalitz32[4];
+	  TH1D*  Gen_dR[4];
 
     std::vector<double> triplet_pt[4];
     std::vector<double> triplet_eta[4];
     std::vector<double> triplet_phi[4];
     std::vector<double> triplet_mass[4];
+    std::vector<double> gen_triplet_pt[4];
+    std::vector<double> gen_triplet_eta[4];
+    std::vector<double> gen_triplet_phi[4];
+    std::vector<double> gen_triplet_mass[4];
   };
 }
 
