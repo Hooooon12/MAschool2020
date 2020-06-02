@@ -128,16 +128,16 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     }
     */
 
-    jet_pt_1[i] = new TH1D(Form("jet_pt_1_%d", i+1), Form("jet_pt_1_%d", i+1), 1100, 0, 1100);
-    jet_pt_2[i] = new TH1D(Form("jet_pt_2_%d", i+1), Form("jet_pt_2_%d", i+1), 1100, 0, 1100);
-    jet_pt_3[i] = new TH1D(Form("jet_pt_3_%d", i+1), Form("jet_pt_3_%d", i+1), 1100, 0, 1100);
-    jet_pt_4[i] = new TH1D(Form("jet_pt_4_%d", i+1), Form("jet_pt_4_%d", i+1), 1100, 0, 1100);
-    jet_pt_5[i] = new TH1D(Form("jet_pt_5_%d", i+1), Form("jet_pt_5_%d", i+1), 1100, 0, 1100);
-    jet_pt_6[i] = new TH1D(Form("jet_pt_6_%d", i+1), Form("jet_pt_6_%d", i+1), 1100, 0, 1100);
-    jet_pt_7[i] = new TH1D(Form("jet_pt_7_%d", i+1), Form("jet_pt_7_%d", i+1), 1100, 0, 1100);
-    jet_pt_8[i] = new TH1D(Form("jet_pt_8_%d", i+1), Form("jet_pt_8_%d", i+1), 1100, 0, 1100);
-    jet_pt_9[i] = new TH1D(Form("jet_pt_9_%d", i+1), Form("jet_pt_9_%d", i+1), 1100, 0, 1100);
-    jet_pt_10[i] = new TH1D(Form("jet_pt_10_%d", i+1), Form("jet_pt_10_%d", i+1), 1100, 0, 1100);
+    jet_pt_1[i] = new TH1D(Form("jet_pt_1_%d", i+1), Form("jet_pt_1_%d", i+1), 1000, 0, 2000);
+    jet_pt_2[i] = new TH1D(Form("jet_pt_2_%d", i+1), Form("jet_pt_2_%d", i+1), 1000, 0, 2000);
+    jet_pt_3[i] = new TH1D(Form("jet_pt_3_%d", i+1), Form("jet_pt_3_%d", i+1), 1000, 0, 2000);
+    jet_pt_4[i] = new TH1D(Form("jet_pt_4_%d", i+1), Form("jet_pt_4_%d", i+1), 1000, 0, 2000);
+    jet_pt_5[i] = new TH1D(Form("jet_pt_5_%d", i+1), Form("jet_pt_5_%d", i+1), 1000, 0, 2000);
+    jet_pt_6[i] = new TH1D(Form("jet_pt_6_%d", i+1), Form("jet_pt_6_%d", i+1), 1000, 0, 2000);
+    jet_pt_7[i] = new TH1D(Form("jet_pt_7_%d", i+1), Form("jet_pt_7_%d", i+1), 1000, 0, 2000);
+    jet_pt_8[i] = new TH1D(Form("jet_pt_8_%d", i+1), Form("jet_pt_8_%d", i+1), 1000, 0, 2000);
+    jet_pt_9[i] = new TH1D(Form("jet_pt_9_%d", i+1), Form("jet_pt_9_%d", i+1), 1000, 0, 2000);
+    jet_pt_10[i] = new TH1D(Form("jet_pt_10_%d", i+1), Form("jet_pt_10_%d", i+1), 1000, 0, 2000);
     jet_eta_1[i] = new TH1D(Form("jet_eta_1_%d", i+1), Form("jet_eta_1_%d", i+1), 100, -5, 5);
     jet_eta_2[i] = new TH1D(Form("jet_eta_2_%d", i+1), Form("jet_eta_2_%d", i+1), 100, -5, 5);
     jet_eta_3[i] = new TH1D(Form("jet_eta_3_%d", i+1), Form("jet_eta_3_%d", i+1), 100, -5, 5);
@@ -149,12 +149,12 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     jet_eta_9[i] = new TH1D(Form("jet_eta_9_%d", i+1), Form("jet_eta_9_%d", i+1), 100, -5, 5);
     jet_eta_10[i] = new TH1D(Form("jet_eta_10_%d", i+1), Form("jet_eta_10_%d", i+1), 100, -5, 5); 
 
-    parton_pt_1[i] = new TH1D(Form("parton_pt_1_%d", i+1), Form("parton_pt_1_%d", i+1), 1100, 0, 1100);
-    parton_pt_2[i] = new TH1D(Form("parton_pt_2_%d", i+1), Form("parton_pt_2_%d", i+1), 1100, 0, 1100);
-    parton_pt_3[i] = new TH1D(Form("parton_pt_3_%d", i+1), Form("parton_pt_3_%d", i+1), 1100, 0, 1100);
-    parton_pt_4[i] = new TH1D(Form("parton_pt_4_%d", i+1), Form("parton_pt_4_%d", i+1), 1100, 0, 1100);
-    parton_pt_5[i] = new TH1D(Form("parton_pt_5_%d", i+1), Form("parton_pt_5_%d", i+1), 1100, 0, 1100);
-    parton_pt_6[i] = new TH1D(Form("parton_pt_6_%d", i+1), Form("parton_pt_6_%d", i+1), 1100, 0, 1100);
+    parton_pt_1[i] = new TH1D(Form("parton_pt_1_%d", i+1), Form("parton_pt_1_%d", i+1), 1000, 0, 2000);
+    parton_pt_2[i] = new TH1D(Form("parton_pt_2_%d", i+1), Form("parton_pt_2_%d", i+1), 1000, 0, 2000);
+    parton_pt_3[i] = new TH1D(Form("parton_pt_3_%d", i+1), Form("parton_pt_3_%d", i+1), 1000, 0, 2000);
+    parton_pt_4[i] = new TH1D(Form("parton_pt_4_%d", i+1), Form("parton_pt_4_%d", i+1), 1000, 0, 2000);
+    parton_pt_5[i] = new TH1D(Form("parton_pt_5_%d", i+1), Form("parton_pt_5_%d", i+1), 1000, 0, 2000);
+    parton_pt_6[i] = new TH1D(Form("parton_pt_6_%d", i+1), Form("parton_pt_6_%d", i+1), 1000, 0, 2000);
     parton_eta_1[i] = new TH1D(Form("parton_eta_1_%d", i+1), Form("parton_eta_1_%d", i+1), 100, -5, 5);
     parton_eta_2[i] = new TH1D(Form("parton_eta_2_%d", i+1), Form("parton_eta_2_%d", i+1), 100, -5, 5);
     parton_eta_3[i] = new TH1D(Form("parton_eta_3_%d", i+1), Form("parton_eta_3_%d", i+1), 100, -5, 5);
@@ -163,10 +163,9 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     parton_eta_6[i] = new TH1D(Form("parton_eta_6_%d", i+1), Form("parton_eta_6_%d", i+1), 100, -5, 5);
 
     // HT ~ Pt histogram
-    Mass_HT_beforeDelta[i] = new TH2D(Form("Mass_HT_beforeDelta_%d", i+1), Form("Mass_HT_beforeDelta_%d", i+1), 120, 0, 1200, 120, 0, 1200);
-    Mass_HT_afterDelta[i] = new TH2D(Form("Mass_HT_afterDelta_%d", i+1), Form("Mass_HT_afterDelta_%d", i+1), 120, 0, 1200, 120, 0, 1200); 
-    Gen_Mass_HT_beforeDelta[i] = new TH2D(Form("Gen_Mass_HT_beforeDelta_%d", i+1), Form("Gen_Mass_HT_beforeDelta_%d", i+1), 120, 0, 1200, 120, 0, 1200);
-    Gen_Mass_HT_afterDelta[i] = new TH2D(Form("Gen_Mass_HT_afterDelta_%d", i+1), Form("Gen_Mass_HT_afterDelta_%d", i+1), 120, 0, 1200, 120, 0, 1200); 
+    Mass_HT_beforeDelta[i] = new TH2D(Form("Mass_HT_beforeDelta_%d", i+1), Form("Mass_HT_beforeDelta_%d", i+1), 200, 0, 2000, 200, 0, 2000);
+    Mass_HT_afterDelta[i] = new TH2D(Form("Mass_HT_afterDelta_%d", i+1), Form("Mass_HT_afterDelta_%d", i+1), 200, 0, 2000, 200, 0, 2000); 
+    Gen_Mass_HT[i] = new TH2D(Form("Gen_Mass_HT%d", i+1), Form("Gen_Mass_HT%d", i+1), 200, 0, 2000, 200, 0, 2000);
     // Dalitz plots
     Dalitz32_beforeMDS[i] = new TH2D(Form("Dalitz32_beforeMDS_%d", i+1), Form("Dalitz_beforeMDS_%d", i+1), 100, 0., 0.5, 100, 0., 1.);
     Dalitz32_afterMDS[i] = new TH2D(Form("Dalitz32_afterMDS_%d", i+1), Form("Dalitz_afterMDS_%d", i+1), 100, 0., 0.5, 100, 0., 1.);
@@ -246,8 +245,7 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
  
     Mass_HT_beforeDelta[i]->Write();
     Mass_HT_afterDelta[i]->Write();
-    Gen_Mass_HT_beforeDelta[i]->Write();
-    Gen_Mass_HT_afterDelta[i]->Write(); // not yet
+    Gen_Mass_HT[i]->Write();
 
     Dalitz32_beforeMDS[i]->Write();
     Dalitz32_afterMDS[i]->Write();
@@ -468,7 +466,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
         // Mass vs HT plot
         genMass[i] = GetMass(genTrips[i].at(j));
         genHT[i] = GetHT(genTrips[i].at(j));
-        Gen_Mass_HT_beforeDelta[i]->Fill(genHT[i], genMass[i]);
+        Gen_Mass_HT[i]->Fill(genHT[i], genMass[i]);
         // Dalitz32 plot
         vector<double> dalitz32s; dalitz32s.clear();
         dalitz32s.push_back(dalitz32(genTrips[i].at(j), 0, 1));

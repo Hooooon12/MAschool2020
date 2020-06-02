@@ -103,8 +103,7 @@ namespace MA5
     TH1D*  parton_eta_6[4];
     TH2D*  Mass_HT_beforeDelta[4];
     TH2D*  Mass_HT_afterDelta[4];
-    TH2D*  Gen_Mass_HT_beforeDelta[4];
-    TH2D*  Gen_Mass_HT_afterDelta[4];
+    TH2D*  Gen_Mass_HT[4];
     TH2D*  Dalitz32_beforeMDS[4];
     TH2D*  Dalitz32_afterMDS[4];
     TH2D*  Gen_Dalitz32[4];
