@@ -118,6 +118,7 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     MDS32_after[i] = new TH1D(Form("MDS32_after_%d", i+1), Form("MDS32_after_%d", i+1), 100, 0., 1.);
     Gen_MDS6332[i] = new TH1D(Form("Gen_MDS6332_%d", i+1), Form("Gen_MDS6332_%d", i+1), 60, 0., 3.);
     Gen_MDS32[i] = new TH1D(Form("Gen_MDS32_%d", i+1), Form("Gen_MDS32_%d", i+1), 100, 0., 1.);
+	Gen_final_triplets[i] = new TH1D(Form("Gen_final_triplets_%d", i+1), Form("Gen_final_triplets_%d", i+1), 11, -0.5, 10.5);
     
     // Histrograms to check Njets & kinematic distributions
     Njets[i] = new TH1D(Form("Njets_%d", i+1), Form("NJets_%d", i+1), 5, 5.5, 10.5);
@@ -251,6 +252,7 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
     Dalitz32_afterMDS[i]->Write();
     Gen_Dalitz32[i]->Write();
     Gen_dR[i]->Write();
+	Gen_final_triplets[i]->Write();
     /*
     for (int j = 0; j < 10; j++) {
       jet_pt[i][j]->Write();
@@ -630,7 +632,8 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
       genTrips[i] = GenMatchedTriplets(event, trips[i]);
 
       // below line is to detect wrongly matched triplets. Ideally this should not print any messages.
-      if(genTrips[i].size()>2) cout << "weird gen matched triplets size : " << genTrips[i].size() << endl;
+      if(genTrips[i].size()>2) cout << "[SR_" + TString::Itoa(i, 10) + "] weird gen matched triplets size : " << genTrips[i].size() << endl;
+	  Gen_final_triplets[i]->Fill(genTrips[i].size());
 
       for (int j = 0; j < genTrips[i].size(); j++){
         MALorentzVector gen_mom = getMomentum(genTrips[i][j]);

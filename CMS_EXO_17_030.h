@@ -108,6 +108,7 @@ namespace MA5
     TH2D*  Dalitz32_afterMDS[4];
     TH2D*  Gen_Dalitz32[4];
     TH1D*  Gen_dR[4];
+	TH1D*  Gen_final_triplets[4];
 
     std::vector<double> triplet_pt[4];
     std::vector<double> triplet_eta[4];
