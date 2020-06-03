@@ -630,6 +630,8 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
         triplet_mass[i].push_back(mom.M());
       }
       genTrips[i] = GenMatchedTriplets(event, trips[i]);
+      // below line is to detect wrongly matched triplets. Ideally this should not print any messages.
+      if(genTrips[i].size()>2) cout << "weird gen matched triplets size : " << genTrips[i].size() << endl;
       for (int j = 0; j < genTrips[i].size(); j++){
         MALorentzVector gen_mom = getMomentum(genTrips[i][j]);
         gen_triplet_pt[i].push_back(gen_mom.Pt());
@@ -811,31 +813,37 @@ TripletCollection CMS_EXO_17_030::GenMatchedTriplets( const EventFormat& event, 
   const vector<MCParticleFormat>& gens = event.mc()->particles();
 
   bool matched;
-  for(unsigned int i=0;i<gens.size();i++){
-    if(1<=gens[i].pdgid()&&gens[i].pdgid()<=3&&(gens[i].mothers()).at(0)->pdgid()==1000021){
-      for(unsigned int j=0;j<Trips.size();j++){
+  for(unsigned int i=0;i<Trips.size();i++){
+    for(unsigned int j=0;j<gens.size();j++){
+      if(1<=gens[j].pdgid()&&gens[j].pdgid()<=3&&(gens[j].mothers()).at(0)->pdgid()==1000021){
         for(unsigned int k=0;k<3;k++){
-          matched = (Trips.at(j)[k]->momentum()).DeltaR(gens[i].momentum())<0.3;
+          matched = (Trips.at(i)[k]->momentum()).DeltaR(gens[j].momentum())<0.3;
           if(matched){
-            GenMatchedJets1.push_back(Trips.at(j)[k]);
+            GenMatchedJets1.push_back(Trips.at(i)[k]);
           }
         }
-        if(GenMatchedJets1.size()==3) GenMatchedTrips.push_back(Trips.at(j));
       }
-    }
-    else if(-3<=gens[i].pdgid()&&gens[i].pdgid()<=-1&&(gens[i].mothers()).at(0)->pdgid()==1000021){
-      for(unsigned int j=0;j<Trips.size();j++){
+      else if(-3<=gens[j].pdgid()&&gens[j].pdgid()<=-1&&(gens[j].mothers()).at(0)->pdgid()==1000021){
         for(unsigned int k=0;k<3;k++){
-          matched = (Trips.at(j)[k]->momentum()).DeltaR(gens[i].momentum())<0.3;
+          matched = (Trips.at(i)[k]->momentum()).DeltaR(gens[j].momentum())<0.3;
           if(matched){
-            GenMatchedJets2.push_back(Trips.at(j)[k]);
+            GenMatchedJets2.push_back(Trips.at(i)[k]);
           }
         }
-        if(GenMatchedJets2.size()==3) GenMatchedTrips.push_back(Trips.at(j));
       }
     }
+    sort(GenMatchedJets1.begin(),GenMatchedJets1.end());
+    auto last1 = unique(GenMatchedJets1.begin(),GenMatchedJets1.end());
+    GenMatchedJets1.erase(last1,GenMatchedJets1.end());
+    sort(GenMatchedJets2.begin(),GenMatchedJets2.end());
+    auto last2 = unique(GenMatchedJets2.begin(),GenMatchedJets2.end());
+    GenMatchedJets2.erase(last2,GenMatchedJets2.end());
+    if(GenMatchedJets1.size()==3) GenMatchedTrips.push_back(Trips.at(i));
+    if(GenMatchedJets2.size()==3) GenMatchedTrips.push_back(Trips.at(i));
+    GenMatchedJets1.clear();
+    GenMatchedJets2.clear();
   }
-  
+
   return GenMatchedTrips;
 } 
 
