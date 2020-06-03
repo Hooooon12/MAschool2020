@@ -165,7 +165,7 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
     // HT ~ Pt histogram
     Mass_HT_beforeDelta[i] = new TH2D(Form("Mass_HT_beforeDelta_%d", i+1), Form("Mass_HT_beforeDelta_%d", i+1), 200, 0, 2000, 200, 0, 2000);
     Mass_HT_afterDelta[i] = new TH2D(Form("Mass_HT_afterDelta_%d", i+1), Form("Mass_HT_afterDelta_%d", i+1), 200, 0, 2000, 200, 0, 2000); 
-    Gen_Mass_HT[i] = new TH2D(Form("Gen_Mass_HT%d", i+1), Form("Gen_Mass_HT%d", i+1), 200, 0, 2000, 200, 0, 2000);
+    Gen_Mass_HT[i] = new TH2D(Form("Gen_Mass_HT_%d", i+1), Form("Gen_Mass_HT_%d", i+1), 200, 0, 2000, 200, 0, 2000);
     // Dalitz plots
     Dalitz32_beforeMDS[i] = new TH2D(Form("Dalitz32_beforeMDS_%d", i+1), Form("Dalitz_beforeMDS_%d", i+1), 100, 0., 0.5, 100, 0., 1.);
     Dalitz32_afterMDS[i] = new TH2D(Form("Dalitz32_afterMDS_%d", i+1), Form("Dalitz_afterMDS_%d", i+1), 100, 0., 0.5, 100, 0., 1.);
