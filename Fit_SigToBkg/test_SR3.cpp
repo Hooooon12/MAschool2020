@@ -2,9 +2,9 @@ void test_SR3() {
 	using namespace RooFit;
 	TFile* f = new TFile("tripletM.root");
 
-	bool trigSig = false;
+	bool trigSig = true;
 	bool trigBkg = false;
-	bool trigTotal = true;
+	bool trigTotal = false;
 
 	TString br;
 	if (trigSig) br = "gen_tripletM_sr3";
@@ -39,10 +39,10 @@ void test_SR3() {
     RooAddPdf sig("sig", "sig", RooArgList(sig1, sig2), sig1_frac);
 
 	//==== Backgournd function
-	RooRealVar a("a", "a", 10e24, 10e28);
-	RooRealVar b("b", "b", 8500, 95000);
-	RooRealVar c("c", "c", -100, 100);
-	RooRealVar d("d", "d", 10e-2, 1.4, 2.4);
+	RooRealVar a("a", "a", 10e26, 10e28);
+	RooRealVar b("b", "b", 11000, 13000);
+	RooRealVar c("c", "c", 100, 300);
+	RooRealVar d("d", "d",  2.6, 3.2);
     RooGenericPdf bkg("bkg", "bkg", "(a / x^(5+d*TMath::Log((x+c)/13000)))*(1 / (TMath::Exp(b / (x+c))-1))", RooArgSet(x, a, b, c, d));
 
 	//==== sig+bkg model

@@ -1,6 +1,6 @@
 void acceptance_cal() {
-	double frac_sr1 = 0.306; // mass range 50 ~ 600
-	double frac_sr2 = 0.151; // mass range 100 ~1200
+	double frac_sr1 = 0.2654; // mass range 50 ~ 600
+	double frac_sr2 = 0.1477; // mass range 100 ~1200
 	double frac_sr3 = 0.213; // mass range 500 ~ 1600
 	double frac_sr4 = 0.099; // mass range 1000 ~ 2500
 

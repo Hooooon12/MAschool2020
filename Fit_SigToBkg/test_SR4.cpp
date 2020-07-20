@@ -39,9 +39,9 @@ void test_SR4() {
 
 	//==== Backgournd function
 	RooRealVar a("a", "a", 10e24, 10e28);
-	RooRealVar b("b", "b", 14500, 16500);
+	RooRealVar b("b", "b", 15500, 17500);
 	RooRealVar c("c", "c", -400, 400);
-	RooRealVar d("d", "d", 2.0, 1.6, 2.2);
+	RooRealVar d("d", "d", 1.4, 2.2);
     RooGenericPdf bkg("bkg", "bkg", "(a / x^(5+d*TMath::Log((x+c)/13000)))*(1 / (TMath::Exp(b / (x+c))-1))", RooArgSet(x, a, b, c, d));
 
 	//==== sig+bkg model

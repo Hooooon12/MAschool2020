@@ -3,8 +3,8 @@ void test_SR2() {
 	TFile* f = new TFile("tripletM.root");
 
 	bool trigSig = false;
-	bool trigBkg = true;
-	bool trigTotal = false;
+	bool trigBkg = false;
+	bool trigTotal = true;
 
 	TString br;
 	if (trigSig) br = "gen_tripletM_sr2";
@@ -45,8 +45,8 @@ void test_SR2() {
 
 	//==== Backgournd function
 	RooRealVar a("a", "a", 10e24, 10e28);
-	RooRealVar b("b", "b", 1900, 2050);
-	RooRealVar c("c", "c", -100, 100);
+	RooRealVar b("b", "b", 2700, 3100);
+	RooRealVar c("c", "c", -150, 150);
 	RooRealVar d("d", "d", 10e-2, 0., 1.0);
 	//RooRealVar d("d", "d", 0);
     RooGenericPdf bkg("bkg", "bkg", "(a / x^(5+d*TMath::Log((x+c)/13000)))*(1 / (TMath::Exp(b / (x+c))-1))", RooArgSet(x, a, b, c, d));
@@ -77,7 +77,7 @@ void test_SR2() {
 	}
 
 	if (trigTotal) {
-		model.fitTo(*dhist);
+		model.chi2FitTo(*dhist);
 
 		RooPlot* total_frame = x.frame();
 		data.plotOn(total_frame);

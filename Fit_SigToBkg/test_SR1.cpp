@@ -38,12 +38,14 @@ void test_SR1() {
 	RooGaussian sig1("sig1", "sig1", x, mean1, sigma1);
     RooGaussian sig2("sig2", "sig2", x, mean2, sigma2);
 
-    RooRealVar sig1_frac("sig1_frac", "sig1_frac", 0.5, 0., 1.);
+	double s1_frac = 0.867;
+	double s1_frac_err = 0.113;
+    RooRealVar sig1_frac("sig1_frac", "sig1_frac", s1_frac, s1_frac-2*s1_frac_err, s1_frac+2*s1_frac_err);
     RooAddPdf sig("sig", "sig", RooArgList(sig1, sig2), sig1_frac);
 
 	//==== Backgournd function
 	RooRealVar a("a", "a", 10e22, 10e28);
-	RooRealVar b("b", "b", 500, 700);
+	RooRealVar b("b", "b", 300, 600);
 	RooRealVar c("c", "c", -200, 200);
 	RooRealVar d("d", "d", 10e-2, 0., 1.0);
 	//RooRealVar d("d", "d", 0);
@@ -75,7 +77,7 @@ void test_SR1() {
 	}
 
 	if (trigTotal) {
-		model.fitTo(*dhist);
+		model.chi2FitTo(*dhist);
 
 		RooPlot* total_frame = x.frame();
 		data.plotOn(total_frame);
