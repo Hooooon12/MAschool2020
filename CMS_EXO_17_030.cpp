@@ -63,63 +63,59 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
   }
 
   // Declaration of Jet ID cut
-  Manager()->AddCut("preselection Low", Low_Mass_Region);
-  Manager()->AddCut("preselection High", High_Mass_Region);
+  Manager()->AddCut("LOW: preselection", Low_Mass_Region);
+  Manager()->AddCut("HIGH: preselection", High_Mass_Region);
     
   // Declaration of the jet-pt cuts and HT cuts
   // pt(jets) requires all jet pt > ~GeV
   
-  Manager()->AddCut("Njets>=6 Low",  Low_Mass_Region);
-  Manager()->AddCut("Njets>=6 High", High_Mass_Region);
+  Manager()->AddCut("LOW: Njets>=6", Low_Mass_Region);
+  Manager()->AddCut("HIGH: Njets>=6", High_Mass_Region);
 
-  Manager()->AddCut("HT > 650GeV", Low_Mass_Region);
-  Manager()->AddCut("HT > 900GeV", High_Mass_Region);
+  Manager()->AddCut("LOW: HT > 650GeV", Low_Mass_Region);
+  Manager()->AddCut("HIGH: HT > 900GeV", High_Mass_Region);
   
   // Declaration of the sixth jet-pt cut
-  Manager()->AddCut("pt(j6) > 40GeV", "Mg_200to400");
-  Manager()->AddCut("pt(j6) > 50GeV", "Mg_400to700");
-  Manager()->AddCut("pt(j6) > 125GeV", "Mg_700to1200");
-  Manager()->AddCut("pt(j6) > 175GeV", "Mg_1200to2000");
+  Manager()->AddCut("SR1: pt(j6) > 40GeV", "Mg_200to400");
+  Manager()->AddCut("SR2: pt(j6) > 50GeV", "Mg_400to700");
+  Manager()->AddCut("SR3: pt(j6) > 125GeV", "Mg_700to1200");
+  Manager()->AddCut("SR4: pt(j6) > 175GeV", "Mg_1200to2000");
   
   // Declaration of the D^2[6,3+3,2] cut
-  Manager()->AddCut("D^2[6,3+3,2] < 1.25", "Mg_200to400");
-  Manager()->AddCut("D^2[6,3+3,2] < 1.0", "Mg_400to700");
-  Manager()->AddCut("D^2[6,3+3,2] < 0.9", "Mg_700to1200");
-  Manager()->AddCut("D^2[6,3+3,2] < 0.75", "Mg_1200to2000");
+  Manager()->AddCut("SR1: D^2[6,3+3,2] < 1.25", "Mg_200to400");
+  Manager()->AddCut("SR2: D^2[6,3+3,2] < 1.0", "Mg_400to700");
+  Manager()->AddCut("SR3: D^2[6,3+3,2] < 0.9", "Mg_700to1200");
+  Manager()->AddCut("SR4: D^2[6,3+3,2] < 0.75", "Mg_1200to2000");
   
   // Declaration of the Am cut - TripletPair cut
-  Manager()->AddCut("Am < 0.25", "Mg_200to400");
-  Manager()->AddCut("Am < 0.175", "Mg_400to700");
-  Manager()->AddCut("Am < 0.15", "Mg_700to1200");
-  Manager()->AddCut("Am < 0.15", "Mg_1200to2000");
+  Manager()->AddCut("SR1: Am < 0.25", "Mg_200to400");
+  Manager()->AddCut("SR2: Am < 0.175", "Mg_400to700");
+  Manager()->AddCut("SR3: Am < 0.15", "Mg_700to1200");
+  Manager()->AddCut("SR4: Am < 0.15", "Mg_1200to2000");
   
   // Declaration of the Delta cut - Triplet cut
-  Manager()->AddCut("Delta > 250GeV", "Mg_200to400");
-  Manager()->AddCut("Delta > 180GeV", "Mg_400to700");
-  Manager()->AddCut("Delta > 20GeV", "Mg_700to1200");
-  Manager()->AddCut("Delta > -120GeV", "Mg_1200to2000");
+  Manager()->AddCut("SR1: Delta > 250GeV", "Mg_200to400");
+  Manager()->AddCut("SR2: Delta > 180GeV", "Mg_400to700");
+  Manager()->AddCut("SR3: Delta > 20GeV", "Mg_700to1200");
+  Manager()->AddCut("SR4: Delta > -120GeV", "Mg_1200to2000");
                     
   // Declaration of the D^2[3,2] cut - Triplet cut
-  Manager()->AddCut("D^2[3,2] < 0.05", "Mg_200to400");
-  Manager()->AddCut("D^2[3,2] < 0.175", "Mg_400to700");
-  Manager()->AddCut("D^2[3,2] < 0.2", "Mg_700to1200");
-  Manager()->AddCut("D^2[3,2] < 0.25", "Mg_1200to2000");
+  Manager()->AddCut("SR1: D^2[3,2] < 0.05", "Mg_200to400");
+  Manager()->AddCut("SR2: D^2[3,2] < 0.175", "Mg_400to700");
+  Manager()->AddCut("SR3: D^2[3,2] < 0.2", "Mg_700to1200");
+  Manager()->AddCut("SR4: D^2[3,2] < 0.25", "Mg_1200to2000");
 
   // validation histograms
   if (!trigGen) f = new TFile("test_SR" + TString::Itoa(SR, 10) + ".root", "recreate");
   if (trigGen) f = new TFile("gen_test_SR" + TString::Itoa(SR, 10) + ".root", "recreate");
-  for (int i = 0; i < 4; i++) {
-	cutflow_event[i] = new TH1D("cutflow_event_SR" + TString::Itoa(i+1, 10), "", 10, 0., 10.);
-	cutflow_pair[i] = new TH1D("cutflow_pair_SR" + TString::Itoa(i+1, 10), "", 10, 0., 10.);
-	cutflow_triplet[i] = new TH1D("cutflow_triplet_SR" + TString::Itoa(i+1, 10), "", 10, 0., 10.);
+  tr = new TTree("SR" + TString::Itoa(SR, 10), "");
+  cutflow_event = new TH1D("cutflow_event_SR" + TString::Itoa(SR, 10), "", 10, 0., 10.);
+  cutflow_pair = new TH1D("cutflow_pair_SR" + TString::Itoa(SR, 10), "", 10, 0., 10.);
+  cutflow_triplet = new TH1D("cutflow_triplet_SR" + TString::Itoa(SR, 10), "", 10, 0., 10.);
 
-	h_mass[i] = new TH1D("triplet_mass_SR" + TString::Itoa(i+1, 10), "", 400, 0., 2000.);
-	//h_mds6332[i] = new TH1D("mds6332_SR" + TString::Itoa(i, 10), "", 1000, 0., 10.);
-	//h_massAsymm[i] = new TH1D("massAsymm_SR" + TString::Itoa(i, 10), "", 100, 0., 1.);
-	h_mds32[i] = new TH1D("mds32_SR" + TString::Itoa(i+1, 10), "", 1000, 0., 1.);
-	h_delta[i] = new TH1D("delta_SR" + TString::Itoa(i+1, 10), "", 100, -500, 500);
-  }
-  
+  tr->Branch("triplet_mass", &triplet_mass);
+  tr->Branch("triplet_deltaR", &triplet_delta);
+  tr->Branch("triplet_mds32", &triplet_mds32);
 
   cout << "END   Initialization" << endl;
   
@@ -135,17 +131,12 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
   cout << "BEGIN Finalization" << endl;
 
   f->cd();
-  for (int i = 0; i < 4; i++) {
-	cutflow_event[i]->Write();
-	cutflow_pair[i]->Write();
-	cutflow_triplet[i]->Write();
+  cutflow_event->Write();
+  cutflow_pair->Write();
+  cutflow_triplet->Write();
 
-	h_mass[i]->Write();
-	//h_mds6332[i]->Write();
-	//h_massAsymm[i]->Write();
-	h_mds32[i]->Write();
-	h_delta[i]->Write();
-  }
+  tr->Write();
+
   f->Close();
 
   cout << "END   Finalization" << endl;
@@ -155,24 +146,22 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
 // Execute
 // function called each time one event is read
 // -----------------------------------------------------------------------------
-unsigned int Nevents = 0;
-
 bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
 {
   // Event weight
-  //double myEventWeight;
+  // using unbiased events, set the weight = 1. to calculated the acceptance
+  double weight = 1.;
+  Manager()->InitializeForNewEvent(weight);
+  double nTrips = 20.;
+  
   //if (Configuration().IsNoEventWeight()) myEventWeight=1.;
   //else if (event.mc()->weight()!=0.) myEventWeight=event.mc()->weight();
   //else {
-    //WARNING << "Found one event with a zero weight. Skipping...\n";
+	//WARNING << "Found one event with a zero weight. Skipping...\n";
     //return false;
   //}
   //Manager()->InitializeForNewEvent(myEventWeight);
-  //cout << "myEventWeight = " << myEventWeight << endl;
-
-  // initialize weight as the number of triplets
-  double nTrips = 20; // 6 choose 3
-  Manager()->InitializeForNewEvent(nTrips);
+  //out << "myEventWeight = " << myEventWeight << endl;
   
   double ptCut[] = {30, 30, 50, 50};
   double HTcut[] = {650, 650, 900, 900};
@@ -181,179 +170,174 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   double asymmCut[] = {0.25, 0.175, 0.15, 0.15};
   double deltaCut[] = {250, 180, 20, -120};
   double mds32Cut[] = {0.05, 0.175, 0.2, 0.25};
+  bool passFlag = true;
   
   // The event loop start here
-  if(event.rec()!=0) {
-	for (int i = 0; i < 4; i++) {
-	  cutflow_event[i]->Fill(0.);
-	  cutflow_pair[i]->Fill(0., 10.);
-	  cutflow_triplet[i]->Fill(0., 20.);
-	}
+  if(event.rec() == 0) return true;
+  
+  // Select jets satisfying pt&eta cut
+  double etaCut = 2.4;
+  JetCollection jets = jetSelection(event, ptCut[SR-1], etaCut);
+  SORTER->sort(jets);
 
-
-    // Select jets satisfying pt&eta cut
-	double etaCut = 2.4;
-	JetCollection jets[4];
-	for (int i = 0; i < 4; i++) {
-	  jets[i] = jetSelection(event, ptCut[i], etaCut);
-	  SORTER->sort(jets[i]);
-
-	  // cutflow
-	  if (jets[i].size() >= 6) {
-		cutflow_event[i]->Fill(1.);
-		cutflow_pair[i]->Fill(1., 10.);
-		cutflow_triplet[i]->Fill(1., 20.);
-	  }
-	}
-
-    // Jet ID
-    if(!Manager()->ApplyCut(jets[0].size() != 0, "preselection Low")) return true;
-    if(!Manager()->ApplyCut(jets[2].size() != 0, "preselection High")) return true;
-
-    // Nj cut for low and high mass regions
-    if(!Manager()->ApplyCut(jets[0].size() >= 6, "Njets>=6 Low") ) return true;
-    if(!Manager()->ApplyCut(jets[2].size() >= 6, "Njets>=6 High")) return true;
-    
-	// HT cuts	
-	double H_T[4];
-	double l6pt[4];
-    for (int i = 0; i < 4; i++) {
-	  if (jets[i].size() >= 6) {
-		H_T[i] = HT(jets[i]);
-		l6pt[i] = jets[i].at(5)->pt();
-	  }
-
-	  else {
-		H_T[i] = 0;
-		l6pt[i] = 0;
-		jets[i].clear();
-	  }
-
-	  if (H_T[i] > HTcut[i]) {
-		cutflow_event[i]->Fill(2.);
-		cutflow_pair[i]->Fill(2., 10.);
-		cutflow_triplet[i]->Fill(2., 20.);
-	  }
-	  else {
-		jets[i].clear();
-		l6pt[i] = 0;
-	  }
-
-	  if (l6pt[i] > l6ptCut[i]) {
-		cutflow_event[i]->Fill(3.);
-		cutflow_pair[i]->Fill(3., 10.);
-		cutflow_triplet[i]->Fill(3., 20.);
-	  }
-	  else jets[i].clear();
-    }
-
-    // HT cut for low and high mass regions
-    if(!Manager()->ApplyCut(H_T[0] > HTcut[0], "HT > 650GeV")) return true;
-    if(!Manager()->ApplyCut(H_T[2] > HTcut[2], "HT > 900GeV")) return true;
-
-    // 6th Jet Pt cut for each regions
-    if(!Manager()->ApplyCut(l6pt[0] > l6ptCut[0], "pt(j6) > 40GeV") ) return true;
-    if(!Manager()->ApplyCut(l6pt[1] > l6ptCut[1], "pt(j6) > 50GeV") ) return true;
-    if(!Manager()->ApplyCut(l6pt[2] > l6ptCut[2], "pt(j6) > 125GeV")) return true;
-    if(!Manager()->ApplyCut(l6pt[3] > l6ptCut[3], "pt(j6) > 175GeV")) return true;
-
-    // Mds6332 cut for each regions
-    double evtMds6332[4];
-    for (int i = 0; i < 4; i++) {
-      if (jets[i].size() >= 6) evtMds6332[i] = mds6332(jets[i]);
-	  else evtMds6332[i] = 100;
-
-
-	  if (evtMds6332[i] < mds6332Cut[i]) {
-		cutflow_event[i]->Fill(4.);
-		cutflow_pair[i]->Fill(4., 10.);
-		cutflow_triplet[i]->Fill(4., 20.);
-	  }
-	  else jets[i].clear();
-    }
-
-    if(!Manager()->ApplyCut(evtMds6332[0] < mds6332Cut[0], "D^2[6,3+3,2] < 1.25")) return true;
-    if(!Manager()->ApplyCut(evtMds6332[1] < mds6332Cut[1], "D^2[6,3+3,2] < 1.0") ) return true;
-    if(!Manager()->ApplyCut(evtMds6332[2] < mds6332Cut[2], "D^2[6,3+3,2] < 0.9") ) return true;
-    if(!Manager()->ApplyCut(evtMds6332[3] < mds6332Cut[3], "D^2[6,3+3,2] < 0.75")) return true; 
-
-    // Mass asymmetry cut
-    // for each TripletPairs
-    PairCollection tripPairs[4];
-    TripletCollection trips[4];
-    for (int i = 0; i < 4; i++) {
-      if (jets[i].size() >= 6) tripPairs[i] = makePairCollection(jets[i]);
-	  else tripPairs[i].clear();
-
-      trips[i] = pairSelection(tripPairs[i], asymmCut[i]);
-
-	  // gen matching
-	  if (trigGen) trips[i] = GenMatchedTriplets(event, trips[i]);
-
-	  if (trips[i].size() != 0) {
-		cutflow_event[i]->Fill(5.);
-		cutflow_pair[i]->Fill(5., trips[i].size()/2.);
-		cutflow_triplet[i]->Fill(5., trips[i].size());
-	  }
-    }
-
-	//==== the function MAbool ApplyCut has been changed to apply weights directly
-	//==== to count the number of triplets in each event
-	Manager()->SetCurrentEventWeight(trips[SR-1].size());
-    if(!Manager()->ApplyCut(trips[0].size() != 0, "Am < 0.25")) return true;
-    if(!Manager()->ApplyCut(trips[1].size() != 0, "Am < 0.175")) return true;
-    if(!Manager()->ApplyCut(trips[2].size() != 0, "Am < 0.15")) return true;
-    if(!Manager()->ApplyCut(trips[3].size() != 0, "Am < 0.15")) return true;
-
-    // Delta cut
-    // for each Triplets
-    for (int i = 0; i < 4; i++) {
-      trips[i] = deltaSelection(trips[i], deltaCut[i]);
-
-	  if (trips[i].size() != 0) {
-		//if (i==2) cout << "true" << endl;
-        cutflow_event[i]->Fill(6.);
-        cutflow_triplet[i]->Fill(6., trips[i].size());
-      }
-    }
-
-	Manager()->SetCurrentEventWeight(trips[SR-1].size());
-    if(!Manager()->ApplyCut(trips[0].size() != 0, "Delta > 250GeV")) return true;
-    if(!Manager()->ApplyCut(trips[1].size() != 0, "Delta > 180GeV")) return true;
-    if(!Manager()->ApplyCut(trips[2].size() != 0, "Delta > 20GeV")) return true;
-    if(!Manager()->ApplyCut(trips[3].size() != 0, "Delta > -120GeV")) return true;
-
-    // mds32 cut
-    // for each Triplets
-    for (int i = 0; i < 4; i++) {
-      trips[i] = mds32Selection(trips[i], mds32Cut[i]);
-
-	  if (trips[i].size() != 0) {
-        cutflow_event[i]->Fill(7.);
-        cutflow_triplet[i]->Fill(7., trips[i].size());
-      }
-    }
-      
-	// below line is to detect wrongly matched triplets. Ideally this should not print any messages.
-    // if(genTrips[i].size()>2) cout << "[SR_" + TString::Itoa(i, 10) + "] weird gen matched triplets size : " << genTrips[i].size() << endl;
-	
-	Manager()->SetCurrentEventWeight(trips[SR-1].size());
-    if(!Manager()->ApplyCut(trips[0].size() != 0, "D^2[3,2] < 0.05")) return true;
-    if(!Manager()->ApplyCut(trips[1].size() != 0, "D^2[3,2] < 0.175")) return true;
-    if(!Manager()->ApplyCut(trips[2].size() != 0, "D^2[3,2] < 0.2")) return true;
-    if(!Manager()->ApplyCut(trips[3].size() != 0, "D^2[3,2] < 0.25")) return true;
- 
-	// fill validation plots
-	for (int i = 0; i < 4; i++) {
-	  if (trips[i].size() != 0) {
-		for (const auto &trip : trips[i]) {
-		  h_mass[i]->Fill(mass(trip));
-		  h_mds32[i]->Fill(mds32(trip));
-		  h_delta[i]->Fill(delta(trip));
-		}
-	  }
-	} 
+  if (jets.size() == 0) passFlag = false;
+  if (passFlag) {
+	// preselection
+	cutflow_event->Fill(0., weight);
+	cutflow_triplet->Fill(0., weight*nTrips);
   }
+  
+  if (jets.size() < 6) passFlag = false;
+  if (passFlag) {
+	// Nj selection
+	cutflow_event->Fill(1., weight);
+	cutflow_triplet->Fill(1., weight*nTrips);
+  }
+
+  // Jet ID
+  Manager()->SetCurrentEventWeight(weight*nTrips);
+  if(!Manager()->ApplyCut(jets.size() != 0, "LOW: preselection")) return true;
+  if(!Manager()->ApplyCut(jets.size() != 0, "HIGH: preselection")) return true;
+
+  // Nj cut for low and high mass regions
+  Manager()->SetCurrentEventWeight(weight*nTrips);
+  if(!Manager()->ApplyCut(jets.size() >= 6, "LOW: Njets>=6") ) return true;
+  if(!Manager()->ApplyCut(jets.size() >= 6, "HIGH: Njets>=6") ) return true;
+  
+  // HT cuts	
+  double H_T = HT(jets);
+  double l6pt = jets.at(5)->pt();
+
+  if (H_T < HTcut[SR-1]) passFlag = false;
+  if (passFlag) {
+	// HT selection
+	cutflow_event->Fill(2., weight);
+	cutflow_triplet->Fill(2., weight*nTrips);
+  }
+
+
+  if (l6pt < l6ptCut[SR-1]) passFlag = false;
+  if (passFlag) {
+	// 6th jet pt selection
+	cutflow_event->Fill(3., weight);
+	cutflow_triplet->Fill(3., weight*nTrips);
+  }
+
+  // HT cut for low and high mass regions
+  Manager()->SetCurrentEventWeight(weight*nTrips);
+  if(!Manager()->ApplyCut(H_T > HTcut[0], "LOW: HT > 650GeV")) return true;
+  if(!Manager()->ApplyCut(H_T > HTcut[2], "HIGH: HT > 900GeV")) return true;
+
+  // 6th Jet Pt cut for each regions
+  Manager()->SetCurrentEventWeight(weight*nTrips);
+  if(!Manager()->ApplyCut(l6pt > l6ptCut[0], "SR1: pt(j6) > 40GeV") ) return true;
+  if(!Manager()->ApplyCut(l6pt > l6ptCut[1], "SR2: pt(j6) > 50GeV") ) return true;
+  if(!Manager()->ApplyCut(l6pt > l6ptCut[2], "SR3: pt(j6) > 125GeV")) return true;
+  if(!Manager()->ApplyCut(l6pt > l6ptCut[3], "SR4: pt(j6) > 175GeV")) return true;
+
+  // Mds6332 cut for each regions
+  double evtMds6332 = mds6332(jets);
+
+  if (evtMds6332 > mds6332Cut[SR-1]) passFlag = false;
+  if (passFlag) {
+	// mds6332 selection
+	cutflow_event->Fill(4., weight);
+	cutflow_triplet->Fill(4., weight*nTrips);
+  }
+  
+  Manager()->SetCurrentEventWeight(weight*nTrips);
+  if(!Manager()->ApplyCut(evtMds6332 < mds6332Cut[0], "SR1: D^2[6,3+3,2] < 1.25")) return true;
+  if(!Manager()->ApplyCut(evtMds6332 < mds6332Cut[1], "SR2: D^2[6,3+3,2] < 1.0") ) return true;
+  if(!Manager()->ApplyCut(evtMds6332 < mds6332Cut[2], "SR3: D^2[6,3+3,2] < 0.9") ) return true;
+  if(!Manager()->ApplyCut(evtMds6332 < mds6332Cut[3], "SR4: D^2[6,3+3,2] < 0.75")) return true; 
+
+  // Mass asymmetry cut
+  // for each TripletPairs
+  PairCollection tripPairs = makePairCollection(jets);
+  TripletCollection trips = pairSelection(tripPairs, asymmCut[SR-1]);
+
+  if (trigGen) trips = GenMatchedTriplets(event, trips);
+  
+  double nTrips_passAsymm = trips.size();
+  nTrips *= nTrips_passAsymm / nTrips;
+
+  // update flag
+  if (trips.size() == 0) passFlag = false;
+
+  // draw cutflow
+  if (passFlag) {
+	// mass asymmetry selection
+	cutflow_event->Fill(5., weight);
+	cutflow_triplet->Fill(5., weight*nTrips);
+  }
+	
+  Manager()->SetCurrentEventWeight(weight*nTrips);
+  if(!Manager()->ApplyCut(trips.size() != 0, "SR1: Am < 0.25")) return true;
+  if(!Manager()->ApplyCut(trips.size() != 0, "SR2: Am < 0.175")) return true;
+  if(!Manager()->ApplyCut(trips.size() != 0, "SR3: Am < 0.15")) return true;
+  if(!Manager()->ApplyCut(trips.size() != 0, "SR4: Am < 0.15")) return true;
+  
+  // Delta cut
+  // for each Triplets
+  trips = deltaSelection(trips, deltaCut[SR-1]);
+	
+  // update weight
+  double nTrips_passDelta = trips.size();
+  nTrips *= nTrips_passDelta/nTrips_passAsymm;
+
+  // update flag
+  if (trips.size() == 0) passFlag = false;
+
+  // draw cutflow
+  if (passFlag) {
+	// delta selection
+	cutflow_event->Fill(6., weight);
+	cutflow_triplet->Fill(6., weight*nTrips);
+  }
+  
+  Manager()->SetCurrentEventWeight(weight*nTrips);
+  if(!Manager()->ApplyCut(trips.size() != 0, "SR1: Delta > 250GeV")) return true;
+  if(!Manager()->ApplyCut(trips.size() != 0, "SR2: Delta > 180GeV")) return true;
+  if(!Manager()->ApplyCut(trips.size() != 0, "SR3: Delta > 20GeV")) return true;
+  if(!Manager()->ApplyCut(trips.size() != 0, "SR4: Delta > -120GeV")) return true;
+  
+  // mds32 cut
+  // for each Triplets
+  trips = mds32Selection(trips, mds32Cut[SR-1]);
+
+  // update weight
+  double nTrips_passMDS32 = trips.size();
+  nTrips *= nTrips_passMDS32/nTrips_passDelta;
+
+  // update flag
+  if (trips.size() == 0) passFlag = false;
+
+  // draw cutflow
+  if (passFlag) {
+	// mds32
+    cutflow_event->Fill(7., weight);
+    cutflow_triplet->Fill(7., weight*nTrips);
+  }
+     
+  Manager()->SetCurrentEventWeight(weight*nTrips);
+  if(!Manager()->ApplyCut(trips.size() != 0, "SR1: D^2[3,2] < 0.05")) return true;
+  if(!Manager()->ApplyCut(trips.size() != 0, "SR2: D^2[3,2] < 0.175")) return true;
+  if(!Manager()->ApplyCut(trips.size() != 0, "SR3: D^2[3,2] < 0.2")) return true;
+  if(!Manager()->ApplyCut(trips.size() != 0, "SR4: D^2[3,2] < 0.25")) return true;
+  
+  // fill trees
+  triplet_mass.clear();
+  triplet_delta.clear();
+  triplet_mds32.clear();
+  if (passFlag) {
+	for (const auto &trip : trips) {
+	  triplet_mass.push_back(mass(trip));
+	  triplet_delta.push_back(delta(trip));
+	  triplet_mds32.push_back(mds32(trip));
+	}
+  }
+  tr->Fill();
+  
   return true;  
 }
 
@@ -573,19 +557,23 @@ TripletCollection CMS_EXO_17_030::GenMatchedTriplets(const EventFormat &event, c
 		}
 	  }
 	}
+	
+	// remove double matching
+	sort(matched_jets1.begin(), matched_jets1.end());
+	auto last1 = unique(matched_jets1.begin(), matched_jets1.end());
+	matched_jets1.erase(last1, matched_jets1.end());
+
+	sort(matched_jets2.begin(), matched_jets2.end());
+	auto last2 = unique(matched_jets2.begin(), matched_jets2.end());
+	matched_jets2.erase(last2, matched_jets2.end());
+
+	if (matched_jets1.size() == 3) matched_trips.push_back({matched_jets1.at(0), matched_jets1.at(1), matched_jets1.at(2)});
+	if (matched_jets2.size() == 3) matched_trips.push_back({matched_jets2.at(0), matched_jets2.at(1), matched_jets2.at(2)});
+	
+	// prepare for next iteration	
+	matched_jets1.clear();
+	matched_jets2.clear();
   } 
   
-  // remove double matching
-  sort(matched_jets1.begin(), matched_jets1.end());
-  auto last1 = unique(matched_jets1.begin(), matched_jets1.end());
-  matched_jets1.erase(last1, matched_jets1.end());
-
-  sort(matched_jets2.begin(), matched_jets2.end());
-  auto last2 = unique(matched_jets2.begin(), matched_jets2.end());
-  matched_jets2.erase(last2, matched_jets2.end());
-
-  if (matched_jets1.size() == 3) matched_trips.push_back({matched_jets1.at(0), matched_jets1.at(1), matched_jets1.at(2)});
-  if (matched_jets2.size() == 3) matched_trips.push_back({matched_jets2.at(0), matched_jets2.at(1), matched_jets2.at(2)});
-
   return matched_trips;
 }

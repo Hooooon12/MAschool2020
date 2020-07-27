@@ -50,14 +50,13 @@ namespace MA5
 
 	// histograms to validate cuts
 	TFile* f;
-	TH1D* cutflow_event[4];
-	TH1D* cutflow_pair[4];
-	TH1D* cutflow_triplet[4];
-	TH1D* h_mass[4];
-	//TH1D* h_mds6332[4];
-	//TH1D* h_massAsymm[4];
-	TH1D* h_mds32[4];
-	TH1D* h_delta[4];
+	TTree* tr;
+	std::vector<double> triplet_mass;
+	std::vector<double> triplet_delta;
+	std::vector<double> triplet_mds32;
+	TH1D* cutflow_event;
+	TH1D* cutflow_pair;
+	TH1D* cutflow_triplet;
   };
 }
 
