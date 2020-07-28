@@ -27,6 +27,13 @@ namespace MA5
   private:
 	int SR = 0;
 	bool trigGen = false;
+	bool trigTrips = false;
+	std::vector<double> cutflow_triplets_no_weight;
+	std::vector<double> cutflow_triplets_with_weight;
+	unsigned int cutflow_size;
+	void InitializeCutflowTriplets();
+	void UpdateCutflowTriplets(const double &nTrips, const double &weight);
+	void PrintCutflowTriplets();
 	JetCollection jetSelection(const EventFormat& event,const double &ptCut, const double &etaCut);
     TripletCollection pairSelection(const PairCollection &pairs, const double &asymmCut);
     TripletCollection deltaSelection(const TripletCollection &trips, const double &deltaCut);

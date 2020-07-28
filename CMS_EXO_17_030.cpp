@@ -46,7 +46,6 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
 	exit(EXIT_FAILURE);
   }
   
-  // Choose to run with gen-matched tools
   int gen_matched;
   cout << "[CMS_EXO_17_030::Initialize] Is triplets gen-matched? (0 for no, 1 for yes): "; 
   cin >> gen_matched;
@@ -139,6 +138,8 @@ void CMS_EXO_17_030::Finalize(const SampleFormat& summary, const std::vector<Sam
 
   f->Close();
 
+  PrintCutflowTriplets();
+  
   cout << "END   Finalization" << endl;
 }
 
@@ -150,18 +151,16 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
 {
   // Event weight
   // using unbiased events, set the weight = 1. to calculated the acceptance
-  double weight = 1.;
+  double weight;
+  if (Configuration().IsNoEventWeight()) weight = 1.;
+  else if (event.mc()->weight() != 0.) weight = event.mc()->weight();
+  else return false;
   Manager()->InitializeForNewEvent(weight);
+  InitializeCutflowTriplets();
+
+  if (weight < 0) cout << "negative weight" << endl;
+
   double nTrips = 20.;
-  
-  //if (Configuration().IsNoEventWeight()) myEventWeight=1.;
-  //else if (event.mc()->weight()!=0.) myEventWeight=event.mc()->weight();
-  //else {
-	//WARNING << "Found one event with a zero weight. Skipping...\n";
-    //return false;
-  //}
-  //Manager()->InitializeForNewEvent(myEventWeight);
-  //out << "myEventWeight = " << myEventWeight << endl;
   
   double ptCut[] = {30, 30, 50, 50};
   double HTcut[] = {650, 650, 900, 900};
@@ -184,23 +183,23 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   if (passFlag) {
 	// preselection
 	cutflow_event->Fill(0., weight);
-	cutflow_triplet->Fill(0., weight*nTrips);
+	cutflow_triplet->Fill(0., nTrips);
+	UpdateCutflowTriplets(nTrips, weight);
   }
   
   if (jets.size() < 6) passFlag = false;
   if (passFlag) {
 	// Nj selection
 	cutflow_event->Fill(1., weight);
-	cutflow_triplet->Fill(1., weight*nTrips);
+	cutflow_triplet->Fill(1., nTrips);
+	UpdateCutflowTriplets(nTrips, weight);
   }
 
   // Jet ID
-  Manager()->SetCurrentEventWeight(weight*nTrips);
   if(!Manager()->ApplyCut(jets.size() != 0, "LOW: preselection")) return true;
   if(!Manager()->ApplyCut(jets.size() != 0, "HIGH: preselection")) return true;
 
   // Nj cut for low and high mass regions
-  Manager()->SetCurrentEventWeight(weight*nTrips);
   if(!Manager()->ApplyCut(jets.size() >= 6, "LOW: Njets>=6") ) return true;
   if(!Manager()->ApplyCut(jets.size() >= 6, "HIGH: Njets>=6") ) return true;
   
@@ -212,7 +211,8 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   if (passFlag) {
 	// HT selection
 	cutflow_event->Fill(2., weight);
-	cutflow_triplet->Fill(2., weight*nTrips);
+	cutflow_triplet->Fill(2., nTrips);
+	UpdateCutflowTriplets(nTrips, weight);
   }
 
 
@@ -220,21 +220,20 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   if (passFlag) {
 	// 6th jet pt selection
 	cutflow_event->Fill(3., weight);
-	cutflow_triplet->Fill(3., weight*nTrips);
+	cutflow_triplet->Fill(3., nTrips);
+	UpdateCutflowTriplets(nTrips, weight);
   }
 
   // HT cut for low and high mass regions
-  Manager()->SetCurrentEventWeight(weight*nTrips);
   if(!Manager()->ApplyCut(H_T > HTcut[0], "LOW: HT > 650GeV")) return true;
   if(!Manager()->ApplyCut(H_T > HTcut[2], "HIGH: HT > 900GeV")) return true;
 
   // 6th Jet Pt cut for each regions
-  Manager()->SetCurrentEventWeight(weight*nTrips);
   if(!Manager()->ApplyCut(l6pt > l6ptCut[0], "SR1: pt(j6) > 40GeV") ) return true;
   if(!Manager()->ApplyCut(l6pt > l6ptCut[1], "SR2: pt(j6) > 50GeV") ) return true;
   if(!Manager()->ApplyCut(l6pt > l6ptCut[2], "SR3: pt(j6) > 125GeV")) return true;
   if(!Manager()->ApplyCut(l6pt > l6ptCut[3], "SR4: pt(j6) > 175GeV")) return true;
-
+  
   // Mds6332 cut for each regions
   double evtMds6332 = mds6332(jets);
 
@@ -242,10 +241,10 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   if (passFlag) {
 	// mds6332 selection
 	cutflow_event->Fill(4., weight);
-	cutflow_triplet->Fill(4., weight*nTrips);
+	cutflow_triplet->Fill(4., nTrips);
+	UpdateCutflowTriplets(nTrips, weight);
   }
   
-  Manager()->SetCurrentEventWeight(weight*nTrips);
   if(!Manager()->ApplyCut(evtMds6332 < mds6332Cut[0], "SR1: D^2[6,3+3,2] < 1.25")) return true;
   if(!Manager()->ApplyCut(evtMds6332 < mds6332Cut[1], "SR2: D^2[6,3+3,2] < 1.0") ) return true;
   if(!Manager()->ApplyCut(evtMds6332 < mds6332Cut[2], "SR3: D^2[6,3+3,2] < 0.9") ) return true;
@@ -268,15 +267,15 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   if (passFlag) {
 	// mass asymmetry selection
 	cutflow_event->Fill(5., weight);
-	cutflow_triplet->Fill(5., weight*nTrips);
+	cutflow_triplet->Fill(5., nTrips);
+	UpdateCutflowTriplets(nTrips, weight);
   }
 	
-  Manager()->SetCurrentEventWeight(weight*nTrips);
   if(!Manager()->ApplyCut(trips.size() != 0, "SR1: Am < 0.25")) return true;
   if(!Manager()->ApplyCut(trips.size() != 0, "SR2: Am < 0.175")) return true;
   if(!Manager()->ApplyCut(trips.size() != 0, "SR3: Am < 0.15")) return true;
   if(!Manager()->ApplyCut(trips.size() != 0, "SR4: Am < 0.15")) return true;
-  
+
   // Delta cut
   // for each Triplets
   trips = deltaSelection(trips, deltaCut[SR-1]);
@@ -292,15 +291,15 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   if (passFlag) {
 	// delta selection
 	cutflow_event->Fill(6., weight);
-	cutflow_triplet->Fill(6., weight*nTrips);
+	cutflow_triplet->Fill(6., nTrips);
+	UpdateCutflowTriplets(nTrips, weight);
   }
   
-  Manager()->SetCurrentEventWeight(weight*nTrips);
   if(!Manager()->ApplyCut(trips.size() != 0, "SR1: Delta > 250GeV")) return true;
   if(!Manager()->ApplyCut(trips.size() != 0, "SR2: Delta > 180GeV")) return true;
   if(!Manager()->ApplyCut(trips.size() != 0, "SR3: Delta > 20GeV")) return true;
   if(!Manager()->ApplyCut(trips.size() != 0, "SR4: Delta > -120GeV")) return true;
-  
+
   // mds32 cut
   // for each Triplets
   trips = mds32Selection(trips, mds32Cut[SR-1]);
@@ -316,15 +315,15 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   if (passFlag) {
 	// mds32
     cutflow_event->Fill(7., weight);
-    cutflow_triplet->Fill(7., weight*nTrips);
+    cutflow_triplet->Fill(7., nTrips);
+	UpdateCutflowTriplets(nTrips, weight);
   }
      
-  Manager()->SetCurrentEventWeight(weight*nTrips);
   if(!Manager()->ApplyCut(trips.size() != 0, "SR1: D^2[3,2] < 0.05")) return true;
   if(!Manager()->ApplyCut(trips.size() != 0, "SR2: D^2[3,2] < 0.175")) return true;
   if(!Manager()->ApplyCut(trips.size() != 0, "SR3: D^2[3,2] < 0.2")) return true;
   if(!Manager()->ApplyCut(trips.size() != 0, "SR4: D^2[3,2] < 0.25")) return true;
-  
+
   // fill trees
   triplet_mass.clear();
   triplet_delta.clear();
@@ -577,3 +576,52 @@ TripletCollection CMS_EXO_17_030::GenMatchedTriplets(const EventFormat &event, c
   
   return matched_trips;
 }
+
+// to draw cutflows
+void CMS_EXO_17_030::InitializeCutflowTriplets() { cutflow_size = 0;}
+void CMS_EXO_17_030::UpdateCutflowTriplets(const double &nTrips, const double &weight) {
+  // check wether the cutflow has room for current status
+  // cutflow_size starts from 0
+  if (cutflow_size == cutflow_triplets_no_weight.size()) {
+	cutflow_triplets_no_weight.push_back(0.);
+	cutflow_triplets_with_weight.push_back(0.);
+  }
+  cutflow_triplets_no_weight.at(cutflow_size) += nTrips;
+  cutflow_triplets_with_weight.at(cutflow_size) += nTrips*weight;
+
+  cutflow_size++;
+}
+ 
+void CMS_EXO_17_030::PrintCutflowTriplets() {
+  vector<MultiRegionCounter*> Cuts = Manager()->GetCutManager()->GetCuts();
+  cout << "[CMS_EXO_17_030::SR" << SR << "]" << endl;
+
+  int nCut;
+  if (SR < 3) nCut = 0;
+  else nCut = 1;
+  
+  cout << "[CMS_EXO_17_030::Cutflow for triplets (no weight)" << endl;
+  for (unsigned int i = 0; i < cutflow_triplets_no_weight.size(); i++) {
+    cout << Cuts.at(nCut)->GetName() << ": " << cutflow_triplets_no_weight.at(i) << endl;
+    if (nCut<4) nCut += 2;
+    else if (nCut<6) {
+      if (SR<3) nCut += SR+1;
+      else nCut += SR;
+    }
+    else nCut += 4;
+  }
+  
+  if (SR < 3) nCut = 0;
+  else nCut = 1;
+  cout << "[CMS_EXO_17_030::Cutflow for triplets (with weight)" << endl; 
+  for (unsigned int i = 0; i < cutflow_triplets_with_weight.size(); i++) {
+    cout << Cuts.at(nCut)->GetName() << ": " << cutflow_triplets_with_weight.at(i) << endl;
+	if (nCut<4) nCut += 2;
+    else if (nCut<6) {
+      if (SR<3) nCut += SR+1;
+      else nCut += SR;
+    }
+    else nCut += 4;
+  } 
+}
+
