@@ -28,8 +28,10 @@ namespace MA5
 	int SR = 0;
 	bool trigGen = false;
 	bool trigTrips = false;
-	std::vector<double> cutflow_triplets_no_weight;
-	std::vector<double> cutflow_triplets_with_weight;
+	std::vector<double> cutflow_triplets_no_weight_pos;
+	std::vector<double> cutflow_triplets_no_weight_neg;
+	std::vector<double> cutflow_triplets_with_weight_pos;
+	std::vector<double> cutflow_triplets_with_weight_neg;
 	unsigned int cutflow_size;
 	void InitializeCutflowTriplets();
 	void UpdateCutflowTriplets(const double &nTrips, const double &weight);
@@ -61,9 +63,12 @@ namespace MA5
 	std::vector<double> triplet_mass;
 	std::vector<double> triplet_delta;
 	std::vector<double> triplet_mds32;
-	TH1D* cutflow_event;
-	TH1D* cutflow_pair;
-	TH1D* cutflow_triplet;
+	TH1D* cutflow_event_pos;
+	TH1D* cutflow_event_neg;
+	TH1D* cutflow_pair_pos;
+	TH1D* cutflow_pair_neg;
+	TH1D* cutflow_triplets_pos;
+	TH1D* cutflow_triplets_neg;
   };
 }
 
