@@ -553,60 +553,61 @@ PairCollection CMS_EXO_17_030::makePairCollection(const JetCollection &jetcoll) 
   }
 }
 
-TripletCollection CMS_EXO_17_030::GenMatchedTriplets(const EventFormat &event, const JetCollection &jetcoll) {
-  JetCollection matched_jets1, matched_jets2;
-  TripletCollection matched_trips;
-  const vector<MCParticleFormat> &gens = event.mc()->particles();
-
-  bool matched;
-  for (const auto &gen : gens) {
-	if (1<=gen.pdgid()&&gen.pdgid()<=3&&(gen.mothers()).at(0)->pdgid()==1000021) {
-	  for (const auto &j : jetcoll) {
-		matched = (j->momentum()).DeltaR(gen.momentum()) < 0.3;
-		if (matched) matched_jets1.push_back(j);
-	  }
-	}
-	else if (-3<=gen.pdgid()&&gen.pdgid()<=-1&&(gen.mothers()).at(0)->pdgid()==1000021) {
-	  for (const auto &j : jetcoll) {
-		matched = (j->momentum()).DeltaR(gen.momentum()) < 0.3;
-		if (matched) matched_jets2.push_back(j);
-	  }
-	}
-  }
-
-  // remove double matching
-  sort(matched_jets1.begin(), matched_jets1.end());
-  auto last1 = unique(matched_jets1.begin(), matched_jets1.end());
-  matched_jets1.erase(last1, matched_jets1.end());
-
-  sort(matched_jets2.begin(), matched_jets2.end());
-  auto last2 = unique(matched_jets2.begin(), matched_jets2.end());
-  matched_jets2.erase(last2, matched_jets2.end());
-
-  if (matched_jets1.size() == 3) matched_trips.push_back({matched_jets1.at(0), matched_jets1.at(1), matched_jets1.at(2)});
-  if (matched_jets2.size() == 3) matched_trips.push_back({matched_jets2.at(0), matched_jets2.at(1), matched_jets2.at(2)});
-
-  return matched_trips;
-}
-
 TripletCollection CMS_EXO_17_030::GenMatchedTriplets(const EventFormat &event, const TripletCollection &trips) {
-  JetCollection matched_jets1, matched_jets2;
+  JetCollection matched_jets1, matched_jets2, matched_jets3, matched_jets4;
   TripletCollection matched_trips;
   const vector<MCParticleFormat> &gens = event.mc()->particles();
+  vector<const MCParticleFormat*> p_gluinos;
+ 
+  
+  for (const auto &gen : gens) {
+	if (1<=gen.pdgid()&&gen.pdgid()<=4&&(gen.mothers()).at(0)->pdgid()==1000021) p_gluinos.push_back((gen.mothers()).at(0));
+	if (-4<=gen.pdgid()&&gen.pdgid()<=-1&&(gen.mothers()).at(0)->pdgid()==1000021) p_gluinos.push_back((gen.mothers()).at(0));
+  }
+  sort(p_gluinos.begin(), p_gluinos.end());
+  auto last = unique(p_gluinos.begin(), p_gluinos.end());
+  p_gluinos.erase(last, p_gluinos.end());
+  //cout << p_gluinos.size() << endl;
+  
+  /*
+  // can't figure out why so many gluinos
+  for (const auto &gen : gens) {
+	if (gen.pdgid()==1000021) p_gluinos.push_back(&gen);
+  }
+  sort(p_gluinos.begin(), p_gluinos.end());
+  auto last = unique(p_gluinos.begin(), p_gluinos.end());
+  p_gluinos.erase(last, p_gluinos.end());
+	
+  cout << p_gluinos.size() << endl;
+  */
 
   bool matched;
+
   for (const auto &trip : trips) {
 	for (const auto &gen : gens) {
-	  if (1<=gen.pdgid()&&gen.pdgid()<=3&&(gen.mothers()).at(0)->pdgid()==1000021) {
+	  if (1<=gen.pdgid()&&gen.pdgid()<=4&&((gen.mothers()).at(0)==p_gluinos.at(0))) {
 		for (const auto &j : trip) {
 		  matched = (j->momentum()).DeltaR(gen.momentum()) < 0.3;
 		  if (matched) matched_jets1.push_back(j);
 		}
 	  }
-	  else if (-3<=gen.pdgid()&&gen.pdgid()<=-1&&(gen.mothers()).at(0)->pdgid()==1000021) {
-		for (const auto &j : trip) {
+	  else if (1<=gen.pdgid()&&gen.pdgid()<=4&&((gen.mothers()).at(0)==p_gluinos.at(1))) {
+	    for (const auto &j : trip) {
 		  matched = (j->momentum()).DeltaR(gen.momentum()) < 0.3;
 		  if (matched) matched_jets2.push_back(j);
+		}
+	  }
+
+	  else if (-4<=gen.pdgid()&&gen.pdgid()<=-1&&(gen.mothers()).at(0)==p_gluinos.at(0)) {
+		for (const auto &j : trip) {
+		  matched = (j->momentum()).DeltaR(gen.momentum()) < 0.3;
+		  if (matched) matched_jets3.push_back(j);
+		}
+	  }
+	  else if (-4<=gen.pdgid()&&gen.pdgid()<=-1&&(gen.mothers()).at(0)==p_gluinos.at(1)) {
+	    for (const auto &j : trip) {
+		  matched = (j->momentum()).DeltaR(gen.momentum()) < 0.3;
+		  if (matched) matched_jets4.push_back(j);
 		}
 	  }
 	}
@@ -620,14 +621,27 @@ TripletCollection CMS_EXO_17_030::GenMatchedTriplets(const EventFormat &event, c
 	auto last2 = unique(matched_jets2.begin(), matched_jets2.end());
 	matched_jets2.erase(last2, matched_jets2.end());
 
+	sort(matched_jets3.begin(), matched_jets3.end());
+    auto last3 = unique(matched_jets3.begin(), matched_jets3.end());
+    matched_jets3.erase(last3, matched_jets3.end());
+
+    sort(matched_jets4.begin(), matched_jets4.end());
+    auto last4 = unique(matched_jets4.begin(), matched_jets4.end());
+    matched_jets4.erase(last4, matched_jets4.end());
+
 	if (matched_jets1.size() == 3) matched_trips.push_back({matched_jets1.at(0), matched_jets1.at(1), matched_jets1.at(2)});
 	if (matched_jets2.size() == 3) matched_trips.push_back({matched_jets2.at(0), matched_jets2.at(1), matched_jets2.at(2)});
-	
+	if (matched_jets3.size() == 3) matched_trips.push_back({matched_jets3.at(0), matched_jets3.at(1), matched_jets3.at(2)});
+	if (matched_jets4.size() == 3) matched_trips.push_back({matched_jets4.at(0), matched_jets4.at(1), matched_jets4.at(2)});
+
 	// prepare for next iteration	
 	matched_jets1.clear();
 	matched_jets2.clear();
-  } 
-  
+	matched_jets3.clear();
+	matched_jets4.clear();
+  }
+
+  //if (matched_trips.size() > 2) cout << "WARNING: matched_trips.size() == " << matched_trips.size() << endl; 
   return matched_trips;
 }
 
