@@ -1,0 +1,1 @@
+c++ -Wall -O3 -fPIC -I/workspace/madanalysis5/tools/ -o Fastjet/Test.o -c Fastjet/Test.cpp

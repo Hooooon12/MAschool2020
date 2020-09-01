@@ -1,0 +1,78 @@
+<analysis id="atlas_exot_2018_30">
+  <lumi>139</lumi> <!-- in fb^-1 -->
+
+  <region type="signal" id="SR_Electron_MT_130_400">
+    <nobs>3538403</nobs>
+    <nb>3320000</nb>
+    <deltanb>250000</deltanb>
+  </region>
+
+  <region type="signal" id="SR_Electron_MT_400_600">
+    <nobs>35568</nobs>
+    <nb>34800</nb>
+    <deltanb>1500</deltanb>
+  </region>
+
+  <region type="signal" id="SR_Electron_MT_600_1000">
+    <nobs>7358</nobs>
+    <nb>7200</nb>
+    <deltanb>400</deltanb>
+  </region>
+  
+  <region type="signal" id="SR_Electron_MT_1000_2000">
+    <nobs>818</nobs>
+    <nb>830</nb>
+    <deltanb>80</deltanb>
+  </region>
+
+  <region type="signal" id="SR_Electron_MT_2000_3000">
+    <nobs>17</nobs>
+    <nb>20.2</nb>
+    <deltanb>3.1</deltanb>
+  </region>
+  
+  <region type="signal" id="SR_Electron_MT_3000_10000">
+    <nobs>0</nobs>
+    <nb>1.3</nb>
+    <deltanb>0.5</deltanb>
+  </region>
+  
+  
+    <region type="signal" id="SR_Muon_MT_110_400">
+    <nobs>8751095</nobs>
+    <nb>7800000</nb>
+    <deltanb>700000</deltanb>
+    </region>
+
+    <region type="signal" id="SR_Muon_MT_400_600">
+    <nobs>26225</nobs>
+    <nb>25800</nb>
+    <deltanb>1400</deltanb>
+    </region>
+
+    <region type="signal" id="SR_Muon_MT_600_1000">
+    <nobs>5393</nobs>
+    <nb>5300</nb>
+    <deltanb>400</deltanb>
+    </region>
+
+    <region type="signal" id="SR_Muon_MT_1000_2000">
+    <nobs>622</nobs>
+    <nb>570</nb>
+    <deltanb>50</deltanb>
+    </region>
+
+    <region type="signal" id="SR_Muon_MT_2000_3000">
+    <nobs>22</nobs>
+    <nb>18</nb>
+    <deltanb>4</deltanb>
+    </region>
+
+    <region type="signal" id="SR_Muon_MT_3000_10000">
+    <nobs>2</nobs>
+    <nb>2.3</nb>
+    <deltanb>0.9</deltanb>
+    </region>
+  
+
+</analysis>

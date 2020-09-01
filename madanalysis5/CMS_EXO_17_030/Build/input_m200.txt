@@ -1,0 +1,1 @@
+/workspace/MG5_aMC_v2_7_3/RPV_GoGoToJets_m200/Events/run_01_decayed_1/tag_2_delphes_events.root

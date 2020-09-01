@@ -1,0 +1,1 @@
+c++ -Wall -O3 -fPIC -I/workspace/madanalysis5/tools/ -pthread -std=c++11 -m64 -I/root/root/include -o Delphes/Test.o -c Delphes/Test.cpp

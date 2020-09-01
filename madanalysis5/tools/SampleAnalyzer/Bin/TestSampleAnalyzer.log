@@ -1,0 +1,86 @@
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for ExRootAnalysis/ExRootTreeReader.h
+   requested to autoload type ExRootTreeReader
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for ExRootAnalysis/ExRootTreeWriter.h
+   requested to autoload type ExRootTreeWriter
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for ExRootAnalysis/ExRootTreeBranch.h
+   requested to autoload type ExRootTreeBranch
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for ExRootAnalysis/ExRootResult.h
+   requested to autoload type ExRootResult
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for ExRootAnalysis/ExRootClassifier.h
+   requested to autoload type ExRootClassifier
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for ExRootAnalysis/ExRootFilter.h
+   requested to autoload type ExRootFilter
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for ExRootAnalysis/ExRootProgressBar.h
+   requested to autoload type ExRootProgressBar
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for ExRootAnalysis/ExRootConfReader.h
+   requested to autoload type ExRootConfParam
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for ExRootAnalysis/ExRootConfReader.h
+   requested to autoload type ExRootConfReader
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for ExRootAnalysis/ExRootTask.h
+   requested to autoload type ExRootTask
+BEGIN-SAMPLEANALYZER-TEST
+
+    * SampleAnalyzer for MadAnalysis 5 - Welcome.
+      - version: 1.8.58 (2020/07/03) 
+      - general: everything is default.
+      - extracting the list of event samples...
+
+List of available analyzers:
+------------------------------------------
+Number of items: 1
+ -         mergingplots : PN3MA512AnalyzerBaseE @ 0x217d160
+------------------------------------------
+
+List of available readers:
+------------------------------------------
+Number of items: 9
+ -                  hep : PN3MA510ReaderBaseE @ 0x217cc50
+ -               hep.gz : PN3MA510ReaderBaseE @ 0x217cc50
+ -                hepmc : PN3MA510ReaderBaseE @ 0x217ce90
+ -             hepmc.gz : PN3MA510ReaderBaseE @ 0x217ce90
+ -                 lhco : PN3MA510ReaderBaseE @ 0x217cad0
+ -              lhco.gz : PN3MA510ReaderBaseE @ 0x217cad0
+ -                  lhe : PN3MA510ReaderBaseE @ 0x217c960
+ -               lhe.gz : PN3MA510ReaderBaseE @ 0x217c960
+ -                 root : PN3MA510ReaderBaseE @ 0x217d050
+------------------------------------------
+
+List of available writers:
+------------------------------------------
+Number of items: 4
+ -                 lhco : PN3MA510WriterBaseE @ 0x217c720
+ -              lhco.gz : PN3MA510WriterBaseE @ 0x217c720
+ -                  lhe : PN3MA510WriterBaseE @ 0x1c589b0
+ -               lhe.gz : PN3MA510WriterBaseE @ 0x1c589b0
+------------------------------------------
+
+List of available JetClusterer:
+------------------------------------------
+Number of items: 8
+ -               antikt : PN3MA512JetClustererE @ 0x217d410
+ -            cambridge : PN3MA512JetClustererE @ 0x217d6c0
+ -            cdfjetclu : PN3MA512JetClustererE @ 0x217daa0
+ -          cdfmidpoint : PN3MA512JetClustererE @ 0x217d990
+ -                genkt : PN3MA512JetClustererE @ 0x217d560
+ -              gridjet : PN3MA512JetClustererE @ 0x217dbd0
+ -                   kt : PN3MA512JetClustererE @ 0x217d2e0
+ -              siscone : PN3MA512JetClustererE @ 0x217d800
+------------------------------------------
+
+List of available DetectorSimList:
+------------------------------------------
+Number of items: 1
+ -              delphes : PN3MA512DetectorBaseE @ 0x217dcc0
+------------------------------------------
+
+END-SAMPLEANALYZER-TEST

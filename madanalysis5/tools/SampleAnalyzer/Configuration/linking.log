@@ -1,0 +1,1 @@
+c++ PortabilityCheckup/PortabilityCheckup.o  -o ../Bin/PortabilityCheckup

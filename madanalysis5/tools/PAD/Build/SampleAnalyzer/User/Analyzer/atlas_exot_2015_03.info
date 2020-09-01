@@ -1,0 +1,110 @@
+<!--
+this XML file serves for the statistical interpretation of the MA5 simulation. 
+it lists the number of observed events <nobs>, number of expected backgrounds <nb> 
+and number of background uncertainty <deltanb> in each of the regions  
+-->
+
+<!--
+to be put in the same directory as the analysis code,
+i.e. Build/SampleAnalyzer/User/Analyzer/
+-->
+
+<analysis id="atlas_exot_2015_03">
+  <lumi>3.2</lumi> <!-- in fb^-1 -->
+
+  <!--  signal regions -->
+
+  <!--
+     region definition: the attribute "id" has to match the name of the region
+     as defined in the analysis code;
+     the attribute "type" can be "signal" or "control" and is optional (default=signal)
+     when results are given after combination of several signal regions
+     (as is the case here: SF instead of ee and mumu separately)
+     the signal regions should be given in the attribute "id" separated by
+     semicolons
+  -->
+<region type="signal" id="EM1">
+    <nobs>9472</nobs>
+    <nb>9400</nb>
+    <deltanb>410</deltanb>
+  </region>
+
+
+
+  <region type="signal" id="EM2">
+    <nobs>5542</nobs>
+    <nb>5770</nb>
+    <deltanb>260</deltanb>
+  </region>
+
+  <region type="signal" id="EM3">
+    <nobs>2939</nobs>
+    <nb>3210</nb>
+    <deltanb>170</deltanb>
+  </region>
+  
+  <region type="signal" id="EM4">
+    <nobs>2324</nobs>
+    <nb>2260</nb>
+    <deltanb>140</deltanb>
+  </region>
+
+  <region type="signal" id="EM5">
+    <nobs>747</nobs>
+    <nb>686</nb>
+    <deltanb>50</deltanb>
+  </region>
+  
+  <region type="signal" id="EM6">
+    <nobs>238</nobs>
+    <nb>271</nb>
+    <deltanb>28</deltanb>
+  </region>
+
+  <region type="signal" id="EM7">
+    <nobs>185</nobs>
+    <nb>167</nb>
+    <deltanb>20</deltanb>
+  </region>
+  
+  
+    <region type="signal" id="IM1">
+    <nobs>21447</nobs>
+    <nb>21730</nb>
+    <deltanb>940</deltanb>
+   </region>
+
+    <region type="signal" id="IM2">
+    <nobs>11975</nobs>
+    <nb>12340</nb>
+    <deltanb>570</deltanb>
+    </region>
+
+
+    <region type="signal" id="IM3">
+    <nobs>6433</nobs>
+    <nb>6570</nb>
+    <deltanb>340</deltanb>
+    </region>
+
+    <region type="signal" id="IM4">
+    <nobs>3494</nobs>
+    <nb>3390</nb>
+    <deltanb>200</deltanb>
+    </region>
+
+    <region type="signal" id="IM5">
+    <nobs>1170</nobs>
+    <nb>1125</nb>
+    <deltanb>77</deltanb>
+    </region>
+
+    <region type="signal" id="IM6">
+    <nobs>423</nobs>
+    <nb>441</nb>
+    <deltanb>39</deltanb>
+    </region>
+ 
+  
+
+</analysis>

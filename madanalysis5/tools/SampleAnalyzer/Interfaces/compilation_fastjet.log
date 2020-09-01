@@ -1,0 +1,7 @@
+c++ -Wall -O3 -fPIC -I/workspace/madanalysis5/tools/ -I/workspace/madanalysis5/tools/fastjet/include -o fastjet/ClusterAlgoCDFMidpoint.o -c fastjet/ClusterAlgoCDFMidpoint.cpp
+c++ -Wall -O3 -fPIC -I/workspace/madanalysis5/tools/ -I/workspace/madanalysis5/tools/fastjet/include -o fastjet/ClusterAlgoStandard.o -c fastjet/ClusterAlgoStandard.cpp
+c++ -Wall -O3 -fPIC -I/workspace/madanalysis5/tools/ -I/workspace/madanalysis5/tools/fastjet/include -o fastjet/ClusterAlgoCDFJetClu.o -c fastjet/ClusterAlgoCDFJetClu.cpp
+c++ -Wall -O3 -fPIC -I/workspace/madanalysis5/tools/ -I/workspace/madanalysis5/tools/fastjet/include -o fastjet/DJRextractor.o -c fastjet/DJRextractor.cpp
+c++ -Wall -O3 -fPIC -I/workspace/madanalysis5/tools/ -I/workspace/madanalysis5/tools/fastjet/include -o fastjet/ClusterAlgoGridJet.o -c fastjet/ClusterAlgoGridJet.cpp
+c++ -Wall -O3 -fPIC -I/workspace/madanalysis5/tools/ -I/workspace/madanalysis5/tools/fastjet/include -o fastjet/ClusterAlgoSISCone.o -c fastjet/ClusterAlgoSISCone.cpp
+c++ -Wall -O3 -fPIC -I/workspace/madanalysis5/tools/ -I/workspace/madanalysis5/tools/fastjet/include -o fastjet/ClusterAlgoFastJet.o -c fastjet/ClusterAlgoFastJet.cpp

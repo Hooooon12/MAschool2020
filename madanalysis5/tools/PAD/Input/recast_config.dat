@@ -1,0 +1,21 @@
+#              delphes card             | Analyses
+#                                       |
+delphes_card_atlas_2016_25.tcl          | atlas_exot_2016_25  
+delphes_card_atlas_2016_32.tcl          | atlas_exot_2016_32  
+delphes_card_atlas_conf_2016_086.tcl    | atlas_conf_2016_086 
+delphes_card_atlas_exot_2015_03.tcl     | atlas_susy_2016_07   atlas_exot_2015_03   atlas_susy_2015_06   atlas_conf_2019_040  atlas_susy_2018_031  atlas_susy_2019_08  
+delphes_card_atlas_exot_2016_27.tcl     | atlas_exot_2016_27  
+delphes_card_atlas_exot_2018_30.tcl     | atlas_exot_2018_30  
+delphes_card_atlas_sus_2013_05_pad.tcl  | atlas_exot_2014_06  
+delphes_card_atlas_susy_2018_06.tcl     | atlas_susy_2018_06  
+delphes_card_cms_b2g_12_012.tcl         | cms_b2g_12_012       cms_exo_12_047       cms_exo_12_048      
+delphes_card_cms_b2g_14_004.tcl         | cms_b2g_12_022       cms_b2g_14_004      
+delphes_card_cms_exo_16_010.tcl         | cms_exo_16_010       cms_sus_17_001      
+delphes_card_cms_exo_16_012.tcl         | cms_exo_16_012      
+delphes_card_cms_exo_16_022.tcl         | cms_exo_16_022      
+delphes_card_cms_sus_16_033.tcl         | cms_sus_16_033      
+delphes_card_cms_sus_16_039.tcl         | cms_sus_16_039      
+delphes_card_cms_sus_16_048.tcl         | cms_sus_16_048      
+delphes_card_cms_sus_16_052.tcl         | cms_sus_16_052      
+delphes_card_cms_top_17_009.tcl         | cms_top_17_009      
+delphes_card_cms_top_18_003.tcl         | cms_top_18_003      

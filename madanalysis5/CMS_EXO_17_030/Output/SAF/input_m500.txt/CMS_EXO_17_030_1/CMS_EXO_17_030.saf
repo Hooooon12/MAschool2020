@@ -1,0 +1,12 @@
+<SAFheader>
+</SAFheader>
+
+<RegionSelection>
+    "Mg_200to400"
+    "Mg_400to700"
+    "Mg_700to1200"
+    "Mg_1200to2000"
+</RegionSelection>
+
+<SAFfooter>
+</SAFfooter>

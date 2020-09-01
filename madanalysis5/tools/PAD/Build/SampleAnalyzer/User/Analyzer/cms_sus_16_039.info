@@ -1,0 +1,953 @@
+<analysis id="cms_sus_16_039">
+<lumi>35.9</lumi> <!-- in fb^-1 -->
+
+<region type="signal" id="SRSS01_Njets0_MT0to100_PTll0to50_MET0to100">
+<nobs>1193</nobs>
+<nb>1430</nb>
+<deltanb>180</deltanb>
+</region>
+
+<region type="signal" id="SRSS02_lPP_Njets0_MT0to100_PTll0to50_MET100to150">
+<nobs>50</nobs>
+<nb>56</nb>
+<deltanb>9</deltanb>
+</region>
+
+<region type="signal" id="SRSS03_lMM_Njets0_MT0to100_PTll0to50_MET100to150">
+<nobs>25</nobs>
+<nb>36</nb>
+<deltanb>7</deltanb>
+</region>
+
+<region type="signal" id="SRSS04_Njets0_MT0to100_PTll0to50_MET150to200">
+<nobs>7</nobs>
+<nb>5.9</nb>
+<deltanb>1.2</deltanb>
+</region>
+
+<region type="signal" id="SRSS05_Njets0_MT0to100_PTll0to50_MET200toInf">
+<nobs>2</nobs>
+<nb>4.5</nb>
+<deltanb>3.5</deltanb>
+</region>
+
+<region type="signal" id="SRSS06_Njets0_MT0to100_PTll50toInf_MET0to100">
+<nobs>143</nobs>
+<nb>163</nb>
+<deltanb>19</deltanb>
+</region>
+
+<region type="signal" id="SRSS07_lPP_Njets0_MT0to100_PTll50toInf_MET100to150">
+<nobs>41</nobs>
+<nb>38</nb>
+<deltanb>6</deltanb>
+</region>
+
+<region type="signal" id="SRSS08_lMM_Njets0_MT0to100_PTll50toInf_MET100to150">
+<nobs>24</nobs>
+<nb>23</nb>
+<deltanb>4</deltanb>
+</region>
+
+<region type="signal" id="SRSS09_Njets0_MT0to100_PTll50toInf_MET150to200">
+<nobs>11</nobs>
+<nb>14.4</nb>
+<deltanb>3.2</deltanb>
+</region>
+
+<region type="signal" id="SRSS10_Njets0_MT0to100_PTll50toInf_MET200toInf">
+<nobs>6</nobs>
+<nb>6.3</nb>
+<deltanb>0.9</deltanb>
+</region>
+
+<region type="signal" id="SRSS11_Njets0_MT100toInf_MET0to100">
+<nobs>67</nobs>
+<nb>82</nb>
+<deltanb>12</deltanb>
+</region>
+
+<region type="signal" id="SRSS12_lPP_Njets0_MT100toInf_MET100to150">
+<nobs>19</nobs>
+<nb>27</nb>
+<deltanb>4</deltanb>
+</region>
+
+<region type="signal" id="SRSS13_lMM_Njets0_MT100toInf_MET100to150">
+<nobs>18</nobs>
+<nb>18</nb>
+<deltanb>4</deltanb>
+</region>
+
+<region type="signal" id="SRSS14_Njets0_MT100toInf_MET150to200">
+<nobs>9</nobs>
+<nb>5</nb>
+<deltanb>0.8</deltanb>
+</region>
+
+<region type="signal" id="SRSS15_Njets0_MT100toInf_MET200toInf">
+<nobs>3</nobs>
+<nb>5.1</nb>
+<deltanb>2.6</deltanb>
+</region>
+
+<region type="signal" id="SRSS16_Njets1_MT0to100_PTll0to50_MET0to100">
+<nobs>591</nobs>
+<nb>603</nb>
+<deltanb>80</deltanb>
+</region>
+
+<region type="signal" id="SRSS17_lPP_Njets1_MT0to100_PTll0to50_MET100to150">
+<nobs>116</nobs>
+<nb>98</nb>
+<deltanb>14</deltanb>
+</region>
+
+<region type="signal" id="SRSS18_lMM_Njets1_MT0to100_PTll0to50_MET100to150">
+<nobs>69</nobs>
+<nb>66</nb>
+<deltanb>10</deltanb>
+</region>
+
+<region type="signal" id="SRSS19_Njets1_MT0to100_PTll0to50_MET150to200">
+<nobs>43</nobs>
+<nb>33</nb>
+<deltanb>6</deltanb>
+</region>
+
+<region type="signal" id="SRSS20_Njets1_MT0to100_PTll0to50_MET200toInf">
+<nobs>13</nobs>
+<nb>11.4</nb>
+<deltanb>1.7</deltanb>
+</region>
+
+<region type="signal" id="SRSS21_Njets1_MT0to100_PTll50toInf_MET0to100">
+<nobs>232</nobs>
+<nb>264</nb>
+<deltanb>31</deltanb>
+</region>
+
+<region type="signal" id="SRSS22_lPP_Njets1_MT0to100_PTll50toInf_MET100to150">
+<nobs>52</nobs>
+<nb>51</nb>
+<deltanb>7</deltanb>
+</region>
+
+<region type="signal" id="SRSS23_lMM_Njets1_MT0to100_PTll50toInf_MET100to150">
+<nobs>35</nobs>
+<nb>31</nb>
+<deltanb>4</deltanb>
+</region>
+
+<region type="signal" id="SRSS24_Njets1_MT0to100_PTll50toInf_MET150to200">
+<nobs>28</nobs>
+<nb>29</nb>
+<deltanb>5</deltanb>
+</region>
+
+<region type="signal" id="SRSS25_Njets1_MT0to100_PTll50toInf_MET200toInf">
+<nobs>27</nobs>
+<nb>22.2</nb>
+<deltanb>3.4</deltanb>
+</region>
+
+<region type="signal" id="SRSS26_Njets1_MT100toInf_MET0to100">
+<nobs>49</nobs>
+<nb>44</nb>
+<deltanb>7</deltanb>
+</region>
+
+<region type="signal" id="SRSS27_lPP_Njets1_MT100toInf_MET100to150">
+<nobs>18</nobs>
+<nb>16.4</nb>
+<deltanb>2.9</deltanb>
+</region>
+
+<region type="signal" id="SRSS28_lMM_Njets1_MT100toInf_MET100to150">
+<nobs>13</nobs>
+<nb>10.9</nb>
+<deltanb>1.9</deltanb>
+</region>
+
+<region type="signal" id="SRSS29_Njets1_MT100toInf_MET150to200">
+<nobs>9</nobs>
+<nb>6.7</nb>
+<deltanb>1.1</deltanb>
+</region>
+
+<region type="signal" id="SRSS30_Njets1_MT100toInf_MET200toInf">
+<nobs>7</nobs>
+<nb>3.9</nb>
+<deltanb>0.8</deltanb>
+</region>
+
+<region type="signal" id="SRA01_Mll0to75_MT0to100_MET50to100">
+<nobs>186</nobs>
+<nb>185</nb>
+<deltanb>22</deltanb>
+</region>
+
+<region type="signal" id="SRA02_Mll0to75_MT0to100_MET100to150">
+<nobs>34</nobs>
+<nb>35</nb>
+<deltanb>6</deltanb>
+</region>
+
+<region type="signal" id="SRA03_Mll0to75_MT0to100_MET150to200">
+<nobs>11</nobs>
+<nb>9.3</nb>
+<deltanb>2.2</deltanb>
+</region>
+
+<region type="signal" id="SRA04_Mll0to75_MT0to100_MET200to250">
+<nobs>1</nobs>
+<nb>3.3</nb>
+<deltanb>1</deltanb>
+</region>
+
+<region type="signal" id="SRA05_Mll0to75_MT0to100_MET250toInf">
+<nobs>5</nobs>
+<nb>4</nb>
+<deltanb>1</deltanb>
+</region>
+
+<region type="signal" id="SRA06_Mll0to75_MT100to160_MET50to100">
+<nobs>60</nobs>
+<nb>50</nb>
+<deltanb>8</deltanb>
+</region>
+
+<region type="signal" id="SRA07_Mll0to75_MT100to160_MET100to150">
+<nobs>19</nobs>
+<nb>15</nb>
+<deltanb>4</deltanb>
+</region>
+
+<region type="signal" id="SRA08_Mll0to75_MT100to160_MET150to200">
+<nobs>1</nobs>
+<nb>1.9</nb>
+<deltanb>0.6</deltanb>
+</region>
+
+<region type="signal" id="SRA09_Mll0to75_MT100to160_MET200toInf">
+<nobs>3</nobs>
+<nb>0.8</nb>
+<deltanb>0.4</deltanb>
+</region>
+
+<region type="signal" id="SRA10_Mll0to75_MT160toInf_MET50to100">
+<nobs>16</nobs>
+<nb>13</nb>
+<deltanb>2.8</deltanb>
+</region>
+
+<region type="signal" id="SRA11_Mll0to75_MT160toInf_MET100to150">
+<nobs>17</nobs>
+<nb>11.9</nb>
+<deltanb>3.2</deltanb>
+</region>
+
+<region type="signal" id="SRA12_Mll0to75_MT160toInf_MET150to200">
+<nobs>4</nobs>
+<nb>3.1</nb>
+<deltanb>1.2</deltanb>
+</region>
+
+<region type="signal" id="SRA13_Mll0to75_MT160toInf_MET200to250">
+<nobs>3</nobs>
+<nb>2.1</nb>
+<deltanb>0.8</deltanb>
+</region>
+
+<region type="signal" id="SRA14_Mll0to75_MT160toInf_MET250toInf">
+<nobs>1</nobs>
+<nb>0.9</nb>
+<deltanb>0.4</deltanb>
+</region>
+
+<region type="signal" id="SRA15_Mll75to105_MT0to100_MET50to100">
+<nobs>2278</nobs>
+<nb>2180</nb>
+<deltanb>260</deltanb>
+</region>
+
+<region type="signal" id="SRA16_Mll75to105_MT0to100_MET100to150">
+<nobs>429</nobs>
+<nb>440</nb>
+<deltanb>70</deltanb>
+</region>
+
+<region type="signal" id="SRA17_Mll75to105_MT0to100_MET150to200">
+<nobs>123</nobs>
+<nb>129</nb>
+<deltanb>28</deltanb>
+</region>
+
+<region type="signal" id="SRA18_Mll75to105_MT0to100_MET200to250">
+<nobs>37</nobs>
+<nb>48</nb>
+<deltanb>10</deltanb>
+</region>
+
+<region type="signal" id="SRA19_Mll75to105_MT0to100_MET250to400">
+<nobs>38</nobs>
+<nb>42</nb>
+<deltanb>9</deltanb>
+</region>
+
+<region type="signal" id="SRA20_Mll75to105_MT0to100_MET400to550">
+<nobs>5</nobs>
+<nb>8.5</nb>
+<deltanb>2.9</deltanb>
+</region>
+
+<region type="signal" id="SRA21_Mll75to105_MT0to100_MET550toInf">
+<nobs>2</nobs>
+<nb>2.6</nb>
+<deltanb>0.8</deltanb>
+</region>
+
+<region type="signal" id="SRA22_Mll75to105_MT100to160_MET50to100">
+<nobs>391</nobs>
+<nb>390</nb>
+<deltanb>50</deltanb>
+</region>
+
+<region type="signal" id="SRA23_Mll75to105_MT100to160_MET100to150">
+<nobs>61</nobs>
+<nb>72</nb>
+<deltanb>19</deltanb>
+</region>
+
+<region type="signal" id="SRA24_Mll75to105_MT100to160_MET150to200">
+<nobs>9</nobs>
+<nb>10</nb>
+<deltanb>4</deltanb>
+</region>
+
+<region type="signal" id="SRA25_Mll75to105_MT100to160_MET200toInf">
+<nobs>8</nobs>
+<nb>4.9</nb>
+<deltanb>1.9</deltanb>
+</region>
+
+<region type="signal" id="SRA26_Mll75to105_MT160toInf_MET50to100">
+<nobs>35</nobs>
+<nb>37</nb>
+<deltanb>9</deltanb>
+</region>
+
+<region type="signal" id="SRA27_Mll75to105_MT160toInf_MET100to150">
+<nobs>17</nobs>
+<nb>21</nb>
+<deltanb>8</deltanb>
+</region>
+
+<region type="signal" id="SRA28_Mll75to105_MT160toInf_MET150to200">
+<nobs>7</nobs>
+<nb>8.9</nb>
+<deltanb>3.1</deltanb>
+</region>
+
+<region type="signal" id="SRA29_Mll75to105_MT160toInf_MET200to250">
+<nobs>5</nobs>
+<nb>3.6</nb>
+<deltanb>1.3</deltanb>
+</region>
+
+<region type="signal" id="SRA30_Mll75to105_MT160toInf_MET250to400">
+<nobs>3</nobs>
+<nb>4.1</nb>
+<deltanb>1.6</deltanb>
+</region>
+
+<region type="signal" id="SRA31_Mll75to105_MT160toInf_MET400toInf">
+<nobs>1</nobs>
+<nb>1</nb>
+<deltanb>0.5</deltanb>
+</region>
+
+<region type="signal" id="SRA32_Mll105toInf_MT0to100_MET50to100">
+<nobs>123</nobs>
+<nb>121</nb>
+<deltanb>14</deltanb>
+</region>
+
+<region type="signal" id="SRA33_Mll105toInf_MT0to100_MET100to150">
+<nobs>32</nobs>
+<nb>32</nb>
+<deltanb>5</deltanb>
+</region>
+
+<region type="signal" id="SRA34_Mll105toInf_MT0to100_MET150to200">
+<nobs>4</nobs>
+<nb>11.6</nb>
+<deltanb>2.6</deltanb>
+</region>
+
+<region type="signal" id="SRA35_Mll105toInf_MT0to100_MET200to250">
+<nobs>6</nobs>
+<nb>2.9</nb>
+<deltanb>0.8</deltanb>
+</region>
+
+<region type="signal" id="SRA36_Mll105toInf_MT0to100_MET250toInf">
+<nobs>5</nobs>
+<nb>3.7</nb>
+<deltanb>1</deltanb>
+</region>
+
+<region type="signal" id="SRA37_Mll105toInf_MT100to160_MET50to100">
+<nobs>17</nobs>
+<nb>32</nb>
+<deltanb>5</deltanb>
+</region>
+
+<region type="signal" id="SRA38_Mll105toInf_MT100to160_MET100to150">
+<nobs>9</nobs>
+<nb>9.6</nb>
+<deltanb>2.4</deltanb>
+</region>
+
+<region type="signal" id="SRA39_Mll105toInf_MT100to160_MET150to200">
+<nobs>0</nobs>
+<nb>2.4</nb>
+<deltanb>0.7</deltanb>
+</region>
+
+<region type="signal" id="SRA40_Mll105toInf_MT100to160_MET200toInf">
+<nobs>2</nobs>
+<nb>1</nb>
+<deltanb>0.4</deltanb>
+</region>
+
+<region type="signal" id="SRA41_Mll105toInf_MT160toInf_MET50to100">
+<nobs>9</nobs>
+<nb>9.4</nb>
+<deltanb>2.4</deltanb>
+</region>
+
+<region type="signal" id="SRA42_Mll105toInf_MT160toInf_MET100to150">
+<nobs>3</nobs>
+<nb>6.6</nb>
+<deltanb>2.1</deltanb>
+</region>
+
+<region type="signal" id="SRA43_Mll105toInf_MT160toInf_MET150to200">
+<nobs>0</nobs>
+<nb>3.1</nb>
+<deltanb>1</deltanb>
+</region>
+
+<region type="signal" id="SRA44_Mll105toInf_MT160toInf_MET200toInf">
+<nobs>0</nobs>
+<nb>2.5</nb>
+<deltanb>0.8</deltanb>
+</region>
+
+<region type="signal" id="SRB01_Mll0to100_MT0to120_MET50to100">
+<nobs>47</nobs>
+<nb>52</nb>
+<deltanb>11</deltanb>
+</region>
+
+<region type="signal" id="SRB02_Mll0to100_MT0to120_MET100toInf">
+<nobs>19</nobs>
+<nb>23</nb>
+<deltanb>6</deltanb>
+</region>
+
+<region type="signal" id="SRB03_Mll0to100_MT120toInf_MET50toInf">
+<nobs>20</nobs>
+<nb>31</nb>
+<deltanb>7</deltanb>
+</region>
+
+<region type="signal" id="SRB04_Mll100toInf_MT0to120_MET50to100">
+<nobs>2</nobs>
+<nb>4.6</nb>
+<deltanb>1.6</deltanb>
+</region>
+
+<region type="signal" id="SRB05_Mll100toInf_MT0to120_MET100toInf">
+<nobs>3</nobs>
+<nb>1.8</nb>
+<deltanb>0.8</deltanb>
+</region>
+
+<region type="signal" id="SRB06_Mll100toInf_MT120toInf_MET50toInf">
+<nobs>6</nobs>
+<nb>4.1</nb>
+<deltanb>1</deltanb>
+</region>
+
+<region type="signal" id="SRC01_Mll0to75_MT20to100_MET50to100">
+<nobs>420</nobs>
+<nb>440</nb>
+<deltanb>130</deltanb>
+</region>
+
+<region type="signal" id="SRC02_Mll0to75_MT20to100_MET100to150">
+<nobs>22</nobs>
+<nb>30</nb>
+<deltanb>8</deltanb>
+</region>
+
+<region type="signal" id="SRC03_Mll0to75_MT20to100_MET150to200">
+<nobs>2</nobs>
+<nb>8.5</nb>
+<deltanb>2.6</deltanb>
+</region>
+
+<region type="signal" id="SRC04_Mll0to75_MT20to100_MET200to250">
+<nobs>2</nobs>
+<nb>1.9</nb>
+<deltanb>0.8</deltanb>
+</region>
+
+<region type="signal" id="SRC05_Mll0to75_MT20to100_MET250toInf">
+<nobs>1</nobs>
+<nb>1.1</nb>
+<deltanb>0.6</deltanb>
+</region>
+
+<region type="signal" id="SRC06_Mll75to105_MT20to100_MET50to100">
+<nobs>3427</nobs>
+<nb>3700</nb>
+<deltanb>1100</deltanb>
+</region>
+
+<region type="signal" id="SRC07_Mll75to105_MT20to100_MET100to150">
+<nobs>97</nobs>
+<nb>83</nb>
+<deltanb>14</deltanb>
+</region>
+
+<region type="signal" id="SRC08_Mll75to105_MT20to100_MET150to200">
+<nobs>18</nobs>
+<nb>19.4</nb>
+<deltanb>3.1</deltanb>
+</region>
+
+<region type="signal" id="SRC09_Mll75to105_MT20to100_MET200to300">
+<nobs>17</nobs>
+<nb>14.6</nb>
+<deltanb>2.6</deltanb>
+</region>
+
+<region type="signal" id="SRC10_Mll75to105_MT20to100_MET300to400">
+<nobs>0</nobs>
+<nb>3.2</nb>
+<deltanb>0.7</deltanb>
+</region>
+
+<region type="signal" id="SRC11_Mll75to105_MT20to100_MET400toInf">
+<nobs>1</nobs>
+<nb>1.5</nb>
+<deltanb>0.6</deltanb>
+</region>
+
+<region type="signal" id="SRC12_Mll105toInf_MT20to100_MET50to100">
+<nobs>223</nobs>
+<nb>231</nb>
+<deltanb>65</deltanb>
+</region>
+
+<region type="signal" id="SRC13_Mll105toInf_MT20to100_MET100to150">
+<nobs>32</nobs>
+<nb>41</nb>
+<deltanb>11</deltanb>
+</region>
+
+<region type="signal" id="SRC14_Mll105toInf_MT20to100_MET150to200">
+<nobs>6</nobs>
+<nb>11</nb>
+<deltanb>4</deltanb>
+</region>
+
+<region type="signal" id="SRC15_Mll105toInf_MT20to100_MET200to250">
+<nobs>1</nobs>
+<nb>2.7</nb>
+<deltanb>1.1</deltanb>
+</region>
+
+<region type="signal" id="SRC16_Mll105toInf_MT20to100_MET250toInf">
+<nobs>3</nobs>
+<nb>2.9</nb>
+<deltanb>1.0</deltanb>
+</region>
+
+<region type="signal" id="SRC17_Mll0to75or105toInf_MT2100toInf_MET50to200">
+<nobs>10</nobs>
+<nb>8.8</nb>
+<deltanb>2</deltanb>
+</region>
+
+<region type="signal" id="SRC18_Mll0to75or105toInf_MT2100toInf_MET200toInf">
+<nobs>1</nobs>
+<nb>1.9</nb>
+<deltanb>0.7</deltanb>
+</region>
+
+<region type="signal" id="SRD01_Mll0to60_MT20to100_MET50to100">
+<nobs>126</nobs>
+<nb>140</nb>
+<deltanb>40</deltanb>
+</region>
+
+<region type="signal" id="SRD02_Mll0to60_MT20to100_MET100to150">
+<nobs>37</nobs>
+<nb>41</nb>
+<deltanb>12</deltanb>
+</region>
+
+<region type="signal" id="SRD03_Mll0to60_MT20to100_MET150to200">
+<nobs>7</nobs>
+<nb>8.7</nb>
+<deltanb>2.7</deltanb>
+</region>
+
+<region type="signal" id="SRD04_Mll0to60_MT20to100_MET200to250">
+<nobs>2</nobs>
+<nb>2.7</nb>
+<deltanb>1.1</deltanb>
+</region>
+
+<region type="signal" id="SRD05_Mll0to60_MT20to100_MET250toInf">
+<nobs>1</nobs>
+<nb>2.3</nb>
+<deltanb>0.9</deltanb>
+</region>
+
+<region type="signal" id="SRD06_Mll60to100_MT20to100_MET50to100">
+<nobs>102</nobs>
+<nb>117</nb>
+<deltanb>32</deltanb>
+</region>
+
+<region type="signal" id="SRD07_Mll60to100_MT20to100_MET100to150">
+<nobs>24</nobs>
+<nb>35</nb>
+<deltanb>10</deltanb>
+</region>
+
+<region type="signal" id="SRD08_Mll60to100_MT20to100_MET150to200">
+<nobs>4</nobs>
+<nb>7.8</nb>
+<deltanb>2.5</deltanb>
+</region>
+
+<region type="signal" id="SRD09_Mll60to100_MT20to100_MET200to250">
+<nobs>1</nobs>
+<nb>2.9</nb>
+<deltanb>1.2</deltanb>
+</region>
+
+<region type="signal" id="SRD10_Mll60to100_MT20to100_MET250toInf">
+<nobs>1</nobs>
+<nb>1.4</nb>
+<deltanb>0.6</deltanb>
+</region>
+
+<region type="signal" id="SRD11_Mll100toInf_MT20to100_MET50to100">
+<nobs>21</nobs>
+<nb>32</nb>
+<deltanb>10</deltanb>
+</region>
+
+<region type="signal" id="SRD12_Mll100toInf_MT20to100_MET100to150">
+<nobs>7</nobs>
+<nb>11</nb>
+<deltanb>4</deltanb>
+</region>
+
+<region type="signal" id="SRD13_Mll100toInf_MT20to100_MET150to200">
+<nobs>7</nobs>
+<nb>3.7</nb>
+<deltanb>1.5</deltanb>
+</region>
+
+<region type="signal" id="SRD14_Mll100toInf_MT20to100_MET200toInf">
+<nobs>0</nobs>
+<nb>3</nb>
+<deltanb>1.2</deltanb>
+</region>
+
+<region type="signal" id="SRD15_Mll0toInf_MT2100toInf_MET50to200">
+<nobs>1</nobs>
+<nb>1.4</nb>
+<deltanb>0.7</deltanb>
+</region>
+
+<region type="signal" id="SRD16_Mll0toInf_MT2100toInf_MET200toInf">
+<nobs>0</nobs>
+<nb>0.06</nb>
+<deltanb>0.05</deltanb>
+</region>
+
+<region type="signal" id="SRE01_Mll0to60_MT20to100_MET50to100">
+<nobs>56</nobs>
+<nb>40</nb>
+<deltanb>7</deltanb>
+</region>
+
+<region type="signal" id="SRE02_Mll0to60_MT20to100_MET100to150">
+<nobs>12</nobs>
+<nb>9.4</nb>
+<deltanb>2.2</deltanb>
+</region>
+
+<region type="signal" id="SRE03_Mll0to60_MT20to100_MET150to200">
+<nobs>3</nobs>
+<nb>5</nb>
+<deltanb>1.5</deltanb>
+</region>
+
+<region type="signal" id="SRE04_Mll0to60_MT20to100_MET200to250">
+<nobs>0</nobs>
+<nb>0.95</nb>
+<deltanb>0.32</deltanb>
+</region>
+
+<region type="signal" id="SRE05_Mll0to60_MT20to100_MET250toInf">
+<nobs>1</nobs>
+<nb>0.89</nb>
+<deltanb>0.32</deltanb>
+</region>
+
+<region type="signal" id="SRE06_Mll60to100_MT20to100_MET50to100">
+<nobs>28</nobs>
+<nb>34</nb>
+<deltanb>6</deltanb>
+</region>
+
+<region type="signal" id="SRE07_Mll60to100_MT20to100_MET100to150">
+<nobs>9</nobs>
+<nb>4.8</nb>
+<deltanb>1.2</deltanb>
+</region>
+
+<region type="signal" id="SRE08_Mll60to100_MT20to100_MET150to200">
+<nobs>1</nobs>
+<nb>2.2</nb>
+<deltanb>0.9</deltanb>
+</region>
+
+<region type="signal" id="SRE09_Mll60to100_MT20to100_MET200to250">
+<nobs>1</nobs>
+<nb>0.7</nb>
+<deltanb>0.4</deltanb>
+</region>
+
+<region type="signal" id="SRE10_Mll60to100_MT20to100_MET250toInf">
+<nobs>0</nobs>
+<nb>0.73</nb>
+<deltanb>0.32</deltanb>
+</region>
+
+<region type="signal" id="SRE11_Mll100toInf_MT20to100_MET50toInf">
+<nobs>4</nobs>
+<nb>5.4</nb>
+<deltanb>1.5</deltanb>
+</region>
+
+<region type="signal" id="SRE12_Mll0toInf_MT2100toInf_MET50toInf">
+<nobs>4</nobs>
+<nb>4.9</nb>
+<deltanb>1.4</deltanb>
+</region>
+
+<region type="signal" id="SRF01_Mll0to100_MT20to100_MET50to100">
+<nobs>146</nobs>
+<nb>170</nb>
+<deltanb>50</deltanb>
+</region>
+
+<region type="signal" id="SRF02_Mll0to100_MT20to100_MET100to150">
+<nobs>21</nobs>
+<nb>24</nb>
+<deltanb>7</deltanb>
+</region>
+
+<region type="signal" id="SRF03_Mll0to100_MT20to100_MET150to200">
+<nobs>2</nobs>
+<nb>5.8</nb>
+<deltanb>2</deltanb>
+</region>
+
+<region type="signal" id="SRF04_Mll0to100_MT20to100_MET200to250">
+<nobs>1</nobs>
+<nb>1.8</nb>
+<deltanb>0.8</deltanb>
+</region>
+
+<region type="signal" id="SRF05_Mll0to100_MT20to100_MET250to300">
+<nobs>1</nobs>
+<nb>0.9</nb>
+<deltanb>0.6</deltanb>
+</region>
+
+<region type="signal" id="SRF06_Mll0to100_MT20to100_MET300toInf">
+<nobs>0</nobs>
+<nb>0.23</nb>
+<deltanb>0.17</deltanb>
+</region>
+
+<region type="signal" id="SRF07_Mll100toInf_MT20to100_MET50to100">
+<nobs>34</nobs>
+<nb>42</nb>
+<deltanb>11</deltanb>
+</region>
+
+<region type="signal" id="SRF08_Mll100toInf_MT20to100_MET100to150">
+<nobs>6</nobs>
+<nb>7</nb>
+<deltanb>2.1</deltanb>
+</region>
+
+<region type="signal" id="SRF09_Mll100toInf_MT20to100_MET150to200">
+<nobs>3</nobs>
+<nb>1.9</nb>
+<deltanb>0.8</deltanb>
+</region>
+
+<region type="signal" id="SRF10_Mll100toInf_MT20to100_MET200toInf">
+<nobs>2</nobs>
+<nb>1.3</nb>
+<deltanb>0.6</deltanb>
+</region>
+
+<region type="signal" id="SRF11_Mll0toInf_MT2100toInf_MET50to200">
+<nobs>1</nobs>
+<nb>3</nb>
+<deltanb>1.1</deltanb>
+</region>
+
+<region type="signal" id="SRF12_Mll0toInf_MT2100toInf_MET200toInf">
+<nobs>1</nobs>
+<nb>0.45</nb>
+<deltanb>0.3</deltanb>
+</region>
+
+<region type="signal" id="SRG01_MET0to50">
+<nobs>619</nobs>
+<nb>460</nb>
+<deltanb>120</deltanb>
+</region>
+
+<region type="signal" id="SRG02_MET50to100">
+<nobs>51</nobs>
+<nb>45</nb>
+<deltanb>14</deltanb>
+</region>
+
+<region type="signal" id="SRG03_MET100to150">
+<nobs>2</nobs>
+<nb>2.7</nb>
+<deltanb>0.8</deltanb>
+</region>
+
+<region type="signal" id="SRG04_MET150to200">
+<nobs>2</nobs>
+<nb>1.12</nb>
+<deltanb>0.33</deltanb>
+</region>
+
+<region type="signal" id="SRG05_MET200toInf">
+<nobs>0</nobs>
+<nb>0.97</nb>
+<deltanb>0.32</deltanb>
+</region>
+
+<region type="signal" id="SRH01_MET0to50">
+<nobs>14</nobs>
+<nb>10.9</nb>
+<deltanb>2.2</deltanb>
+</region>
+
+<region type="signal" id="SRH02_MET50to100">
+<nobs>6</nobs>
+<nb>7.7</nb>
+<deltanb>1.5</deltanb>
+</region>
+
+<region type="signal" id="SRH03_MET100to150">
+<nobs>0</nobs>
+<nb>2.7</nb>
+<deltanb>0.6</deltanb>
+</region>
+
+<region type="signal" id="SRH04_MET150toInf">
+<nobs>1</nobs>
+<nb>1.9</nb>
+<deltanb>0.6</deltanb>
+</region>
+
+<region type="signal" id="SRI01_MET0to50">
+<nobs>51</nobs>
+<nb>42</nb>
+<deltanb>8</deltanb>
+</region>
+
+<region type="signal" id="SRI02_MET50to100">
+<nobs>14</nobs>
+<nb>16.4</nb>
+<deltanb>3.5</deltanb>
+</region>
+
+<region type="signal" id="SRI03_MET100to150">
+<nobs>4</nobs>
+<nb>4.7</nb>
+<deltanb>1.4</deltanb>
+</region>
+
+<region type="signal" id="SRI04_MET150toInf">
+<nobs>5</nobs>
+<nb>2.9</nb>
+<deltanb>0.9</deltanb>
+</region>
+
+<region type="signal" id="SRJ01_MET0to50">
+<nobs>29</nobs>
+<nb>30</nb>
+<deltanb>7</deltanb>
+</region>
+
+<region type="signal" id="SRJ02_MET50to100">
+<nobs>5</nobs>
+<nb>5.7</nb>
+<deltanb>1.7</deltanb>
+</region>
+
+<region type="signal" id="SRJ03_MET100to150">
+<nobs>1</nobs>
+<nb>0.9</nb>
+<deltanb>0.5</deltanb>
+</region>
+
+<region type="signal" id="SRJ04_MET150toInf">
+<nobs>0</nobs>
+<nb>0.63</nb>
+<deltanb>0.32</deltanb>
+</region>
+
+<region type="signal" id="SRK01_MET0to50">
+<nobs>30</nobs>
+<nb>24</nb>
+<deltanb>8</deltanb>
+</region>
+
+<region type="signal" id="SRK02_MET50to100">
+<nobs>1</nobs>
+<nb>0.07</nb>
+<deltanb>0.19</deltanb>
+</region>
+
+<region type="signal" id="SRK03_MET100toInf">
+<nobs>0</nobs>
+<nb>0.6</nb>
+<deltanb>0.4</deltanb>
+</region>
+
+</analysis>
+

@@ -1,0 +1,132 @@
+make FJCONTRIB_SUBMAKE=1 -C ClusteringVetoPlugin
+make FJCONTRIB_SUBMAKE=1 -C SoftKiller
+make FJCONTRIB_SUBMAKE=1 -C ScJet
+make FJCONTRIB_SUBMAKE=1 -C RecursiveTools
+make FJCONTRIB_SUBMAKE=1 -C Nsubjettiness
+make FJCONTRIB_SUBMAKE=1 -C EnergyCorrelator
+make FJCONTRIB_SUBMAKE=1 -C JetCleanser
+make FJCONTRIB_SUBMAKE=1 -C GenericSubtractor
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/ClusteringVetoPlugin'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o ClusteringVetoPlugin.o ClusteringVetoPlugin.cc
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/JetCleanser'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o JetCleanser.o JetCleanser.cc
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/GenericSubtractor'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o GenericSubtractor.o GenericSubtractor.cc
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/ScJet'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o ScJet.o ScJet.cc
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/SoftKiller'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o SoftKiller.o SoftKiller.cc
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/Nsubjettiness'
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/workspace/madanalysis5/tools/fastjet/include   -c -o Nsubjettiness.o Nsubjettiness.cc
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/EnergyCorrelator'
+g++ -O3 -Wall -Wextra -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o EnergyCorrelator.o EnergyCorrelator.cc
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/RecursiveTools'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o Recluster.o Recluster.cc
+ar cru libScJet.a ScJet.o
+ranlib libScJet.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/ScJet'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o RecursiveSymmetryCutBase.o RecursiveSymmetryCutBase.cc
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/workspace/madanalysis5/tools/fastjet/include   -c -o Njettiness.o Njettiness.cc
+ar cru libClusteringVetoPlugin.a ClusteringVetoPlugin.o
+ranlib libClusteringVetoPlugin.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/ClusteringVetoPlugin'
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/workspace/madanalysis5/tools/fastjet/include   -c -o NjettinessPlugin.o NjettinessPlugin.cc
+ar cru libSoftKiller.a SoftKiller.o
+ranlib libSoftKiller.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/SoftKiller'
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/workspace/madanalysis5/tools/fastjet/include   -c -o XConePlugin.o XConePlugin.cc
+ar cru libGenericSubtractor.a GenericSubtractor.o
+ranlib libGenericSubtractor.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/GenericSubtractor'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o ModifiedMassDropTagger.o ModifiedMassDropTagger.cc
+make FJCONTRIB_SUBMAKE=1 -C VariableR
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/VariableR'
+g++ -O3 -Wall -Woverloaded-virtual -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o VariableRPlugin.o VariableRPlugin.cc
+make FJCONTRIB_SUBMAKE=1 -C SubjetCounting
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/SubjetCounting'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o SubjetCounting.o SubjetCounting.cc
+make FJCONTRIB_SUBMAKE=1 -C JetsWithoutJets
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/JetsWithoutJets'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o JetsWithoutJets.o JetsWithoutJets.cc
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o EventStorage.o EventStorage.cc
+ar cru libJetCleanser.a JetCleanser.o
+ranlib libJetCleanser.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/JetCleanser'
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/workspace/madanalysis5/tools/fastjet/include   -c -o MeasureDefinition.o MeasureDefinition.cc
+ar cru libSubjetCounting.a SubjetCounting.o
+ranlib libSubjetCounting.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/SubjetCounting'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o SoftDrop.o SoftDrop.cc
+make FJCONTRIB_SUBMAKE=1 -C JetFFMoments
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/JetFFMoments'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o JetFFMoments.o JetFFMoments.cc
+make FJCONTRIB_SUBMAKE=1 -C ValenciaPlugin
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/ValenciaPlugin'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o ValenciaPlugin.o ValenciaPlugin.cc
+ar cru libEnergyCorrelator.a EnergyCorrelator.o
+ranlib libEnergyCorrelator.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/EnergyCorrelator'
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/workspace/madanalysis5/tools/fastjet/include   -c -o ExtraRecombiners.o ExtraRecombiners.cc
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o IteratedSoftDrop.o IteratedSoftDrop.cc
+make FJCONTRIB_SUBMAKE=1 -C ConstituentSubtractor
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/ConstituentSubtractor'
+g++ -O3 -Wall -g -fPIC -I/workspace/madanalysis5/tools/fastjet/include   -c -o ConstituentSubtractor.o ConstituentSubtractor.cc
+ar cru libValenciaPlugin.a ValenciaPlugin.o
+ranlib libValenciaPlugin.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/ValenciaPlugin'
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/workspace/madanalysis5/tools/fastjet/include   -c -o AxesDefinition.o AxesDefinition.cc
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o RecursiveSoftDrop.o RecursiveSoftDrop.cc
+ar cru libVariableR.a VariableRPlugin.o
+ranlib libVariableR.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/VariableR'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o BottomUpSoftDrop.o BottomUpSoftDrop.cc
+make FJCONTRIB_SUBMAKE=1 -C FlavorCone
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/FlavorCone'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o FlavorCone.o FlavorCone.cc
+ar cru libJetsWithoutJets.a JetsWithoutJets.o EventStorage.o
+ranlib libJetsWithoutJets.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/JetsWithoutJets'
+g++ -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter -I/workspace/madanalysis5/tools/fastjet/include   -c -o TauComponents.o TauComponents.cc
+g++ -O3 -Wall -g -fPIC -I/workspace/madanalysis5/tools/fastjet/include   -c -o IterativeConstituentSubtractor.o IterativeConstituentSubtractor.cc
+ar cru libJetFFMoments.a JetFFMoments.o
+ranlib libJetFFMoments.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/JetFFMoments'
+make FJCONTRIB_SUBMAKE=1 -C QCDAwarePlugin
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/QCDAwarePlugin'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include -fPIC   -c -o QCDAwarePlugin.o QCDAwarePlugin.cc
+make FJCONTRIB_SUBMAKE=1 -C LundPlane
+make[1]: Entering directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/LundPlane'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o LundGenerator.o LundGenerator.cc
+ar cru libFlavorCone.a FlavorCone.o
+ranlib libFlavorCone.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/FlavorCone'
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o LundWithSecondary.o LundWithSecondary.cc
+g++ -O3 -Wall -g -fPIC -I/workspace/madanalysis5/tools/fastjet/include   -c -o RescalingClasses.o RescalingClasses.cc
+g++ -O3 -Wall -g -I/workspace/madanalysis5/tools/fastjet/include   -c -o SecondaryLund.o SecondaryLund.cc
+ar cru libQCDAwarePlugin.a QCDAwarePlugin.o
+ranlib libQCDAwarePlugin.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/QCDAwarePlugin'
+SecondaryLund.cc: In member function ‘virtual int fastjet::contrib::SecondaryLund_mMDT::result(const std::vector<fastjet::contrib::LundDeclustering>&) const’:
+SecondaryLund.cc:36:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i=0; i < declusts.size(); ++i) {
+                                   ^
+SecondaryLund.cc: In member function ‘virtual int fastjet::contrib::SecondaryLund_dotmMDT::result(const std::vector<fastjet::contrib::LundDeclustering>&) const’:
+SecondaryLund.cc:49:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i=0; i < declusts.size(); ++i) {
+                                   ^
+SecondaryLund.cc: In member function ‘virtual int fastjet::contrib::SecondaryLund_Mass::result(const std::vector<fastjet::contrib::LundDeclustering>&) const’:
+SecondaryLund.cc:72:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i=0; i < declusts.size(); ++i) {
+                                   ^
+ar cru libNsubjettiness.a Nsubjettiness.o Njettiness.o NjettinessPlugin.o XConePlugin.o MeasureDefinition.o ExtraRecombiners.o AxesDefinition.o TauComponents.o
+ranlib libNsubjettiness.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/Nsubjettiness'
+ar cru libLundPlane.a LundGenerator.o LundWithSecondary.o SecondaryLund.o
+ranlib libLundPlane.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/LundPlane'
+ar cru libRecursiveTools.a Recluster.o RecursiveSymmetryCutBase.o ModifiedMassDropTagger.o SoftDrop.o IteratedSoftDrop.o RecursiveSoftDrop.o BottomUpSoftDrop.o
+ar cru libConstituentSubtractor.a ConstituentSubtractor.o IterativeConstituentSubtractor.o RescalingClasses.o
+ranlib libConstituentSubtractor.a
+ranlib libRecursiveTools.a
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/ConstituentSubtractor'
+make[1]: Leaving directory `/tmp/root/MA5_fastjetcontrib/fjcontrib-1.039/RecursiveTools'

@@ -1,0 +1,124 @@
+<!--
+this XML file serves for the statistical interpretation of the MA5 simulation. 
+it lists the number of observed events <nobs>, number of expected backgrounds <nb> 
+and number of background uncertainty <deltanb> in each of the regions  
+-->
+
+<!--
+to be put in the same directory as the analysis code,
+i.e. Build/SampleAnalyzer/User/Analyzer/
+-->
+
+<analysis id="atlas_susy_2018_031">
+  <lumi>139.0</lumi> <!-- in fb^-1 -->
+
+  <!--  signal regions -->
+
+  <!--
+     region definition: the attribute "id" has to match the name of the region
+     as defined in the analysis code;
+     the attribute "type" can be "signal" or "control" and is optional (default=signal)
+     when results are given after combination of several signal regions
+     (as is the case here: SF instead of ee and mumu separately)
+     the signal regions should be given in the attribute "id" separated by
+     semicolons
+  -->
+  <region type="signal" id="SRA">
+    <nobs>17</nobs>
+    <nb>17.1</nb>
+    <deltanb>2.8</deltanb>
+  </region>
+  <region type="signal" id="SRA_L">
+    <nobs>12</nobs>
+    <nb>8.4</nb>
+    <deltanb>1.7</deltanb>
+  </region>
+  <region type="signal" id="SRA_M">
+    <nobs>3</nobs>
+    <nb>5.7</nb>
+    <deltanb>0.8</deltanb>
+  </region>
+  <region type="signal" id="SRA_H">
+    <nobs>2</nobs>
+    <nb>3.0</nb>
+    <deltanb>1.5</deltanb>
+  </region>
+
+
+  <region type="signal" id="SRB">
+    <nobs>3</nobs>
+    <nb>3.3</nb>
+    <deltanb>0.9</deltanb>
+  </region>
+
+
+  <region type="signal" id="SRC">
+    <nobs>47</nobs>
+    <nb>37.9</nb>
+    <deltanb>6.2</deltanb>
+  </region>
+<region type="signal" id="SRC_22">
+    <nobs>28</nobs>
+    <nb>21.2</nb>
+    <deltanb>4.1</deltanb>
+  </region>
+  <region type="signal" id="SRC_24">
+    <nobs>12</nobs>
+    <nb>10.6</nb>
+    <deltanb>2.3</deltanb>
+  </region>
+  <region type="signal" id="SRC_26">
+    <nobs>4</nobs>
+    <nb>3.7</nb>
+    <deltanb>0.9</deltanb>
+  </region>
+<region type="signal" id="SRC_28">
+    <nobs>3</nobs>
+    <nb>2.4</nb>
+    <deltanb>0.6</deltanb>
+  </region>
+
+
+  <pyhf id="RegionA">
+    <name>atlas_susy_2018_031_SRA.json</name>
+    <regions>
+      <channel name="SR_meff">
+      SRA_L
+      SRA_M
+      SRA_H
+      </channel>
+      <channel name="VRtt_meff"></channel>
+      <channel name="CRtt_meff"></channel>
+    </regions>
+  </pyhf>
+ 
+  <pyhf id="RegionB">
+    <name>atlas_susy_2018_031_SRB.json</name>
+    <regions>
+      <channel name="CRtt_cuts"> </channel>
+      <channel name="VRtt_cuts"> </channel>
+      <channel name="SR_cuts">
+      SRB
+      </channel>
+    </regions>
+  </pyhf>
+
+  <pyhf id="RegionC">
+    <name>atlas_susy_2018_031_SRC.json</name>
+    <regions>
+      <channel name="CRtt_cuts"> </channel>
+      <channel name="SR_metsigST">
+      SRC_22
+      SRC_24
+      SRC_26
+      SRC_28
+      </channel>
+      <channel name="VRzAlt_cuts"> </channel>
+      <channel name="CRz_cuts"> </channel>
+      <channel name="VRtt_cuts"> </channel>
+      <channel name="VRz_cuts"> </channel>
+    </regions>
+  </pyhf>
+
+</analysis>
+	  

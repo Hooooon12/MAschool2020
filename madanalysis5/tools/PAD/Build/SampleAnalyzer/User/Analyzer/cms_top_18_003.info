@@ -1,0 +1,88 @@
+<analysis id="cms_top_18_003">
+  <lumi>137</lumi> <!-- in fb^-1 -->
+
+  <region type="signal" id="SR1">
+    <nobs>33</nobs>
+    <nb>28.1</nb>
+    <deltanb>2.4</deltanb>
+  </region>
+
+  <region type="signal" id="SR2">
+    <nobs>9</nobs>
+    <nb>10.5</nb>
+    <deltanb>1.4</deltanb>
+  </region>
+
+  <region type="signal" id="SR3">
+    <nobs>3</nobs>
+    <nb>2.9</nb>
+    <deltanb>0.7</deltanb>
+  </region>
+
+  <region type="signal" id="SR4">
+    <nobs>14</nobs>
+    <nb>13.3</nb>
+    <deltanb>1.6</deltanb>
+  </region>
+
+  <region type="signal" id="SR5">
+    <nobs>5</nobs>
+    <nb>7.2</nb>
+    <deltanb>1.2</deltanb>
+  </region>
+
+  <region type="signal" id="SR6">
+    <nobs>8</nobs>
+    <nb>3.8</nb>
+    <deltanb>0.8</deltanb>
+  </region>
+
+  <region type="signal" id="SR7">
+    <nobs>0</nobs>
+    <nb>1.9</nb>
+    <deltanb>0.5</deltanb>
+  </region>
+
+  <region type="signal" id="SR8">
+    <nobs>5</nobs>
+    <nb>6.1</nb>
+    <deltanb>1.6</deltanb>
+  </region>
+
+  <region type="signal" id="SR9">
+    <nobs>6</nobs>
+    <nb>7.7</nb>
+    <deltanb>0.9</deltanb>
+  </region>
+
+  <region type="signal" id="SR10">
+    <nobs>3</nobs>
+    <nb>2.55</nb>
+    <deltanb>0.38</deltanb>
+  </region>
+
+  <region type="signal" id="SR11">
+    <nobs>1</nobs>
+    <nb>1.7</nb>
+    <deltanb>0.71</deltanb>
+  </region>
+
+  <region type="signal" id="SR12">
+    <nobs>2</nobs>
+    <nb>2.75</nb>
+    <deltanb>0.6</deltanb>
+  </region>
+
+  <region type="signal" id="SR13">
+    <nobs>2</nobs>
+    <nb>2.0</nb>
+    <deltanb>0.5</deltanb>
+  </region>
+
+  <region type="signal" id="SR14">
+    <nobs>1</nobs>
+    <nb>1.9</nb>
+    <deltanb>0.5</deltanb>
+  </region>
+
+</analysis>

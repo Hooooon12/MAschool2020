@@ -1,0 +1,1 @@
+c++ -Wall -O3 -fPIC -I/workspace/madanalysis5/tools/ -I/usr/include -o zlib/gz_streambase.o -c zlib/gz_streambase.cpp

@@ -1,0 +1,8 @@
+<analysis id="atlas_exot_2014_06">
+<lumi>20.3</lumi> <!-- in fb^-1 -->
+<region type="signal" id="S1">
+<nobs>521</nobs>
+<nb>557</nb>
+<deltanb>63</deltanb>
+</region>
+</analysis>

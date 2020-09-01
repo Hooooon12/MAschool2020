@@ -1,0 +1,1 @@
+c++ Process/Test.o  -L/workspace/madanalysis5/tools/SampleAnalyzer/Lib -L/workspace/madanalysis5/tools/SampleAnalyzer/ExternalSymLink/Lib -lprocess_for_ma5 -lcommons_for_ma5 -o ../Bin/TestSampleAnalyzer

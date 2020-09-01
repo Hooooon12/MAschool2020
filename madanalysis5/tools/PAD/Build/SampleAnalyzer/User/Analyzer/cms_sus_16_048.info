@@ -1,0 +1,115 @@
+<analysis id="cms_sus_16_048">
+  <lumi>35.9</lumi> <!-- in fb^-1 -->
+
+  <region type="signal" id="Ewkino_lowMET_M_4to9">
+    <nobs>2</nobs>
+    <nb>3.5</nb>
+    <deltanb>1.0</deltanb>
+  </region>
+  <region type="signal" id="Ewkino_lowMET_M_10to20">
+    <nobs>15</nobs>
+    <nb>12.0</nb>
+    <deltanb>2.3</deltanb>
+  </region>
+  <region type="signal" id="Ewkino_lowMET_M_20to30">
+    <nobs>19</nobs>
+    <nb>17.0</nb>
+    <deltanb>2.4</deltanb>
+  </region>
+  <region type="signal" id="Ewkino_lowMET_M_30to50">
+    <nobs>18</nobs>
+    <nb>11.0</nb>
+    <deltanb>2.0</deltanb>
+  </region>
+
+  <region type="signal" id="Ewkino_medMET_M_4to9">
+    <nobs>1</nobs>
+    <nb>1.6</nb>
+    <deltanb>0.7</deltanb>
+  </region>
+  <region type="signal" id="Ewkino_medMET_M_10to20">
+    <nobs>0</nobs>
+    <nb>3.5</nb>
+    <deltanb>0.9</deltanb>
+  </region>
+  <region type="signal" id="Ewkino_medMET_M_20to30">
+    <nobs>3</nobs>
+    <nb>2.0</nb>
+    <deltanb>0.7</deltanb>
+  </region>
+  <region type="signal" id="Ewkino_medMET_M_30to50">
+    <nobs>1</nobs>
+    <nb>0.51</nb>
+    <deltanb>0.51</deltanb>
+  </region>
+
+  <region type="signal" id="Ewkino_highMET_M_4to9">
+    <nobs>2</nobs>
+    <nb>1.4</nb>
+    <deltanb>0.7</deltanb>
+  </region>
+  <region type="signal" id="Ewkino_highMET_M_10to20">
+    <nobs>1</nobs>
+    <nb>1.5</nb>
+    <deltanb>0.6</deltanb>
+  </region>
+  <region type="signal" id="Ewkino_highMET_M_20to30">
+    <nobs>2</nobs>
+    <nb>1.5</nb>
+    <deltanb>0.8</deltanb>
+  </region>
+  <region type="signal" id="Ewkino_highMET_M_30to50">
+    <nobs>0</nobs>
+    <nb>1.2</nb>
+    <deltanb>0.6</deltanb>
+  </region>
+
+  <region type="signal" id="stop_lowMET_PT_5to12">
+    <nobs>16</nobs>
+    <nb>14.0</nb>
+    <deltanb>2.3</deltanb>
+  </region>
+  <region type="signal" id="stop_lowMET_PT_12to20">
+    <nobs>51</nobs>
+    <nb>37.0</nb>
+    <deltanb>6.8</deltanb>
+  </region>
+  <region type="signal" id="stop_lowMET_PT_20to30">
+    <nobs>67</nobs>
+    <nb>54.0</nb>
+    <deltanb>6.5</deltanb>
+  </region>
+
+  <region type="signal" id="stop_medMET_PT_5to12">
+    <nobs>23</nobs>
+    <nb>23.0</nb>
+    <deltanb>3.5</deltanb>
+  </region>
+  <region type="signal" id="stop_medMET_PT_12to20">
+    <nobs>40</nobs>
+    <nb>41.0</nb>
+    <deltanb>5.6</deltanb>
+  </region>
+  <region type="signal" id="stop_medMET_PT_20to30">
+    <nobs>44</nobs>
+    <nb>45.0</nb>
+    <deltanb>7.0</deltanb>
+  </region>
+
+  <region type="signal" id="stop_highMET_PT_5to12">
+    <nobs>4</nobs>
+    <nb>4.7</nb>
+    <deltanb>1.3</deltanb>
+  </region>
+  <region type="signal" id="stop_highMET_PT_12to20">
+    <nobs>11</nobs>
+    <nb>10.0</nb>
+    <deltanb>1.9</deltanb>
+  </region>
+  <region type="signal" id="stop_highMET_PT_20to30">
+    <nobs>9</nobs>
+    <nb>10.0</nb>
+    <deltanb>2.5</deltanb>
+  </region>
+
+</analysis>

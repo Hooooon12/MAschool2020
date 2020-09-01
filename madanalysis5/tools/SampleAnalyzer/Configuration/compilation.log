@@ -1,0 +1,1 @@
+c++ -Wall -O3 -fPIC -I/workspace/madanalysis5/tools/ -o PortabilityCheckup/PortabilityCheckup.o -c PortabilityCheckup/PortabilityCheckup.cpp

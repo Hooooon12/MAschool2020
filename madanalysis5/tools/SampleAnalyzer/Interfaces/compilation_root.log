@@ -1,0 +1,3 @@
+c++ -Wall -O3 -fPIC -I/workspace/madanalysis5/tools/ -pthread -std=c++11 -m64 -I/root/root/include -DDELPHES_USE -o root/TreeReaderBase.o -c root/TreeReaderBase.cpp
+c++ -Wall -O3 -fPIC -I/workspace/madanalysis5/tools/ -pthread -std=c++11 -m64 -I/root/root/include -DDELPHES_USE -o root/RootMainHeaders.o -c root/RootMainHeaders.cpp
+c++ -Wall -O3 -fPIC -I/workspace/madanalysis5/tools/ -pthread -std=c++11 -m64 -I/root/root/include -DDELPHES_USE -o root/ROOTReader.o -c root/ROOTReader.cpp

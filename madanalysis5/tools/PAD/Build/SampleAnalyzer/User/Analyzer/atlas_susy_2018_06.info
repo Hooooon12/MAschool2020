@@ -1,0 +1,41 @@
+<!--
+this XML file serves for the statistical interpretation of the MA5 simulation. 
+it lists the number of observed events <nobs>, number of expected backgrounds <nb> 
+and number of background uncertainty <deltanb> in each of the regions  
+-->
+
+<!--
+to be put in the same directory as the analysis code,
+i.e. Build/SampleAnalyzer/User/Analyzer/
+-->
+
+<analysis id="atlas_susy_2018_06">
+  <lumi>139</lumi> <!-- in fb^-1 -->
+
+  <!--  signal regions -->
+
+  <!--
+     region definition: the attribute "id" has to match the name of the region
+     as defined in the analysis code;
+     the attribute "type" can be "signal" or "control" and is optional (default=signal)
+     when results are given after combination of several signal regions
+     (as is the case here: SF instead of ee and mumu separately)
+     the signal regions should be given in the attribute "id" separated by
+     semicolons
+  -->
+  
+  
+  <region type="signal" id="SR_ISR">
+    <nobs>30</nobs>
+    <nb>23.4</nb>
+    <deltanb>2.1</deltanb>
+  </region>
+  
+  <region type="signal" id="SR_low">
+    <nobs>51</nobs>
+    <nb>46</nb>
+    <deltanb>5</deltanb>
+  </region>
+
+ </analysis>
+  
