@@ -1,8 +1,0 @@
-<analysis id="cms_b2g_12_012">
-<lumi>19.5</lumi> <!-- in fb^-1 -->
-<region type="signal" id="S1">
-<nobs>9</nobs>
-<nb>6.8</nb>
-<deltanb>2.1</deltanb>
-</region>
-</analysis>

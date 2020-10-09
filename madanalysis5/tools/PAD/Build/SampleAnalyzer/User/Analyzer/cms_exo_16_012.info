@@ -1,9 +1,0 @@
-<analysis id="cms_exo_16_012">
-<lumi>2.3</lumi> <!-- in fb^-1 -->
-
-<region type="signal" id="higgs_aa">
-    <nobs>0</nobs>
-    <nb>0.38</nb>
-    <deltanb>0.27</deltanb>
-  </region>
-</analysis>

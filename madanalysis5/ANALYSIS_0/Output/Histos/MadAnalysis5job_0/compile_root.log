@@ -1,1 +1,0 @@
-`/home/jhkim/MAschool2020/madanalysis5/tools/SampleAnalyzer/ExternalSymLink/Bin/root-config --cxx` `/home/jhkim/MAschool2020/madanalysis5/tools/SampleAnalyzer/ExternalSymLink/Bin/root-config --cflags` all.C `/home/jhkim/MAschool2020/madanalysis5/tools/SampleAnalyzer/ExternalSymLink/Bin/root-config --libs` -o goROOT

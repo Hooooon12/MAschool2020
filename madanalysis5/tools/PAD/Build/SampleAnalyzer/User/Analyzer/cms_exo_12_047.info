@@ -1,8 +1,0 @@
-<analysis id="cms_exo_12_047">
-<lumi>19.6</lumi> <!-- in fb^-1 -->
-<region type="signal" id="S1">
-<nobs>630</nobs>
-<nb>614</nb>
-<deltanb>63</deltanb>
-</region>
-</analysis>
