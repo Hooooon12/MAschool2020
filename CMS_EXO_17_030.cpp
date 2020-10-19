@@ -132,7 +132,6 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   }
   //JetCollection jets = jetSelection(event, ptCut[SR-1], etaCut);
   //SORTER->sort(jets);
-
   // Jet ID
   //if(!Manager()->ApplyCut(jets.size() != 0, "ALL: preselection")) return true;
   if(!Manager()->ApplyCut(jets[0].size() != 0, "LOW: preselection")) return true;
@@ -147,9 +146,11 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   double H_T[4], l6pt[4];
   for (int i = 0; i < 4; i++) {
 	H_T[i] = HT(jets[i]);
-	l6pt[i] = jets[i].at(5)->pt();
+	if (jets[i].size() > 5)
+	  l6pt[i] = jets[i].at(5)->pt();
+	else l6pt[i] = 0.;
   }
-
+  
   //double H_T = HT(jets);
   //double l6pt = jets.at(5)->pt();
 
@@ -165,9 +166,12 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   
   // Mds6332 cut for each regions
   double evtMds6332[4];
-  for (int i = 0; i < 4; i++)
-	evtMds6332[i] = mds6332(jets[i]);
-
+  for (int i = 0; i < 4; i++) {
+	if (jets[i].size() > 5)
+	  evtMds6332[i] = mds6332(jets[i]);
+	else evtMds6332[i] = 999.;
+  }
+  
   //double evtMds6332 = mds6332(jets);
 
   if(!Manager()->ApplyCut(evtMds6332[0] < mds6332Cut[0], "SR1: D^2[6,3+3,2] < 1.25")) return true;
@@ -180,11 +184,12 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   PairCollection tripPairs[4];
   TripletCollection trips[4];
   for (int i = 0; i < 4; i++) {
-	tripPairs[i] = makePairCollection(jets[i]);
+	if (jets[i].size() > 5)
+	  tripPairs[i] = makePairCollection(jets[i]);
 	trips[i] = pairSelection(tripPairs[i], asymmCut[i]);
 	trips[i] = GenMatchedTriplets(event, trips[i]);
   }
-
+  
   //PairCollection tripPairs = makePairCollection(jets);
   //TripletCollection trips = pairSelection(tripPairs, asymmCut[SR-1]);
   //trips = GenMatchedTriplets(event, trips);
@@ -194,7 +199,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
 	nTrips_passAsymm[i] = trips[i].size();
     //nTrips[i] *= nTrips_passAsymm[i] / nTrips[i];
   }
-
+  
   Manager()->SetCurrentEventWeight(weight*nTrips_passAsymm[0]); 
   if(!Manager()->ApplyCut(trips[0].size() != 0, "SR1: Am < 0.25")) return true;
   Manager()->SetCurrentEventWeight(weight*nTrips_passAsymm[1]);
@@ -236,7 +241,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
 	nTrips_passMDS32[i] = trips[i].size();
 	//nTrips[i] *= nTrips_passMDS32[i]/nTrips_passDelta[i];
   }
-
+  
   //trips = mds32Selection(trips, mds32Cut[SR-1]);
 
   // update nTrips
@@ -268,7 +273,7 @@ double CMS_EXO_17_030::mass(const Triplet &trip) {
 double CMS_EXO_17_030::HT(const JetCollection &jetcoll) {
   double this_HT = 0;
   for (unsigned int i = 0; i < jetcoll.size(); i++)
-	this_HT += jetcoll.at(0)->pt();
+	this_HT += jetcoll.at(i)->pt();
   //for (const auto &j : jetcoll) this_HT += j->pt();
   return this_HT;
 }
@@ -440,7 +445,6 @@ TripletCollection CMS_EXO_17_030::GenMatchedTriplets(const EventFormat &event, c
 	if (-4<=gen.pdgid()&&gen.pdgid()<=-1&&(gen.mothers()).at(0)->pdgid()==1000021) 
 	  p_gluinos.push_back((gen.mothers()).at(0));
   }
-  
   //for (const auto &gen : gens) {
   //	if (1<=gen.pdgid()&&gen.pdgid()<=4&&(gen.mothers()).at(0)->pdgid()==1000021) p_gluinos.push_back((gen.mothers()).at(0));
   //	if (-4<=gen.pdgid()&&gen.pdgid()<=-1&&(gen.mothers()).at(0)->pdgid()==1000021) p_gluinos.push_back((gen.mothers()).at(0));
@@ -454,40 +458,39 @@ TripletCollection CMS_EXO_17_030::GenMatchedTriplets(const EventFormat &event, c
   
   // start matching
   bool matched;
-
   for (unsigned int i = 0; i < trips.size(); i++) {
 	for (unsigned int j = 0; j < gens.size(); j++) {
 	  const Triplet& trip = trips.at(i);
-	  const MCParticleFormat& gen = gens.at(j);	 
+	  const MCParticleFormat& gen = gens.at(j);
 	  if (1<=gen.pdgid()&&gen.pdgid()<=4&&((gen.mothers()).at(0)==p_gluinos.at(0))) {
 		for (unsigned int k = 0; k < trip.size(); k++) {
-		  const RecJetFormat* j = trip.at(k);
-		  matched = (j->momentum()).DeltaR(gen.momentum()) < 0.3;
-		  if (matched) matched_jets1.push_back(j);
+		  const RecJetFormat* jet = trip.at(k);
+		  matched = (jet->momentum()).DeltaR(gen.momentum()) < 0.3;
+		  if (matched) matched_jets1.push_back(jet);
 		}
 	  }
 	  else if (1<=gen.pdgid()&&gen.pdgid()<=4&&((gen.mothers()).at(0)==p_gluinos.at(1))) {
-		for (unsigned int k = 0; k < trips.size(); k++) {
-		  const RecJetFormat* j = trip.at(k);
-		  matched = (j->momentum()).DeltaR(gen.momentum()) < 0.3;
-		  if (matched) matched_jets2.push_back(j);
+		for (unsigned int k = 0; k < trip.size(); k++) {
+		  const RecJetFormat* jet = trip.at(k);
+		  matched = (jet->momentum()).DeltaR(gen.momentum()) < 0.3;
+		  if (matched) matched_jets2.push_back(jet);
 		}
 	  }
 	  else if (-4<=gen.pdgid()&&gen.pdgid()<=-1&&(gen.mothers()).at(0)==p_gluinos.at(0)) {
-		for (unsigned int k = 0; k < trips.size(); k++) {
-		  const RecJetFormat* j = trip.at(k);
-		  matched = (j->momentum()).DeltaR(gen.momentum()) < 0.3;
-		  if (matched) matched_jets3.push_back(j);
+		for (unsigned int k = 0; k < trip.size(); k++) {
+		  const RecJetFormat* jet = trip.at(k);
+		  matched = (jet->momentum()).DeltaR(gen.momentum()) < 0.3;
+		  if (matched) matched_jets3.push_back(jet);
 		}
 	  }
 	  else if (-4<=gen.pdgid()&&gen.pdgid()<=-1&&(gen.mothers()).at(0)==p_gluinos.at(1)) {
-		for (unsigned int k = 0; k < trips.size(); k++) {
-		  const RecJetFormat* j = trip.at(k);
-		  matched = (j->momentum()).DeltaR(gen.momentum()) < 0.3;
-		  if (matched) matched_jets3.push_back(j);
+		for (unsigned int k = 0; k < trip.size(); k++) {
+		  const RecJetFormat* jet = trip.at(k);
+		  matched = (jet->momentum()).DeltaR(gen.momentum()) < 0.3;
+		  if (matched) matched_jets3.push_back(jet);
 		}
 	  }
-	}	  
+	}
   /*	  
   for (const auto &trip : trips) {
 	for (const auto &gen : gens) {
@@ -518,6 +521,7 @@ TripletCollection CMS_EXO_17_030::GenMatchedTriplets(const EventFormat &event, c
 	  }
 	}
 	*/
+
 	// remove double matching
 	JetCollection::iterator last1, last2, last3, last4;
 	sort(matched_jets1.begin(), matched_jets1.end());
@@ -540,7 +544,7 @@ TripletCollection CMS_EXO_17_030::GenMatchedTriplets(const EventFormat &event, c
 	if (matched_jets2.size() == 3) matched_trips.push_back({matched_jets2.at(0), matched_jets2.at(1), matched_jets2.at(2)});
 	if (matched_jets3.size() == 3) matched_trips.push_back({matched_jets3.at(0), matched_jets3.at(1), matched_jets3.at(2)});
 	if (matched_jets4.size() == 3) matched_trips.push_back({matched_jets4.at(0), matched_jets4.at(1), matched_jets4.at(2)});
-
+	
 	// prepare for next iteration	
 	matched_jets1.clear();
 	matched_jets2.clear();
