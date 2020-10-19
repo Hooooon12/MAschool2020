@@ -109,7 +109,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   else return false;
   
   //double nTrips = 20.;
-  double nTrips[] = {20., 20., 20., 20.};
+  //double nTrips[] = {20., 20., 20., 20.};
   Manager()->InitializeForNewEvent(weight*20.);
   
   double ptCut[] = {30, 30, 50, 50};
@@ -192,16 +192,16 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   double nTrips_passAsymm[4];
   for (int i = 0; i < 4; i++) {
 	nTrips_passAsymm[i] = trips[i].size();
-    nTrips[i] *= nTrips_passAsymm[i] / nTrips[i];
+    //nTrips[i] *= nTrips_passAsymm[i] / nTrips[i];
   }
 
-  Manager()->SetCurrentEventWeight(weight*nTrips[0]); 
+  Manager()->SetCurrentEventWeight(weight*nTrips_passAsymm[0]); 
   if(!Manager()->ApplyCut(trips[0].size() != 0, "SR1: Am < 0.25")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips[1]);
+  Manager()->SetCurrentEventWeight(weight*nTrips_passAsymm[1]);
   if(!Manager()->ApplyCut(trips[1].size() != 0, "SR2: Am < 0.175")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips[2]);
+  Manager()->SetCurrentEventWeight(weight*nTrips_passAsymm[2]);
   if(!Manager()->ApplyCut(trips[2].size() != 0, "SR3: Am < 0.15")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips[3]);
+  Manager()->SetCurrentEventWeight(weight*nTrips_passAsymm[3]);
   if(!Manager()->ApplyCut(trips[3].size() != 0, "SR4: Am < 0.15")) return true;
 
   // Delta cut
@@ -213,16 +213,16 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
 
 	// update nTrips
 	nTrips_passDelta[i] = trips[i].size();
-	nTrips[i] *= nTrips_passDelta[i]/nTrips_passAsymm[i];
+	//nTrips[i] *= nTrips_passDelta[i]/nTrips_passAsymm[i];
   }
   
-  Manager()->SetCurrentEventWeight(weight*nTrips[0]);
+  Manager()->SetCurrentEventWeight(weight*nTrips_passDelta[0]);
   if(!Manager()->ApplyCut(trips[0].size() != 0, "SR1: Delta > 250GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips[1]);
+  Manager()->SetCurrentEventWeight(weight*nTrips_passDelta[1]);
   if(!Manager()->ApplyCut(trips[1].size() != 0, "SR2: Delta > 180GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips[2]);
+  Manager()->SetCurrentEventWeight(weight*nTrips_passDelta[2]);
   if(!Manager()->ApplyCut(trips[2].size() != 0, "SR3: Delta > 20GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips[3]);
+  Manager()->SetCurrentEventWeight(weight*nTrips_passDelta[3]);
   if(!Manager()->ApplyCut(trips[3].size() != 0, "SR4: Delta > -120GeV")) return true;
 
   // mds32 cut
@@ -234,7 +234,7 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
 	
 	// update nTrips
 	nTrips_passMDS32[i] = trips[i].size();
-	nTrips[i] *= nTrips_passMDS32[i]/nTrips_passDelta[i];
+	//nTrips[i] *= nTrips_passMDS32[i]/nTrips_passDelta[i];
   }
 
   //trips = mds32Selection(trips, mds32Cut[SR-1]);
@@ -242,13 +242,13 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   // update nTrips
   //double nTrips_passMDS32 = trips.size();
   //nTrips *= nTrips_passMDS32/nTrips_passDelta;
-  Manager()->SetCurrentEventWeight(weight*nTrips[0]);
+  Manager()->SetCurrentEventWeight(weight*nTrips_passMDS32[0]);
   if(!Manager()->ApplyCut(trips[0].size() != 0, "SR1: D^2[3,2] < 0.05")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips[1]);
+  Manager()->SetCurrentEventWeight(weight*nTrips_passMDS32[1]);
   if(!Manager()->ApplyCut(trips[1].size() != 0, "SR2: D^2[3,2] < 0.175")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips[2]);
+  Manager()->SetCurrentEventWeight(weight*nTrips_passMDS32[2]);
   if(!Manager()->ApplyCut(trips[2].size() != 0, "SR3: D^2[3,2] < 0.2")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips[3]);
+  Manager()->SetCurrentEventWeight(weight*nTrips_passMDS32[3]);
   if(!Manager()->ApplyCut(trips[3].size() != 0, "SR4: D^2[3,2] < 0.25")) return true;
 
   return true;  
