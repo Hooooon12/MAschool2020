@@ -4,10 +4,6 @@
 #include "SampleAnalyzer/Process/Analyzer/AnalyzerBase.h"
 #include <vector>
 #include <array>
-#include <TFile.h>
-#include <TTree.h>
-#include <TH1D.h>
-#include <TString.h>
 
 namespace MA5
 {
@@ -17,7 +13,7 @@ namespace MA5
   typedef std::vector<TripletPair> PairCollection;
   typedef std::vector<Triplet> TripletCollection;  
   class CMS_EXO_17_030 : public AnalyzerBase	{                                                
-    INIT_ANALYSIS(CMS_EXO_17_030,"CMS_EXO_17_030"  )
+    INIT_ANALYSIS(CMS_EXO_17_030,"CMS_EXO_17_030")
   
   public:
 	virtual bool Initialize(const MA5::Configuration& cfg, const std::map<std::string,std::string>& parameters);
@@ -25,8 +21,6 @@ namespace MA5
 	virtual bool Execute(SampleFormat& sample, const EventFormat& event);
   
   private:
-	int SR = 0;
-	bool trigGen = false;
 	JetCollection jetSelection(const EventFormat& event,const double &ptCut, const double &etaCut);
     TripletCollection pairSelection(const PairCollection &pairs, const double &asymmCut);
     TripletCollection deltaSelection(const TripletCollection &trips, const double &deltaCut);
@@ -35,7 +29,6 @@ namespace MA5
     TripletCollection GenMatchedTriplets( const EventFormat& event, const TripletCollection &trips);
 
     PairCollection makePairCollection(const JetCollection &jetcoll);
-    PairCollection MassAsymSelection(const PairCollection &pairs, const double &asymmCut);
    
     // kinematic variables
     MALorentzVector momentum(const Triplet &trip);
