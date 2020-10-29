@@ -1,5 +1,5 @@
 #include "SampleAnalyzer/User/Analyzer/CMS_EXO_17_030.h"
-
+#define CMS_EXO_17_030_PID 1000021
 using namespace MA5;
 using namespace std;
 
@@ -23,9 +23,8 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
   INFO << "      <><><><><><><><><><><><><><><><><><><><><><><><><>" << endmsg;
   
   // Initial setting for the mother particle
-  reso_pid = 1000021;
-  WARNING << "Triplets will be matched to the particle with PID " << reso_pid << endmsg;
-  WARNING << "Change the PID for your triplets, or the code will fail" << endmsg;
+  WARNING << "Triplets will be matched to the particle with PID " << CMS_EXO_17_030_PID << endmsg;
+  WARNING << "Change CMS_EXO_17_030_PID for your triplets" << endmsg;
 
   // Declaration of the signal regions (SR)
   Manager()->AddRegionSelection("Mg_200to400");
@@ -389,9 +388,9 @@ TripletCollection CMS_EXO_17_030::GenMatchedTriplets(const EventFormat &event, c
  
   for (unsigned int i = 0; i < gens.size(); i++) {
 	const MCParticleFormat& gen = gens.at(i);
-	if (1<=gen.pdgid()&&gen.pdgid()<=4&&(gen.mothers()).at(0)->pdgid()==reso_pid) 
+	if (1<=gen.pdgid()&&gen.pdgid()<=4&&(gen.mothers()).at(0)->pdgid()==CMS_EXO_17_030_PID) 
 	  p_gluinos.push_back((gen.mothers()).at(0));
-	if (-4<=gen.pdgid()&&gen.pdgid()<=-1&&(gen.mothers()).at(0)->pdgid()==reso_pid) 
+	if (-4<=gen.pdgid()&&gen.pdgid()<=-1&&(gen.mothers()).at(0)->pdgid()==CMS_EXO_17_030_PID) 
 	  p_gluinos.push_back((gen.mothers()).at(0));
   }
   
