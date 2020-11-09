@@ -31,54 +31,114 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
   Manager()->AddRegionSelection("Mg_400to700");
   Manager()->AddRegionSelection("Mg_700to1200");
   Manager()->AddRegionSelection("Mg_1200to2000");
+  Manager()->AddRegionSelection("Mass_200to300");
+  Manager()->AddRegionSelection("Mass_300to400");
+  Manager()->AddRegionSelection("Mass_400to500");
+  Manager()->AddRegionSelection("Mass_500to600");
+  Manager()->AddRegionSelection("Mass_600to700");
+  Manager()->AddRegionSelection("Mass_700to800");
+  Manager()->AddRegionSelection("Mass_800to900");
+  Manager()->AddRegionSelection("Mass_900to1000");
+  Manager()->AddRegionSelection("Mass_1000to1100");
+  Manager()->AddRegionSelection("Mass_1100to1200");
+  Manager()->AddRegionSelection("Mass_1200to1300");
+  Manager()->AddRegionSelection("Mass_1300to1400");
+  Manager()->AddRegionSelection("Mass_1400to1500");
+  Manager()->AddRegionSelection("Mass_1500to1600");
+  Manager()->AddRegionSelection("Mass_1600to1700");
+  Manager()->AddRegionSelection("Mass_1700to1800");
+  Manager()->AddRegionSelection("Mass_1800to1900");
+  Manager()->AddRegionSelection("Mass_1900to2000");
   
   // Signal Region Partitions
-  std::string All_Region[]={"Mg_200to400", "Mg_400to700", "Mg_700to1200", "Mg_1200to2000"};
+  std::string All_Region[] = {
+	// Signal regions
+	"Mg_200to400", "Mg_400to700", "Mg_700to1200", "Mg_1200to2000",
+	// Mass partition 1
+	"Mass_200to300", "Mass_300to400",
+	// Mass partition 2
+	"Mass_400to500", "Mass_500to600", "Mass_600to700",
+	// Mass partition 3
+	"Mass_700to800", "Mass_800to900", "Mass_900to1000" ,"Mass_1000to1100" ,"Mass_1100to1200", 
+	// Mass partition 4
+	"Mass_1200to1300", "Mass_1300to1400", "Mass_1400to1500", "Mass_1500to1600", "Mass_1600to1700", "Mass_1700to1800", "Mass_1800to1900", "Mass_1900to2000"
+  };
 
-  std::string Low_Mass_Region[] = {"Mg_200to400", "Mg_400to700"};
-  std::string High_Mass_Region[] = {"Mg_700to1200", "Mg_1200to2000"};
+  std::string Low_Mass_Region[] = {
+	"Mg_200to400", "Mg_400to700",
+	"Mass_200to300", "Mass_300to400",
+	"Mass_400to500", "Mass_500to600", "Mass_600to700"
+  };
+  std::string High_Mass_Region[] = {
+	"Mg_700to1200", "Mg_1200to2000",
+    "Mass_700to800", "Mass_800to900", "Mass_900to1000" ,"Mass_1000to1100" ,"Mass_1100to1200",
+	"Mass_1200to1300", "Mass_1300to1400", "Mass_1400to1500", "Mass_1500to1600", "Mass_1600to1700", "Mass_1700to1800", "Mass_1800to1900", "Mass_1900to2000"
+  };
+  std::string SR1[] = {"Mg_200to400", "Mass_200to300", "Mass_300to400"};
+  std::string SR2[] = {"Mg_400to700", "Mass_400to500", "Mass_500to600", "Mass_600to700"};
+  std::string SR3[] = {"Mg_700to1200", "Mass_700to800", "Mass_800to900", "Mass_900to1000" ,"Mass_1000to1100" ,"Mass_1100to1200"};
+  std::string SR4[] = {"Mg_1200to2000", "Mass_1200to1300", "Mass_1300to1400", "Mass_1400to1500", "Mass_1500to1600", "Mass_1600to1700", "Mass_1700to1800", "Mass_1800to1900", "Mass_1900to2000"};
 
-  // Declaration of Jet ID cut
+    
+  // Declaration of the preselection and HT cuts 
+  Manager()->AddCut("ALL: Njets>=6", All_Region);
+
   Manager()->AddCut("LOW: preselection", Low_Mass_Region);
   Manager()->AddCut("HIGH: preselection", High_Mass_Region);
-    
-  // Declaration of the jet-pt cuts and HT cuts
-  
-  Manager()->AddCut("LOW: Njets>=6", Low_Mass_Region);
-  Manager()->AddCut("HIGH: Njets>=6", High_Mass_Region);
 
   Manager()->AddCut("LOW: HT > 650GeV", Low_Mass_Region);
   Manager()->AddCut("HIGH: HT > 900GeV", High_Mass_Region);
   
   // Declaration of the sixth jet-pt cut
-  Manager()->AddCut("SR1: pt(j6) > 40GeV", "Mg_200to400");
-  Manager()->AddCut("SR2: pt(j6) > 50GeV", "Mg_400to700");
-  Manager()->AddCut("SR3: pt(j6) > 125GeV", "Mg_700to1200");
-  Manager()->AddCut("SR4: pt(j6) > 175GeV", "Mg_1200to2000");
+  Manager()->AddCut("SR1: pt(j6) > 40GeV", SR1);
+  Manager()->AddCut("SR2: pt(j6) > 50GeV", SR2);
+  Manager()->AddCut("SR3: pt(j6) > 125GeV", SR3);
+  Manager()->AddCut("SR4: pt(j6) > 175GeV", SR4);
   
   // Declaration of the D^2[6,3+3,2] cut
-  Manager()->AddCut("SR1: D^2[6,3+3,2] < 1.25", "Mg_200to400");
-  Manager()->AddCut("SR2: D^2[6,3+3,2] < 1.0", "Mg_400to700");
-  Manager()->AddCut("SR3: D^2[6,3+3,2] < 0.9", "Mg_700to1200");
-  Manager()->AddCut("SR4: D^2[6,3+3,2] < 0.75", "Mg_1200to2000");
+  Manager()->AddCut("SR1: D^2[6,3+3,2] < 1.25", SR1);
+  Manager()->AddCut("SR2: D^2[6,3+3,2] < 1.0", SR2);
+  Manager()->AddCut("SR3: D^2[6,3+3,2] < 0.9", SR3);
+  Manager()->AddCut("SR4: D^2[6,3+3,2] < 0.75", SR4);
   
   // Declaration of the Am cut - TripletPair cut
-  Manager()->AddCut("SR1: Am < 0.25", "Mg_200to400");
-  Manager()->AddCut("SR2: Am < 0.175", "Mg_400to700");
-  Manager()->AddCut("SR3: Am < 0.15", "Mg_700to1200");
-  Manager()->AddCut("SR4: Am < 0.15", "Mg_1200to2000");
+  Manager()->AddCut("SR1: Am < 0.25", SR1);
+  Manager()->AddCut("SR2: Am < 0.175", SR2);
+  Manager()->AddCut("SR3: Am < 0.15", SR3);
+  Manager()->AddCut("SR4: Am < 0.15", SR4);
   
   // Declaration of the Delta cut - Triplet cut
-  Manager()->AddCut("SR1: Delta > 250GeV", "Mg_200to400");
-  Manager()->AddCut("SR2: Delta > 180GeV", "Mg_400to700");
-  Manager()->AddCut("SR3: Delta > 20GeV", "Mg_700to1200");
-  Manager()->AddCut("SR4: Delta > -120GeV", "Mg_1200to2000");
+  Manager()->AddCut("SR1: Delta > 250GeV", SR1);
+  Manager()->AddCut("SR2: Delta > 180GeV", SR2);
+  Manager()->AddCut("SR3: Delta > 20GeV", SR3);
+  Manager()->AddCut("SR4: Delta > -120GeV", SR4);
                     
   // Declaration of the D^2[3,2] cut - Triplet cut
-  Manager()->AddCut("SR1: D^2[3,2] < 0.05", "Mg_200to400");
-  Manager()->AddCut("SR2: D^2[3,2] < 0.175", "Mg_400to700");
-  Manager()->AddCut("SR3: D^2[3,2] < 0.2", "Mg_700to1200");
-  Manager()->AddCut("SR4: D^2[3,2] < 0.25", "Mg_1200to2000");
+  Manager()->AddCut("SR1: D^2[3,2] < 0.05", SR1);
+  Manager()->AddCut("SR2: D^2[3,2] < 0.175", SR2);
+  Manager()->AddCut("SR3: D^2[3,2] < 0.2", SR3);
+  Manager()->AddCut("SR4: D^2[3,2] < 0.25", SR4);
+
+  // mass partition
+  Manager()->AddCut("SR1: 200 < M(jjj) < 300GeV", "Mass_200to300");
+  Manager()->AddCut("SR1: 300 < M(jjj) < 400GeV", "Mass_300to400");
+  Manager()->AddCut("SR2: 400 < M(jjj) < 500GeV", "Mass_400to500");
+  Manager()->AddCut("SR2: 500 < M(jjj) < 600GeV", "Mass_500to600");
+  Manager()->AddCut("SR2: 600 < M(jjj) < 700GeV", "Mass_600to700");
+  Manager()->AddCut("SR3: 700 < M(jjj) < 800GeV", "Mass_700to800");
+  Manager()->AddCut("SR3: 800 < M(jjj) < 900GeV", "Mass_800to900");
+  Manager()->AddCut("SR3: 900 < M(jjj) < 1000GeV", "Mass_900to1000");
+  Manager()->AddCut("SR3: 1000 < M(jjj) < 1100GeV", "Mass_1000to1100");
+  Manager()->AddCut("SR3: 1100 < M(jjj) < 1200GeV", "Mass_1100to1200");
+  Manager()->AddCut("SR4: 1200 < M(jjj) < 1300GeV", "Mass_1200to1300");
+  Manager()->AddCut("SR4: 1300 < M(jjj) < 1400GeV", "Mass_1300to1400");
+  Manager()->AddCut("SR4: 1400 < M(jjj) < 1500GeV", "Mass_1400to1500");
+  Manager()->AddCut("SR4: 1500 < M(jjj) < 1600GeV", "Mass_1500to1600");
+  Manager()->AddCut("SR4: 1600 < M(jjj) < 1700GeV", "Mass_1600to1700");
+  Manager()->AddCut("SR4: 1700 < M(jjj) < 1800GeV", "Mass_1700to1800");
+  Manager()->AddCut("SR4: 1800 < M(jjj) < 1900GeV", "Mass_1800to1900");
+  Manager()->AddCut("SR4: 1900 < M(jjj) < 2000GeV", "Mass_1900to2000");
+
 
   return true;
 }
@@ -102,11 +162,12 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   else return false;
   
   const double nTrips = 20.;
+  const int nRegions = 4;
   Manager()->InitializeForNewEvent(weight*nTrips);
   
   const double ptCut[] = {30, 30, 50, 50};
   const double HTcut[] = {650, 650, 900, 900};
-  const double l6ptCut[] = {40, 50, 125, 175};
+  const double j6ptCut[] = {40, 50, 125, 175};
   const double mds6332Cut[] = {1.25, 1., 0.9, 0.75};
   const double asymmCut[] = {0.25, 0.175, 0.15, 0.15};
   const double deltaCut[] = {250, 180, 20, -120};
@@ -117,66 +178,52 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   
   // Select jets satisfying pt&eta cut
   const double etaCut = 2.4;
-  JetCollection jets[4];
-  for (int i = 0; i < 4; i++) {
-	jets[i] = jetSelection(event, ptCut[i], etaCut);
-	SORTER->sort(jets[i]);
-  }
+  const double basePtCut = 20.;
+  JetCollection jets = jetSelection(event, basePtCut, etaCut);
+  SORTER->sort(jets);
   
-  // Jet ID
-  if(!Manager()->ApplyCut(jets[0].size() != 0, "LOW: preselection")) return true;
-  if(!Manager()->ApplyCut(jets[2].size() != 0, "HIGH: preselection")) return true;
-
   // Nj cut for low and high mass regions
-  if(!Manager()->ApplyCut(jets[0].size() >= 6, "LOW: Njets>=6")) return true;
-  if(!Manager()->ApplyCut(jets[2].size() >= 6, "HIGH: Njets>=6")) return true;
+  if(!Manager()->ApplyCut(jets.size() >= 6, "ALL: Njets>=6")) return true;
+ 
+  // confirm jet pt cut
+  if(!Manager()->ApplyCut(jets.at(5)->pt() > ptCut[0], "LOW: preselection")) return true;
+  if(!Manager()->ApplyCut(jets.at(5)->pt() > ptCut[2], "HIGH: preselection")) return true;
   
-  // HT cuts
-  double H_T[4], l6pt[4];
-  for (int i = 0; i < 4; i++) {
-	H_T[i] = HT(jets[i]);
-	if (jets[i].size() > 5)
-	  l6pt[i] = jets[i].at(5)->pt();
-	else l6pt[i] = 0.;
-  }
+  // HT, j6pt cut
+  double H_T = HT(jets);
+  double j6pt = jets.at(5)->pt();
 
   // HT cut for low and high mass regions
-  if(!Manager()->ApplyCut(H_T[0] > HTcut[0], "LOW: HT > 650GeV")) return true;
-  if(!Manager()->ApplyCut(H_T[2] > HTcut[2], "HIGH: HT > 900GeV")) return true;
+  if(!Manager()->ApplyCut(H_T > HTcut[0], "LOW: HT > 650GeV")) return true;
+  if(!Manager()->ApplyCut(H_T > HTcut[2], "HIGH: HT > 900GeV")) return true;
 
   // 6th Jet Pt cut for each regions
-  if(!Manager()->ApplyCut(l6pt[0] > l6ptCut[0], "SR1: pt(j6) > 40GeV") ) return true;
-  if(!Manager()->ApplyCut(l6pt[1] > l6ptCut[1], "SR2: pt(j6) > 50GeV") ) return true;
-  if(!Manager()->ApplyCut(l6pt[2] > l6ptCut[2], "SR3: pt(j6) > 125GeV")) return true;
-  if(!Manager()->ApplyCut(l6pt[3] > l6ptCut[3], "SR4: pt(j6) > 175GeV")) return true;
+  if(!Manager()->ApplyCut(j6pt > j6ptCut[0], "SR1: pt(j6) > 40GeV") ) return true;
+  if(!Manager()->ApplyCut(j6pt > j6ptCut[1], "SR2: pt(j6) > 50GeV") ) return true;
+  if(!Manager()->ApplyCut(j6pt > j6ptCut[2], "SR3: pt(j6) > 125GeV")) return true;
+  if(!Manager()->ApplyCut(j6pt > j6ptCut[3], "SR4: pt(j6) > 175GeV")) return true;
   
-  // Mds6332 cut for each regions
-  double evtMds6332[4];
-  for (int i = 0; i < 4; i++) {
-	if (jets[i].size() > 5)
-	  evtMds6332[i] = mds6332(jets[i]);
-	else evtMds6332[i] = 999.;
-  }
+  // Mds6332 cut
+  double evtMds6332 = mds6332(jets);
   
-  if(!Manager()->ApplyCut(evtMds6332[0] < mds6332Cut[0], "SR1: D^2[6,3+3,2] < 1.25")) return true;
-  if(!Manager()->ApplyCut(evtMds6332[1] < mds6332Cut[1], "SR2: D^2[6,3+3,2] < 1.0") ) return true;
-  if(!Manager()->ApplyCut(evtMds6332[2] < mds6332Cut[2], "SR3: D^2[6,3+3,2] < 0.9") ) return true;
-  if(!Manager()->ApplyCut(evtMds6332[3] < mds6332Cut[3], "SR4: D^2[6,3+3,2] < 0.75")) return true; 
+  if(!Manager()->ApplyCut(evtMds6332 < mds6332Cut[0], "SR1: D^2[6,3+3,2] < 1.25")) return true;
+  if(!Manager()->ApplyCut(evtMds6332 < mds6332Cut[1], "SR2: D^2[6,3+3,2] < 1.0") ) return true;
+  if(!Manager()->ApplyCut(evtMds6332 < mds6332Cut[2], "SR3: D^2[6,3+3,2] < 0.9") ) return true;
+  if(!Manager()->ApplyCut(evtMds6332 < mds6332Cut[3], "SR4: D^2[6,3+3,2] < 0.75")) return true; 
 
   // Mass asymmetry cut
-  PairCollection tripPairs[4];
-  TripletCollection trips[4];
-  for (int i = 0; i < 4; i++) {
-	if (jets[i].size() > 5)
-	  tripPairs[i] = makePairCollection(jets[i]);
-	trips[i] = pairSelection(tripPairs[i], asymmCut[i]);
+  PairCollection tripPairs = makePairCollection(jets);
+  TripletCollection trips[nRegions];
+  for (int i = 0; i < nRegions; i++) {
+	trips[i] = pairSelection(tripPairs, asymmCut[i]);
 	trips[i] = GenMatchedTriplets(event, trips[i]);
   }
-  
-  double nTrips_passAsymm[4];
-  for (int i = 0; i < 4; i++)
+
+  double nTrips_passAsymm[nRegions];
+  for (int i = 0; i < nRegions; i++)
 	nTrips_passAsymm[i] = trips[i].size();
-  
+
+  // starting to implement triplet size as weight
   Manager()->SetCurrentEventWeight(weight*nTrips_passAsymm[0]); 
   if(!Manager()->ApplyCut(trips[0].size() != 0, "SR1: Am < 0.25")) return true;
   Manager()->SetCurrentEventWeight(weight*nTrips_passAsymm[1]);
@@ -184,11 +231,12 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   Manager()->SetCurrentEventWeight(weight*nTrips_passAsymm[2]);
   if(!Manager()->ApplyCut(trips[2].size() != 0, "SR3: Am < 0.15")) return true;
   Manager()->SetCurrentEventWeight(weight*nTrips_passAsymm[3]);
+  Manager()->SetCurrentEventWeight(weight*trips[3].size());
   if(!Manager()->ApplyCut(trips[3].size() != 0, "SR4: Am < 0.15")) return true;
 
   // Delta cut
-  double nTrips_passDelta[4];
-  for (int i = 0; i < 4; i++) {
+  double nTrips_passDelta[nRegions];
+  for (int i = 0; i < nRegions; i++) {
 	// select triplets
 	trips[i] = deltaSelection(trips[i], deltaCut[i]);
 
@@ -206,8 +254,8 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   if(!Manager()->ApplyCut(trips[3].size() != 0, "SR4: Delta > -120GeV")) return true;
 
   // mds32 cut
-  double nTrips_passMDS32[4];
-  for (int i = 0; i < 4; i++) {
+  double nTrips_passMDS32[nRegions];
+  for (int i = 0; i < nRegions; i++) {
 	// select triplets
 	trips[i] = mds32Selection(trips[i], mds32Cut[i]);
 	
@@ -223,6 +271,79 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   if(!Manager()->ApplyCut(trips[2].size() != 0, "SR3: D^2[3,2] < 0.2")) return true;
   Manager()->SetCurrentEventWeight(weight*nTrips_passMDS32[3]);
   if(!Manager()->ApplyCut(trips[3].size() != 0, "SR4: D^2[3,2] < 0.25")) return true;
+
+  // 200to300 -> nTrips_massbin[2], 500to600 -> nTrips_massbin[5]
+  int nTrips_massbin[20] = {0};
+  for (unsigned int i = 0; i < trips[0].size(); i++) {
+    int trip_mass = static_cast<int> (mass(trips[0].at(i)));
+	int bin = trip_mass / 100;
+	if (2 <= bin && bin < 4) 
+	  nTrips_massbin[bin]++;
+	else
+	  continue;
+  }
+  for (unsigned int i = 0; i < trips[1].size(); i++) {
+    int trip_mass = static_cast<int> (mass(trips[1].at(i)));
+    int bin = trip_mass / 100;
+    if (4 <= bin && bin < 7)
+      nTrips_massbin[bin]++;
+    else
+      continue;
+  }
+  for (unsigned int i = 0; i < trips[2].size(); i++) {
+    int trip_mass = static_cast<int> (mass(trips[2].at(i)));
+    int bin = trip_mass / 100;
+    if (7 <= bin && bin < 12)
+      nTrips_massbin[bin]++;
+    else
+      continue;
+  }
+  for (unsigned int i = 0; i < trips[3].size(); i++) {
+    int trip_mass = static_cast<int> (mass(trips[3].at(i)));
+    int bin = trip_mass / 100;
+    if (12 <= bin && bin < 20)
+      nTrips_massbin[bin]++;
+    else
+      continue;
+  }
+  
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[2]);
+  if(!Manager()->ApplyCut(nTrips_massbin[2] != 0, "SR1: 200 < M(jjj) < 300GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[3]);
+  if(!Manager()->ApplyCut(nTrips_massbin[3] != 0, "SR1: 300 < M(jjj) < 400GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[4]);
+  if(!Manager()->ApplyCut(nTrips_massbin[4] != 0, "SR2: 400 < M(jjj) < 500GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[5]);
+  if(!Manager()->ApplyCut(nTrips_massbin[5] != 0, "SR2: 500 < M(jjj) < 600GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[6]);
+  if(!Manager()->ApplyCut(nTrips_massbin[6] != 0, "SR2: 600 < M(jjj) < 700GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[7]);
+  if(!Manager()->ApplyCut(nTrips_massbin[7] != 0, "SR3: 700 < M(jjj) < 800GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[8]);
+  if(!Manager()->ApplyCut(nTrips_massbin[8] != 0, "SR3: 800 < M(jjj) < 900GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[9]);
+  if(!Manager()->ApplyCut(nTrips_massbin[9] != 0, "SR3: 900 < M(jjj) < 1000GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[10]);
+  if(!Manager()->ApplyCut(nTrips_massbin[10] != 0, "SR3: 1000 < M(jjj) < 1100GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[11]);
+  if(!Manager()->ApplyCut(nTrips_massbin[11] != 0, "SR3: 1100 < M(jjj) < 1200GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[12]);
+  if(!Manager()->ApplyCut(nTrips_massbin[12] != 0, "SR4: 1200 < M(jjj) < 1300GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[13]);
+  if(!Manager()->ApplyCut(nTrips_massbin[13] != 0, "SR4: 1300 < M(jjj) < 1400GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[14]);
+  if(!Manager()->ApplyCut(nTrips_massbin[14] != 0, "SR4: 1400 < M(jjj) < 1500GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[15]);
+  if(!Manager()->ApplyCut(nTrips_massbin[15] != 0, "SR4: 1500 < M(jjj) < 1600GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[16]);
+  if(!Manager()->ApplyCut(nTrips_massbin[16] != 0, "SR4: 1600 < M(jjj) < 1700GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[17]);
+  if(!Manager()->ApplyCut(nTrips_massbin[17] != 0, "SR4: 1700 < M(jjj) < 1800GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[18]);
+  if(!Manager()->ApplyCut(nTrips_massbin[18] != 0, "SR4: 1800 < M(jjj) < 1900GeV")) return true;
+  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[19]);
+  if(!Manager()->ApplyCut(nTrips_massbin[19] != 0, "SR4: 1900 < M(jjj) < 2000GeV")) return true;
+  
 
   return true;  
 }
@@ -406,6 +527,7 @@ TripletCollection CMS_EXO_17_030::GenMatchedTriplets(const EventFormat &event, c
 	for (unsigned int j = 0; j < gens.size(); j++) {
 	  const Triplet& trip = trips.at(i);
 	  const MCParticleFormat& gen = gens.at(j);
+	    
 	  if (1<=gen.pdgid()&&gen.pdgid()<=4&&((gen.mothers()).at(0)==p_gluinos.at(0))) {
 		for (unsigned int k = 0; k < trip.size(); k++) {
 		  const RecJetFormat* jet = trip.at(k);
@@ -431,9 +553,10 @@ TripletCollection CMS_EXO_17_030::GenMatchedTriplets(const EventFormat &event, c
 		for (unsigned int k = 0; k < trip.size(); k++) {
 		  const RecJetFormat* jet = trip.at(k);
 		  matched = (jet->momentum()).DeltaR(gen.momentum()) < 0.3;
-		  if (matched) matched_jets3.push_back(jet);
+		  if (matched) matched_jets4.push_back(jet);
 		}
 	  }
+	   
 	}
 	
 	// remove double matching
@@ -465,7 +588,7 @@ TripletCollection CMS_EXO_17_030::GenMatchedTriplets(const EventFormat &event, c
 	matched_jets3.clear();
 	matched_jets4.clear();
   }
-
+  
   return matched_trips;
 }
 
