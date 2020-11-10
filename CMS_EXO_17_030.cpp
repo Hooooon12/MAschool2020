@@ -31,53 +31,23 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
   Manager()->AddRegionSelection("Mg_400to700");
   Manager()->AddRegionSelection("Mg_700to1200");
   Manager()->AddRegionSelection("Mg_1200to2000");
-  Manager()->AddRegionSelection("Mass_200to300");
-  Manager()->AddRegionSelection("Mass_300to400");
-  Manager()->AddRegionSelection("Mass_400to500");
-  Manager()->AddRegionSelection("Mass_500to600");
-  Manager()->AddRegionSelection("Mass_600to700");
-  Manager()->AddRegionSelection("Mass_700to800");
-  Manager()->AddRegionSelection("Mass_800to900");
-  Manager()->AddRegionSelection("Mass_900to1000");
-  Manager()->AddRegionSelection("Mass_1000to1100");
-  Manager()->AddRegionSelection("Mass_1100to1200");
-  Manager()->AddRegionSelection("Mass_1200to1300");
-  Manager()->AddRegionSelection("Mass_1300to1400");
-  Manager()->AddRegionSelection("Mass_1400to1500");
-  Manager()->AddRegionSelection("Mass_1500to1600");
-  Manager()->AddRegionSelection("Mass_1600to1700");
-  Manager()->AddRegionSelection("Mass_1700to1800");
-  Manager()->AddRegionSelection("Mass_1800to1900");
-  Manager()->AddRegionSelection("Mass_1900to2000");
   
   // Signal Region Partitions
   std::string All_Region[] = {
 	// Signal regions
-	"Mg_200to400", "Mg_400to700", "Mg_700to1200", "Mg_1200to2000",
-	// Mass partition 1
-	"Mass_200to300", "Mass_300to400",
-	// Mass partition 2
-	"Mass_400to500", "Mass_500to600", "Mass_600to700",
-	// Mass partition 3
-	"Mass_700to800", "Mass_800to900", "Mass_900to1000" ,"Mass_1000to1100" ,"Mass_1100to1200", 
-	// Mass partition 4
-	"Mass_1200to1300", "Mass_1300to1400", "Mass_1400to1500", "Mass_1500to1600", "Mass_1600to1700", "Mass_1700to1800", "Mass_1800to1900", "Mass_1900to2000"
+	"Mg_200to400", "Mg_400to700", "Mg_700to1200", "Mg_1200to2000"
   };
 
   std::string Low_Mass_Region[] = {
-	"Mg_200to400", "Mg_400to700",
-	"Mass_200to300", "Mass_300to400",
-	"Mass_400to500", "Mass_500to600", "Mass_600to700"
+	"Mg_200to400", "Mg_400to700"
   };
   std::string High_Mass_Region[] = {
-	"Mg_700to1200", "Mg_1200to2000",
-    "Mass_700to800", "Mass_800to900", "Mass_900to1000" ,"Mass_1000to1100" ,"Mass_1100to1200",
-	"Mass_1200to1300", "Mass_1300to1400", "Mass_1400to1500", "Mass_1500to1600", "Mass_1600to1700", "Mass_1700to1800", "Mass_1800to1900", "Mass_1900to2000"
+	"Mg_700to1200", "Mg_1200to2000"
   };
-  std::string SR1[] = {"Mg_200to400", "Mass_200to300", "Mass_300to400"};
-  std::string SR2[] = {"Mg_400to700", "Mass_400to500", "Mass_500to600", "Mass_600to700"};
-  std::string SR3[] = {"Mg_700to1200", "Mass_700to800", "Mass_800to900", "Mass_900to1000" ,"Mass_1000to1100" ,"Mass_1100to1200"};
-  std::string SR4[] = {"Mg_1200to2000", "Mass_1200to1300", "Mass_1300to1400", "Mass_1400to1500", "Mass_1500to1600", "Mass_1600to1700", "Mass_1700to1800", "Mass_1800to1900", "Mass_1900to2000"};
+  std::string SR1[] = {"Mg_200to400"};
+  std::string SR2[] = {"Mg_400to700"};
+  std::string SR3[] = {"Mg_700to1200"};
+  std::string SR4[] = {"Mg_1200to2000"};
 
     
   // Declaration of the preselection and HT cuts 
@@ -120,25 +90,10 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
   Manager()->AddCut("SR4: D^2[3,2] < 0.25", SR4);
 
   // mass partition
-  Manager()->AddCut("SR1: 200 < M(jjj) < 300GeV", "Mass_200to300");
-  Manager()->AddCut("SR1: 300 < M(jjj) < 400GeV", "Mass_300to400");
-  Manager()->AddCut("SR2: 400 < M(jjj) < 500GeV", "Mass_400to500");
-  Manager()->AddCut("SR2: 500 < M(jjj) < 600GeV", "Mass_500to600");
-  Manager()->AddCut("SR2: 600 < M(jjj) < 700GeV", "Mass_600to700");
-  Manager()->AddCut("SR3: 700 < M(jjj) < 800GeV", "Mass_700to800");
-  Manager()->AddCut("SR3: 800 < M(jjj) < 900GeV", "Mass_800to900");
-  Manager()->AddCut("SR3: 900 < M(jjj) < 1000GeV", "Mass_900to1000");
-  Manager()->AddCut("SR3: 1000 < M(jjj) < 1100GeV", "Mass_1000to1100");
-  Manager()->AddCut("SR3: 1100 < M(jjj) < 1200GeV", "Mass_1100to1200");
-  Manager()->AddCut("SR4: 1200 < M(jjj) < 1300GeV", "Mass_1200to1300");
-  Manager()->AddCut("SR4: 1300 < M(jjj) < 1400GeV", "Mass_1300to1400");
-  Manager()->AddCut("SR4: 1400 < M(jjj) < 1500GeV", "Mass_1400to1500");
-  Manager()->AddCut("SR4: 1500 < M(jjj) < 1600GeV", "Mass_1500to1600");
-  Manager()->AddCut("SR4: 1600 < M(jjj) < 1700GeV", "Mass_1600to1700");
-  Manager()->AddCut("SR4: 1700 < M(jjj) < 1800GeV", "Mass_1700to1800");
-  Manager()->AddCut("SR4: 1800 < M(jjj) < 1900GeV", "Mass_1800to1900");
-  Manager()->AddCut("SR4: 1900 < M(jjj) < 2000GeV", "Mass_1900to2000");
-
+  Manager()->AddHisto("SR1: M(jjj)", 200, 200., 400.);
+  Manager()->AddHisto("SR2: M(jjj)", 300, 400., 700.);
+  Manager()->AddHisto("SR3: M(jjj)", 500, 700., 1200.);
+  Manager()->AddHisto("SR4: M(jjj)", 800, 1200., 2000.);
 
   return true;
 }
@@ -272,78 +227,16 @@ bool CMS_EXO_17_030::Execute(SampleFormat& sample, const EventFormat& event)
   Manager()->SetCurrentEventWeight(weight*nTrips_passMDS32[3]);
   if(!Manager()->ApplyCut(trips[3].size() != 0, "SR4: D^2[3,2] < 0.25")) return true;
 
-  // 200to300 -> nTrips_massbin[2], 500to600 -> nTrips_massbin[5]
-  int nTrips_massbin[20] = {0};
-  for (unsigned int i = 0; i < trips[0].size(); i++) {
-    int trip_mass = static_cast<int> (mass(trips[0].at(i)));
-	int bin = trip_mass / 100;
-	if (2 <= bin && bin < 4) 
-	  nTrips_massbin[bin]++;
-	else
-	  continue;
-  }
-  for (unsigned int i = 0; i < trips[1].size(); i++) {
-    int trip_mass = static_cast<int> (mass(trips[1].at(i)));
-    int bin = trip_mass / 100;
-    if (4 <= bin && bin < 7)
-      nTrips_massbin[bin]++;
-    else
-      continue;
-  }
-  for (unsigned int i = 0; i < trips[2].size(); i++) {
-    int trip_mass = static_cast<int> (mass(trips[2].at(i)));
-    int bin = trip_mass / 100;
-    if (7 <= bin && bin < 12)
-      nTrips_massbin[bin]++;
-    else
-      continue;
-  }
-  for (unsigned int i = 0; i < trips[3].size(); i++) {
-    int trip_mass = static_cast<int> (mass(trips[3].at(i)));
-    int bin = trip_mass / 100;
-    if (12 <= bin && bin < 20)
-      nTrips_massbin[bin]++;
-    else
-      continue;
-  }
-  
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[2]);
-  if(!Manager()->ApplyCut(nTrips_massbin[2] != 0, "SR1: 200 < M(jjj) < 300GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[3]);
-  if(!Manager()->ApplyCut(nTrips_massbin[3] != 0, "SR1: 300 < M(jjj) < 400GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[4]);
-  if(!Manager()->ApplyCut(nTrips_massbin[4] != 0, "SR2: 400 < M(jjj) < 500GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[5]);
-  if(!Manager()->ApplyCut(nTrips_massbin[5] != 0, "SR2: 500 < M(jjj) < 600GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[6]);
-  if(!Manager()->ApplyCut(nTrips_massbin[6] != 0, "SR2: 600 < M(jjj) < 700GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[7]);
-  if(!Manager()->ApplyCut(nTrips_massbin[7] != 0, "SR3: 700 < M(jjj) < 800GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[8]);
-  if(!Manager()->ApplyCut(nTrips_massbin[8] != 0, "SR3: 800 < M(jjj) < 900GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[9]);
-  if(!Manager()->ApplyCut(nTrips_massbin[9] != 0, "SR3: 900 < M(jjj) < 1000GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[10]);
-  if(!Manager()->ApplyCut(nTrips_massbin[10] != 0, "SR3: 1000 < M(jjj) < 1100GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[11]);
-  if(!Manager()->ApplyCut(nTrips_massbin[11] != 0, "SR3: 1100 < M(jjj) < 1200GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[12]);
-  if(!Manager()->ApplyCut(nTrips_massbin[12] != 0, "SR4: 1200 < M(jjj) < 1300GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[13]);
-  if(!Manager()->ApplyCut(nTrips_massbin[13] != 0, "SR4: 1300 < M(jjj) < 1400GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[14]);
-  if(!Manager()->ApplyCut(nTrips_massbin[14] != 0, "SR4: 1400 < M(jjj) < 1500GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[15]);
-  if(!Manager()->ApplyCut(nTrips_massbin[15] != 0, "SR4: 1500 < M(jjj) < 1600GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[16]);
-  if(!Manager()->ApplyCut(nTrips_massbin[16] != 0, "SR4: 1600 < M(jjj) < 1700GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[17]);
-  if(!Manager()->ApplyCut(nTrips_massbin[17] != 0, "SR4: 1700 < M(jjj) < 1800GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[18]);
-  if(!Manager()->ApplyCut(nTrips_massbin[18] != 0, "SR4: 1800 < M(jjj) < 1900GeV")) return true;
-  Manager()->SetCurrentEventWeight(weight*nTrips_massbin[19]);
-  if(!Manager()->ApplyCut(nTrips_massbin[19] != 0, "SR4: 1900 < M(jjj) < 2000GeV")) return true;
-  
+  // Filling Histo
+  Manager()->SetCurrentEventWeight(weight);
+  for (unsigned int i = 0; i < trips[0].size(); i++)
+	Manager()->FillHisto("SR1: M(jjj)", mass(trips[0].at(i)));
+  for (unsigned int i = 0; i < trips[1].size(); i++)
+	Manager()->FillHisto("SR2: M(jjj)", mass(trips[1].at(i)));
+  for (unsigned int i = 0; i < trips[2].size(); i++)
+	Manager()->FillHisto("SR3: M(jjj)", mass(trips[2].at(i)));
+  for (unsigned int i = 0; i < trips[3].size(); i++)
+	Manager()->FillHisto("SR4: M(jjj)", mass(trips[3].at(i)));
 
   return true;  
 }
