@@ -1,0 +1,75 @@
+<SAFheader>
+</SAFheader>
+
+<InitialCounter>
+"Initial number of events"      #
+400000          0               # nentries
+4.372593e-08    0.000000e+00    # sum of weights
+4.779893e-21    0.000000e+00    # sum of weights^2
+</InitialCounter>
+
+<Counter>
+"ALL: Njets>=6"                 # 1st cut
+394516          0               # nentries
+4.312645e-08    0.000000e+00    # sum of weights
+4.714361e-21    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"HIGH: preselection"            # 2st cut
+373669          0               # nentries
+4.084756e-08    0.000000e+00    # sum of weights
+4.465245e-21    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"HIGH: HT > 900GeV"             # 3st cut
+373661          0               # nentries
+4.084669e-08    0.000000e+00    # sum of weights
+4.465149e-21    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"SR3: pt(j6) > 125GeV"          # 4st cut
+263675          0               # nentries
+2.882359e-08    0.000000e+00    # sum of weights
+3.150846e-21    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"SR3: D^2[6,3+3,2] < 0.9"       # 5st cut
+193224          0               # nentries
+2.112225e-08    0.000000e+00    # sum of weights
+2.308975e-21    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"SR3: Am < 0.15"                # 6st cut
+112092          0               # nentries
+8.826135e-10    0.000000e+00    # sum of weights
+7.826209e-24    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"SR3: Delta > 20GeV"            # 7st cut
+41528           0               # nentries
+2.705597e-10    0.000000e+00    # sum of weights
+1.961041e-24    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"SR3: D^2[3,2] < 0.2"           # 8st cut
+37859           0               # nentries
+2.430779e-10    0.000000e+00    # sum of weights
+1.726348e-24    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"SR3: 870 < M(jjj) < 900"       # 9st cut
+52              0               # nentries
+2.842186e-13    0.000000e+00    # sum of weights
+1.553465e-27    0.000000e+00    # sum of weights^2
+</Counter>
+
+<SAFfooter>
+</SAFfooter>
