@@ -33,8 +33,6 @@ bool CMS_EXO_17_030::Initialize(const MA5::Configuration& cfg, const std::map<st
   Manager()->AddRegionSelection("Mg_1200to2000");
 
   // initialize the bins
-  std::vector<std::string> bins_SR1, bins_SR2, bins_SR3, bins_SR4;
-  std::vector<std::string> cuts_SR1, cuts_SR2, cuts_SR3, cuts_SR4;
   for (unsigned int i = 0; i < nBins_SR1; i++) {
     unsigned int this_bin_left = (firstBin_SR1 + i*binsize_SR1); 
     unsigned int this_bin_right = this_bin_left + binsize_SR1;

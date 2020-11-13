@@ -24,6 +24,8 @@ namespace MA5
 	virtual bool Execute(SampleFormat& sample, const EventFormat& event);
   
   private:
+    std::vector<std::string> bins_SR1, bins_SR2, bins_SR3, bins_SR4;
+    std::vector<std::string> cuts_SR1, cuts_SR2, cuts_SR3, cuts_SR4;
   	const unsigned int nBins_SR1 = 30; 
 	const unsigned int binsize_SR1 = 7;
 	const unsigned int firstBin_SR1 = 196;
