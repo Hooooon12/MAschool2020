@@ -1,5 +1,0 @@
-Get pdfset from https://lhapdf.hepforge.org/downloads?f=pdfsets/v6.backup/6.1.6
-and store it at MG5_aMC_v2_7_0/HEPTools/lhapdf6/share/LHAPDF/
-then unzip.
-
-We are now using : NNPDF30_nlo_as_0115 (264000)
