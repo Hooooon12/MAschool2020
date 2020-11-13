@@ -1,0 +1,19 @@
+<SAFheader>
+</SAFheader>
+
+<SampleGlobalInfo>
+# xsection     xsection_error nevents        sum_weight+    sum_weight-    
+0.000000e+00   0.000000e+00   10000          0.000000e+00   0.000000e+00   
+</SampleGlobalInfo>
+
+<FileInfo>
+"/root/workspace/MASchool2020/CMSSW_7_6_7/src/madanalysis5/ANALYSIS_3/Output/SAF/defaultset/RecoEvents/RecoEvents_v1x2_delphes_card_CMS_EXO_17_030.root" # file 1 / 1
+</FileInfo>
+
+<SampleDetailedInfo>
+# xsection     xsection_error nevents        sum_weight+    sum_weight-    
+0              0              10000          0              0               # file 1 / 1
+</SampleDetailedInfo>
+
+<SAFfooter>
+</SAFfooter>

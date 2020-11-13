@@ -1,0 +1,16 @@
+# AnalysisName               PADType    Switch     DetectorCard
+# Detector cards must be located in the PAD(ForMA5tune/ForSFS) directory
+# Switches must be on or off
+atlas_higg_2013_03            v1.1        off    delphesma5tune_card_atlas_dileptonsusy.tcl         #  ATLAS - 8 TeV - ZH in the invisible + 2 leptons channel
+atlas_susy_2013_02            v1.1        off    delphesma5tune_card_atlas_dileptonsusy.tcl         #  ATLAS - 8 TeV - squark-gluino in the 0 letons + 2-6 jets + met channel
+atlas_susy_2013_04            v1.1        off    delphes_card_atlas_sus_2013_04.tcl                 #  ATLAS - 8 TeV - multijet + met
+atlas_susy_2013_05            v1.1        off    delphesma5tune_card_atlas_05.tcl                   #  ATLAS - 8 TeV - stop/sbottom in the0 lepton + 2 bjets + met channel
+atlas_susy_2013_11            v1.1        off    delphesma5tune_card_atlas_dileptonsusy.tcl         #  ATLAS - 8 TeV - ewkinos in the 2 leptons + met channel
+atlas_susy_2013_21            v1.1        off    delphesma5tune_card_atlas_05.tcl                   #  ATLAS - 8 TeV - monojet
+atlas_susy_2014_10            v1.1        off    delphesma5tune_card_atlas_2014_10.tcl              #  ATLAS - 8 TeV - squark-gluino in the 2 leptons + jets + met channel
+cms_sus_13_011                v1.1        off    delphesma5tune_card_cms_susy.tcl                   #  CMS   - 8 TeV - stop in the 1 lepton + bjets + met channel
+cms_sus_13_012                v1.1        off    delphesma5tune_card_cms_susy.tcl                   #  CMS   - 8 TeV - squark-gluino in the MET/MHT channel
+cms_sus_13_016                v1.1        off    delphesma5tune_card_cms_susy.tcl                   #  CMS   - 8 TeV - gluinos in the 2 leptons + bjets + met channel
+cms_sus_14_001_monojet        v1.1        off    delphesma5tune_card_cms_susy.tcl                   #  CMS   - 8 TeV - stop in the monojet channel
+cms_sus_14_001_toptag         v1.1        off    delphesma5tune_card_cms_sus14004.tcl               #  CMS   - 8 TeV - stops in the top-tagging channel#
+CMS_EXO_17_030                v1.2        on    delphes_card_CMS_EXO_17_030.tcl                    # UNKNOWN#

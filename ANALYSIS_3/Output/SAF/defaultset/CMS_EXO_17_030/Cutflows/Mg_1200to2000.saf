@@ -1,0 +1,68 @@
+<SAFheader>
+</SAFheader>
+
+<InitialCounter>
+"Initial number of events"      #
+10000           0               # nentries
+4.357184e-08    0.000000e+00    # sum of weights
+1.898505e-19    0.000000e+00    # sum of weights^2
+</InitialCounter>
+
+<Counter>
+"ALL: Njets>=6"                 # 1st cut
+9869            0               # nentries
+4.300105e-08    0.000000e+00    # sum of weights
+1.873635e-19    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"HIGH: preselection"            # 2st cut
+9334            0               # nentries
+4.066995e-08    0.000000e+00    # sum of weights
+1.772065e-19    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"HIGH: HT > 900GeV"             # 3st cut
+9334            0               # nentries
+4.066995e-08    0.000000e+00    # sum of weights
+1.772065e-19    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"SR4: pt(j6) > 175GeV"          # 4st cut
+4115            0               # nentries
+1.792981e-08    0.000000e+00    # sum of weights
+7.812349e-20    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"SR4: D^2[6,3+3,2] < 0.75"      # 5st cut
+2788            0               # nentries
+1.214783e-08    0.000000e+00    # sum of weights
+5.293032e-20    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"SR4: Am < 0.15"                # 6st cut
+1708            0               # nentries
+5.457373e-10    0.000000e+00    # sum of weights
+1.957834e-22    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"SR4: Delta > -120GeV"          # 7st cut
+1255            0               # nentries
+3.485747e-10    0.000000e+00    # sum of weights
+1.094488e-22    0.000000e+00    # sum of weights^2
+</Counter>
+
+<Counter>
+"SR4: D^2[3,2] < 0.25"          # 8st cut
+1245            0               # nentries
+3.444354e-10    0.000000e+00    # sum of weights
+1.076927e-22    0.000000e+00    # sum of weights^2
+</Counter>
+
+<SAFfooter>
+</SAFfooter>

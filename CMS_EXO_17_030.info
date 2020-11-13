@@ -20,595 +20,595 @@ i.e. Build/SampleAnalyzer/Analyzer/
      the attribute "type" can be "signal" or "control" and is optional (default=signal)
   -->
 
-  <region type="signal" id="SR1:_196to203">
+  <region type="signal" id="SR1: 196to203">
     <nobs>3159.6162721605638</nobs>
     <nb>3255.461622371915</nb>
     <deltanb>59.8744720191</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_203to210">
+  <region type="signal" id="SR1: 203to210">
     <nobs>3086.1645151443886</nobs>
     <nb>3050.8380716665542</nb>
     <deltanb>60.2436798856</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_210to217">
+  <region type="signal" id="SR1: 210to217">
     <nobs>2905.3875662852734</nobs>
     <nb>2898.705472351924</nb>
     <deltanb>60.806810644</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_217to224">
+  <region type="signal" id="SR1: 217to224">
     <nobs>2910.785241209591</nobs>
     <nb>2805.5010320111437</nb>
     <deltanb>54.0337977372</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_224to231">
+  <region type="signal" id="SR1: 224to231">
     <nobs>2784.7375764399185</nobs>
     <nb>2740.213443244232</nb>
     <deltanb>50.0035735063</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_231to238">
+  <region type="signal" id="SR1: 231to238">
     <nobs>2676.5779510795182</nobs>
     <nb>2701.343604290239</nb>
     <deltanb>58.4940973353</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_238to245">
+  <region type="signal" id="SR1: 238to245">
     <nobs>2650.7898485906953</nobs>
     <nb>2650.8555969830836</nb>
     <deltanb>53.3120084918</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_245to252">
+  <region type="signal" id="SR1: 245to252">
     <nobs>2565.4295774974935</nobs>
     <nb>2589.1025864697385</nb>
     <deltanb>67.0101178975</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_252to259">
+  <region type="signal" id="SR1: 252to259">
     <nobs>2494.339903966312</nobs>
     <nb>2529.0390420189556</nb>
     <deltanb>63.542854228</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_259to266">
+  <region type="signal" id="SR1: 259to266">
     <nobs>2510.383940278042</nobs>
     <nb>2464.50390375279</nb>
     <deltanb>49.4944531939</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_266to273">
+  <region type="signal" id="SR1: 266to273">
     <nobs>2336.33978140866</nobs>
     <nb>2390.6999045353514</nb>
     <deltanb>44.6541708925</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_273to280">
+  <region type="signal" id="SR1: 273to280">
     <nobs>2362.162180255367</nobs>
     <nb>2313.715004332069</nb>
     <deltanb>51.4946649375</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_280to287">
+  <region type="signal" id="SR1: 280to287">
     <nobs>2193.338109596141</nobs>
     <nb>2244.4266497431113</nb>
     <deltanb>51.6678041866</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_287to294">
+  <region type="signal" id="SR1: 287to294">
     <nobs>2098.514676688944</nobs>
     <nb>2172.259769813252</nb>
     <deltanb>50.8886487671</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_294to301">
+  <region type="signal" id="SR1: 294to301">
     <nobs>2054.404482476796</nobs>
     <nb>2087.785305069693</nb>
     <deltanb>43.4076980218</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_301to308">
+  <region type="signal" id="SR1: 301to308">
     <nobs>2053.4365575363895</nobs>
     <nb>2016.0077422922413</nb>
     <deltanb>54.2246791946</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_308to315">
+  <region type="signal" id="SR1: 308to315">
     <nobs>1911.0250226601452</nobs>
     <nb>1924.2713921557145</nb>
     <deltanb>53.0404145886</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_315to322">
+  <region type="signal" id="SR1: 315to322">
     <nobs>1862.3525327144462</nobs>
     <nb>1853.7959433869714</nb>
     <deltanb>49.7685392473</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_322to329">
+  <region type="signal" id="SR1: 322to329">
     <nobs>1781.838425170893</nobs>
     <nb>1777.7403792271427</nb>
     <deltanb>59.4613540445</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_329to336">
+  <region type="signal" id="SR1: 329to336">
     <nobs>1744.3846775931206</nobs>
     <nb>1700.7577079548296</nb>
     <deltanb>46.9792100425</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_336to343">
+  <region type="signal" id="SR1: 336to343">
     <nobs>1601.1728590145735</nobs>
     <nb>1627.189384778229</nb>
     <deltanb>41.6437758547</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_343to350">
+  <region type="signal" id="SR1: 343to350">
     <nobs>1535.4054782551586</nobs>
     <nb>1553.1458124203518</nb>
     <deltanb>47.5045802521</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_350to357">
+  <region type="signal" id="SR1: 350to357">
     <nobs>1534.6820777424</nobs>
     <nb>1489.4250013960896</nb>
     <deltanb>46.4776541264</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_357to364">
+  <region type="signal" id="SR1: 357to364">
     <nobs>1386.0948564246369</nobs>
     <nb>1421.650255017978</nb>
     <deltanb>32.5227631957</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_364to371">
+  <region type="signal" id="SR1: 364to371">
     <nobs>1440.783658222309</nobs>
     <nb>1360.1887972589557</nb>
     <deltanb>41.4621935859</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_371to378">
+  <region type="signal" id="SR1: 371to378">
     <nobs>1328.6013733800219</nobs>
     <nb>1301.3521925210182</nb>
     <deltanb>38.6054176263</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_378to385">
+  <region type="signal" id="SR1: 378to385">
     <nobs>1273.9981317712136</nobs>
     <nb>1239.278720579916</nb>
     <deltanb>42.5243790146</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_385to392">
+  <region type="signal" id="SR1: 385to392">
     <nobs>1177.5394593470353</nobs>
     <nb>1188.434914075102</nb>
     <deltanb>37.5865855882</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_392to399">
+  <region type="signal" id="SR1: 392to399">
     <nobs>1075.8455203346086</nobs>
     <nb>1131.7475071481908</nb>
     <deltanb>34.1675559668</deltanb>
   </region>
 
-  <region type="signal" id="SR1:_399to406">
+  <region type="signal" id="SR1: 399to406">
     <nobs>1110.5676443202742</nobs>
     <nb>1085.2884579012052</nb>
     <deltanb>32.9590363584</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_390to400">
+  <region type="signal" id="SR2: 390to400">
     <nobs>5082.749332306259</nobs>
     <nb>5165.77281855032</nb>
     <deltanb>167.403108472</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_400to410">
+  <region type="signal" id="SR2: 400to410">
     <nobs>4812.781764219288</nobs>
     <nb>4838.8449457389825</nb>
     <deltanb>131.734999645</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_410to420">
+  <region type="signal" id="SR2: 410to420">
     <nobs>4484.061637497896</nobs>
     <nb>4557.305940007969</nb>
     <deltanb>147.685004241</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_420to430">
+  <region type="signal" id="SR2: 420to430">
     <nobs>4292.147746771852</nobs>
     <nb>4246.035190678536</nb>
     <deltanb>141.364216068</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_430to440">
+  <region type="signal" id="SR2: 430to440">
     <nobs>3956.0246948110325</nobs>
     <nb>3998.9876949873997</nb>
     <deltanb>130.293820885</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_440to450">
+  <region type="signal" id="SR2: 440to450">
     <nobs>3746.0279156050865</nobs>
     <nb>3725.8509091836945</nb>
     <deltanb>102.535915882</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_450to460">
+  <region type="signal" id="SR2: 450to460">
     <nobs>3471.3697706210883</nobs>
     <nb>3509.0693482458346</nb>
     <deltanb>114.331447857</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_460to470">
+  <region type="signal" id="SR2: 460to470">
     <nobs>3340.7925114836426</nobs>
     <nb>3269.285267050871</nb>
     <deltanb>109.915297036</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_470to480">
+  <region type="signal" id="SR2: 470to480">
     <nobs>3013.3646321259503</nobs>
     <nb>3062.58603194858</nb>
     <deltanb>82.3778920582</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_480to490">
+  <region type="signal" id="SR2: 480to490">
     <nobs>2853.31134830107</nobs>
     <nb>2837.9427278065295</nb>
     <deltanb>93.9753582001</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_490to500">
+  <region type="signal" id="SR2: 490to500">
     <nobs>2615.7001520056874</nobs>
     <nb>2658.4259547928373</nb>
     <deltanb>86.1495044609</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_500to510">
+  <region type="signal" id="SR2: 500to510">
     <nobs>2530.941580435093</nobs>
     <nb>2476.8515224685216</nb>
     <deltanb>83.3579348943</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_510to520">
+  <region type="signal" id="SR2: 510to520">
     <nobs>2295.249179963796</nobs>
     <nb>2320.1759179219625</nb>
     <deltanb>62.8253398391</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_520to530">
+  <region type="signal" id="SR2: 520to530">
     <nobs>2104.1109420102275</nobs>
     <nb>2173.4109781194775</nb>
     <deltanb>57.59352237</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_530to540">
+  <region type="signal" id="SR2: 530to540">
     <nobs>1918.5003900699849</nobs>
     <nb>2013.9894244749191</nb>
     <deltanb>63.1205139237</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_540to550">
+  <region type="signal" id="SR2: 540to550">
     <nobs>1826.4990230609799</nobs>
     <nb>1886.5926032413645</nb>
     <deltanb>49.9319391228</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_550to560">
+  <region type="signal" id="SR2: 550to560">
     <nobs>1776.8247946646975</nobs>
     <nb>1767.254389398284</nb>
     <deltanb>58.5206891764</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_560to570">
+  <region type="signal" id="SR2: 560to570">
     <nobs>1646.548295647913</nobs>
     <nb>1646.5482956479113</nb>
     <deltanb>54.2299619596</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_570to580">
+  <region type="signal" id="SR2: 570to580">
     <nobs>1584.6125821717092</nobs>
     <nb>1534.0866069791603</nb>
     <deltanb>61.0540314033</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_580to590">
+  <region type="signal" id="SR2: 580to590">
     <nobs>1406.3346341276592</nobs>
     <nb>1429.2583716204351</nb>
     <deltanb>46.2697663833</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_590to600">
+  <region type="signal" id="SR2: 590to600">
     <nobs>1282.2772270577984</nobs>
     <nb>1331.6379067721014</nb>
     <deltanb>42.1881579923</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_600to610">
+  <region type="signal" id="SR2: 600to610">
     <nobs>1267.7794325084737</nobs>
     <nb>1247.4038813620111</nb>
     <deltanb>48.8466683628</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_610to620">
+  <region type="signal" id="SR2: 610to620">
     <nobs>1149.7182413589348</nobs>
     <nb>1168.4981595400855</nb>
     <deltanb>37.8665944133</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_620to630">
+  <region type="signal" id="SR2: 620to630">
     <nobs>1106.4710315665543</nobs>
     <nb>1088.6880036062764</nb>
     <deltanb>36.4422240817</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_630to640">
+  <region type="signal" id="SR2: 630to640">
     <nobs>987.3045932115741</nobs>
     <nb>1008.8655798888266</nb>
     <deltanb>21.5609866773</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_640to650">
+  <region type="signal" id="SR2: 640to650">
     <nobs>875.78732010122</nobs>
     <nb>950.1666516397906</nb>
     <deltanb>41.75872850026428</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_650to660">
+  <region type="signal" id="SR2: 650to660">
     <nobs>945.0171898084067</nobs>
     <nb>885.2688612484704</nb>
     <deltanb>38.63835166804165</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_660to670">
+  <region type="signal" id="SR2: 660to670">
     <nobs>856.5541295593404</nobs>
     <nb>824.8036861151234</nb>
     <deltanb>37.8197532945</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_670to680">
+  <region type="signal" id="SR2: 670to680">
     <nobs>768.4683720487869</nobs>
     <nb>772.629942561241</nb>
     <deltanb>29.6085570993</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_680to690">
+  <region type="signal" id="SR2: 680to690">
     <nobs>727.6515770447268</nobs>
     <nb>719.8581724976809</nb>
     <deltanb>32.1537057487</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_690to700">
+  <region type="signal" id="SR2: 690to700">
     <nobs>692.7571667329669</nobs>
     <nb>674.3228574653738</nb>
     <deltanb>30.5875650291</deltanb>
   </region>
 
-  <region type="signal" id="SR2:_700to710">
+  <region type="signal" id="SR2: 700to710">
     <nobs>598.4176256248813</nobs>
     <nb>624.8397817819774</nb>
     <deltanb>19.7092093559</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_1020to1050">
+  <region type="signal" id="SR3: 1020to1050">
     <nobs>3679.0423812995145</nobs>
     <nb>3644.709673007542</nb>
     <deltanb>87.2533606579</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_1050to1080">
+  <region type="signal" id="SR3: 1050to1080">
     <nobs>3268.4872986967594</nobs>
     <nb>3253.200841360148</nb>
     <deltanb>77.6108547865</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_1080to1110">
+  <region type="signal" id="SR3: 1080to1110">
     <nobs>2863.1957149489135</nobs>
     <nb>2863.2764520434703</nb>
     <deltanb>81.7604565385</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_1110to1140">
+  <region type="signal" id="SR3: 1110to1140">
     <nobs>2382.167705554822</nobs>
     <nb>2484.8241766849874</nb>
     <deltanb>56.4962608251</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_1140to1170">
+  <region type="signal" id="SR3: 1140to1170">
     <nobs>2086.7795232228136</nobs>
     <nb>2126.2790947014046</nb>
     <deltanb>49.4907390246</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_1170to1200">
+  <region type="signal" id="SR3: 1170to1200">
     <nobs>1828.0193994686933</nobs>
     <nb>1819.4698968986154</nb>
     <deltanb>52.147291464</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_690to720">
+  <region type="signal" id="SR3: 690to720">
     <nobs>1513.7491968432673</nobs>
     <nb>1542.4021733249522</nb>
     <deltanb>50.49807275</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_720to750">
+  <region type="signal" id="SR3: 720to750">
     <nobs>1344.8255036265755</nobs>
     <nb>1301.410950545155</nb>
     <deltanb>31.8943171969</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_750to780">
+  <region type="signal" id="SR3: 750to780">
     <nobs>1077.6744391899435</nobs>
     <nb>1092.9375802028271</nb>
     <deltanb>30.7424544291</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_780to810">
+  <region type="signal" id="SR3: 780to810">
     <nobs>939.6278710531674</nobs>
     <nb>909.2941779646495</nb>
     <deltanb>31.3456130575</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_810to840">
+  <region type="signal" id="SR3: 810to840">
     <nobs>749.448181498319</nobs>
     <nb>760.0626424710198</nb>
     <deltanb>32.2965110425</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_840to870">
+  <region type="signal" id="SR3: 840to870">
     <nobs>668.9436672178846</nobs>
     <nb>635.3226870682612</nb>
     <deltanb>28.8272719428</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_870to900">
+  <region type="signal" id="SR3: 870to900">
     <nobs>577.8112634045909</nobs>
     <nb>531.0548027875577</nb>
     <deltanb>27.7321161658</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_900to930">
+  <region type="signal" id="SR3: 900to930">
     <nobs>427.5598461967408</nobs>
     <nb>443.899154404713</nb>
     <deltanb>16.3518253851</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_930to960">
+  <region type="signal" id="SR3: 930to960">
     <nobs>372.80134146654217</nobs>
     <nb>372.8013414665433</nb>
     <deltanb>17.8926420496</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_960to990">
+  <region type="signal" id="SR3: 960to990">
     <nobs>305.8204297868888</nobs>
     <nb>310.1517752978456</nb>
     <deltanb>19.2171146303</deltanb>
   </region>
 
-  <region type="signal" id="SR3:_990to1020">
+  <region type="signal" id="SR3: 990to1020">
     <nobs>258.03779527042514</nobs>
     <nb>259.2502884243944</nb>
     <deltanb>16.2145540575</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1200to1240">
+  <region type="signal" id="SR4: 1200to1240">
     <nobs>388.3863858786797</nobs>
     <nb>362.5883679187363</nb>
     <deltanb>17.0314136704</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1240to1280">
+  <region type="signal" id="SR4: 1240to1280">
     <nobs>305.0971756251123</nobs>
     <nb>299.9087451848384</nb>
     <deltanb>24.5181958318</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1280to1320">
+  <region type="signal" id="SR4: 1280to1320">
     <nobs>252.3496283058447</nobs>
     <nb>245.93689916916654</nb>
     <deltanb>20.2860687925</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1320to1360">
+  <region type="signal" id="SR4: 1320to1360">
     <nobs>174.28516285773972</nobs>
     <nb>203.42248497339006</nb>
     <deltanb>15.6299844671</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1360to1400">
+  <region type="signal" id="SR4: 1360to1400">
     <nobs>155.737847556037</nobs>
     <nb>166.81439264069635</nb>
     <deltanb>11.0765450847</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1400to1440">
+  <region type="signal" id="SR4: 1400to1440">
     <nobs>126.61898054100416</nobs>
     <nb>136.79432534571828</nb>
     <deltanb>10.1753448047</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1440to1480">
+  <region type="signal" id="SR4: 1440to1480">
     <nobs>108.38844105646083</nobs>
     <nb>111.2173969968157</nb>
     <deltanb>12.8029902128</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1480to1520">
+  <region type="signal" id="SR4: 1480to1520">
     <nobs>91.20487863357556</nobs>
     <nb>90.42492369363966</nb>
     <deltanb>9.90116014726</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1520to1560">
+  <region type="signal" id="SR4: 1520to1560">
     <nobs>64.63307124621122</nobs>
     <nb>73.51967449152527</nb>
     <deltanb>8.2578865126</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1560to1600">
+  <region type="signal" id="SR4: 1560to1600">
     <nobs>72.20486061931848</nobs>
     <nb>59.773435808362834</nb>
     <deltanb>10.6361016668</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1600to1640">
+  <region type="signal" id="SR4: 1600to1640">
     <nobs>44.598931750113145</nobs>
     <nb>47.769756427904284</nb>
     <deltanb>7.45484139339</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1640to1680">
+  <region type="signal" id="SR4: 1640to1680">
     <nobs>48.55517912089852</nobs>
     <nb>38.8380727903467</nb>
     <deltanb>7.63289937368</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1680to1720">
+  <region type="signal" id="SR4: 1680to1720">
     <nobs>30.510030414312613</nobs>
     <nb>31.577162056541432</nb>
     <deltanb>6.66416293613</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1720to1760">
+  <region type="signal" id="SR4: 1720to1760">
     <nobs>16.710620626362342</nobs>
     <nb>25.45415015670471</nb>
     <deltanb>5.09759150932</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1760to1800">
+  <region type="signal" id="SR4: 1760to1800">
     <nobs>20.342457090193818</nobs>
     <nb>20.168494905981557</nb>
     <deltanb>5.97845732714</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1800to1840">
+  <region type="signal" id="SR4: 1800to1840">
     <nobs>14.665240504198394</nobs>
     <nb>16.11826518162727</nb>
     <deltanb>5.14256432709</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1840to1880">
+  <region type="signal" id="SR4: 1840to1880">
     <nobs>13.56258947610024</nobs>
     <nb>12.992831384406454</nb>
     <deltanb>5.07327796327</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1880to1920">
+  <region type="signal" id="SR4: 1880to1920">
     <nobs>9.777512895558733</nobs>
     <nb>10.294562871795089</nb>
     <deltanb>4.24690963201</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1920to1960">
+  <region type="signal" id="SR4: 1920to1960">
     <nobs>9.68548057995681</nobs>
     <nb>8.298381870641382</nb>
     <deltanb>4.32711099745</deltanb>
   </region>
 
-  <region type="signal" id="SR4:_1960to2000">
+  <region type="signal" id="SR4: 1960to2000">
     <nobs>6.8051665639017305</nobs>
     <nb>6.632068497449017</nb>
     <deltanb>3.7402713501</deltanb>
